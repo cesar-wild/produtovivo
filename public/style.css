@@ -200,6 +200,13 @@ footer a { color: #94a3b8; text-decoration: none; }
 
 /* Purchase card enhancements */
 .price-launch-badge { display: inline-block; background: #FF6B35; color: #fff; font-size: 11px; font-weight: 800; letter-spacing: 1px; text-transform: uppercase; padding: 4px 12px; border-radius: 20px; margin-bottom: 12px; }
+.countdown-wrap { margin: 10px 0 18px; text-align: center; }
+.countdown-label { font-size: 13px; color: #e53e3e; font-weight: 600; margin-bottom: 8px; }
+.countdown { display: flex; justify-content: center; align-items: center; gap: 6px; }
+.cd-block { display: flex; flex-direction: column; align-items: center; background: #1A1A2E; color: #fff; border-radius: 8px; padding: 8px 14px; min-width: 54px; }
+.cd-block span { font-size: 26px; font-weight: 800; line-height: 1; font-variant-numeric: tabular-nums; }
+.cd-block small { font-size: 10px; text-transform: uppercase; letter-spacing: 1px; opacity: 0.7; margin-top: 2px; }
+.cd-sep { font-size: 24px; font-weight: 800; color: #1A1A2E; margin-bottom: 12px; }
 .guarantee-row { display: flex; align-items: flex-start; gap: 12px; background: #f0fdf4; border: 1.5px solid #86efac; border-radius: 10px; padding: 14px 16px; margin: 20px 0 0; text-align: left; }
 .guarantee-icon { font-size: 24px; flex-shrink: 0; line-height: 1; }
 .guarantee-text { display: flex; flex-direction: column; gap: 4px; }
