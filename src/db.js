@@ -28,6 +28,13 @@ async function migrate() {
       CREATE INDEX IF NOT EXISTS idx_orders_email ON orders(email);
       CREATE INDEX IF NOT EXISTS idx_orders_download_token ON orders(download_token);
     `);
+
+    // Add nurturing tracking columns if they don't exist yet
+    await client.query(`
+      ALTER TABLE orders
+        ADD COLUMN IF NOT EXISTS nurturing_day1_at TIMESTAMPTZ,
+        ADD COLUMN IF NOT EXISTS nurturing_day3_at TIMESTAMPTZ;
+    `);
     console.log('DB migrations applied');
   } finally {
     client.release();

@@ -61,6 +61,119 @@ async function sendPurchaseEmail({ to, name, downloadUrl }) {
 }
 
 /**
+ * Send a buyer nurturing email (Day 1 quick-start tip or Day 3 results check-in).
+ * @param {object} opts
+ * @param {string} opts.to - buyer email
+ * @param {string} opts.name - buyer full name
+ * @param {1|3} opts.day - day number in the sequence
+ */
+async function sendNurturingEmail({ to, name, day }) {
+  const firstName = name ? name.split(' ')[0] : 'Criador';
+
+  const configs = {
+    1: {
+      subject: `${firstName}, já tentou o Prompt C-01?`,
+      preheader: 'Dica rápida para seu primeiro resultado hoje.',
+      headline: 'Dica rápida para começar hoje',
+      body: `
+        <p style="margin:0 0 16px;color:#374151;font-size:15px;line-height:1.7;">
+          Oi ${firstName}, tudo bem?
+        </p>
+        <p style="margin:0 0 16px;color:#374151;font-size:15px;line-height:1.7;">
+          Ontem você baixou o Guia ProdutoVivo. Queria compartilhar a forma mais rápida de ver resultado:
+        </p>
+        <div style="background:#eff6ff;border-left:4px solid #2563eb;border-radius:6px;padding:16px 20px;margin:0 0 20px;">
+          <p style="margin:0 0 8px;font-weight:700;color:#1e40af;font-size:14px;">⚡ Sequência de 30 minutos:</p>
+          <ol style="margin:0;padding-left:20px;color:#374151;font-size:14px;line-height:1.9;">
+            <li>Abra qualquer PDF que você já tem (não precisa ser o melhor)</li>
+            <li>Copie 2–3 páginas de texto</li>
+            <li>Cole no ChatGPT gratuito junto com o <strong>Prompt C-01</strong> (Capítulo 4)</li>
+            <li>Faça 5 perguntas sobre o conteúdo</li>
+          </ol>
+        </div>
+        <p style="margin:0 0 16px;color:#374151;font-size:15px;line-height:1.7;">
+          Isso já é o suficiente para mostrar para um cliente o que seu produto pode fazer.
+        </p>
+        <p style="margin:0;color:#374151;font-size:15px;line-height:1.7;">
+          Qualquer dúvida, responde aqui.<br><br>
+          Cesar
+        </p>
+      `,
+    },
+    3: {
+      subject: `Como está indo, ${firstName}?`,
+      preheader: 'Resultado em 3 dias — e um pedido rápido.',
+      headline: 'Como está indo com o guia?',
+      body: `
+        <p style="margin:0 0 16px;color:#374151;font-size:15px;line-height:1.7;">
+          Oi ${firstName},
+        </p>
+        <p style="margin:0 0 16px;color:#374151;font-size:15px;line-height:1.7;">
+          Já faz 3 dias desde que você baixou o ProdutoVivo. Queria saber como está indo.
+        </p>
+        <p style="margin:0 0 16px;color:#374151;font-size:15px;line-height:1.7;">
+          Você já testou algum prompt? Transformou algum PDF?
+        </p>
+        <p style="margin:0 16px;color:#374151;font-size:15px;line-height:1.7;">
+          Se sim — ótimo! Se não, me conta o que travou. Responde este e-mail com uma linha e eu ajudo pessoalmente.
+        </p>
+        <div style="background:#f0fdf4;border-left:4px solid #22c55e;border-radius:6px;padding:16px 20px;margin:20px 0;">
+          <p style="margin:0;color:#166534;font-size:14px;line-height:1.6;">
+            <strong>Um pedido rápido:</strong> se o guia te ajudou de alguma forma, você pode me ajudar com uma resposta aqui descrevendo sua experiência? Isso faz muita diferença para criadores que ainda estão avaliando.
+          </p>
+        </div>
+        <p style="margin:0;color:#374151;font-size:15px;line-height:1.7;">
+          Obrigado,<br>
+          Cesar
+        </p>
+      `,
+    },
+  };
+
+  const config = configs[day];
+  if (!config) throw new Error(`Invalid nurturing day: ${day}`);
+
+  const html = `
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>${config.subject}</title>
+</head>
+<body style="margin:0;padding:0;background:#f9fafb;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;">
+  <div style="max-width:560px;margin:40px auto;background:#fff;border-radius:10px;overflow:hidden;box-shadow:0 2px 8px rgba(0,0,0,.06);">
+    <div style="background:#0f172a;padding:24px 36px;">
+      <span style="color:#fff;font-size:18px;font-weight:800;">ProdutoVivo</span>
+    </div>
+    <div style="padding:36px;">
+      <h2 style="margin:0 0 20px;font-size:20px;font-weight:700;color:#0f172a;">${config.headline}</h2>
+      ${config.body}
+    </div>
+    <div style="padding:16px 36px;border-top:1px solid #f1f5f9;text-align:center;">
+      <p style="margin:0;color:#9ca3af;font-size:12px;">
+        ProdutoVivo ·
+        <a href="https://produtovivo.com/privacidade" style="color:#9ca3af;">Privacidade</a> ·
+        <a href="https://produtovivo.com/unsubscribe?email=${encodeURIComponent(to)}" style="color:#9ca3af;">Cancelar inscrição</a>
+      </p>
+    </div>
+  </div>
+</body>
+</html>
+  `;
+
+  const { error } = await getResend().emails.send({
+    from: FROM,
+    to,
+    replyTo: SUPPORT,
+    subject: config.subject,
+    html,
+  });
+
+  if (error) throw new Error(`Resend nurturing email error: ${JSON.stringify(error)}`);
+}
+
+/**
  * Send a cold outreach email (sequence touch 1, 2, or 3).
  * @param {object} opts
  * @param {string} opts.to - recipient email
@@ -134,4 +247,4 @@ async function sendColdEmail({ to, firstName, productName, platform, touch }) {
   if (error) throw new Error(`Resend cold email error: ${JSON.stringify(error)}`);
 }
 
-module.exports = { sendPurchaseEmail, sendColdEmail };
+module.exports = { sendPurchaseEmail, sendNurturingEmail, sendColdEmail };

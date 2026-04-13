@@ -8,7 +8,9 @@
     "dev": "node --watch src/index.js",
     "generate-pdf": "node scripts/generate-pdf.js",
     "send-cold-emails": "node scripts/send-cold-emails.js",
-    "send-cold-emails:dry": "node scripts/send-cold-emails.js --dry-run"
+    "send-cold-emails:dry": "node scripts/send-cold-emails.js --dry-run",
+    "send-nurturing": "node scripts/send-nurturing-emails.js",
+    "send-nurturing:dry": "node scripts/send-nurturing-emails.js --dry-run"
   },
   "engines": {
     "node": ">=18"
