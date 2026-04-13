@@ -14,7 +14,7 @@
 - [x] Product JSON-LD (rich snippets no Google)
 - [x] FAQ JSON-LD (rich snippets)
 
-### Blog (20 artigos publicados)
+### Blog (30 artigos publicados — sessões 1 e 2)
 - [x] Como transformar PDF em app interativo com IA
 - [x] 5 Ferramentas de IA para Infoprodutores
 - [x] Como criar quiz para infoproduto com IA
@@ -23,21 +23,31 @@
 - [x] Como criar ebook com IA
 - [x] Como precificar infoproduto
 - [x] Como criar chatbot para infoproduto
-- [x] Funil de vendas para infoproduto (HowTo + Article + FAQPage JSON-LD)
-- [x] Landing page para infoproduto (HowTo + Article + FAQPage JSON-LD)
-- [x] Email marketing para infoproduto (Article + FAQPage JSON-LD)
-- [x] Tráfego orgânico para infoproduto: 5 canais (Article + FAQPage JSON-LD)
+- [x] Funil de vendas para infoproduto (HowTo + FAQPage JSON-LD)
+- [x] Landing page para infoproduto (HowTo + FAQPage JSON-LD)
+- [x] Email marketing para infoproduto (FAQPage JSON-LD)
+- [x] Tráfego orgânico para infoproduto (FAQPage JSON-LD)
 - [x] Como lançar infoproduto: guia 30 dias (HowTo + FAQPage JSON-LD)
 - [x] Copywriting para infoproduto: 8 blocos PASTOR (HowTo + FAQPage JSON-LD)
 - [x] Como criar infoproduto do zero (HowTo + FAQPage JSON-LD)
 - [x] Renda passiva com infoproduto (FAQPage JSON-LD)
-- [x] Como monetizar seu conhecimento: 8 formatos (ItemList + FAQPage JSON-LD)
+- [x] Como monetizar seu conhecimento (ItemList + FAQPage JSON-LD)
 - [x] Kiwify vs Hotmart: comparação completa (FAQPage JSON-LD)
-- [x] Como vender infoproduto sem audiência: 7 estratégias (FAQPage JSON-LD)
+- [x] Como vender infoproduto sem audiência (FAQPage JSON-LD)
 - [x] Como criar PDF interativo com IA (HowTo + FAQPage JSON-LD)
-- [x] Todos os 20 artigos: nav sticky, sidebar quiz/guia, WA share button
-- [x] /recursos hub page com todos os 20 artigos (CollectionPage JSON-LD)
-- [x] /trilha — trilha de aprendizado gratuita 3 fases, 20 guias, ~5h de leitura (Course JSON-LD)
+- [x] YouTube para Infoprodutores (HowTo + FAQPage JSON-LD)
+- [x] Como Criar Curso Online (HowTo + FAQPage JSON-LD)
+- [x] Instagram para Infoprodutores (HowTo + FAQPage JSON-LD)
+- [x] Tráfego Pago para Infoproduto: Meta Ads e Google Ads (HowTo + FAQPage JSON-LD)
+- [x] Marketing de Afiliados para Infoprodutores (HowTo + FAQPage JSON-LD)
+- [x] WhatsApp para Infoprodutores (HowTo + FAQPage JSON-LD)
+- [x] Como Escolher Nicho para Infoproduto (HowTo + FAQPage JSON-LD)
+- [x] Webinar para Infoproduto (HowTo + FAQPage JSON-LD)
+- [x] TikTok para Infoprodutores (HowTo + FAQPage JSON-LD)
+- [x] Como Criar Comunidade Paga (HowTo + FAQPage JSON-LD)
+- [x] Todos os 30 artigos: nav sticky, sidebar quiz/guia, WA share button
+- [x] /recursos hub page com todos os 30 artigos (CollectionPage JSON-LD)
+- [x] /trilha — trilha de aprendizado gratuita 3 fases, 30 guias, ~6h de leitura (Course JSON-LD)
 
 ### Funil / Lead Capture
 - [x] Quiz de diagnóstico (6 perguntas, 3 perfis, email gate)
@@ -74,7 +84,7 @@
 - [x] Roda a cada hora, no-op se Resend não configurado
 
 ### SEO
-- [x] Sitemap.xml com 31 URLs indexadas
+- [x] Sitemap.xml com 46 URLs indexadas
 - [x] robots.txt configurado
 - [x] JSON-LD em todos os artigos (Article, HowTo, FAQPage, ItemList)
 - [x] /recursos hub page com todos os artigos
