@@ -176,6 +176,21 @@
     .price-note { font-size: 0.85rem; color: var(--muted); margin-top: 10px; }
     footer { border-top: 1px solid #e5e7eb; padding: 32px 24px; text-align: center; font-size: 0.85rem; color: var(--muted); }
     footer a { color: var(--muted); }
+    .article-layout { max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: minmax(0,1fr) 280px; gap: 48px; align-items: start; }
+    .article-sidebar { position: sticky; top: 24px; padding: 48px 0 80px; }
+    .sidebar-card { border-radius: 14px; padding: 24px; margin-bottom: 20px; }
+    .sidebar-card-quiz { background: linear-gradient(135deg, #1e3a5f, #16213e); }
+    .sidebar-card-guide { border: 1.5px solid #2563eb; background: #eff6ff; }
+    .sidebar-label { font-size: 10px; font-weight: 800; letter-spacing: 1.5px; text-transform: uppercase; margin: 0 0 8px; color: #2563eb; display: block; }
+    .sidebar-card h3 { font-size: 1rem; font-weight: 700; margin: 0 0 10px; line-height: 1.3; }
+    .sidebar-card-quiz h3 { color: #fff; }
+    .sidebar-card-guide h3 { color: #1e293b; }
+    .sidebar-card p { font-size: 13px; margin: 0 0 16px; line-height: 1.6; }
+    .sidebar-card-quiz p { color: #9ab; }
+    .sidebar-card-guide p { color: #475569; }
+    .sidebar-btn { display: block; text-align: center; padding: 12px 16px; border-radius: 8px; font-weight: 700; font-size: 14px; text-decoration: none; background: #2563eb; color: #fff; transition: background .15s; }
+    .sidebar-btn:hover { background: #1245b8; }
+    @media(max-width:860px) { .article-layout { grid-template-columns: 1fr; } .article-sidebar { position: static; padding: 0 0 40px; } }
   </style>
 </head>
 <body>
@@ -185,6 +200,7 @@
   <a class="cta" href="/#comprar">Quero o guia — R$37</a>
 </nav>
 
+<div class="article-layout">
 <article class="article">
   <div class="breadcrumb">
     <a href="/">ProdutoVivo</a> › <a href="/blog">Blog</a> › Como transformar PDF em app interativo com IA
@@ -427,6 +443,22 @@ Texto:
   <p style="text-align:center;margin-top:32px;"><a href="/blog" style="color:#FF6B35;font-weight:600;text-decoration:none;">← Ver todos os artigos</a></p>
 
 </article>
+
+  <aside class="article-sidebar">
+    <div class="sidebar-card sidebar-card-quiz">
+      <span class="sidebar-label">Diagnóstico grátis</span>
+      <h3>Seu infoproduto está pronto para IA?</h3>
+      <p>Quiz de 6 perguntas. Resultado + plano personalizado em segundos.</p>
+      <a href="/quiz" class="sidebar-btn">Fazer o quiz →</a>
+    </div>
+    <div class="sidebar-card sidebar-card-guide">
+      <span class="sidebar-label">Guia completo</span>
+      <h3>PDF → App Interativo em 7 capítulos</h3>
+      <p>50 prompts prontos. Sem código. Funciona com Hotmart e Kiwify.</p>
+      <a href="/#comprar" class="sidebar-btn">Adquirir por R$37 →</a>
+    </div>
+  </aside>
+</div>
 
 <footer>
   <p>ProdutoVivo &copy; 2026 — <a href="mailto:suporte@produtovivo.com">suporte@produtovivo.com</a></p>
