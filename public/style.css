@@ -173,3 +173,13 @@ footer a { color: #94a3b8; text-decoration: none; }
 .author-contact { font-size: 14px; color: #64748b; }
 .author-contact a { color: var(--blue); text-decoration: none; }
 .author-contact a:hover { text-decoration: underline; }
+
+/* Quiz CTA strip */
+.quiz-cta { background: #0f172a; padding: 32px 0; }
+.quiz-cta-inner { display: flex; align-items: center; justify-content: space-between; gap: 24px; flex-wrap: wrap; }
+.quiz-cta-label { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; color: #60a5fa; margin-bottom: 6px; }
+.quiz-cta-text h3 { font-size: 18px; font-weight: 700; color: #fff; margin-bottom: 6px; }
+.quiz-cta-text p { font-size: 14px; color: #64748b; }
+.quiz-cta-btn { flex-shrink: 0; display: inline-block; background: transparent; border: 2px solid #2563eb; color: #60a5fa; padding: 12px 24px; border-radius: 8px; font-weight: 700; font-size: 15px; text-decoration: none; white-space: nowrap; transition: background .15s, color .15s; }
+.quiz-cta-btn:hover { background: #2563eb; color: #fff; }
+@media(max-width:600px) { .quiz-cta-inner { flex-direction: column; text-align: center; } .quiz-cta-btn { width: 100%; text-align: center; } }

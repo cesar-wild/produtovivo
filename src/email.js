@@ -61,6 +61,80 @@ async function sendPurchaseEmail({ to, name, downloadUrl }) {
 }
 
 /**
+ * Send a lead welcome email after quiz completion.
+ * @param {object} opts
+ * @param {string} opts.to - lead email
+ * @param {'iniciante'|'intermediario'|'avancado'} opts.profile - quiz result
+ */
+async function sendLeadWelcomeEmail({ to, profile }) {
+  const profileContent = {
+    iniciante: {
+      title: 'Você está no começo — e isso é ótimo',
+      insight: 'Criadores que começam com a estrutura certa evitam meses de retrabalho. O primeiro passo é simples: qualquer PDF que você já tem pode virar um produto interativo em menos de uma tarde.',
+      tip: 'Dica para você: comece com um PDF que você já usa — uma apostila, um checklist, um guia. Não precisa ser perfeito.',
+    },
+    intermediario: {
+      title: 'Você já tem produto — agora é sobre diferenciação',
+      insight: 'Produtores no nível intermediário costumam ter bom conteúdo, mas produtos que parecem iguais aos da concorrência. Adicionar interatividade (quiz, chatbot, glossário) muda a percepção de valor imediatamente.',
+      tip: 'Dica para você: pegue seu produto mais vendido e adicione um quiz de verificação ao final. Isso sozinho reduz pedidos de reembolso.',
+    },
+    avancado: {
+      title: 'Você está pronto para a próxima camada',
+      insight: 'Para produtores avançados, a diferença está na experiência entregue — não no volume de conteúdo. Automação com IA libera seu tempo enquanto melhora o produto.',
+      tip: 'Dica para você: o Capítulo 7 do guia (Escala e automação) foi escrito especificamente para quem já está vendendo e quer sistemas rodando sem esforço manual.',
+    },
+  };
+
+  const content = profileContent[profile] || profileContent.iniciante;
+
+  const html = `
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"></head>
+<body style="margin:0;padding:0;background:#f9fafb;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;">
+  <div style="max-width:540px;margin:40px auto;background:#fff;border-radius:10px;overflow:hidden;box-shadow:0 2px 8px rgba(0,0,0,.06);">
+    <div style="background:#0f172a;padding:24px 36px;">
+      <span style="color:#fff;font-size:18px;font-weight:800;">ProdutoVivo</span>
+    </div>
+    <div style="padding:36px;">
+      <h2 style="margin:0 0 16px;font-size:20px;font-weight:700;color:#0f172a;">📊 ${content.title}</h2>
+      <p style="margin:0 0 16px;font-size:15px;color:#374151;line-height:1.7;">${content.insight}</p>
+      <div style="background:#eff6ff;border-left:4px solid #2563eb;border-radius:0 8px 8px 0;padding:14px 18px;margin:0 0 20px;">
+        <p style="margin:0;font-size:14px;color:#1e40af;line-height:1.6;"><strong>💡 ${content.tip}</strong></p>
+      </div>
+      <p style="margin:0 0 24px;font-size:15px;color:#374151;line-height:1.7;">O Guia ProdutoVivo tem 50 prompts organizados exatamente para o seu nível — do primeiro chatbot até automação completa.</p>
+      <table cellpadding="0" cellspacing="0">
+        <tr>
+          <td style="background:#2563eb;border-radius:8px;">
+            <a href="https://produtovivo.com/#comprar" style="display:inline-block;padding:14px 28px;color:#fff;text-decoration:none;font-weight:700;font-size:15px;">Ver o Guia — R$37 →</a>
+          </td>
+        </tr>
+      </table>
+      <p style="margin:20px 0 0;font-size:13px;color:#94a3b8;">Dúvidas? Responde este e-mail.<br>Cesar · ProdutoVivo</p>
+    </div>
+    <div style="padding:16px 36px;border-top:1px solid #f1f5f9;text-align:center;">
+      <p style="margin:0;color:#9ca3af;font-size:12px;">
+        <a href="https://produtovivo.com/privacidade" style="color:#9ca3af;">Privacidade</a> ·
+        <a href="https://produtovivo.com/unsubscribe?email=${encodeURIComponent(to)}" style="color:#9ca3af;">Cancelar inscrição</a>
+      </p>
+    </div>
+  </div>
+</body>
+</html>
+  `;
+
+  const { error } = await getResend().emails.send({
+    from: FROM,
+    to,
+    replyTo: SUPPORT,
+    subject: `Seu resultado do quiz + dica personalizada`,
+    html,
+  });
+
+  if (error) throw new Error(`Resend lead email error: ${JSON.stringify(error)}`);
+}
+
+/**
  * Send a buyer nurturing email (Day 1 quick-start tip or Day 3 results check-in).
  * @param {object} opts
  * @param {string} opts.to - buyer email
@@ -247,4 +321,4 @@ async function sendColdEmail({ to, firstName, productName, platform, touch }) {
   if (error) throw new Error(`Resend cold email error: ${JSON.stringify(error)}`);
 }
 
-module.exports = { sendPurchaseEmail, sendNurturingEmail, sendColdEmail };
+module.exports = { sendPurchaseEmail, sendLeadWelcomeEmail, sendNurturingEmail, sendColdEmail };

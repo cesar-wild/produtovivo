@@ -35,6 +35,22 @@ async function migrate() {
         ADD COLUMN IF NOT EXISTS nurturing_day1_at TIMESTAMPTZ,
         ADD COLUMN IF NOT EXISTS nurturing_day3_at TIMESTAMPTZ;
     `);
+    // Leads table for quiz funnel
+    await client.query(`
+      CREATE TABLE IF NOT EXISTS leads (
+        id              SERIAL PRIMARY KEY,
+        email           TEXT UNIQUE NOT NULL,
+        quiz_profile    TEXT,
+        quiz_score      NUMERIC,
+        source          TEXT DEFAULT 'quiz',
+        welcome_sent_at TIMESTAMPTZ,
+        converted_at    TIMESTAMPTZ,
+        created_at      TIMESTAMPTZ NOT NULL DEFAULT NOW(),
+        updated_at      TIMESTAMPTZ NOT NULL DEFAULT NOW()
+      );
+      CREATE INDEX IF NOT EXISTS idx_leads_email ON leads(email);
+    `);
+
     console.log('DB migrations applied');
   } finally {
     client.release();

@@ -10,6 +10,7 @@ const healthRouter = require('./routes/health');
 const checkoutRouter = require('./routes/checkout');
 const webhookRouter = require('./routes/webhook');
 const downloadRouter = require('./routes/download');
+const leadsRouter = require('./routes/leads');
 
 const app = express();
 const PORT = process.env.PORT || 8082;
@@ -64,6 +65,7 @@ app.use(express.static(path.join(__dirname, '..', 'public')));
 app.use('/health', healthRouter);
 app.use('/checkout', checkoutRouter);
 app.use('/download', downloadRouter);
+app.use('/leads', leadsRouter);
 
 // SPA fallback — serve index.html for any unmatched route
 app.get('*', (req, res) => {
