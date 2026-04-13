@@ -1,3 +1,29 @@
+// Mobile hamburger toggle
+(function() {
+  function initHamburger() {
+    const btn = document.querySelector('.nav-hamburger');
+    const links = document.querySelector('.nav-links');
+    if (!btn || !links) return;
+    btn.addEventListener('click', () => {
+      const open = btn.classList.toggle('open');
+      links.classList.toggle('open', open);
+      btn.setAttribute('aria-expanded', open);
+    });
+    // Close menu when a nav link is clicked
+    links.querySelectorAll('a').forEach(a => {
+      a.addEventListener('click', () => {
+        btn.classList.remove('open');
+        links.classList.remove('open');
+      });
+    });
+  }
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initHamburger);
+  } else {
+    initHamburger();
+  }
+})();
+
 // Countdown timer — launch price expires 2026-05-15
 (function() {
   const DEADLINE = new Date('2026-05-15T23:59:59-03:00').getTime();

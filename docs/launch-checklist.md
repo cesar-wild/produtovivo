@@ -14,7 +14,7 @@
 - [x] Product JSON-LD (rich snippets no Google)
 - [x] FAQ JSON-LD (rich snippets)
 
-### Blog (8 artigos publicados)
+### Blog (11 artigos publicados)
 - [x] Como transformar PDF em app interativo com IA
 - [x] 5 Ferramentas de IA para Infoprodutores
 - [x] Como criar quiz para infoproduto com IA
@@ -23,6 +23,11 @@
 - [x] Como criar ebook com IA
 - [x] Como precificar infoproduto
 - [x] Como criar chatbot para infoproduto
+- [x] Funil de vendas para infoproduto (HowTo + Article + FAQPage JSON-LD)
+- [x] Landing page para infoproduto (HowTo + Article + FAQPage JSON-LD)
+- [x] Email marketing para infoproduto (Article + FAQPage JSON-LD)
+- [x] Todos os 11 artigos: nav sticky, sidebar quiz/guia, WA share button
+- [x] /recursos hub page com todos os 11 artigos (CollectionPage JSON-LD)
 
 ### Funil / Lead Capture
 - [x] Quiz de diagnóstico (6 perguntas, 3 perfis, email gate)
@@ -47,15 +52,33 @@
 - [x] Página /sucesso com verificação de pagamento via Stripe
 - [x] Meta Pixel Purchase event (só dispara após verificação server-side)
 
+### Conversão / UX
+- [x] Countdown timer na homepage (R$37 → R$97 até 2026-05-15)
+- [x] Botão WhatsApp share no resultado do quiz
+- [x] Botão WhatsApp share em todos os 11 artigos
+- [x] Nav sticky com CTA "Comprar — R$37" em todas as páginas
+- [x] /afiliados page (40% comissão, materiais prontos, FAQ)
+
+### E-mail — Automação backend
+- [x] Scheduler de nurturing (Day 1 + Day 3) em src/index.js
+- [x] Roda a cada hora, no-op se Resend não configurado
+
 ### SEO
-- [x] Sitemap.xml com 15+ URLs
+- [x] Sitemap.xml com 20+ URLs
 - [x] robots.txt configurado
 - [x] JSON-LD em todos os artigos (Article, HowTo, FAQPage, ItemList)
 - [x] /recursos hub page com todos os artigos
 
-### Ads
-- [x] Brief do carrossel Meta Ads (4 cards, copy, config)
-- [x] Meta Pixel instalado em todas as páginas
+### Ads / Social
+- [x] Meta Pixel instalado em todas as páginas (PageView, Lead, InitiateCheckout, Purchase)
+- [x] docs/meta-ads-copy.md — 4 conjuntos de anúncios prontos
+- [x] docs/social-media-copy.md — Reels, Stories, Twitter, LinkedIn, WhatsApp
+
+### Documentação operacional
+- [x] docs/cold-email-templates.md — 3-touch sequence + quiz nurture
+- [x] docs/meta-ads-copy.md — ad sets, criativos, pixel events, audiences
+- [x] docs/social-media-copy.md — calendário + copy completo por plataforma
+- [x] docs/launch-checklist.md — este documento
 
 ---
 
