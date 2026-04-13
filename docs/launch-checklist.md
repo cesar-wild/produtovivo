@@ -14,7 +14,7 @@
 - [x] Product JSON-LD (rich snippets no Google)
 - [x] FAQ JSON-LD (rich snippets)
 
-### Blog (11 artigos publicados)
+### Blog (20 artigos publicados)
 - [x] Como transformar PDF em app interativo com IA
 - [x] 5 Ferramentas de IA para Infoprodutores
 - [x] Como criar quiz para infoproduto com IA
@@ -26,8 +26,18 @@
 - [x] Funil de vendas para infoproduto (HowTo + Article + FAQPage JSON-LD)
 - [x] Landing page para infoproduto (HowTo + Article + FAQPage JSON-LD)
 - [x] Email marketing para infoproduto (Article + FAQPage JSON-LD)
-- [x] Todos os 11 artigos: nav sticky, sidebar quiz/guia, WA share button
-- [x] /recursos hub page com todos os 11 artigos (CollectionPage JSON-LD)
+- [x] Tráfego orgânico para infoproduto: 5 canais (Article + FAQPage JSON-LD)
+- [x] Como lançar infoproduto: guia 30 dias (HowTo + FAQPage JSON-LD)
+- [x] Copywriting para infoproduto: 8 blocos PASTOR (HowTo + FAQPage JSON-LD)
+- [x] Como criar infoproduto do zero (HowTo + FAQPage JSON-LD)
+- [x] Renda passiva com infoproduto (FAQPage JSON-LD)
+- [x] Como monetizar seu conhecimento: 8 formatos (ItemList + FAQPage JSON-LD)
+- [x] Kiwify vs Hotmart: comparação completa (FAQPage JSON-LD)
+- [x] Como vender infoproduto sem audiência: 7 estratégias (FAQPage JSON-LD)
+- [x] Como criar PDF interativo com IA (HowTo + FAQPage JSON-LD)
+- [x] Todos os 20 artigos: nav sticky, sidebar quiz/guia, WA share button
+- [x] /recursos hub page com todos os 20 artigos (CollectionPage JSON-LD)
+- [x] /trilha — trilha de aprendizado gratuita 3 fases, 20 guias, ~5h de leitura (Course JSON-LD)
 
 ### Funil / Lead Capture
 - [x] Quiz de diagnóstico (6 perguntas, 3 perfis, email gate)
@@ -64,7 +74,7 @@
 - [x] Roda a cada hora, no-op se Resend não configurado
 
 ### SEO
-- [x] Sitemap.xml com 20+ URLs
+- [x] Sitemap.xml com 31 URLs indexadas
 - [x] robots.txt configurado
 - [x] JSON-LD em todos os artigos (Article, HowTo, FAQPage, ItemList)
 - [x] /recursos hub page com todos os artigos
