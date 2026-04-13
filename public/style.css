@@ -197,3 +197,11 @@ footer a { color: #94a3b8; text-decoration: none; }
 .preview-cta p { color: #64748b; font-size: 14px; margin-bottom: 16px; }
 .preview-cta .btn-orange { display: inline-block; background: #FF6B35; color: #fff; padding: 16px 40px; border-radius: 10px; font-weight: 800; font-size: 16px; text-decoration: none; transition: background .15s; }
 .preview-cta .btn-orange:hover { background: #e55a24; }
+
+/* Purchase card enhancements */
+.price-launch-badge { display: inline-block; background: #FF6B35; color: #fff; font-size: 11px; font-weight: 800; letter-spacing: 1px; text-transform: uppercase; padding: 4px 12px; border-radius: 20px; margin-bottom: 12px; }
+.guarantee-row { display: flex; align-items: flex-start; gap: 12px; background: #f0fdf4; border: 1.5px solid #86efac; border-radius: 10px; padding: 14px 16px; margin: 20px 0 0; text-align: left; }
+.guarantee-icon { font-size: 24px; flex-shrink: 0; line-height: 1; }
+.guarantee-text { display: flex; flex-direction: column; gap: 4px; }
+.guarantee-text strong { font-size: 14px; color: #166534; }
+.guarantee-text span { font-size: 13px; color: #15803d; line-height: 1.4; }
