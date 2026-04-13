@@ -183,3 +183,17 @@ footer a { color: #94a3b8; text-decoration: none; }
 .quiz-cta-btn { flex-shrink: 0; display: inline-block; background: transparent; border: 2px solid #2563eb; color: #60a5fa; padding: 12px 24px; border-radius: 8px; font-weight: 700; font-size: 15px; text-decoration: none; white-space: nowrap; transition: background .15s, color .15s; }
 .quiz-cta-btn:hover { background: #2563eb; color: #fff; }
 @media(max-width:600px) { .quiz-cta-inner { flex-direction: column; text-align: center; } .quiz-cta-btn { width: 100%; text-align: center; } }
+
+/* Guide preview / sample prompts section */
+.preview { background: #0f172a; padding: 64px 0; }
+.preview h2 { color: #fff; text-align: center; font-size: 1.5rem; font-weight: 800; margin-bottom: 8px; }
+.preview .preview-sub { text-align: center; color: #64748b; font-size: 15px; margin-bottom: 40px; }
+.preview-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px; }
+.preview-card { background: #1e293b; border: 1px solid #334155; border-radius: 12px; padding: 24px; }
+.preview-card .pcard-tag { display: inline-block; background: #FF6B35; color: #fff; font-size: 10px; font-weight: 800; letter-spacing: 1px; text-transform: uppercase; padding: 3px 10px; border-radius: 4px; margin-bottom: 14px; }
+.preview-card h3 { color: #fff; font-size: 15px; font-weight: 700; margin-bottom: 12px; line-height: 1.4; }
+.preview-card pre { background: #0f172a; border-radius: 8px; padding: 16px; font-family: 'SF Mono', 'Fira Code', monospace; font-size: 0.8rem; color: #94a3b8; white-space: pre-wrap; line-height: 1.6; margin: 0; border: 1px solid #1e293b; }
+.preview-cta { text-align: center; margin-top: 40px; }
+.preview-cta p { color: #64748b; font-size: 14px; margin-bottom: 16px; }
+.preview-cta .btn-orange { display: inline-block; background: #FF6B35; color: #fff; padding: 16px 40px; border-radius: 10px; font-weight: 800; font-size: 16px; text-decoration: none; transition: background .15s; }
+.preview-cta .btn-orange:hover { background: #e55a24; }
