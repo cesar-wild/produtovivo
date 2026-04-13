@@ -295,3 +295,10 @@ footer a { color: #94a3b8; text-decoration: none; }
 .pb-low { background: #dcfce7; color: #166534; }
 .pb-mid { background: #fef9c3; color: #854d0e; }
 .pb-high { background: #fee2e2; color: #991b1b; }
+
+/* WhatsApp share button (blog articles) */
+.wa-share-section { margin: 40px 0 0; padding: 20px 0; border-top: 1px solid #e2e8f0; display: flex; align-items: center; gap: 12px; flex-wrap: wrap; }
+.wa-share-label { font-size: 14px; color: #64748b; font-weight: 500; }
+.btn-wa-share { display: inline-flex; align-items: center; gap: 8px; background: #25d366; color: #fff; text-decoration: none; padding: 10px 20px; border-radius: 8px; font-weight: 700; font-size: 14px; transition: background .15s; }
+.btn-wa-share:hover { background: #128C7E; }
+.btn-wa-share svg { flex-shrink: 0; }
