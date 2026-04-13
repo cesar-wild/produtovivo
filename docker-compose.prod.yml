@@ -1,0 +1,35 @@
+version: '3.8'
+
+# Production deployment for produtovivo.com
+# Port 3000 → internal, nginx proxies 443 → localhost:3000
+# Dev environment stays on port 8082 (separate container)
+#
+# Usage:
+#   docker compose -f docker-compose.prod.yml up -d
+#   docker compose -f docker-compose.prod.yml pull && docker compose -f docker-compose.prod.yml up -d --build
+
+services:
+  produtovivo:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: produtovivo-prod
+    restart: unless-stopped
+    ports:
+      - "127.0.0.1:3000:8082"
+    env_file:
+      - .env
+    environment:
+      - NODE_ENV=production
+      - PORT=8082
+    healthcheck:
+      test: ["CMD", "wget", "-qO-", "http://localhost:8082/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 15s
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "10m"
+        max-file: "3"
