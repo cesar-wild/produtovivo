@@ -116,3 +116,15 @@ footer a { color: #94a3b8; text-decoration: none; }
   .hero { padding: 48px 0 48px; }
   .benefits, .inside, .purchase { padding: 48px 0; }
 }
+
+/* FAQ */
+.faq { padding: 72px 0; background: var(--light); }
+.faq h2 { text-align: center; margin-bottom: 40px; }
+.faq-list { max-width: 680px; margin: 0 auto; }
+.faq-item { border: 1px solid var(--border); border-radius: 10px; margin-bottom: 12px; background: #fff; overflow: hidden; }
+.faq-item summary { padding: 18px 20px; font-weight: 600; font-size: 15px; color: var(--dark); cursor: pointer; list-style: none; display: flex; justify-content: space-between; align-items: center; }
+.faq-item summary::after { content: '+'; font-size: 20px; font-weight: 400; color: var(--primary); flex-shrink: 0; margin-left: 12px; transition: transform .2s; }
+.faq-item[open] summary::after { transform: rotate(45deg); }
+.faq-item summary::-webkit-details-marker { display: none; }
+.faq-item p { padding: 0 20px 18px; font-size: 15px; color: var(--muted); line-height: 1.7; margin: 0; }
+.faq-item p a { color: var(--primary); }
