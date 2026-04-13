@@ -10,7 +10,7 @@ const router = express.Router();
  * Idempotent — updates existing row if email already exists.
  */
 router.post('/', async (req, res) => {
-  const { email, profile, score } = req.body;
+  const { email, profile, score, source } = req.body;
 
   if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
     return res.status(400).json({ error: 'E-mail inválido.' });
@@ -19,6 +19,8 @@ router.post('/', async (req, res) => {
   const profiles = ['iniciante', 'intermediario', 'avancado'];
   const safeProfile = profiles.includes(profile) ? profile : 'iniciante';
   const safeScore = typeof score === 'number' ? Math.min(Math.max(score, 0), 10) : null;
+  const safeSources = ['quiz', 'landing', 'blog', 'social'];
+  const safeSource = safeSources.includes(source) ? source : 'quiz';
 
   try {
     // Check global unsubscribe list before anything
@@ -34,13 +36,13 @@ router.post('/', async (req, res) => {
     // Upsert: if email seen before, update profile and reset welcome sent flag
     const result = await pool.query(
       `INSERT INTO leads (email, quiz_profile, quiz_score, source)
-       VALUES ($1, $2, $3, 'quiz')
+       VALUES ($1, $2, $3, $4)
        ON CONFLICT (email) DO UPDATE
          SET quiz_profile = EXCLUDED.quiz_profile,
              quiz_score = EXCLUDED.quiz_score,
              updated_at = NOW()
        RETURNING id, welcome_sent_at`,
-      [email.toLowerCase().trim(), safeProfile, safeScore]
+      [email.toLowerCase().trim(), safeProfile, safeScore, safeSource]
     );
 
     const lead = result.rows[0];
