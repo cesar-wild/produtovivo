@@ -281,3 +281,230 @@ Para quem tem pelo menos um PDF e quer modernizar sem complicar.
 | Sexta | B-01 — Contagem regressiva | Bastidores |
 
 Frequência: 5x/semana na fase de lançamento, 3x/semana na manutenção.
+
+---
+
+## Série 5 — Blog e Conteúdo Orgânico (9 posts para artigos 12-20)
+
+### BL-01 — Como lançar infoproduto (artigo 13)
+
+```
+Cronograma de lançamento de 30 dias.
+
+Semana 1-2: validação e pré-lançamento
+Semana 3: aquecimento da lista
+Semana 4: abertura do carrinho + 6 e-mails
+
+Não é magia. É processo.
+
+O artigo completo no link da bio — gratuito, com template de e-mail incluso.
+
+#lancamento #infoprodutor #hotmart #kiwify #email #marketingdigital
+```
+
+---
+
+### BL-02 — Copywriting para infoproduto (artigo 14)
+
+```
+8 blocos que toda página de vendas de infoproduto precisa ter:
+
+1. Headline que para o scroll
+2. Subheadline que clarifica
+3. Agitação da dor
+4. Solução específica
+5. Bullets de benefício
+6. Prova social
+7. Garantia
+8. CTA urgente
+
+Publiquei um guia completo com o framework PASTOR e 6 prompts prontos de IA.
+
+🔗 Link na bio
+
+#copywriting #vendas #infoprodutor #hotmart #marketingdigital #ia
+```
+
+---
+
+### BL-03 — Kiwify vs Hotmart (artigo 18)
+
+```
+Kiwify ou Hotmart?
+
+Pergunta que todo infoprodutor faz. Comparação sem patrocínio:
+
+Kiwify:
+✓ 4,99% de taxa (menor)
+✓ Checkout mais limpo
+✓ Aprovação rápida
+
+Hotmart:
+✓ Marketplace com afiliados ativos
+✓ Área de membros nativa
+✓ Reconhecimento de marca
+
+A resposta certa depende do seu modelo.
+
+Escrevi um guia completo — link na bio.
+
+#kiwify #hotmart #infoprodutor #vendas #plataformasdigitais
+```
+
+---
+
+### BL-04 — Vender sem audiência (artigo 19)
+
+```
+"Mas eu não tenho seguidores..."
+
+Essa frase não é motivo para não lançar.
+
+7 estratégias para as primeiras vendas sem audiência:
+
+1. Grupos de WhatsApp de nicho
+2. Cold DM no Instagram
+3. Parcerias com produtores maiores
+4. Tráfego pago (R$30/dia)
+5. SEO básico
+6. Cold email
+7. Rede pessoal
+
+Qual vai funcionar melhor pra você? Guia no link da bio.
+
+#vendas #infoprodutor #primeirasvendas #hotmart #marketingdigital
+```
+
+---
+
+### BL-05 — PDF Interativo (artigo 20)
+
+```
+3 formas de transformar seu PDF em produto premium com IA:
+
+1️⃣ Custom GPT — chatbot que responde dúvidas do seu conteúdo 24h
+2️⃣ Typebot Quiz — captura e-mails com diagnóstico personalizado
+3️⃣ Glossário navegável — busca por termos, links internos, exemplos
+
+Nenhuma exige programação.
+Todas elevam o ticket percebido.
+
+Tutorial completo no link da bio — gratuito.
+
+#pdfinterativo #ia #chatgpt #typebot #infoprodutor #hotmart
+```
+
+---
+
+### BL-06 — A trilha gratuita
+
+```
+20 guias organizados em 3 fases:
+
+FASE 1 — CRIAR
+→ Do zero ao produto pronto com IA
+
+FASE 2 — VENDER
+→ Copy, landing page, plataforma, lançamento
+
+FASE 3 — ESCALAR
+→ Funil, email, tráfego orgânico, renda passiva
+
+~5h de leitura. 100% gratuito.
+
+produtovivo.com/trilha
+
+#infoprodutor #cursogratis #hotmart #kiwify #ia #marketingdigital
+```
+
+---
+
+### BL-07 — Renda passiva com infoproduto (artigo 16)
+
+```
+Renda passiva de verdade tem 4 pilares:
+
+1. Tráfego que chega sem você postar todo dia
+2. Captura de e-mails automatizada
+3. Sequência evergreen que vende enquanto você dorme
+4. Programa de afiliados que multiplica sem custo
+
+Cada um desses é construível em semanas, não meses.
+
+Escrevi um guia com o processo. Link na bio.
+
+#rendapassiva #infoprodutor #hotmart #afiliados #ia #marketingdigital
+```
+
+---
+
+### BL-08 — Como monetizar conhecimento (artigo 17)
+
+```
+Qual é o melhor formato para monetizar o que você sabe?
+
+Depende:
+
+Quer escala? → Infoproduto digital
+Quer ticket alto? → Mentoria ou consultoria
+Quer recorrência? → Comunidade ou newsletter
+Quer diferencial? → Produto interativo com IA
+
+Escrevi um comparativo dos 8 formatos com ticket típico e velocidade para primeira venda.
+
+🔗 Link na bio
+
+#monetizacao #infoprodutor #empreendedorismo #ia #hotmart #kiwify
+```
+
+---
+
+### BL-09 — Tráfego orgânico (artigo 12)
+
+```
+5 canais de tráfego orgânico que funcionam em 2026:
+
+1. SEO → resultado em 60-90 dias (mas dura anos)
+2. Instagram Reels → alcance rápido se testar formatos
+3. YouTube Shorts → repurposing de conteúdo longo
+4. WhatsApp → menor alcance, maior conversão
+5. Pinterest → tráfego evergreen para nichos visuais
+
+Qual você já usa? Qual ainda não explorou?
+
+Guia com estratégia de 90 dias no link da bio.
+
+#trafegoorganico #seo #instagram #youtube #infoprodutor #marketing
+```
+
+---
+
+## Calendário estendido — Semana 2
+
+| Dia | Post | Tipo |
+|-----|------|------|
+| Segunda | BL-01 — Como lançar | Blog |
+| Terça | B-02 — O produto em detalhes | Produto |
+| Quarta | BL-03 — Kiwify vs Hotmart | Blog |
+| Quinta | P-02 — A janela de oportunidade | Dor |
+| Sexta | BL-05 — PDF Interativo | Blog |
+
+## Calendário estendido — Semana 3
+
+| Dia | Post | Tipo |
+|-----|------|------|
+| Segunda | BL-06 — A trilha gratuita | Blog/Viral |
+| Terça | C-02 — O argumento de preço | Credibilidade |
+| Quarta | BL-04 — Vender sem audiência | Blog |
+| Quinta | S-01 — Chatbot de conteúdo | Solução |
+| Sexta | BL-07 — Renda passiva | Blog |
+
+## Calendário estendido — Semana 4 (pré-deadline)
+
+| Dia | Post | Tipo |
+|-----|------|------|
+| Segunda | BL-02 — Copywriting | Blog |
+| Terça | P-03 — A taxa de conclusão | Urgência |
+| Quarta | BL-08 — Monetizar conhecimento | Blog |
+| Quinta | B-01 — Countdown (10 dias para preço subir) | Urgência |
+| Sexta | BL-09 — Tráfego orgânico | Blog |
