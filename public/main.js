@@ -49,6 +49,58 @@
   setInterval(tick, 1000);
 })();
 
+// Lead magnet form
+(function() {
+  function initLeadForm() {
+    const form = document.getElementById('lead-form');
+    if (!form) return;
+    const btn = document.getElementById('lead-btn');
+    const msgEl = document.getElementById('lead-msg');
+
+    function showMsg(text, type) {
+      msgEl.textContent = text;
+      msgEl.className = 'lead-msg ' + type;
+      msgEl.style.display = 'block';
+    }
+
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const email = document.getElementById('lead-email').value.trim();
+      if (!email) return;
+
+      btn.disabled = true;
+      btn.textContent = 'Enviando...';
+
+      try {
+        const res = await fetch('/api/leads', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ email, profile: 'iniciante', source: 'landing' }),
+        });
+        const data = await res.json();
+        if (data.ok) {
+          showMsg('✓ Prompts enviados! Verifique seu e-mail (e a caixa de spam).', 'success');
+          form.reset();
+          if (window.fbq) fbq('track', 'Lead');
+        } else {
+          throw new Error(data.error || 'Erro');
+        }
+      } catch (err) {
+        showMsg('Erro ao enviar. Tente novamente ou escreva para suporte@produtovivo.com', 'error');
+      } finally {
+        btn.disabled = false;
+        btn.textContent = 'Enviar os 3 prompts grátis →';
+      }
+    });
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initLeadForm);
+  } else {
+    initLeadForm();
+  }
+})();
+
 document.addEventListener('DOMContentLoaded', () => {
   const buyBtn = document.getElementById('buy-btn');
   if (!buyBtn) return;
