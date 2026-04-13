@@ -76,7 +76,17 @@ app.use((err, req, res, _next) => {
   res.status(500).json({ error: 'Internal server error' });
 });
 
+function checkEnv() {
+  const required = ['STRIPE_SECRET_KEY', 'STRIPE_PRICE_ID', 'STRIPE_WEBHOOK_SECRET'];
+  const missing = required.filter((k) => !process.env[k]);
+  if (missing.length) {
+    console.warn(`[config] Missing env vars — checkout/webhook will fail: ${missing.join(', ')}`);
+  }
+}
+
 async function start() {
+  checkEnv();
+
   // Run DB migrations (no-op if DB not configured)
   try {
     await migrate();

@@ -5,7 +5,16 @@ const { pool } = require('../db');
 const { sendPurchaseEmail } = require('../email');
 
 const router = express.Router();
-const stripe = new Stripe(process.env.STRIPE_SECRET_KEY);
+
+// Lazy Stripe client — avoids crash on startup if key is missing
+let _stripe;
+function getStripe() {
+  if (!_stripe) {
+    if (!process.env.STRIPE_SECRET_KEY) throw new Error('STRIPE_SECRET_KEY not configured');
+    _stripe = new Stripe(process.env.STRIPE_SECRET_KEY);
+  }
+  return _stripe;
+}
 
 const APP_URL = process.env.APP_URL || 'https://produtovivo.com';
 const DOWNLOAD_SECRET = process.env.DOWNLOAD_SECRET || 'change_me';
@@ -16,7 +25,7 @@ router.post('/stripe', express.raw({ type: 'application/json' }), async (req, re
 
   let event;
   try {
-    event = stripe.webhooks.constructEvent(req.body, sig, process.env.STRIPE_WEBHOOK_SECRET);
+    event = getStripe().webhooks.constructEvent(req.body, sig, process.env.STRIPE_WEBHOOK_SECRET);
   } catch (err) {
     console.error('Webhook signature error:', err.message);
     return res.status(400).send(`Webhook Error: ${err.message}`);
