@@ -51,7 +51,7 @@ const limiter = rateLimit({
 app.use('/api', limiter);
 
 // Stripe webhook needs raw body — mount BEFORE express.json()
-app.use('/webhook/stripe', webhookRouter);
+app.use('/webhook', webhookRouter);
 
 // JSON body parser
 app.use(express.json());
