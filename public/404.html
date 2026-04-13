@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Página não encontrada — ProdutoVivo</title>
+  <meta name="robots" content="noindex, nofollow" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/style.css" />
+  <style>
+    .error-page {
+      min-height: 80vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 40px 20px;
+    }
+    .error-code {
+      font-size: 96px;
+      font-weight: 800;
+      color: #FF6B35;
+      line-height: 1;
+      margin-bottom: 16px;
+    }
+    .error-title {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: #1A1A2E;
+      margin-bottom: 12px;
+    }
+    .error-desc {
+      font-size: 16px;
+      color: #64748b;
+      max-width: 420px;
+      line-height: 1.7;
+      margin-bottom: 32px;
+    }
+    .error-links {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      justify-content: center;
+      margin-bottom: 48px;
+    }
+    .error-link-primary {
+      background: #FF6B35;
+      color: #fff;
+      text-decoration: none;
+      padding: 12px 24px;
+      border-radius: 8px;
+      font-weight: 700;
+      font-size: 15px;
+    }
+    .error-link-secondary {
+      background: #f1f5f9;
+      color: #334155;
+      text-decoration: none;
+      padding: 12px 24px;
+      border-radius: 8px;
+      font-weight: 600;
+      font-size: 15px;
+    }
+    .error-suggestions {
+      max-width: 500px;
+      text-align: left;
+    }
+    .error-suggestions h3 {
+      font-size: 14px;
+      font-weight: 700;
+      color: #1A1A2E;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      margin-bottom: 16px;
+    }
+    .error-suggestions ul {
+      list-style: none;
+      padding: 0;
+    }
+    .error-suggestions li {
+      margin-bottom: 10px;
+    }
+    .error-suggestions a {
+      color: #2563eb;
+      text-decoration: none;
+      font-size: 15px;
+    }
+    .error-suggestions a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+  <nav class="nav">
+    <div class="nav-inner">
+      <a href="/" class="nav-logo">Produto<span>Vivo</span></a>
+      <button class="nav-hamburger" id="navToggle" aria-label="Menu">&#9776;</button>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="/blog">Blog</a></li>
+        <li><a href="/trilha">Trilha</a></li>
+        <li><a href="/quiz">Quiz grátis</a></li>
+        <li><a href="/recursos">Recursos</a></li>
+        <li><a href="/#comprar" class="nav-cta">Comprar guia</a></li>
+      </ul>
+    </div>
+  </nav>
+  <script>
+    document.getElementById('navToggle').addEventListener('click', function() {
+      document.getElementById('navLinks').classList.toggle('open');
+    });
+  </script>
+
+  <div class="error-page">
+    <div class="error-code">404</div>
+    <h1 class="error-title">Página não encontrada</h1>
+    <p class="error-desc">O link que você acessou pode ter mudado ou não existe mais. Mas o conteúdo que você procura provavelmente está aqui:</p>
+
+    <div class="error-links">
+      <a href="/blog" class="error-link-primary">Ver todos os artigos →</a>
+      <a href="/" class="error-link-secondary">Página inicial</a>
+    </div>
+
+    <div class="error-suggestions">
+      <h3>Conteúdos mais acessados</h3>
+      <ul>
+        <li><a href="/blog/como-criar-infoproduto-do-zero">Como Criar Infoproduto do Zero</a></li>
+        <li><a href="/blog/como-transformar-pdf-em-app-interativo-com-ia">Como Transformar PDF em App Interativo com IA</a></li>
+        <li><a href="/blog/funil-de-vendas-para-infoproduto">Funil de Vendas para Infoproduto</a></li>
+        <li><a href="/blog/trafego-organico-para-infoproduto">Tráfego Orgânico para Infoproduto</a></li>
+        <li><a href="/quiz">Quiz: Qual infoproduto combina com você?</a></li>
+        <li><a href="/trilha">Trilha completa — 30 guias gratuitos</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <div class="footer-logo">Produto<span>Vivo</span></div>
+          <p class="footer-desc">IA prática para infoprodutores brasileiros.</p>
+        </div>
+        <div>
+          <h4>Conteúdo</h4>
+          <ul>
+            <li><a href="/blog">Blog</a></li>
+            <li><a href="/trilha">Trilha</a></li>
+            <li><a href="/recursos">Recursos</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Produto</h4>
+          <ul>
+            <li><a href="/quiz">Quiz grátis</a></li>
+            <li><a href="/#comprar">Comprar guia</a></li>
+          </ul>
+        </div>
+      </div>
+      <p class="footer-copy">© 2026 ProdutoVivo. Todos os direitos reservados.</p>
+    </div>
+  </footer>
+</body>
+</html>
