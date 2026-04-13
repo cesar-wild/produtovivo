@@ -137,7 +137,7 @@ Política de reembolso conforme os termos da plataforma (Hotmart/Kiwify). Normal
 | Subcategoria | Marketing Digital |
 | Idioma | Português (Brasil) |
 | Preço | R$37,00 |
-| Comissão de afiliados | 30% (R$11,10) — recomendado para atrair afiliados |
+| Comissão de afiliados | 40% (R$14,80) — recomendado para atrair afiliados |
 | Garantia | 7 dias |
 | Entrega | Arquivo em PDF (upload: `guia-produtovivo.pdf`) |
 
@@ -149,7 +149,7 @@ Política de reembolso conforme os termos da plataforma (Hotmart/Kiwify). Normal
 | Preço | R$37,00 |
 | Garantia | 7 dias |
 | Formato de entrega | Arquivo digital |
-| Comissão afiliado | 30% |
+| Comissão afiliado | 40% (R$14,80) |
 
 ---
 
