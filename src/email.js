@@ -60,4 +60,78 @@ async function sendPurchaseEmail({ to, name, downloadUrl }) {
   if (error) throw new Error(`Resend error: ${JSON.stringify(error)}`);
 }
 
-module.exports = { sendPurchaseEmail };
+/**
+ * Send a cold outreach email (sequence touch 1, 2, or 3).
+ * @param {object} opts
+ * @param {string} opts.to - recipient email
+ * @param {string} opts.firstName - recipient first name
+ * @param {string} opts.productName - their product name
+ * @param {string} opts.platform - Hotmart or Kiwify
+ * @param {1|2|3} opts.touch - which email in the sequence
+ */
+async function sendColdEmail({ to, firstName, productName, platform, touch }) {
+  const COLD_FROM = process.env.COLD_FROM_EMAIL || 'cesar@produtovivo.com';
+
+  const subjects = {
+    1: `${firstName}, vi seu produto no ${platform}`,
+    2: `Resultado real: PDF virou app em 40 minutos`,
+    3: `Última mensagem sobre o ProdutoVivo`,
+  };
+
+  const bodies = {
+    1: `
+<p>Oi ${firstName},</p>
+<p>Vi que você tem <strong>${productName}</strong> no ${platform} — parabéns pelo lançamento.</p>
+<p>Tenho um guia que mostra como transformar PDFs como o seu num app interativo com IA, em menos de uma tarde.</p>
+<p>Tem funcionado bem pra infoprodutores no Hotmart. Quer que eu te mande o link? R$37 só essa semana.</p>
+<p>Abraço,<br>Cesar<br><a href="https://produtovivo.com">produtovivo.com</a></p>
+    `,
+    2: `
+<p>Oi ${firstName},</p>
+<p>Te mandei um e-mail outro dia sobre o ProdutoVivo.</p>
+<p>Queria compartilhar um exemplo concreto: um produtor pegou um PDF de 30 páginas e, usando os prompts do guia, criou um app com quiz, glossário e resumos gerados por IA — tudo sem código.</p>
+<p>Se você tem PDFs parados ou cursos que precisam de atualização, isso pode ser exatamente o que você está buscando.</p>
+<p>Link: <a href="https://produtovivo.com">produtovivo.com</a><br>Preço: R$37</p>
+<p>Qualquer dúvida, responde aqui.</p>
+<p>Cesar</p>
+    `,
+    3: `
+<p>Oi ${firstName},</p>
+<p>Última vez que te escrevo sobre isso — promessa.</p>
+<p>Se o timing não foi bom, sem problema. Mas se você ainda pensa em modernizar seus materiais com IA, o guia está em <a href="https://produtovivo.com">produtovivo.com</a> por R$37.</p>
+<p>Boa sorte com <strong>${productName}</strong>!</p>
+<p>Cesar</p>
+    `,
+  };
+
+  const html = `
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"></head>
+<body style="margin:0;padding:0;background:#ffffff;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;">
+  <div style="max-width:540px;margin:40px auto;padding:0 20px;">
+    <div style="font-size:15px;color:#1a1a1a;line-height:1.7;">
+      ${bodies[touch]}
+    </div>
+    <hr style="border:none;border-top:1px solid #eee;margin:32px 0 16px;">
+    <p style="margin:0;color:#999;font-size:12px;">
+      ProdutoVivo · <a href="https://produtovivo.com" style="color:#999;">produtovivo.com</a>
+      · <a href="https://produtovivo.com/unsubscribe?email=${encodeURIComponent(to)}" style="color:#999;">cancelar inscrição</a>
+    </p>
+  </div>
+</body>
+</html>
+  `;
+
+  const { error } = await getResend().emails.send({
+    from: COLD_FROM,
+    to,
+    replyTo: COLD_FROM,
+    subject: subjects[touch],
+    html,
+  });
+
+  if (error) throw new Error(`Resend cold email error: ${JSON.stringify(error)}`);
+}
+
+module.exports = { sendPurchaseEmail, sendColdEmail };

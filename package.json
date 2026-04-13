@@ -6,7 +6,9 @@
   "scripts": {
     "start": "node src/index.js",
     "dev": "node --watch src/index.js",
-    "generate-pdf": "node scripts/generate-pdf.js"
+    "generate-pdf": "node scripts/generate-pdf.js",
+    "send-cold-emails": "node scripts/send-cold-emails.js",
+    "send-cold-emails:dry": "node scripts/send-cold-emails.js --dry-run"
   },
   "engines": {
     "node": ">=18"
