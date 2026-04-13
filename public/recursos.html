@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Recursos Gratuitos para Infoprodutores — ProdutoVivo</title>
+  <meta name="description" content="Guias, prompts, ferramentas e quiz gratuitos para infoprodutores brasileiros. Tudo que você precisa para criar, melhorar e vender produtos digitais com IA." />
+  <meta name="keywords" content="recursos para infoprodutores, guias gratuitos infoproduto, ferramentas ia infoprodutor, prompts chatgpt gratis, quiz infoproduto" />
+  <link rel="canonical" href="https://produtovivo.com/recursos" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Recursos Gratuitos para Infoprodutores — ProdutoVivo" />
+  <meta property="og:description" content="7 guias, quiz de diagnóstico e 50 prompts prontos — tudo para criar e vender produtos digitais com IA." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://produtovivo.com/recursos" />
+
+  <!-- Meta Pixel -->
+  <script>
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window, document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '4520253334926563');
+    fbq('track', 'PageView');
+  </script>
+  <noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=4520253334926563&ev=PageView&noscript=1"/></noscript>
+
+  <!-- Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "CollectionPage",
+    "name": "Recursos Gratuitos para Infoprodutores",
+    "description": "Guias, quiz de diagnóstico e prompts gratuitos para criar e vender produtos digitais com IA no mercado brasileiro.",
+    "url": "https://produtovivo.com/recursos",
+    "publisher": {"@type": "Organization", "name": "ProdutoVivo", "url": "https://produtovivo.com"}
+  }
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/style.css" />
+
+  <style>
+    .recursos-hero { background: #1A1A2E; padding: 56px 0 40px; text-align: center; }
+    .recursos-hero .badge { display: inline-block; background: #FF6B35; color: #fff; font-size: 11px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; padding: 4px 12px; border-radius: 20px; margin-bottom: 16px; }
+    .recursos-hero h1 { font-size: clamp(1.8rem, 4vw, 2.6rem); font-weight: 800; color: #fff; line-height: 1.2; margin: 0 0 12px; }
+    .recursos-hero p { color: #9999bb; font-size: 16px; max-width: 540px; margin: 0 auto; line-height: 1.6; }
+
+    /* Quiz feature */
+    .quiz-feature { background: linear-gradient(135deg, #1e3a5f, #1A1A2E); padding: 40px 0; }
+    .quiz-feature-inner { display: flex; align-items: center; justify-content: space-between; gap: 32px; flex-wrap: wrap; }
+    .quiz-feature-icon { font-size: 56px; flex-shrink: 0; }
+    .quiz-feature-text { flex: 1; min-width: 240px; }
+    .quiz-tag { font-size: 11px; font-weight: 800; text-transform: uppercase; letter-spacing: 1.5px; color: #60a5fa; margin-bottom: 8px; }
+    .quiz-feature-text h2 { font-size: 1.6rem; font-weight: 800; color: #fff; margin: 0 0 10px; line-height: 1.3; }
+    .quiz-feature-text p { color: #7ea8d8; font-size: 15px; margin: 0 0 4px; line-height: 1.6; }
+    .quiz-feature-text ul { list-style: none; padding: 0; margin: 12px 0 0; }
+    .quiz-feature-text ul li { color: #7ea8d8; font-size: 14px; padding: 4px 0; }
+    .quiz-feature-text ul li::before { content: '✓ '; color: #60a5fa; font-weight: 700; }
+    .quiz-feature-cta { flex-shrink: 0; }
+    .btn-quiz-big { display: inline-block; background: #2563eb; color: #fff; padding: 16px 36px; border-radius: 10px; font-weight: 800; font-size: 16px; text-decoration: none; transition: background .15s; white-space: nowrap; }
+    .btn-quiz-big:hover { background: #1d4ed8; }
+    @media(max-width:640px) { .quiz-feature-inner { flex-direction: column; text-align: center; } .quiz-feature-icon { margin: 0 auto; } .btn-quiz-big { width: 100%; text-align: center; } }
+
+    /* Articles grid */
+    .articles-section { padding: 56px 0; background: #f8fafc; }
+    .articles-section h2 { font-size: 1.4rem; font-weight: 800; color: #1A1A2E; margin: 0 0 8px; }
+    .articles-section .section-sub { color: #64748b; font-size: 15px; margin: 0 0 32px; }
+    .recursos-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 20px; }
+    .recurso-card { background: #fff; border: 1.5px solid #e2e8f0; border-radius: 14px; padding: 24px; display: flex; flex-direction: column; gap: 12px; transition: border-color .15s, box-shadow .15s; text-decoration: none; }
+    .recurso-card:hover { border-color: #FF6B35; box-shadow: 0 4px 16px rgba(255,107,53,.1); }
+    .recurso-card .rc-icon { font-size: 32px; }
+    .recurso-card .rc-tag { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; color: #FF6B35; }
+    .recurso-card h3 { font-size: 16px; font-weight: 700; color: #1A1A2E; line-height: 1.4; margin: 0; }
+    .recurso-card p { font-size: 14px; color: #64748b; line-height: 1.6; margin: 0; flex: 1; }
+    .recurso-card .rc-read { font-size: 13px; font-weight: 600; color: #FF6B35; margin-top: auto; }
+    .recurso-card .rc-badge { display: inline-block; background: #f0fdf4; color: #166534; font-size: 11px; font-weight: 700; padding: 2px 8px; border-radius: 20px; }
+
+    /* Guide CTA */
+    .guide-cta-section { background: #1A1A2E; padding: 56px 0; text-align: center; }
+    .guide-cta-section h2 { font-size: 1.8rem; font-weight: 800; color: #fff; margin: 0 0 12px; }
+    .guide-cta-section p { color: #9999bb; font-size: 16px; max-width: 520px; margin: 0 auto 28px; line-height: 1.7; }
+    .guide-includes { list-style: none; padding: 0; display: flex; flex-wrap: wrap; justify-content: center; gap: 10px 24px; margin: 0 0 32px; }
+    .guide-includes li { font-size: 14px; color: #7ea8d8; }
+    .guide-includes li::before { content: '✓ '; color: #60a5fa; font-weight: 700; }
+    .btn-buy-big { display: inline-block; background: #FF6B35; color: #fff; padding: 18px 48px; border-radius: 10px; font-weight: 800; font-size: 17px; text-decoration: none; transition: background .15s; }
+    .btn-buy-big:hover { background: #e55a24; }
+    .guide-guarantee { margin-top: 16px; font-size: 13px; color: #64748b; }
+
+    footer { background: #0f172a; color: #64748b; text-align: center; padding: 24px; font-size: 13px; }
+    footer a { color: #64748b; text-decoration: none; }
+    footer a:hover { color: #FF6B35; }
+  </style>
+</head>
+<body>
+  <nav class="site-nav">
+    <div class="container site-nav-inner">
+      <a href="/" class="nav-logo">ProdutoVivo</a>
+      <button class="nav-hamburger" aria-label="Menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+      <div class="nav-links">
+        <a href="/blog">Blog</a>
+        <a href="/trilha">Trilha</a>
+        <a href="/quiz">Quiz grátis</a>
+        <a href="/recursos">Recursos</a>
+        <a href="/#comprar" class="nav-cta">Comprar — R$37</a>
+      </div>
+    </div>
+  </nav>
+
+
+  <!-- Hero -->
+  <section class="recursos-hero">
+    <div class="container">
+      <div class="badge">100% Gratuito</div>
+      <h1>Recursos para Infoprodutores</h1>
+      <p>Guias práticos, quiz de diagnóstico e prompts prontos para criar, melhorar e vender produtos digitais com IA — sem pagar nada.</p>
+    </div>
+  </section>
+
+  <!-- Quiz feature -->
+  <section class="quiz-feature">
+    <div class="container">
+      <div class="quiz-feature-inner">
+        <div class="quiz-feature-icon">🎯</div>
+        <div class="quiz-feature-text">
+          <p class="quiz-tag">Recurso em destaque — gratuito</p>
+          <h2>Quiz: Seu infoproduto está pronto para IA?</h2>
+          <p>6 perguntas de diagnóstico. Resultado personalizado com plano de ação para o seu estágio atual.</p>
+          <ul>
+            <li>Descubra se você é Iniciante, Intermediário ou Avançado</li>
+            <li>Receba 3 insights personalizados para o seu nível</li>
+            <li>Próximo passo concreto indicado ao final</li>
+          </ul>
+        </div>
+        <div class="quiz-feature-cta">
+          <a href="/quiz" class="btn-quiz-big">Fazer o quiz grátis →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Articles -->
+  <section class="articles-section">
+    <div class="container">
+      <h2>Guias gratuitos</h2>
+      <p class="section-sub">7 artigos com estratégias e prompts prontos para usar hoje.</p>
+      <div class="recursos-grid">
+
+        <a href="/blog/como-transformar-pdf-em-app-interativo-com-ia" class="recurso-card">
+          <div class="rc-icon">📄→📱</div>
+          <div class="rc-tag">Tutorial</div>
+          <h3>Como Transformar PDF em App Interativo com IA (sem código)</h3>
+          <p>Passo a passo para criar chatbot especializado, quiz e glossário a partir de qualquer PDF. Funciona com Hotmart e Kiwify.</p>
+          <span class="rc-read">Ler guia → <span class="rc-badge">8 min</span></span>
+        </a>
+
+        <a href="/blog/ferramentas-de-ia-para-infoprodutores" class="recurso-card">
+          <div class="rc-icon">🤖</div>
+          <div class="rc-tag">Ferramentas</div>
+          <h3>5 Ferramentas de IA para Infoprodutores Brasileiros (2026)</h3>
+          <p>ChatGPT, Claude, Gamma, Typebot e ElevenLabs — o que cada uma faz, quanto custa e qual usar para cada tarefa.</p>
+          <span class="rc-read">Ler guia → <span class="rc-badge">8 min</span></span>
+        </a>
+
+        <a href="/blog/como-criar-quiz-para-infoproduto-com-ia" class="recurso-card">
+          <div class="rc-icon">🎯</div>
+          <div class="rc-tag">Tutorial</div>
+          <h3>Como Criar Quiz para Infoproduto com IA (guia completo)</h3>
+          <p>4 tipos de quiz, passo a passo de criação com prompts e comparativo de plataformas: Typebot, Jotform, Quiz Cat.</p>
+          <span class="rc-read">Ler guia → <span class="rc-badge">9 min</span></span>
+        </a>
+
+        <a href="/blog/como-vender-infoproduto-no-hotmart" class="recurso-card">
+          <div class="rc-icon">🛒</div>
+          <div class="rc-tag">Vendas</div>
+          <h3>Como Vender Infoproduto no Hotmart (7 passos)</h3>
+          <p>Do cadastro ao primeiro saque: configuração do produto, página de vendas, precificação e estratégias de lançamento.</p>
+          <span class="rc-read">Ler guia → <span class="rc-badge">10 min</span></span>
+        </a>
+
+        <a href="/blog/prompts-chatgpt-para-infoprodutores" class="recurso-card">
+          <div class="rc-icon">⚡</div>
+          <div class="rc-tag">Prompts</div>
+          <h3>15 Prompts ChatGPT para Criar Infoprodutos (prontos)</h3>
+          <p>15 prompts testados em 4 categorias: estrutura, interatividade, copy de vendas e e-mails de pós-venda.</p>
+          <span class="rc-read">Ler guia → <span class="rc-badge">10 min</span></span>
+        </a>
+
+        <a href="/blog/como-criar-ebook-com-ia" class="recurso-card">
+          <div class="rc-icon">📖</div>
+          <div class="rc-tag">Tutorial</div>
+          <h3>Como Criar um Ebook com IA em 2026 (passo a passo)</h3>
+          <p>6 etapas da ideia ao PDF no Hotmart: validação, estrutura, escrita, humanização, formatação e publicação.</p>
+          <span class="rc-read">Ler guia → <span class="rc-badge">9 min</span></span>
+        </a>
+
+        <a href="/blog/como-precificar-infoproduto" class="recurso-card">
+          <div class="rc-icon">💰</div>
+          <div class="rc-tag">Estratégia</div>
+          <h3>Como Precificar seu Infoproduto (sem chute e sem medo)</h3>
+          <p>5 métodos testados com tabela de referência por nicho e os erros mais caros que você pode evitar.</p>
+          <span class="rc-read">Ler guia → <span class="rc-badge">8 min</span></span>
+        </a>
+
+        <a href="/blog/chatbot-para-infoproduto" class="recurso-card">
+          <div class="rc-icon">🤖</div>
+          <div class="rc-tag">Interatividade</div>
+          <h3>Como Criar um Chatbot para seu Infoproduto (sem programar)</h3>
+          <p>Custom GPT ou Typebot: assistente IA especializado no conteúdo do produto, pronto para Hotmart e Kiwify.</p>
+          <span class="rc-read">Ler guia → <span class="rc-badge">9 min</span></span>
+        </a>
+
+        <a href="/blog/funil-de-vendas-para-infoproduto" class="recurso-card">
+          <div class="rc-icon">🎯</div>
+          <div class="rc-tag">Estratégia de Vendas</div>
+          <h3>Funil de Vendas para Infoproduto: Guia Completo com IA</h3>
+          <p>Quiz → captura → e-mails → página de vendas → checkout. Monte seu funil completo em 3 horas com prompts prontos.</p>
+          <span class="rc-read">Ler guia → <span class="rc-badge">10 min</span></span>
+        </a>
+
+        <a href="/blog/landing-page-para-infoproduto" class="recurso-card">
+          <div class="rc-icon">📄</div>
+          <div class="rc-tag">Vendas &amp; Conversão</div>
+          <h3>Landing Page para Infoproduto: Como Criar com IA em 2 Horas</h3>
+          <p>7 blocos de copy prontos + prompts de IA + comparativo de ferramentas. Checklist completo antes de publicar.</p>
+          <span class="rc-read">Ler guia → <span class="rc-badge">9 min</span></span>
+        </a>
+
+      
+        <a href="/blog/email-marketing-para-infoproduto" class="recurso-card">
+          <div class="rc-icon">📧</div>
+          <div class="rc-tag">Email Marketing</div>
+          <h3>Email Marketing para Infoproduto: Guia Completo 2026</h3>
+          <p>4 sequências automáticas, ferramentas gratuitas, benchmarks reais e como crescer sua lista sem anúncios pagos.</p>
+          <span class="rc-read">Ler guia → <span class="rc-badge">11 min</span></span>
+        </a>
+
+        <a href="/blog/trafego-organico-para-infoproduto" class="recurso-card">
+          <div class="rc-icon">🌱</div>
+          <div class="rc-tag">Tráfego Orgânico</div>
+          <h3>Tráfego Orgânico para Infoproduto: 5 Canais que Funcionam em 2026</h3>
+          <p>SEO, Reels, YouTube, WhatsApp e Pinterest — como gerar visitantes qualificados sem gastar com anúncios.</p>
+          <span class="rc-read">Ler guia → <span class="rc-badge">10 min</span></span>
+        </a>
+
+        <a href="/blog/como-lancar-infoproduto" class="recurso-card">
+          <div class="rc-icon">🚀</div>
+          <div class="rc-tag">Lançamento Digital</div>
+          <h3>Como Lançar um Infoproduto em 2026: Guia Completo para a Primeira Venda</h3>
+          <p>Pré-lançamento, sequência de e-mails, dia do lançamento e pós. Cronograma de 30 dias com IA.</p>
+          <span class="rc-read">Ler guia → <span class="rc-badge">11 min</span></span>
+        </a>
+
+        <a href="/blog/copywriting-para-infoproduto" class="recurso-card">
+          <div class="rc-icon">✍️</div>
+          <div class="rc-tag">Copywriting &amp; Vendas</div>
+          <h3>Copywriting para Infoproduto: Guia Completo com IA (2026)</h3>
+          <p>Os 8 blocos de copy para página de vendas — com checklist de 20 pontos e prompts prontos para cada bloco.</p>
+          <span class="rc-read">Ler guia → <span class="rc-badge">12 min</span></span>
+        </a>
+
+        <a href="/blog/como-criar-infoproduto-do-zero" class="recurso-card">
+          <div class="rc-icon">💡</div>
+          <div class="rc-tag">Criação de Infoprodutos</div>
+          <h3>Como Criar um Infoproduto do Zero em 2026 (Guia Completo)</h3>
+          <p>Nicho, avatar, validação, formato, produção com IA e publicação. O passo a passo completo para o primeiro produto.</p>
+          <span class="rc-read">Ler guia → <span class="rc-badge">13 min</span></span>
+        </a>
+
+        <a href="/blog/renda-passiva-com-infoproduto" class="recurso-card">
+          <div class="rc-icon">💤</div>
+          <div class="rc-tag">Renda Passiva &amp; Escala</div>
+          <h3>Renda Passiva com Infoproduto: Como Funciona de Verdade</h3>
+          <p>Os 4 pilares do sistema de vendas automático: tráfego, captura, funil evergreen e afiliados — com curva de tempo realista.</p>
+          <span class="rc-read">Ler guia → <span class="rc-badge">11 min</span></span>
+        </a>
+
+        <a href="/blog/como-monetizar-conhecimento" class="recurso-card">
+          <div class="rc-icon">🧠</div>
+          <div class="rc-tag">Monetização de Conhecimento</div>
+          <h3>Como Monetizar seu Conhecimento Online: 8 Formas Comprovadas</h3>
+          <p>Comparativo honesto de cada formato: ticket, escala, velocidade para primeira venda e para quem cada um é indicado.</p>
+          <span class="rc-read">Ler guia → <span class="rc-badge">12 min</span></span>
+        </a>
+
+        <a href="/blog/kiwify-vs-hotmart" class="recurso-card">
+          <div class="rc-icon">⚖️</div>
+          <div class="rc-tag">Plataformas</div>
+          <h3>Kiwify vs Hotmart: Qual Plataforma Usar em 2026?</h3>
+          <p>Taxas, checkout, afiliados e área de membros — comparação completa para você escolher sem propaganda.</p>
+          <span class="rc-read">Ler guia → <span class="rc-badge">10 min</span></span>
+        </a>
+
+        <a href="/blog/vender-infoproduto-sem-audiencia" class="recurso-card">
+          <div class="rc-icon">🎙️</div>
+          <div class="rc-tag">Primeiras Vendas</div>
+          <h3>Como Vender Infoproduto Sem Audiência (7 Estratégias)</h3>
+          <p>Grupos de nicho, cold outreach, parcerias e rede pessoal — como conseguir as primeiras vendas do zero.</p>
+          <span class="rc-read">Ler guia → <span class="rc-badge">10 min</span></span>
+        </a>
+
+        <a href="/blog/como-criar-pdf-interativo" class="recurso-card">
+          <div class="rc-icon">📄✨</div>
+          <div class="rc-tag">PDF Interativo &amp; IA</div>
+          <h3>Como Criar um PDF Interativo com IA (Sem Programar)</h3>
+          <p>Custom GPT, quiz com Typebot e glossário navegável — 3 métodos para transformar qualquer PDF em produto premium.</p>
+          <span class="rc-read">Ler guia → <span class="rc-badge">11 min</span></span>
+        </a>
+
+        <a href="/blog/youtube-para-infoprodutores" class="recurso-card">
+          <div class="rc-icon">🎬</div>
+          <div class="rc-tag">YouTube &amp; Vídeo</div>
+          <h3>YouTube para Infoprodutores: Como Usar o Canal para Vender Mais</h3>
+          <p>Nicho, SEO de vídeo, funil e como transformar visualizações em vendas — guia completo para o segundo maior buscador do mundo.</p>
+          <span class="rc-read">Ler guia → <span class="rc-badge">12 min</span></span>
+        </a>
+
+        <a href="/blog/como-criar-curso-online" class="recurso-card">
+          <div class="rc-icon">🎓</div>
+          <div class="rc-tag">Curso Online</div>
+          <h3>Como Criar um Curso Online do Zero (Guia Completo 2026)</h3>
+          <p>Do tema ao primeiro pagamento: formato, gravação, plataforma, precificação e lançamento — com IA para acelerar cada etapa.</p>
+          <span class="rc-read">Ler guia → <span class="rc-badge">13 min</span></span>
+        </a>
+
+        <a href="/blog/instagram-para-infoprodutores" class="recurso-card">
+          <div class="rc-icon">📱</div>
+          <div class="rc-tag">Instagram &amp; Social</div>
+          <h3>Instagram para Infoprodutores: Estratégia Completa 2026</h3>
+          <p>Reels, Stories, Direct e funil de vendas — como transformar seguidores em compradores mesmo com audiência pequena.</p>
+          <span class="rc-read">Ler guia → <span class="rc-badge">11 min</span></span>
+        </a>
+
+        <a href="/blog/trafego-pago-para-infoproduto" class="recurso-card">
+          <div class="rc-icon">📊</div>
+          <div class="rc-tag">Tráfego Pago</div>
+          <h3>Tráfego Pago para Infoproduto: Meta Ads e Google Ads do Zero</h3>
+          <p>Pixel, públicos, criativos, orçamento e escala — o que funciona em 2026 para infoprodutores brasileiros.</p>
+          <span class="rc-read">Ler guia → <span class="rc-badge">12 min</span></span>
+        </a>
+
+        <a href="/blog/marketing-de-afiliados-para-infoprodutores" class="recurso-card">
+          <div class="rc-icon">🤝</div>
+          <div class="rc-tag">Marketing de Afiliados</div>
+          <h3>Marketing de Afiliados para Infoprodutores: Programa que Vende por Você</h3>
+          <p>Comissão ideal, materiais prontos, recrutamento e como escalar vendas sem aumentar o budget de ads.</p>
+          <span class="rc-read">Ler guia → <span class="rc-badge">10 min</span></span>
+        </a>
+
+        <a href="/blog/whatsapp-para-infoprodutores" class="recurso-card">
+          <div class="rc-icon">📱</div>
+          <div class="rc-tag">WhatsApp & Vendas</div>
+          <h3>WhatsApp para Infoprodutores: Funil, Listas e Estratégia de Vendas</h3>
+          <p>Lista de transmissão, sequência de 7 mensagens e automação — o canal de 98% de abertura sem virar spam.</p>
+          <span class="rc-read">Ler guia → <span class="rc-badge">11 min</span></span>
+        </a>
+
+        <a href="/blog/como-escolher-nicho-para-infoproduto" class="recurso-card">
+          <div class="rc-icon">🎯</div>
+          <div class="rc-tag">Estratégia de Nicho</div>
+          <h3>Como Escolher Nicho para Infoproduto: Método dos 3 Círculos</h3>
+          <p>Método dos 3 círculos, validação de demanda, análise de concorrência e os nichos mais lucrativos do Brasil em 2026.</p>
+          <span class="rc-read">Ler guia → <span class="rc-badge">12 min</span></span>
+        </a>
+
+        <a href="/blog/webinar-para-infoproduto" class="recurso-card">
+          <div class="rc-icon">🎙</div>
+          <div class="rc-tag">Webinar & Lançamento</div>
+          <h3>Webinar para Infoproduto: Como Fazer, Converter e Vender ao Vivo</h3>
+          <p>Estrutura P.A.S.T.O.R., pitch de vendas, plataformas gratuitas, follow-up de 3 dias e métricas de conversão realistas.</p>
+          <span class="rc-read">Ler guia → <span class="rc-badge">13 min</span></span>
+        </a>
+
+        <a href="/blog/tiktok-para-infoprodutores" class="recurso-card">
+          <div class="rc-icon">🎵</div>
+          <div class="rc-tag">TikTok & Conteúdo</div>
+          <h3>TikTok para Infoprodutores: Como Criar Conteúdo e Vender</h3>
+          <p>Algoritmo, os 7 tipos de vídeo que convertem, funil TikTok → lead → venda e alcance orgânico para produtos digitais.</p>
+          <span class="rc-read">Ler guia → <span class="rc-badge">11 min</span></span>
+        </a>
+
+        <a href="/blog/como-criar-comunidade-paga" class="recurso-card">
+          <div class="rc-icon">🏘</div>
+          <div class="rc-tag">Comunidade & Assinatura</div>
+          <h3>Como Criar uma Comunidade Paga para Infoprodutos</h3>
+          <p>Plataformas, precificação, lançamento fundador, sistema anti-churn e como escalar para MRR previsível.</p>
+          <span class="rc-read">Ler guia → <span class="rc-badge">12 min</span></span>
+        </a>
+
+        <a href="/blog/o-que-e-infoproduto" class="recurso-card">
+          <div class="rc-icon">💡</div>
+          <div class="rc-tag">Conceitos Fundamentais</div>
+          <h3>O Que É Infoproduto? Tipos, Exemplos e Como Criar</h3>
+          <p>Definição completa, os 8 tipos com exemplos reais, comparação de formatos e custo zero para começar.</p>
+          <span class="rc-read">Ler guia → <span class="rc-badge">10 min</span></span>
+        </a>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Guide CTA -->
+  <section class="guide-cta-section">
+    <div class="container">
+      <h2>O método completo em um guia</h2>
+      <p>Se os artigos gratuitos já entregam valor, o guia vai um nível acima: 50 prompts numerados, 7 capítulos com progressão pedagógica e templates prontos para chatbot, quiz e glossário.</p>
+      <ul class="guide-includes">
+        <li>Guia em PDF (7 capítulos)</li>
+        <li>50 prompts prontos numerados</li>
+        <li>Templates de chatbot, quiz e glossário</li>
+        <li>Checklist de publicação Hotmart/Kiwify</li>
+        <li>Atualizações vitalícias</li>
+        <li>Suporte por e-mail</li>
+      </ul>
+      <a href="/#comprar" class="btn-buy-big">Adquirir por R$37 →</a>
+      <p class="guide-guarantee">🛡️ Garantia de 7 dias · Pagamento único · Sem assinatura</p>
+    </div>
+  </section>
+
+  <footer>
+    <p>© 2026 ProdutoVivo · <a href="mailto:suporte@produtovivo.com">suporte@produtovivo.com</a></p>
+    <p style="margin-top:6px;"><a href="/">Home</a> · <a href="/blog">Blog</a>
+        <a href="/trilha">Trilha</a> · <a href="/quiz">Quiz</a> · <a href="/afiliados">Afiliados</a> · <a href="/privacidade">Privacidade</a> · <a href="/termos">Termos</a></p>
+  </footer>
+
+</body>
+</html>

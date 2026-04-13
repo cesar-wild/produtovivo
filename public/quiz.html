@@ -1,0 +1,576 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Quiz: Seu Infoproduto Está Pronto para IA? — ProdutoVivo</title>
+  <meta name="description" content="Descubra em 2 minutos se o seu infoproduto está pronto para dar o salto com IA — e o que fazer a seguir.">
+  <link rel="canonical" href="https://produtovivo.com/quiz">
+
+  <!-- Meta Pixel -->
+  <script>
+    !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '4520253334926563');
+    fbq('track', 'PageView');
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Inter', -apple-system, sans-serif;
+      background: #f8fafc;
+      color: #0f172a;
+      min-height: 100vh;
+    }
+
+    /* Nav */
+    .nav { background: #0f172a; padding: 14px 20px; text-align: center; }
+    .nav a { color: #fff; font-weight: 800; font-size: 18px; text-decoration: none; }
+
+    /* Quiz shell */
+    .quiz-wrap {
+      max-width: 640px;
+      margin: 48px auto 80px;
+      padding: 0 20px;
+    }
+
+    /* Intro screen */
+    .screen { display: none; }
+    .screen.active { display: block; }
+
+    .intro-card {
+      background: #fff;
+      border-radius: 16px;
+      padding: 48px 40px;
+      text-align: center;
+      box-shadow: 0 4px 24px rgba(0,0,0,.07);
+    }
+    .intro-card .emoji { font-size: 52px; margin-bottom: 20px; }
+    .intro-card h1 { font-size: clamp(1.4rem, 4vw, 1.9rem); font-weight: 800; margin-bottom: 14px; line-height: 1.25; }
+    .intro-card p { font-size: 16px; color: #475569; line-height: 1.7; margin-bottom: 28px; }
+    .intro-meta { display: flex; justify-content: center; gap: 20px; margin-bottom: 32px; flex-wrap: wrap; }
+    .intro-meta span { font-size: 13px; color: #64748b; background: #f1f5f9; padding: 6px 14px; border-radius: 20px; }
+
+    /* Progress bar */
+    .progress-wrap { margin-bottom: 28px; }
+    .progress-label { display: flex; justify-content: space-between; font-size: 13px; color: #64748b; margin-bottom: 8px; }
+    .progress-bar { height: 6px; background: #e2e8f0; border-radius: 6px; overflow: hidden; }
+    .progress-fill { height: 100%; background: linear-gradient(90deg, #2563eb, #7c3aed); border-radius: 6px; transition: width .4s ease; }
+
+    /* Question card */
+    .question-card {
+      background: #fff;
+      border-radius: 16px;
+      padding: 36px 32px;
+      box-shadow: 0 4px 24px rgba(0,0,0,.07);
+    }
+    .q-num { font-size: 12px; font-weight: 700; color: #2563eb; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 12px; }
+    .q-text { font-size: 1.15rem; font-weight: 700; color: #0f172a; margin-bottom: 24px; line-height: 1.4; }
+
+    .options { display: flex; flex-direction: column; gap: 12px; }
+    .option {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      padding: 16px 20px;
+      border: 2px solid #e2e8f0;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: border-color .15s, background .15s;
+      font-size: 15px;
+      color: #334155;
+      text-align: left;
+      background: #fff;
+      width: 100%;
+    }
+    .option:hover { border-color: #2563eb; background: #eff6ff; }
+    .option.selected { border-color: #2563eb; background: #eff6ff; color: #1e40af; font-weight: 600; }
+    .option-dot {
+      width: 20px; height: 20px;
+      border: 2px solid #cbd5e1;
+      border-radius: 50%;
+      flex-shrink: 0;
+      display: flex; align-items: center; justify-content: center;
+      transition: border-color .15s, background .15s;
+    }
+    .option.selected .option-dot { border-color: #2563eb; background: #2563eb; }
+    .option.selected .option-dot::after { content: ''; width: 8px; height: 8px; background: #fff; border-radius: 50%; }
+
+    .q-nav { display: flex; justify-content: space-between; align-items: center; margin-top: 28px; }
+    .btn-back { background: none; border: 1.5px solid #e2e8f0; color: #64748b; padding: 12px 24px; border-radius: 8px; font-size: 14px; font-weight: 600; cursor: pointer; }
+    .btn-back:hover { border-color: #94a3b8; }
+    .btn-next {
+      background: #2563eb;
+      color: #fff;
+      border: none;
+      padding: 12px 28px;
+      border-radius: 8px;
+      font-size: 15px;
+      font-weight: 700;
+      cursor: pointer;
+      transition: background .15s;
+      opacity: .4;
+      pointer-events: none;
+    }
+    .btn-next.ready { opacity: 1; pointer-events: auto; }
+    .btn-next.ready:hover { background: #1d4ed8; }
+
+    /* Email gate */
+    .email-card {
+      background: #fff;
+      border-radius: 16px;
+      padding: 40px 36px;
+      box-shadow: 0 4px 24px rgba(0,0,0,.07);
+      text-align: center;
+    }
+    .email-card h2 { font-size: 1.4rem; font-weight: 800; margin-bottom: 10px; }
+    .email-card p { font-size: 15px; color: #475569; line-height: 1.7; margin-bottom: 28px; }
+    .email-form { display: flex; flex-direction: column; gap: 12px; max-width: 400px; margin: 0 auto; }
+    .email-input {
+      padding: 14px 18px;
+      border: 1.5px solid #e2e8f0;
+      border-radius: 8px;
+      font-size: 16px;
+      color: #0f172a;
+      outline: none;
+      transition: border-color .15s;
+    }
+    .email-input:focus { border-color: #2563eb; }
+    .btn-submit {
+      background: #2563eb;
+      color: #fff;
+      border: none;
+      padding: 14px;
+      border-radius: 8px;
+      font-size: 16px;
+      font-weight: 700;
+      cursor: pointer;
+      transition: background .15s;
+    }
+    .btn-submit:hover { background: #1d4ed8; }
+    .btn-submit:disabled { opacity: .6; cursor: not-allowed; }
+    .privacy-note { font-size: 12px; color: #94a3b8; margin-top: 8px; text-align: center; }
+
+    /* Results */
+    .result-card {
+      background: #fff;
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 4px 24px rgba(0,0,0,.07);
+    }
+    .result-header { padding: 36px 36px 28px; text-align: center; }
+    .result-badge {
+      display: inline-block;
+      padding: 6px 18px;
+      border-radius: 20px;
+      font-size: 12px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 16px;
+    }
+    .badge-iniciante { background: #fef3c7; color: #92400e; }
+    .badge-intermediario { background: #dbeafe; color: #1e40af; }
+    .badge-avancado { background: #d1fae5; color: #065f46; }
+
+    .result-header h2 { font-size: 1.6rem; font-weight: 800; margin-bottom: 12px; line-height: 1.3; }
+    .result-header p { font-size: 15px; color: #475569; line-height: 1.7; }
+
+    .result-insight {
+      border-top: 1px solid #f1f5f9;
+      padding: 28px 36px;
+    }
+    .result-insight h3 { font-size: 14px; font-weight: 700; color: #64748b; text-transform: uppercase; letter-spacing: .5px; margin-bottom: 16px; }
+
+    .insight-item {
+      display: flex;
+      gap: 14px;
+      margin-bottom: 16px;
+      align-items: flex-start;
+    }
+    .insight-icon { font-size: 20px; flex-shrink: 0; margin-top: 1px; }
+    .insight-text { font-size: 15px; color: #334155; line-height: 1.6; }
+    .insight-text strong { color: #0f172a; }
+
+    .result-cta {
+      background: linear-gradient(135deg, #1A1A2E, #2d2d4e);
+      padding: 32px 36px;
+      text-align: center;
+    }
+    .result-cta h3 { color: #fff; font-size: 1.1rem; font-weight: 700; margin-bottom: 8px; }
+    .result-cta p { color: #9999bb; font-size: 14px; margin-bottom: 20px; line-height: 1.6; }
+    .btn-cta {
+      display: inline-block;
+      background: #ff6b35;
+      color: #fff;
+      text-decoration: none;
+      padding: 14px 32px;
+      border-radius: 8px;
+      font-weight: 700;
+      font-size: 15px;
+    }
+    .btn-cta:hover { background: #e55a24; }
+    .result-cta .small { font-size: 12px; color: #64748b; margin-top: 10px; }
+
+    .retry-link { text-align: center; margin-top: 16px; }
+    .retry-link a { font-size: 14px; color: #64748b; text-decoration: none; }
+    .retry-link a:hover { color: #2563eb; }
+    .share-section { text-align: center; padding: 20px 36px; border-top: 1px solid #f1f5f9; }
+    .share-label { font-size: 12px; color: #94a3b8; text-transform: uppercase; letter-spacing: 1px; font-weight: 700; margin-bottom: 12px; }
+    .btn-share-wa { display: inline-flex; align-items: center; gap: 8px; background: #25d366; color: #fff; padding: 11px 22px; border-radius: 8px; font-weight: 700; font-size: 14px; text-decoration: none; transition: background .15s; }
+    .btn-share-wa:hover { background: #1ebe5d; }
+
+    footer { background: #0f172a; color: #475569; text-align: center; padding: 20px; font-size: 13px; }
+    footer a { color: #475569; text-decoration: none; }
+    footer a:hover { color: #94a3b8; }
+  </style>
+</head>
+<body>
+  <nav class="site-nav">
+    <div class="container site-nav-inner">
+      <a href="/" class="nav-logo">ProdutoVivo</a>
+      <button class="nav-hamburger" aria-label="Menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+      <div class="nav-links">
+        <a href="/blog">Blog</a>
+        <a href="/trilha">Trilha</a>
+        <a href="/quiz">Quiz grátis</a>
+        <a href="/recursos">Recursos</a>
+        <a href="/#comprar" class="nav-cta">Comprar — R$37</a>
+      </div>
+    </div>
+  </nav>
+
+
+<nav class="nav">
+  <a href="/">ProdutoVivo</a>
+</nav>
+
+<div class="quiz-wrap">
+
+  <!-- Screen 0: Intro -->
+  <div id="screen-intro" class="screen active">
+    <div class="intro-card">
+      <div class="emoji">🤖</div>
+      <h1>Seu infoproduto está pronto para dar o salto com IA?</h1>
+      <p>Responda 6 perguntas rápidas e descubra em qual estágio você está — e o que fazer a seguir para criar uma experiência interativa que vende mais.</p>
+      <div class="intro-meta">
+        <span>⏱ 2 minutos</span>
+        <span>6 perguntas</span>
+        <span>Resultado personalizado</span>
+      </div>
+      <button class="btn-next ready" onclick="startQuiz()" style="width:100%;padding:16px;font-size:17px;">Começar o Quiz →</button>
+    </div>
+  </div>
+
+  <!-- Screen 1–6: Questions -->
+  <div id="screen-quiz" class="screen">
+    <div class="progress-wrap">
+      <div class="progress-label">
+        <span id="q-progress-label">Pergunta 1 de 6</span>
+        <span id="q-progress-pct">0%</span>
+      </div>
+      <div class="progress-bar">
+        <div class="progress-fill" id="progress-fill" style="width:0%"></div>
+      </div>
+    </div>
+
+    <div class="question-card">
+      <div class="q-num" id="q-num">Pergunta 1</div>
+      <div class="q-text" id="q-text"></div>
+      <div class="options" id="q-options"></div>
+      <div class="q-nav">
+        <button class="btn-back" id="btn-back" onclick="prevQuestion()">← Voltar</button>
+        <button class="btn-next" id="btn-next" onclick="nextQuestion()">Próxima →</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Screen 2: Email gate -->
+  <div id="screen-email" class="screen">
+    <div class="email-card">
+      <div style="font-size:40px;margin-bottom:16px;">📊</div>
+      <h2>Seu resultado está pronto!</h2>
+      <p>Coloque seu e-mail para ver o diagnóstico completo com recomendações personalizadas para o seu nível.</p>
+      <form class="email-form" onsubmit="submitEmail(event)">
+        <input type="email" id="email-input" class="email-input" placeholder="seu@email.com" required autocomplete="email" />
+        <button type="submit" class="btn-submit" id="btn-submit">Ver meu resultado →</button>
+      </form>
+      <p class="privacy-note">Sem spam. Você pode cancelar a qualquer momento.</p>
+    </div>
+  </div>
+
+  <!-- Screen 3: Results -->
+  <div id="screen-result" class="screen">
+    <div class="result-card">
+      <div class="result-header">
+        <div class="result-badge" id="result-badge"></div>
+        <h2 id="result-title"></h2>
+        <p id="result-desc"></p>
+      </div>
+      <div class="result-insight">
+        <h3>Suas recomendações personalizadas</h3>
+        <div id="result-insights"></div>
+      </div>
+      <div class="result-cta">
+        <h3 id="result-cta-title"></h3>
+        <p id="result-cta-desc"></p>
+        <a href="/#comprar" class="btn-cta" onclick="trackPurchaseIntent()">Ver o Guia ProdutoVivo — R$37</a>
+        <p class="small">Acesso imediato · Garantia de 7 dias</p>
+      </div>
+      <div class="share-section">
+        <p class="share-label">Compartilhe seu resultado</p>
+        <a id="btn-share-wa" href="#" class="btn-share-wa" target="_blank" rel="noopener noreferrer">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.123.554 4.118 1.528 5.845L0 24l6.335-1.507A11.934 11.934 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.77 9.77 0 01-5.012-1.378l-.36-.214-3.732.888.924-3.638-.235-.374A9.775 9.775 0 012.182 12C2.182 6.57 6.57 2.182 12 2.182S21.818 6.57 21.818 12 17.43 21.818 12 21.818z"/></svg>
+          Compartilhar no WhatsApp
+        </a>
+      </div>
+    </div>
+    <div class="retry-link">
+      <a href="/quiz">Refazer o quiz</a> · <a href="/recursos">Ver recursos grátis</a> · <a href="/blog">Blog</a>
+        <a href="/trilha">Trilha</a>
+    </div>
+  </div>
+
+</div>
+
+<footer>
+  <p>© 2026 ProdutoVivo · <a href="/">Home</a> · <a href="/privacidade">Privacidade</a></p>
+</footer>
+
+<script>
+const QUESTIONS = [
+  {
+    text: 'Você já tem algum conteúdo digital criado (PDF, ebook, apostila, planilha...)?',
+    options: [
+      { label: 'Sim, tenho pelo menos um produto pronto', value: 2 },
+      { label: 'Tenho conteúdo rascunhado mas não finalizado', value: 1 },
+      { label: 'Ainda não tenho nada criado', value: 0 },
+    ],
+  },
+  {
+    text: 'Você já vendeu algum infoproduto (em qualquer plataforma ou valor)?',
+    options: [
+      { label: 'Sim, tenho vendas regulares', value: 2 },
+      { label: 'Já vendi algumas unidades', value: 1 },
+      { label: 'Ainda não vendi nada', value: 0 },
+    ],
+  },
+  {
+    text: 'Com qual ferramenta de IA você tem mais familiaridade?',
+    options: [
+      { label: 'Uso ChatGPT ou Claude regularmente', value: 2 },
+      { label: 'Já experimentei algumas vezes', value: 1 },
+      { label: 'Nunca usei ou quase não conheço', value: 0 },
+    ],
+  },
+  {
+    text: 'Qual é o maior obstáculo para melhorar seu produto hoje?',
+    options: [
+      { label: 'Não sei como torná-lo mais interativo ou diferente', value: 2 },
+      { label: 'Falta de tempo para implementar melhorias', value: 1 },
+      { label: 'Não sei por onde começar a criar um produto', value: 0 },
+    ],
+  },
+  {
+    text: 'Qual resultado você quer alcançar nos próximos 30 dias?',
+    options: [
+      { label: 'Elevar meu produto atual para ter quiz, chatbot ou glossário', value: 2 },
+      { label: 'Publicar meu primeiro produto e ter as primeiras vendas', value: 1 },
+      { label: 'Entender o mercado antes de criar qualquer coisa', value: 0 },
+    ],
+  },
+  {
+    text: 'Quanto tempo por semana você consegue dedicar a isso?',
+    options: [
+      { label: '3h ou mais por semana', value: 2 },
+      { label: '1–2h por semana', value: 1 },
+      { label: 'Menos de 1h por semana', value: 0 },
+    ],
+  },
+];
+
+const RESULTS = {
+  iniciante: {
+    badge: '🌱 Iniciante',
+    badgeClass: 'badge-iniciante',
+    title: 'Você está no início — e o terreno é perfeito',
+    desc: 'Você ainda está construindo as bases, o que é uma vantagem: dá para começar com a estrutura certa desde o início, sem precisar refazer nada depois.',
+    insights: [
+      { icon: '📄', text: '<strong>Comece com o que você tem:</strong> um rascunho, uma apresentação, um texto solto. Qualquer conteúdo serve como ponto de partida para um produto interativo.' },
+      { icon: '🤖', text: '<strong>ChatGPT gratuito é suficiente</strong> para construir seu primeiro chatbot de conteúdo. O Guia mostra exatamente como no Capítulo 3.' },
+      { icon: '⏱', text: '<strong>Primeira versão em menos de uma tarde:</strong> o método foi desenhado para pessoas que estão começando — não para quem já tem tudo pronto.' },
+    ],
+    ctaTitle: 'O guia certo para o seu momento',
+    ctaDesc: 'O Capítulo 1 foi escrito especificamente para quem está no começo. 50 prompts prontos para aplicar desde o zero.',
+  },
+  intermediario: {
+    badge: '⚡ Intermediário',
+    badgeClass: 'badge-intermediario',
+    title: 'Você tem conteúdo — falta o diferencial',
+    desc: 'Você já passou pela parte difícil: criar e validar um produto. O próximo salto é transformar esse produto em uma experiência que os compradores não esquecem.',
+    insights: [
+      { icon: '🎯', text: '<strong>Adicione um quiz ao seu produto mais vendido.</strong> É a adição de maior impacto para reduzir reembolso e aumentar percepção de valor.' },
+      { icon: '💬', text: '<strong>Um chatbot especializado no seu conteúdo</strong> diferencia seu produto imediatamente — sem nenhum custo extra para você.' },
+      { icon: '💰', text: '<strong>Você pode cobrar 20–40% mais</strong> por um produto interativo do que por um PDF equivalente. O mercado já reconhece essa diferença.' },
+    ],
+    ctaTitle: 'Da boa ideia ao produto premium',
+    ctaDesc: 'Os prompts de interatividade (Capítulos 4 e 5) vão elevar o que você já tem sem precisar reescrever nada.',
+  },
+  avancado: {
+    badge: '🚀 Avançado',
+    badgeClass: 'badge-avancado',
+    title: 'Você está pronto para automação e escala',
+    desc: 'Você tem produto, tem vendas, e sabe o que funciona. O próximo nível é automatizar a criação e a entrega para crescer sem aumentar o esforço.',
+    insights: [
+      { icon: '⚙️', text: '<strong>Automação com IA</strong> permite criar variações de produtos, atualizar conteúdo e responder clientes sem trabalho manual.' },
+      { icon: '📈', text: '<strong>Escale o que já funciona:</strong> os 20 prompts de automação do Capítulo 7 foram desenhados para produtores com produto e audiência.' },
+      { icon: '🔄', text: '<strong>Novos produtos em horas:</strong> o método de transformação de PDF permite criar produtos derivados rapidamente — bônus, módulos extras, versões nicho.' },
+    ],
+    ctaTitle: 'Para quem já vende e quer crescer mais rápido',
+    ctaDesc: 'O Capítulo 7 (Escala e automação) é o mais denso do guia — e foi escrito para o seu nível.',
+  },
+};
+
+let answers = new Array(QUESTIONS.length).fill(null);
+let currentQ = 0;
+
+function startQuiz() {
+  showScreen('screen-quiz');
+  renderQuestion(0);
+}
+
+function showScreen(id) {
+  document.querySelectorAll('.screen').forEach(s => s.classList.remove('active'));
+  document.getElementById(id).classList.add('active');
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+function renderQuestion(idx) {
+  currentQ = idx;
+  const q = QUESTIONS[idx];
+  const pct = Math.round((idx / QUESTIONS.length) * 100);
+
+  document.getElementById('q-progress-label').textContent = `Pergunta ${idx + 1} de ${QUESTIONS.length}`;
+  document.getElementById('q-progress-pct').textContent = `${pct}%`;
+  document.getElementById('progress-fill').style.width = `${pct}%`;
+  document.getElementById('q-num').textContent = `Pergunta ${idx + 1}`;
+  document.getElementById('q-text').textContent = q.text;
+
+  const container = document.getElementById('q-options');
+  container.innerHTML = '';
+  q.options.forEach((opt, i) => {
+    const btn = document.createElement('button');
+    btn.className = 'option' + (answers[idx] === i ? ' selected' : '');
+    btn.innerHTML = `<span class="option-dot"></span><span>${opt.label}</span>`;
+    btn.onclick = () => selectOption(i);
+    container.appendChild(btn);
+  });
+
+  document.getElementById('btn-back').style.visibility = idx === 0 ? 'hidden' : 'visible';
+  const nextBtn = document.getElementById('btn-next');
+  nextBtn.textContent = idx === QUESTIONS.length - 1 ? 'Ver resultado →' : 'Próxima →';
+  nextBtn.classList.toggle('ready', answers[idx] !== null);
+}
+
+function selectOption(i) {
+  answers[currentQ] = i;
+  document.querySelectorAll('.option').forEach((el, idx) => {
+    el.classList.toggle('selected', idx === i);
+  });
+  document.getElementById('btn-next').classList.add('ready');
+}
+
+function nextQuestion() {
+  if (answers[currentQ] === null) return;
+  if (currentQ < QUESTIONS.length - 1) {
+    renderQuestion(currentQ + 1);
+  } else {
+    showScreen('screen-email');
+  }
+}
+
+function prevQuestion() {
+  if (currentQ > 0) renderQuestion(currentQ - 1);
+}
+
+function getProfile() {
+  const total = answers.reduce((sum, a, i) => sum + (a !== null ? QUESTIONS[i].options[a].value : 0), 0);
+  const max = QUESTIONS.length * 2;
+  const pct = total / max;
+  if (pct >= 0.67) return { profile: 'avancado', score: Math.round(pct * 10) };
+  if (pct >= 0.34) return { profile: 'intermediario', score: Math.round(pct * 10) };
+  return { profile: 'iniciante', score: Math.round(pct * 10) };
+}
+
+async function submitEmail(e) {
+  e.preventDefault();
+  const email = document.getElementById('email-input').value.trim();
+  const btn = document.getElementById('btn-submit');
+  if (!email) return;
+
+  btn.disabled = true;
+  btn.textContent = 'Aguarde…';
+
+  const { profile, score } = getProfile();
+
+  try {
+    await fetch('/leads', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ email, profile, score }),
+    });
+  } catch (_) {
+    // Non-blocking: show result even if lead capture fails
+  }
+
+  // Fire Meta Pixel Lead event
+  if (typeof fbq !== 'undefined') {
+    fbq('track', 'Lead', { content_name: 'quiz_' + profile });
+  }
+
+  showResult(profile);
+}
+
+function showResult(profile) {
+  const r = RESULTS[profile];
+  document.getElementById('result-badge').textContent = r.badge;
+  document.getElementById('result-badge').className = 'result-badge ' + r.badgeClass;
+  document.getElementById('result-title').textContent = r.title;
+  document.getElementById('result-desc').textContent = r.desc;
+  document.getElementById('result-cta-title').textContent = r.ctaTitle;
+  document.getElementById('result-cta-desc').textContent = r.ctaDesc;
+
+  const container = document.getElementById('result-insights');
+  container.innerHTML = r.insights.map(item => `
+    <div class="insight-item">
+      <span class="insight-icon">${item.icon}</span>
+      <span class="insight-text">${item.text}</span>
+    </div>
+  `).join('');
+
+  // WhatsApp share link
+  const profileLabels = { iniciante: 'Iniciante', intermediario: 'Intermediário', avancado: 'Avançado' };
+  const shareText = encodeURIComponent(
+    'Fiz o quiz do ProdutoVivo e sou ' + (profileLabels[profile] || profile) +
+    '! 🎯 Descubra seu nível como infoprodutor: https://produtovivo.com/quiz'
+  );
+  const shareEl = document.getElementById('btn-share-wa');
+  if (shareEl) shareEl.href = 'https://wa.me/?text=' + shareText;
+
+  showScreen('screen-result');
+}
+
+function trackPurchaseIntent() {
+  if (typeof fbq !== 'undefined') {
+    fbq('track', 'InitiateCheckout');
+  }
+}
+</script>
+
+</body>
+</html>

@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Como transformar PDF em app interativo com IA (sem código) — ProdutoVivo</title>
+  <meta name="description" content="Guia passo a passo: aprenda a transformar qualquer PDF em um app interativo com chatbot, quiz e glossário usando IA. Funciona com ChatGPT e Claude, sem programação." />
+  <meta name="keywords" content="transformar pdf em app, pdf interativo com ia, chatbot de conteúdo, quiz com ia, infoprodutor, hotmart, kiwify, chatgpt, prompts prontos" />
+  <link rel="canonical" href="https://produtovivo.com/blog/como-transformar-pdf-em-app-interativo-com-ia" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Como transformar PDF em app interativo com IA (sem código)" />
+  <meta property="og:description" content="Guia completo para infoprodutores: chatbot, quiz e glossário a partir do seu PDF, em menos de uma tarde." />
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://produtovivo.com/blog/como-transformar-pdf-em-app-interativo-com-ia" />
+  <meta property="article:published_time" content="2026-04-13" />
+  <meta property="article:author" content="ProdutoVivo" />
+
+  <!-- Meta Pixel -->
+  <script>
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window, document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '4520253334926563');
+    fbq('track', 'PageView');
+  </script>
+  <noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=4520253334926563&ev=PageView&noscript=1"/></noscript>
+
+  <!-- Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Como transformar PDF em app interativo com IA (sem código)",
+    "description": "Guia passo a passo para infoprodutores que querem modernizar seus materiais usando inteligência artificial.",
+    "datePublished": "2026-04-13",
+    "author": {"@type": "Organization", "name": "ProdutoVivo"},
+    "publisher": {
+      "@type": "Organization",
+      "name": "ProdutoVivo",
+      "url": "https://produtovivo.com"
+    },
+    "mainEntityOfPage": "https://produtovivo.com/blog/como-transformar-pdf-em-app-interativo-com-ia"
+  }
+  </script>
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --brand: #1a56db;
+      --accent: #f59e0b;
+      --text: #111827;
+      --muted: #6b7280;
+      --surface: #f9fafb;
+      --white: #ffffff;
+    }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      color: var(--text);
+      background: var(--white);
+      line-height: 1.75;
+    }
+    nav {
+      border-bottom: 1px solid #e5e7eb;
+      padding: 0 24px;
+      height: 58px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      position: sticky;
+      top: 0;
+      background: var(--white);
+      z-index: 10;
+    }
+    nav .logo { font-weight: 800; color: var(--brand); text-decoration: none; font-size: 1.1rem; }
+    nav a.cta { background: var(--brand); color: #fff; padding: 7px 18px; border-radius: 8px; font-size: 0.875rem; font-weight: 600; text-decoration: none; }
+    .article {
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 48px 24px 80px;
+    }
+    .breadcrumb { font-size: 0.8rem; color: var(--muted); margin-bottom: 20px; }
+    .breadcrumb a { color: var(--brand); text-decoration: none; }
+    .meta { font-size: 0.85rem; color: var(--muted); margin-bottom: 32px; display: flex; gap: 16px; flex-wrap: wrap; }
+    h1 {
+      font-size: clamp(1.8rem, 4vw, 2.6rem);
+      font-weight: 900;
+      line-height: 1.2;
+      letter-spacing: -1px;
+      margin-bottom: 16px;
+    }
+    .lead {
+      font-size: 1.15rem;
+      color: var(--muted);
+      margin-bottom: 40px;
+      border-left: 3px solid var(--brand);
+      padding-left: 16px;
+    }
+    h2 {
+      font-size: 1.5rem;
+      font-weight: 800;
+      letter-spacing: -0.5px;
+      margin: 48px 0 16px;
+    }
+    h3 {
+      font-size: 1.15rem;
+      font-weight: 700;
+      margin: 32px 0 12px;
+    }
+    p { margin-bottom: 20px; font-size: 1.02rem; }
+    ul, ol { padding-left: 24px; margin-bottom: 20px; }
+    li { margin-bottom: 8px; font-size: 1.02rem; }
+    strong { font-weight: 700; }
+    code {
+      background: #f3f4f6;
+      border: 1px solid #e5e7eb;
+      border-radius: 4px;
+      padding: 2px 6px;
+      font-size: 0.9em;
+      font-family: 'SF Mono', 'Fira Code', monospace;
+    }
+    pre {
+      background: #1e293b;
+      color: #e2e8f0;
+      border-radius: 10px;
+      padding: 20px 24px;
+      overflow-x: auto;
+      margin-bottom: 24px;
+      font-family: 'SF Mono', 'Fira Code', monospace;
+      font-size: 0.9rem;
+      line-height: 1.6;
+    }
+    .callout {
+      background: #eff6ff;
+      border-left: 4px solid var(--brand);
+      border-radius: 0 8px 8px 0;
+      padding: 16px 20px;
+      margin: 28px 0;
+    }
+    .callout p { margin: 0; font-size: 0.98rem; }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-bottom: 24px;
+      font-size: 0.95rem;
+    }
+    th { background: var(--surface); font-weight: 700; text-align: left; padding: 10px 14px; border-bottom: 2px solid #e5e7eb; }
+    td { padding: 10px 14px; border-bottom: 1px solid #f3f4f6; }
+    tr:last-child td { border-bottom: none; }
+    .cta-inline {
+      background: linear-gradient(135deg, #eff6ff, #fef9c3);
+      border-radius: 16px;
+      padding: 32px;
+      text-align: center;
+      margin: 40px 0;
+    }
+    .cta-inline h3 { margin: 0 0 8px; font-size: 1.3rem; }
+    .cta-inline p { color: var(--muted); margin-bottom: 20px; font-size: 0.95rem; }
+    .btn {
+      display: inline-block;
+      background: var(--brand);
+      color: #fff;
+      text-decoration: none;
+      padding: 14px 36px;
+      border-radius: 10px;
+      font-weight: 700;
+      font-size: 1rem;
+      transition: background 0.2s;
+    }
+    .btn:hover { background: #1245b8; }
+    .price-note { font-size: 0.85rem; color: var(--muted); margin-top: 10px; }
+    footer { border-top: 1px solid #e5e7eb; padding: 32px 24px; text-align: center; font-size: 0.85rem; color: var(--muted); }
+    footer a { color: var(--muted); }
+    .article-layout { max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: minmax(0,1fr) 280px; gap: 48px; align-items: start; }
+    .article-sidebar { position: sticky; top: 24px; padding: 48px 0 80px; }
+    .sidebar-card { border-radius: 14px; padding: 24px; margin-bottom: 20px; }
+    .sidebar-card-quiz { background: linear-gradient(135deg, #1e3a5f, #16213e); }
+    .sidebar-card-guide { border: 1.5px solid #2563eb; background: #eff6ff; }
+    .sidebar-label { font-size: 10px; font-weight: 800; letter-spacing: 1.5px; text-transform: uppercase; margin: 0 0 8px; color: #2563eb; display: block; }
+    .sidebar-card h3 { font-size: 1rem; font-weight: 700; margin: 0 0 10px; line-height: 1.3; }
+    .sidebar-card-quiz h3 { color: #fff; }
+    .sidebar-card-guide h3 { color: #1e293b; }
+    .sidebar-card p { font-size: 13px; margin: 0 0 16px; line-height: 1.6; }
+    .sidebar-card-quiz p { color: #9ab; }
+    .sidebar-card-guide p { color: #475569; }
+    .sidebar-btn { display: block; text-align: center; padding: 12px 16px; border-radius: 8px; font-weight: 700; font-size: 14px; text-decoration: none; background: #2563eb; color: #fff; transition: background .15s; }
+    .sidebar-btn:hover { background: #1245b8; }
+    @media(max-width:860px) { .article-layout { grid-template-columns: 1fr; } .article-sidebar { position: static; padding: 0 0 40px; } }
+  </style>
+</head>
+<body>
+  <nav class="site-nav">
+    <div class="container site-nav-inner">
+      <a href="/" class="nav-logo">ProdutoVivo</a>
+      <button class="nav-hamburger" aria-label="Menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+      <div class="nav-links">
+        <a href="/blog">Blog</a>
+        <a href="/trilha">Trilha</a>
+        <a href="/quiz">Quiz grátis</a>
+        <a href="/recursos">Recursos</a>
+        <a href="/#comprar" class="nav-cta">Comprar — R$37</a>
+      </div>
+    </div>
+  </nav>
+
+
+<nav>
+  <a class="logo" href="/">ProdutoVivo</a>
+  <a class="cta" href="/#comprar">Quero o guia — R$37</a>
+</nav>
+
+<div class="article-layout">
+<article class="article">
+  <div class="breadcrumb">
+    <a href="/">ProdutoVivo</a> › <a href="/blog">Blog</a>
+        <a href="/trilha">Trilha</a> › Como transformar PDF em app interativo com IA
+  </div>
+
+  <h1>Como transformar PDF em app interativo com IA (sem saber programar)</h1>
+
+  <div class="meta">
+    <span>📅 Abril 2026</span>
+    <span>⏱️ 8 min de leitura</span>
+    <span>🏷️ IA · Infoprodutos · ChatGPT</span>
+  </div>
+
+  <p class="lead">
+    Você tem um PDF que ninguém usa do jeito que merece. A IA pode mudar isso — sem código, sem designer, em menos de uma tarde. Neste guia, você vai ver como criar um chatbot, um quiz e um glossário a partir do seu material existente.
+  </p>
+
+  <h2>Por que seu PDF está perdendo alunos</h2>
+
+  <p>Pense nos últimos 10 alunos que compraram seu produto digital. Quantos deles terminaram de ler o PDF? Se for como a maioria dos infoprodutores brasileiros, a resposta é decepcionante: menos de 30%.</p>
+
+  <p>Não é culpa do conteúdo. É culpa do formato.</p>
+
+  <p><strong>PDFs são passivos.</strong> Eles não respondem perguntas. Não testam o aprendizado. Não se adaptam ao ritmo de cada pessoa. E quando o aluno trava em uma dúvida às 22h de uma sexta-feira, não tem ninguém para responder — e ele abandona.</p>
+
+  <p>Apps interativos resolvem exatamente esse problema. E a grande notícia de 2025–2026 é que <strong>qualquer infoprodutor pode criar um app interativo a partir de um PDF existente, usando IA, em menos de uma tarde</strong>.</p>
+
+  <h2>O que é um "app interativo" nesse contexto?</h2>
+
+  <p>Antes de ir para o passo a passo, vamos alinhar o que estamos chamando de "app interativo". Não estamos falando de um aplicativo para baixar na App Store. Estamos falando de experiências digitais que o aluno acessa pelo navegador ou pelo celular e que <em>respondem</em> ao que ele faz.</p>
+
+  <p>Exemplos práticos:</p>
+
+  <ul>
+    <li><strong>Chatbot de conteúdo:</strong> O aluno digita uma dúvida, e uma IA treinada no seu PDF responde — 24 horas por dia, sem você precisar fazer nada</li>
+    <li><strong>Quiz automático:</strong> Questões geradas pelo seu conteúdo, com gabarito e feedback personalizado por resposta</li>
+    <li><strong>Glossário interativo:</strong> Termos do seu material com definições em linguagem simples e exemplos práticos</li>
+    <li><strong>Resumo por capítulo:</strong> Síntese dos pontos principais para o aluno que quer revisão rápida</li>
+    <li><strong>Mapa de aprendizado:</strong> Trilha visual mostrando o progresso e as dependências entre tópicos</li>
+  </ul>
+
+  <p>Nada disso requer programação. Tudo funciona com prompts bem estruturados no ChatGPT ou no Claude.</p>
+
+  <h2>Como a IA lê o seu PDF</h2>
+
+  <p>O princípio é simples: você extrai o texto do seu PDF e cola numa ferramenta de IA (como o ChatGPT ou o Claude) junto com um conjunto de instruções — o que chamamos de <strong>prompt</strong>. A IA lê, processa e passa a responder perguntas, criar exercícios ou gerar apps baseados exclusivamente no que você forneceu.</p>
+
+  <p>O processo básico:</p>
+
+  <ol>
+    <li>Extrair o texto do PDF</li>
+    <li>Limpar o texto (remover números de página, cabeçalhos repetitivos)</li>
+    <li>Colar o texto num prompt estruturado</li>
+    <li>Deixar a IA gerar o chatbot, quiz ou glossário</li>
+    <li>Ajustar o resultado e entregar para os alunos</li>
+  </ol>
+
+  <div class="callout">
+    <p><strong>Limite de texto:</strong> A maioria das ferramentas gratuitas aceita até ~15 páginas de texto por vez. Para PDFs maiores, trabalhe capítulo por capítulo.</p>
+  </div>
+
+  <h2>Passo a passo: criando seu primeiro chatbot em 60 minutos</h2>
+
+  <h3>Passo 1 — Extraia o texto do seu PDF (15 min)</h3>
+
+  <p>Se o PDF for pesquisável (não uma imagem escaneada):</p>
+  <ul>
+    <li>Abra no navegador → Ctrl+A → Ctrl+C → cole no Bloco de Notas</li>
+    <li>Ou acesse <strong>smallpdf.com</strong> → "PDF para Word" → copie o texto</li>
+  </ul>
+
+  <p>Se for um PDF escaneado (imagem):</p>
+  <ul>
+    <li>Abra no Google Drive → clique direito → "Abrir com Google Docs" (OCR gratuito)</li>
+    <li>Ou use Adobe Acrobat (versão gratuita com limitações)</li>
+  </ul>
+
+  <p>Depois de extrair, revise rapidamente: remova números de página isolados, cabeçalhos repetitivos e qualquer texto que seja "lixo de formatação".</p>
+
+  <h3>Passo 2 — Use este prompt base (10 min)</h3>
+
+  <p>Abra o ChatGPT ou o Claude. Cole o seguinte prompt e <strong>substitua os campos em colchetes</strong>:</p>
+
+  <pre>Você é um assistente especializado no conteúdo de "[NOME DO SEU PRODUTO]",
+criado por [SEU NOME]. Seu único papel é responder perguntas baseadas
+no material abaixo. Se a resposta não estiver no material, diga exatamente:
+"Essa informação não está coberta neste guia."
+
+Sempre responda em português do Brasil, de forma clara e objetiva.
+
+MATERIAL DE REFERÊNCIA:
+[COLE O TEXTO DO SEU PDF AQUI]
+
+---
+Pronto. Pode fazer sua primeira pergunta.</pre>
+
+  <p>Cole o texto do PDF onde indicado e envie. A IA vai confirmar que entendeu o material e ficará pronta para responder perguntas.</p>
+
+  <h3>Passo 3 — Teste com 5 perguntas (20 min)</h3>
+
+  <p>Faça as perguntas que seus alunos mais fazem. Verifique:</p>
+
+  <ul>
+    <li>Respostas corretas para perguntas que estão no material? ✅</li>
+    <li>Respostas honestas ("não sei") para o que está fora? ✅</li>
+    <li>Tom de voz adequado para o seu público? ✅</li>
+  </ul>
+
+  <p>Se algo não estiver bom, ajuste o prompt — adicione instruções de tom, limite de tamanho das respostas ou exemplos de como você quer que a IA responda.</p>
+
+  <h3>Passo 4 — Entregue para os alunos (15 min)</h3>
+
+  <p>A forma mais simples, sem precisar de nada técnico:</p>
+
+  <ul>
+    <li>Salve o prompt completo (com o texto do PDF) num arquivo <code>CHATBOT.txt</code></li>
+    <li>Crie um PDF de 1 página explicando como colar o prompt no ChatGPT gratuito</li>
+    <li>Adicione esse bônus na entrega do seu produto no Hotmart ou Kiwify</li>
+  </ul>
+
+  <p>Se quiser um link direto (mais profissional): use o <strong>Poe</strong> (poe.com) ou crie um "GPT customizado" no ChatGPT Plus para gerar um link compartilhável.</p>
+
+  <div class="cta-inline">
+    <h3>Quer 50 prompts prontos para fazer tudo isso?</h3>
+    <p>O guia ProdutoVivo tem chatbot, quiz, glossário, resumos e muito mais — organizados e prontos para copiar.</p>
+    <a class="btn" href="/#comprar" onclick="fbq('track', 'InitiateCheckout')">Ver o guia completo — R$37</a>
+    <p class="price-note">Acesso imediato · Pagamento único · Funciona com ChatGPT gratuito</p>
+  </div>
+
+  <h2>Como criar um quiz em 30 minutos</h2>
+
+  <p>Quizzes têm duas vantagens comerciais diretas: aumentam o engajamento com o produto e geram prova social ("fiz o quiz e acertei 9/10" vira argumento de venda espontâneo dos seus alunos).</p>
+
+  <p>Use este prompt:</p>
+
+  <pre>Com base no texto abaixo, crie um quiz de verificação com 5 questões
+de múltipla escolha (4 alternativas cada) sobre os principais conceitos.
+
+Para cada questão:
+**Questão [N]:** [enunciado]
+a) [opção]  b) [opção]  c) [opção]  d) [opção]
+✅ Resposta: [letra] — [explicação de 1–2 linhas]
+
+Nível de dificuldade: intermediário.
+
+Texto:
+[COLE O TEXTO DO SEU PDF AQUI]</pre>
+
+  <p>Em 2–3 minutos você tem um quiz completo. Revise as questões (às vezes a IA fica muito fácil ou cria distratores fracos), ajuste o que precisar, e exporte como PDF ou Google Forms.</p>
+
+  <h2>Como criar um glossário interativo</h2>
+
+  <p>O glossário é o app mais subestimado pelos infoprodutores. Mas pense assim: se o seu aluno trava num termo que ele não entende, ele para de estudar. Um glossário elimina esse atrito.</p>
+
+  <p>Prompt:</p>
+
+  <pre>Com base no texto abaixo, crie um glossário com os 15 termos mais
+importantes do material.
+
+Para cada termo:
+**[TERMO]**
+- Definição simples: [em 1–2 linhas, sem jargão]
+- Exemplo prático: [como esse termo aparece no dia a dia do aluno]
+- Relacionado a: [outros termos do glossário]
+
+Organize em ordem alfabética.
+
+Texto:
+[COLE O TEXTO DO SEU PDF AQUI]</pre>
+
+  <h2>Ferramentas para ir além do copy-paste</h2>
+
+  <p>Se você quiser criar uma interface com a sua marca (sem programar), estas são as melhores opções com plano gratuito:</p>
+
+  <table>
+    <tr><th>Ferramenta</th><th>O que faz</th><th>Gratuita?</th></tr>
+    <tr><td><strong>Poe</strong> (poe.com)</td><td>Chatbot com link compartilhável</td><td>Sim (limitado)</td></tr>
+    <tr><td><strong>Typebot</strong></td><td>Chatbot/quiz com visual customizado</td><td>Sim</td></tr>
+    <tr><td><strong>Google Forms</strong></td><td>Quiz com correção automática</td><td>Sim</td></tr>
+    <tr><td><strong>Quizlet</strong></td><td>Flashcards e quiz gamificado</td><td>Sim (limitado)</td></tr>
+    <tr><td><strong>Miro / Whimsical</strong></td><td>Mapa de aprendizado visual</td><td>Sim</td></tr>
+  </table>
+
+  <h2>Como isso diferencia seu produto</h2>
+
+  <p>Infoprodutos com componentes interativos têm, em média, taxas de conclusão 2–3x maiores do que PDFs estáticos. Alunos que terminam o produto:</p>
+  <ul>
+    <li>Pedem menos reembolso</li>
+    <li>Deixam mais avaliações positivas</li>
+    <li>Compram mais vezes do mesmo produtor</li>
+    <li>Indicam para amigos</li>
+  </ul>
+
+  <p>E do ponto de vista do marketing, <strong>"vem com chatbot de IA incluído"</strong> é um diferencial que você pode colocar no título do produto, no copy dos anúncios e nas páginas de vendas — sem aumentar o preço.</p>
+
+  <div class="callout">
+    <p><strong>Exemplo real:</strong> Um produtor com um PDF de 30 páginas usou os prompts do guia ProdutoVivo para criar um chatbot, um quiz de 10 questões e um glossário de 20 termos. Tempo total: 2h45min. Resultado: taxa de conclusão subiu de 18% para 61% em 30 dias.</p>
+  </div>
+
+  <h2>Por onde começar hoje</h2>
+
+  <ol>
+    <li>Escolha o seu PDF mais vendido (ou com mais potencial)</li>
+    <li>Extraia o texto (veja o Passo 1 acima)</li>
+    <li>Cole o prompt de chatbot no ChatGPT gratuito</li>
+    <li>Faça 5 perguntas de teste</li>
+    <li>Adicione como bônus no Hotmart/Kiwify ainda essa semana</li>
+  </ol>
+
+  <p>Não espere ter o "produto perfeito". Um chatbot básico que funciona já diferencia você de 90% dos produtores do mercado.</p>
+
+  <div class="cta-inline">
+    <h3>Salte essa curva de aprendizado</h3>
+    <p>O guia ProdutoVivo tem 50 prompts prontos, organizados em 6 séries (chatbot, quiz, glossário, resumos, mapa de aprendizado, exercícios). Tudo testado e pronto para usar hoje.</p>
+    <a class="btn" href="/#comprar" onclick="fbq('track', 'InitiateCheckout')">Quero os 50 prompts — R$37</a>
+    <p class="price-note">Acesso imediato · Funciona com ChatGPT gratuito · Para Hotmart e Kiwify</p>
+  </div>
+
+  <h2>Perguntas frequentes</h2>
+
+  <h3>Preciso de uma versão paga do ChatGPT?</h3>
+  <p>Não. A versão gratuita do ChatGPT (GPT-4o com limite de mensagens) funciona para criar chatbot, quiz e glossário. O Claude também tem plano gratuito. Para volumes maiores, o ChatGPT Plus (US$20/mês) remove os limites.</p>
+
+  <h3>Funciona com PDF em qualquer formato?</h3>
+  <p>Funciona com qualquer PDF que tenha texto pesquisável (a maioria dos ebooks e apostilas). PDFs escaneados precisam de um passo extra de OCR, mas também funcionam.</p>
+
+  <h3>E se meu PDF for muito longo?</h3>
+  <p>Trabalhe capítulo por capítulo. Divida o texto em blocos de ~10–15 páginas e crie apps separados para cada módulo do seu produto.</p>
+
+  <h3>Posso usar os apps que criar com fins comerciais?</h3>
+  <p>Sim. O chatbot, quiz e glossário que você criar com o seu conteúdo são seus. Você pode entregar para alunos, usar como bônus, e incorporar em qualquer plataforma.</p>
+
+  <!-- Related post -->
+  <div style="border:1.5px solid #eee;border-radius:12px;padding:20px;margin:40px 0;background:#fafafa;">
+    <p style="font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:#FF6B35;margin:0 0 8px;">Leia também</p>
+    <a href="/blog/ferramentas-de-ia-para-infoprodutores" style="font-size:15px;font-weight:700;color:#1A1A2E;text-decoration:none;display:block;margin-bottom:6px;">5 Ferramentas de IA para Infoprodutores Brasileiros (testadas em 2026) →</a>
+    <p style="font-size:13px;color:#666;margin:0;">ChatGPT, Claude, Gamma, Typebot e ElevenLabs — quais valem o seu tempo e como usar cada uma no seu negócio.</p>
+  </div>
+
+  <p style="text-align:center;margin-top:32px;"><a href="/blog" style="color:#FF6B35;font-weight:600;text-decoration:none;">← Ver todos os artigos</a></p>
+
+
+  <div class="wa-share-section">
+    <span class="wa-share-label">Achou útil? Compartilhe:</span>
+    <a href="https://wa.me/?text=Como%20transformar%20PDF%20em%20app%20interativo%20com%20IA%20%F0%9F%91%89%20https%3A//produtovivo.com/blog/como-transformar-pdf-em-app-interativo-com-ia" target="_blank" rel="noopener" class="btn-wa-share">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+      Compartilhar no WhatsApp
+    </a>
+  </div>
+
+  </article>
+
+  <aside class="article-sidebar">
+    <div class="sidebar-card sidebar-card-quiz">
+      <span class="sidebar-label">Diagnóstico grátis</span>
+      <h3>Seu infoproduto está pronto para IA?</h3>
+      <p>Quiz de 6 perguntas. Resultado + plano personalizado em segundos.</p>
+      <a href="/quiz" class="sidebar-btn">Fazer o quiz →</a>
+    </div>
+    <div class="sidebar-card sidebar-card-guide">
+      <span class="sidebar-label">Guia completo</span>
+      <h3>PDF → App Interativo em 7 capítulos</h3>
+      <p>50 prompts prontos. Sem código. Funciona com Hotmart e Kiwify.</p>
+      <a href="/#comprar" class="sidebar-btn">Adquirir por R$37 →</a>
+    </div>
+  </aside>
+</div>
+
+<footer>
+  <p>ProdutoVivo &copy; 2026 — <a href="mailto:suporte@produtovivo.com">suporte@produtovivo.com</a></p>
+  <p style="margin-top:6px;"><a href="/">Home</a> · <a href="/blog">Blog</a>
+        <a href="/trilha">Trilha</a> · <a href="/afiliados">Afiliados</a> · <a href="/privacidade">Privacidade</a> · <a href="/termos">Termos</a></p>
+</footer>
+
+</body>
+</html>

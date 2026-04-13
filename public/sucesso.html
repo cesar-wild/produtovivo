@@ -4,22 +4,311 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Compra confirmada — ProdutoVivo</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="/style.css">
-  <!-- Meta Pixel: Purchase -->
+  <meta name="robots" content="noindex, nofollow">
+
+  <!-- Meta Pixel base (Purchase fired after session verification) -->
   <script>
     !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');
     fbq('init', '4520253334926563');
-    fbq('track', 'Purchase', { value: 37, currency: 'BRL' });
+    fbq('track', 'PageView');
   </script>
+  <noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=4520253334926563&ev=PageView&noscript=1"/></noscript>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/style.css">
+
+  <style>
+    body { background: #f8fafc; }
+
+    .success-wrapper {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+      padding: 60px 20px 80px;
+    }
+
+    .success-card {
+      background: #fff;
+      border-radius: 16px;
+      box-shadow: 0 4px 24px rgba(0,0,0,.08);
+      max-width: 560px;
+      width: 100%;
+      overflow: hidden;
+    }
+
+    .success-header {
+      background: linear-gradient(135deg, #0f172a 0%, #1e3a5f 100%);
+      padding: 36px 40px;
+      text-align: center;
+    }
+    .success-header .brand { color: #fff; font-size: 20px; font-weight: 800; letter-spacing: -.3px; margin-bottom: 24px; }
+    .success-header .check-circle {
+      width: 72px; height: 72px;
+      background: #22c55e;
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      margin: 0 auto 20px;
+      font-size: 36px;
+    }
+    .success-header h1 { color: #fff; font-size: 24px; font-weight: 700; margin: 0 0 8px; }
+    .success-header p { color: #94a3b8; font-size: 15px; margin: 0; }
+
+    .success-body { padding: 36px 40px; }
+
+    .email-note {
+      background: #eff6ff;
+      border: 1px solid #bfdbfe;
+      border-radius: 10px;
+      padding: 16px 20px;
+      margin-bottom: 28px;
+      font-size: 14px;
+      color: #1e40af;
+      line-height: 1.5;
+    }
+    .email-note strong { display: block; margin-bottom: 4px; font-size: 15px; }
+    .email-note .buyer-email { font-weight: 700; color: #1d4ed8; }
+
+    .next-steps h3 {
+      font-size: 15px;
+      font-weight: 700;
+      color: #0f172a;
+      margin-bottom: 16px;
+      text-transform: uppercase;
+      letter-spacing: .5px;
+      font-size: 12px;
+    }
+
+    .step {
+      display: flex;
+      gap: 14px;
+      margin-bottom: 16px;
+      align-items: flex-start;
+    }
+    .step-num {
+      width: 28px; height: 28px;
+      background: #2563eb;
+      color: #fff;
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 13px; font-weight: 700;
+      flex-shrink: 0;
+      margin-top: 1px;
+    }
+    .step-text { font-size: 15px; color: #334155; line-height: 1.5; }
+    .step-text strong { color: #0f172a; }
+
+    .divider { border: none; border-top: 1px solid #f1f5f9; margin: 28px 0; }
+
+    .share-section { text-align: center; }
+    .share-section p { font-size: 14px; color: #64748b; margin-bottom: 16px; }
+
+    .btn-share {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: #25D366;
+      color: #fff;
+      text-decoration: none;
+      padding: 12px 24px;
+      border-radius: 8px;
+      font-weight: 600;
+      font-size: 14px;
+      transition: background .15s;
+    }
+    .btn-share:hover { background: #1ebe5a; }
+
+    .blog-nudge {
+      background: #f8fafc;
+      border: 1px solid #e2e8f0;
+      border-radius: 10px;
+      padding: 18px 20px;
+      margin-top: 24px;
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      text-decoration: none;
+    }
+    .blog-nudge:hover { border-color: #2563eb; }
+    .blog-nudge-icon { font-size: 28px; flex-shrink: 0; }
+    .blog-nudge-text p { font-size: 12px; color: #64748b; margin-bottom: 2px; text-transform: uppercase; font-weight: 600; letter-spacing: .5px; }
+    .blog-nudge-text strong { font-size: 14px; color: #0f172a; line-height: 1.4; display: block; }
+
+    .success-footer {
+      text-align: center;
+      padding: 20px 40px 28px;
+      border-top: 1px solid #f1f5f9;
+    }
+    .success-footer p { font-size: 13px; color: #94a3b8; }
+    .success-footer a { color: #64748b; text-decoration: none; }
+    .success-footer a:hover { color: #2563eb; }
+
+    /* Loading state */
+    .loading-spinner {
+      display: inline-block;
+      width: 20px; height: 20px;
+      border: 2px solid rgba(255,255,255,.3);
+      border-top-color: #fff;
+      border-radius: 50%;
+      animation: spin .7s linear infinite;
+      margin-right: 8px;
+      vertical-align: middle;
+    }
+    @keyframes spin { to { transform: rotate(360deg); } }
+
+    /* Error state */
+    .error-card {
+      background: #fff;
+      border-radius: 16px;
+      box-shadow: 0 4px 24px rgba(0,0,0,.08);
+      max-width: 480px;
+      width: 100%;
+      padding: 48px 40px;
+      text-align: center;
+    }
+    .error-card h2 { font-size: 22px; color: #0f172a; margin: 16px 0 12px; }
+    .error-card p { font-size: 15px; color: #64748b; line-height: 1.6; }
+    .error-card a { color: #2563eb; }
+
+    @media(max-width: 560px) {
+      .success-header, .success-body, .success-footer { padding-left: 24px; padding-right: 24px; }
+    }
+  </style>
 </head>
 <body>
-  <section class="success-hero container">
-    <div style="font-size:64px;margin-bottom:24px;">🎉</div>
-    <h1>Pagamento confirmado!</h1>
-    <p>Enviamos o link de download para o seu e-mail.<br>Verifique sua caixa de entrada (e o spam, por via das dúvidas).</p>
-    <p style="margin-top:24px;font-size:14px;color:#94a3b8;">Dúvidas? <a href="mailto:suporte@produtovivo.com">suporte@produtovivo.com</a></p>
-  </section>
+  <nav class="site-nav">
+    <div class="container site-nav-inner">
+      <a href="/" class="nav-logo">ProdutoVivo</a>
+      <button class="nav-hamburger" aria-label="Menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+      <div class="nav-links">
+        <a href="/blog">Blog</a>
+        <a href="/trilha">Trilha</a>
+        <a href="/quiz">Quiz grátis</a>
+        <a href="/recursos">Recursos</a>
+        <a href="/#comprar" class="nav-cta">Comprar — R$37</a>
+      </div>
+    </div>
+  </nav>
+
+
+<div class="success-wrapper">
+  <!-- Loading state shown while verifying -->
+  <div id="loading-state" class="success-card" style="padding:60px 40px;text-align:center;">
+    <div class="brand" style="color:#0f172a;font-size:20px;font-weight:800;margin-bottom:32px;">ProdutoVivo</div>
+    <div style="font-size:40px;margin-bottom:20px;">⏳</div>
+    <p style="color:#475569;font-size:16px;">Verificando pagamento…</p>
+  </div>
+
+  <!-- Success state (hidden until verified) -->
+  <div id="success-state" class="success-card" style="display:none;">
+    <div class="success-header">
+      <div class="brand">ProdutoVivo</div>
+      <div class="check-circle">✓</div>
+      <h1>Pagamento confirmado!</h1>
+      <p>Obrigado pela compra. Você já faz parte dos criadores que vendem mais.</p>
+    </div>
+
+    <div class="success-body">
+      <div class="email-note">
+        <strong>📧 Verifique sua caixa de entrada</strong>
+        O link de download foi enviado para <span class="buyer-email" id="buyer-email">seu e-mail</span>.
+        Não achou? Confira a pasta de spam ou promoções.
+      </div>
+
+      <div class="next-steps">
+        <h3>Próximos passos</h3>
+
+        <div class="step">
+          <div class="step-num">1</div>
+          <div class="step-text"><strong>Abra o e-mail</strong> com o link de download do guia. O link é válido por 48 horas.</div>
+        </div>
+
+        <div class="step">
+          <div class="step-num">2</div>
+          <div class="step-text"><strong>Comece pelo Capítulo 3</strong> — "Ferramentas de IA para criadores". Ele mostra exatamente quais ferramentas usar (grátis ou pagas).</div>
+        </div>
+
+        <div class="step">
+          <div class="step-num">3</div>
+          <div class="step-text"><strong>Aplique o Prompt #1</strong> no seu PDF hoje mesmo. A maioria dos criadores vê resultado na primeira sessão de 1 hora.</div>
+        </div>
+      </div>
+
+      <hr class="divider">
+
+      <div class="share-section">
+        <p>Conhece outro criador que poderia se beneficiar? Compartilhe.</p>
+        <a href="https://api.whatsapp.com/send?text=Acabei%20de%20comprar%20o%20ProdutoVivo%20%E2%80%94%20guia%20para%20transformar%20PDF%20em%20app%20com%20IA.%20Por%20R%2437%20vale%20demais%3A%20https%3A%2F%2Fprodutovivo.com" target="_blank" rel="noopener" class="btn-share">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+          Compartilhar no WhatsApp
+        </a>
+      </div>
+
+      <a href="/blog/como-transformar-pdf-em-app-interativo-com-ia" class="blog-nudge">
+        <div class="blog-nudge-icon">📄→📱</div>
+        <div class="blog-nudge-text">
+          <p>Leitura recomendada</p>
+          <strong>Como Transformar PDF em App Interativo com IA (sem código)</strong>
+        </div>
+      </a>
+    </div>
+
+    <div class="success-footer">
+      <p>Dúvidas? <a href="mailto:suporte@produtovivo.com">suporte@produtovivo.com</a></p>
+    </div>
+  </div>
+
+  <!-- Error state (hidden until needed) -->
+  <div id="error-state" class="error-card" style="display:none;">
+    <div style="font-size:48px;">⚠️</div>
+    <h2>Não conseguimos verificar o pagamento</h2>
+    <p>Se você completou a compra, verifique sua caixa de entrada — o guia pode já ter sido enviado.<br><br>
+    Se o problema persistir, entre em contato: <a href="mailto:suporte@produtovivo.com">suporte@produtovivo.com</a></p>
+    <p style="margin-top:24px;"><a href="/" style="color:#2563eb;font-weight:600;">← Voltar para a página inicial</a></p>
+  </div>
+</div>
+
+<script>
+(async function() {
+  const params = new URLSearchParams(window.location.search);
+  const sessionId = params.get('session_id');
+
+  function show(id) {
+    ['loading-state','success-state','error-state'].forEach(function(s) {
+      document.getElementById(s).style.display = s === id ? '' : 'none';
+    });
+  }
+
+  if (!sessionId) {
+    show('error-state');
+    return;
+  }
+
+  try {
+    const res = await fetch('/checkout/success?session_id=' + encodeURIComponent(sessionId));
+    if (!res.ok) throw new Error('Payment not verified');
+
+    const data = await res.json();
+
+    if (data.email) {
+      document.getElementById('buyer-email').textContent = data.email;
+    }
+
+    // Fire Meta Pixel Purchase event after server-side verification
+    if (typeof fbq !== 'undefined') {
+      fbq('track', 'Purchase', { value: 37.00, currency: 'BRL' });
+    }
+
+    show('success-state');
+  } catch (err) {
+    show('error-state');
+  }
+})();
+</script>
+
 </body>
 </html>

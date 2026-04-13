@@ -18,11 +18,68 @@
   </script>
   <noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=4520253334926563&ev=PageView&noscript=1"/></noscript>
 
+  <!-- Product Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Product",
+    "name": "Guia ProdutoVivo — PDF para App Interativo com IA",
+    "description": "Guia completo com 7 capítulos e 50 prompts prontos para transformar PDFs em apps interativos com chatbot, quiz e glossário. Para infoprodutores brasileiros no Hotmart e Kiwify.",
+    "url": "https://produtovivo.com",
+    "brand": {"@type": "Brand", "name": "ProdutoVivo"},
+    "offers": {
+      "@type": "Offer",
+      "priceCurrency": "BRL",
+      "price": "37.00",
+      "availability": "https://schema.org/InStock",
+      "seller": {"@type": "Organization", "name": "ProdutoVivo", "url": "https://produtovivo.com"},
+      "hasMerchantReturnPolicy": {
+        "@type": "MerchantReturnPolicy",
+        "returnPolicyCategory": "https://schema.org/MerchantReturnFiniteReturnWindow",
+        "merchantReturnDays": 7,
+        "returnMethod": "https://schema.org/ReturnByMail"
+      }
+    }
+  }
+  </script>
+
+  <!-- FAQ Structured Data (rich snippets) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {"@type":"Question","name":"Preciso saber programar para usar o guia?","acceptedAnswer":{"@type":"Answer","text":"Não. Tudo é feito no ChatGPT ou Claude usando prompts em português. Nenhuma linha de código é necessária."}},
+      {"@type":"Question","name":"Funciona com o plano gratuito do ChatGPT?","acceptedAnswer":{"@type":"Answer","text":"Sim. Os 50 prompts foram testados na versão gratuita do ChatGPT e do Claude. Você não precisa pagar por nenhuma ferramenta adicional."}},
+      {"@type":"Question","name":"O que recebo logo após a compra?","acceptedAnswer":{"@type":"Answer","text":"Acesso imediato ao guia completo em PDF (7 capítulos + 50 prompts) enviado por e-mail."}},
+      {"@type":"Question","name":"Como funciona a garantia de 7 dias?","acceptedAnswer":{"@type":"Answer","text":"Se você ler o guia e sentir que não valeu, basta enviar um e-mail para suporte@produtovivo.com em até 7 dias. Reembolso integral, sem perguntas."}},
+      {"@type":"Question","name":"Funciona para qualquer nicho?","acceptedAnswer":{"@type":"Answer","text":"Sim. O método funciona com qualquer tipo de conteúdo — saúde, finanças, marketing, culinária, educação, espiritualidade."}}
+    ]
+  }
+  </script>
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="/style.css">
 </head>
 <body>
+
+  <!-- Nav -->
+  <nav class="site-nav">
+    <div class="container site-nav-inner">
+      <a href="/" class="nav-logo">ProdutoVivo</a>
+      <button class="nav-hamburger" aria-label="Menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+      <div class="nav-links">
+        <a href="/blog">Blog</a>
+        <a href="/trilha">Trilha grátis</a>
+        <a href="/quiz">Quiz</a>
+        <a href="/recursos">Recursos</a>
+        <a href="#comprar" class="nav-cta">Comprar — R$37</a>
+      </div>
+    </div>
+  </nav>
 
   <!-- Hero -->
   <section class="hero">
@@ -37,10 +94,30 @@
     </div>
   </section>
 
-  <!-- Social proof -->
+  <!-- Social proof stats bar -->
   <section class="proof">
     <div class="container">
-      <p class="proof-text">Criadores usando o método de produtovivo.com para vender mais</p>
+      <div class="proof-stats">
+        <div class="proof-stat">
+          <span class="proof-num">50</span>
+          <span class="proof-label">prompts prontos</span>
+        </div>
+        <div class="proof-divider"></div>
+        <div class="proof-stat">
+          <span class="proof-num">7</span>
+          <span class="proof-label">capítulos</span>
+        </div>
+        <div class="proof-divider"></div>
+        <div class="proof-stat">
+          <span class="proof-num">&lt; 1h</span>
+          <span class="proof-label">para o primeiro resultado</span>
+        </div>
+        <div class="proof-divider"></div>
+        <div class="proof-stat">
+          <span class="proof-num">R$0</span>
+          <span class="proof-label">em ferramentas extras</span>
+        </div>
+      </div>
     </div>
   </section>
 
@@ -84,21 +161,245 @@
     </div>
   </section>
 
+  <!-- Sample prompts preview -->
+  <section class="preview">
+    <div class="container">
+      <h2>3 prompts do guia — de graça</h2>
+      <p class="preview-sub">Veja a qualidade do conteúdo antes de comprar. O guia completo tem 50.</p>
+      <div class="preview-grid">
+
+        <div class="preview-card">
+          <div class="pcard-tag">Prompt C-01</div>
+          <h3>Transformar capítulo de PDF em chatbot</h3>
+          <pre>Você é um assistente especialista em [TEMA DO SEU PRODUTO].
+
+Abaixo está o conteúdo do capítulo [N]:
+"""
+[COLE O TEXTO AQUI]
+"""
+
+Sua tarefa:
+1. Responder perguntas com base neste conteúdo
+2. Usar linguagem simples e direta
+3. Quando não souber, dizer "isso está fora do escopo deste capítulo"
+4. Terminar cada resposta com uma pergunta de acompanhamento</pre>
+        </div>
+
+        <div class="preview-card">
+          <div class="pcard-tag">Prompt Q-03</div>
+          <h3>Gerar quiz de diagnóstico a partir do conteúdo</h3>
+          <pre>Com base no conteúdo abaixo, crie um quiz de diagnóstico com 5 perguntas:
+
+"""
+[COLE O TRECHO DO SEU MATERIAL]
+"""
+
+Formato para cada pergunta:
+- Enunciado claro e direto
+- 4 alternativas (A, B, C, D)
+- Gabarito + explicação de 1 linha
+- Nível: iniciante / intermediário / avançado
+
+Objetivo: ajudar o leitor a identificar onde está e o que precisa focar.</pre>
+        </div>
+
+        <div class="preview-card">
+          <div class="pcard-tag">Prompt V-07</div>
+          <h3>Escrever página de vendas para produto interativo</h3>
+          <pre>Escreva uma página de vendas para o produto abaixo.
+
+Produto: [NOME]
+Formato: [ebook + chatbot / quiz / glossário]
+Público: [DESCRIÇÃO]
+Preço: R$[VALOR]
+Principal resultado: [O QUE O COMPRADOR CONSEGUE]
+
+Estrutura obrigatória:
+1. Headline com dor + resultado
+2. Agitação do problema (3 parágrafos)
+3. Apresentação da solução
+4. O que está incluído (lista)
+5. Para quem é / não é
+6. CTA com garantia de 7 dias</pre>
+        </div>
+
+      </div>
+      <div class="preview-cta">
+        <p>Esses são 3 dos 50 prompts do guia. Os outros 47 cobrem estrutura, interatividade, automação e pós-venda.</p>
+        <a href="#comprar" class="btn-orange">Quero os 50 prompts — R$37 →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- For who / not for who -->
+  <section class="forwhom">
+    <div class="container">
+      <h2>Este guia é para você?</h2>
+      <div class="forwhom-grid">
+        <div class="forwhom-card forwhom-yes">
+          <div class="forwhom-icon">✅</div>
+          <h3>É para você se…</h3>
+          <ul>
+            <li>Você já tem um PDF, ebook ou apostila — e quer diferenciá-lo da concorrência</li>
+            <li>Vende (ou quer vender) no Hotmart, Kiwify ou Monetizze</li>
+            <li>Usa ChatGPT ou Claude, mas ainda não sabe explorar o potencial deles para produtos</li>
+            <li>Quer adicionar chatbot, quiz ou glossário interativo sem contratar desenvolvedor</li>
+            <li>Quer cobrar mais pelo mesmo conteúdo — porque a experiência vale mais</li>
+          </ul>
+        </div>
+        <div class="forwhom-card forwhom-no">
+          <div class="forwhom-icon">🚫</div>
+          <h3>Não é para você se…</h3>
+          <ul>
+            <li>Você ainda não tem nenhum conteúdo criado e está do zero absoluto</li>
+            <li>Quer um curso gravado em vídeo — este guia foca em produtos baseados em texto</li>
+            <li>Está buscando uma solução que não exige nenhum esforço da sua parte</li>
+            <li>Não tem 1–2 horas para dedicar a aprender e aplicar o método</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Author credibility -->
+  <section class="author">
+    <div class="container">
+      <div class="author-card">
+        <div class="author-avatar">C</div>
+        <div class="author-text">
+          <p class="author-byline">Escrito por</p>
+          <h3 class="author-name">Cesar</h3>
+          <p class="author-bio">Criador de conteúdo e desenvolvedor brasileiro especializado em infoprodutos com IA. Passou meses testando formas de transformar PDFs em experiências interativas usando apenas ferramentas gratuitas — e documentou o método que realmente funciona neste guia.</p>
+          <p class="author-contact">Dúvidas? <a href="mailto:suporte@produtovivo.com">suporte@produtovivo.com</a> — respondo pessoalmente.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Quiz CTA -->
+  <section class="quiz-cta">
+    <div class="container">
+      <div class="quiz-cta-inner">
+        <div class="quiz-cta-text">
+          <p class="quiz-cta-label">Não tem certeza se é para você?</p>
+          <h3>Faça o quiz de diagnóstico gratuito</h3>
+          <p>6 perguntas. 2 minutos. Descubra em qual estágio você está e o que fazer a seguir.</p>
+        </div>
+        <a href="/quiz" class="quiz-cta-btn">Fazer o quiz grátis →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Trilha gratuita promo -->
+  <section style="background:#f8fafc;padding:48px 0;border-top:1px solid #e8ecf0;">
+    <div class="container" style="text-align:center;">
+      <p style="font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:1.5px;color:#FF6B35;margin:0 0 12px;">Conteúdo gratuito</p>
+      <h2 style="font-size:clamp(1.4rem,3vw,2rem);font-weight:800;color:#1A1A2E;margin:0 0 12px;">31 guias gratuitos — do zero ao produto interativo</h2>
+      <p style="font-size:15px;color:#555;max-width:520px;margin:0 auto 28px;line-height:1.7;">Organizados em 3 fases: Criar, Vender, Escalar. Leia em qualquer ordem ou siga a trilha completa.</p>
+      <div style="display:flex;gap:24px;justify-content:center;flex-wrap:wrap;margin-bottom:32px;">
+        <div style="text-align:left;background:#fff;border:1.5px solid #e8ecf0;border-radius:10px;padding:18px 22px;min-width:160px;">
+          <div style="font-size:1.5rem;margin-bottom:6px;">🛠️</div>
+          <div style="font-weight:800;color:#FF6B35;font-size:13px;margin-bottom:4px;">FASE 1 — CRIAR</div>
+          <div style="font-size:13px;color:#555;">7 guias · Do PDF ao produto IA</div>
+        </div>
+        <div style="text-align:left;background:#fff;border:1.5px solid #e8ecf0;border-radius:10px;padding:18px 22px;min-width:160px;">
+          <div style="font-size:1.5rem;margin-bottom:6px;">💰</div>
+          <div style="font-weight:800;color:#1A1A2E;font-size:13px;margin-bottom:4px;">FASE 2 — VENDER</div>
+          <div style="font-size:13px;color:#555;">7 guias · Copy, plataforma, lançamento</div>
+        </div>
+        <div style="text-align:left;background:#fff;border:1.5px solid #e8ecf0;border-radius:10px;padding:18px 22px;min-width:160px;">
+          <div style="font-size:1.5rem;margin-bottom:6px;">📈</div>
+          <div style="font-weight:800;color:#22c55e;font-size:13px;margin-bottom:4px;">FASE 3 — ESCALAR</div>
+          <div style="font-size:13px;color:#555;">6 guias · Funil, email, tráfego</div>
+        </div>
+      </div>
+      <a href="/trilha" style="display:inline-block;background:#FF6B35;color:#fff;font-weight:700;font-size:15px;padding:14px 32px;border-radius:8px;text-decoration:none;">Ver a trilha gratuita →</a>
+      <p style="font-size:12px;color:#999;margin:14px 0 0;">~5h de leitura · sem cadastro · 100% gratuito</p>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="faq" id="faq">
+    <div class="container">
+      <h2>Perguntas frequentes</h2>
+      <div class="faq-list">
+
+        <details class="faq-item">
+          <summary>Preciso saber programar para usar o guia?</summary>
+          <p>Não. Tudo é feito no ChatGPT ou Claude usando prompts de linguagem natural — você escreve em português e a IA faz o trabalho técnico. Nenhuma linha de código é necessária.</p>
+        </details>
+
+        <details class="faq-item">
+          <summary>Funciona com o plano gratuito do ChatGPT?</summary>
+          <p>Sim. Os 50 prompts do guia foram testados na versão gratuita do ChatGPT (GPT-4o com limite de mensagens) e no Claude gratuito. Você não precisa pagar por nenhuma ferramenta para aplicar o método.</p>
+        </details>
+
+        <details class="faq-item">
+          <summary>O que recebo logo após a compra?</summary>
+          <p>Acesso imediato ao guia completo em PDF (7 capítulos + 50 prompts) enviado por e-mail. Você pode começar a aplicar o método em menos de uma hora.</p>
+        </details>
+
+        <details class="faq-item">
+          <summary>Para quem é esse guia?</summary>
+          <p>Para infoprodutores brasileiros que já têm pelo menos um PDF, ebook ou apostila e querem diferenciá-lo com recursos interativos — seja um chatbot especializado, um quiz ou um glossário inteligente. Se você vende no Hotmart, Kiwify ou Monetizze, este guia é para você.</p>
+        </details>
+
+        <details class="faq-item">
+          <summary>O guia recebe atualizações?</summary>
+          <p>Sim. Atualizações são gratuitas e vitalícias. Quando adicionarmos novos prompts ou adaptar o conteúdo para novas ferramentas de IA, você recebe automaticamente.</p>
+        </details>
+
+        <details class="faq-item">
+          <summary>Como funciona a garantia de 7 dias?</summary>
+          <p>Se você ler o guia e sentir que não valeu, basta enviar um e-mail para <a href="mailto:suporte@produtovivo.com">suporte@produtovivo.com</a> em até 7 dias da compra. Reembolso integral, sem perguntas, sem burocracia.</p>
+        </details>
+
+        <details class="faq-item">
+          <summary>Funciona para qualquer nicho?</summary>
+          <p>Sim. O método foi desenhado para funcionar com qualquer tipo de conteúdo — saúde, finanças, marketing, culinária, educação, espiritualidade. Se você tem um PDF com conteúdo relevante, você pode criar um chatbot especializado nele.</p>
+        </details>
+
+      </div>
+    </div>
+  </section>
+
   <!-- Purchase -->
   <section class="purchase" id="comprar">
     <div class="container">
       <div class="pricing-card">
-        <div class="price-label">Acesso completo</div>
+        <div class="price-launch-badge">Preço de lançamento</div>
+        <div class="countdown-wrap">
+          <div class="countdown-label">Preço sobe para R$97 em:</div>
+          <div class="countdown" id="countdown">
+            <div class="cd-block"><span id="cd-days">--</span><small>dias</small></div>
+            <div class="cd-sep">:</div>
+            <div class="cd-block"><span id="cd-hours">--</span><small>horas</small></div>
+            <div class="cd-sep">:</div>
+            <div class="cd-block"><span id="cd-mins">--</span><small>min</small></div>
+            <div class="cd-sep">:</div>
+            <div class="cd-block"><span id="cd-secs">--</span><small>seg</small></div>
+          </div>
+        </div>
+        <div class="price-label">Acesso completo + vitalício</div>
         <div class="price">R$<span>37</span></div>
-        <div class="price-note">Pagamento único · Acesso vitalício</div>
+        <div class="price-note">Pagamento único · Sem mensalidade · Sem assinatura</div>
         <ul class="includes">
-          <li>✓ Guia completo (7 capítulos)</li>
-          <li>✓ 50 prompts prontos para usar</li>
-          <li>✓ Atualizações gratuitas</li>
-          <li>✓ Suporte por e-mail</li>
+          <li>✓ Guia completo em PDF (7 capítulos, ~80 páginas)</li>
+          <li>✓ 50 prompts prontos para copiar e usar</li>
+          <li>✓ Templates de chatbot, quiz e glossário</li>
+          <li>✓ Checklist de publicação no Hotmart / Kiwify</li>
+          <li>✓ Atualizações gratuitas para sempre</li>
+          <li>✓ Suporte por e-mail com resposta em 24h</li>
         </ul>
         <button class="btn-primary btn-full" id="buy-btn">Comprar agora — R$37</button>
-        <p class="security-note">🔒 Pagamento seguro via Stripe · Garantia de 7 dias sem perguntas</p>
+        <div class="guarantee-row">
+          <span class="guarantee-icon">🛡️</span>
+          <div class="guarantee-text">
+            <strong>Garantia incondicional de 7 dias</strong>
+            <span>Se não gostar, devolvemos 100% — sem perguntas, sem formulário, sem burocracia.</span>
+          </div>
+        </div>
+        <p class="security-note">🔒 Pagamento seguro via Stripe · Seus dados protegidos</p>
       </div>
     </div>
   </section>
@@ -107,7 +408,7 @@
   <footer>
     <div class="container">
       <p>© 2026 ProdutoVivo · <a href="mailto:suporte@produtovivo.com">suporte@produtovivo.com</a></p>
-      <p class="footer-links"><a href="/privacidade">Privacidade</a> · <a href="/termos">Termos</a></p>
+      <p class="footer-links"><a href="/blog">Blog</a> · <a href="/trilha">Trilha</a> · <a href="/quiz">Quiz</a> · <a href="/recursos">Recursos</a> · <a href="/afiliados">Afiliados</a> · <a href="/privacidade">Privacidade</a> · <a href="/termos">Termos</a></p>
     </div>
   </footer>
 

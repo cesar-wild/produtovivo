@@ -1,0 +1,553 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Trilha Gratuita: Como Criar e Vender Infoprodutos com IA | ProdutoVivo</title>
+  <meta name="description" content="Trilha de aprendizado gratuita em 3 fases: Criar, Vender e Escalar. 15 guias práticos organizados em ordem para infoprodutores brasileiros." />
+  <link rel="canonical" href="https://produtovivo.com/trilha" />
+  <meta property="og:title" content="Trilha Gratuita: Como Criar e Vender Infoprodutos com IA" />
+  <meta property="og:description" content="15 guias organizados em 3 fases para você criar, lançar e escalar seu infoproduto com IA — 100% gratuito." />
+  <meta property="og:url" content="https://produtovivo.com/trilha" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="ProdutoVivo" />
+  <!-- Meta Pixel -->
+  <script>
+    !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '4520253334926563');
+    fbq('track', 'PageView');
+  </script>
+  <link rel="stylesheet" href="/style.css" />
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Course",
+    "name": "Trilha Gratuita: Como Criar e Vender Infoprodutos com IA",
+    "description": "15 guias práticos organizados em 3 fases para criar, lançar e escalar infoprodutos com IA",
+    "provider": { "@type": "Organization", "name": "ProdutoVivo", "url": "https://produtovivo.com" },
+    "url": "https://produtovivo.com/trilha",
+    "inLanguage": "pt-BR",
+    "isAccessibleForFree": true,
+    "educationalLevel": "Beginner",
+    "teaches": "Como criar, lançar e vender infoprodutos usando inteligência artificial"
+  }
+  </script>
+  <style>
+    .trilha-hero { background: linear-gradient(135deg, #1A1A2E 0%, #2d2d4e 100%); padding: 60px 0 48px; text-align: center; }
+    .trilha-hero .badge { display: inline-block; background: #FF6B35; color: #fff; font-size: 11px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; padding: 4px 14px; border-radius: 20px; margin-bottom: 18px; }
+    .trilha-hero h1 { font-size: clamp(1.7rem, 4vw, 2.4rem); font-weight: 800; color: #fff; margin: 0 0 14px; }
+    .trilha-hero p { color: #9999bb; font-size: 15px; max-width: 540px; margin: 0 auto 28px; }
+    .trilha-stats { display: flex; gap: 32px; justify-content: center; flex-wrap: wrap; margin-top: 8px; }
+    .trilha-stat { color: #fff; text-align: center; }
+    .trilha-stat strong { display: block; font-size: 1.8rem; font-weight: 800; color: #FF6B35; }
+    .trilha-stat span { font-size: 12px; color: #9999bb; }
+
+    .trilha-body { max-width: 760px; margin: 0 auto; padding: 48px 20px 80px; }
+
+    .fase { margin-bottom: 48px; }
+    .fase-header { display: flex; align-items: center; gap: 14px; margin-bottom: 24px; padding-bottom: 14px; border-bottom: 2px solid #f0f0f0; }
+    .fase-num { width: 44px; height: 44px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 800; font-size: 1.1rem; color: #fff; flex-shrink: 0; }
+    .fase-1 .fase-num { background: #FF6B35; }
+    .fase-2 .fase-num { background: #1A1A2E; }
+    .fase-3 .fase-num { background: #22c55e; }
+    .fase-title { font-size: 1.25rem; font-weight: 800; color: #1A1A2E; margin: 0; }
+    .fase-sub { font-size: 13px; color: #666; margin: 2px 0 0; }
+
+    .trilha-list { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 12px; }
+    .trilha-item { display: flex; align-items: flex-start; gap: 14px; padding: 16px 18px; border: 1.5px solid #eee; border-radius: 10px; text-decoration: none; color: inherit; transition: border-color .15s, box-shadow .15s; }
+    .trilha-item:hover { border-color: #FF6B35; box-shadow: 0 2px 12px rgba(0,0,0,.07); }
+    .trilha-item-num { font-size: 11px; font-weight: 700; color: #999; background: #f5f5f5; border-radius: 6px; padding: 3px 8px; flex-shrink: 0; margin-top: 2px; }
+    .trilha-item-icon { font-size: 1.5rem; flex-shrink: 0; }
+    .trilha-item-body { flex: 1; }
+    .trilha-item-title { font-size: 15px; font-weight: 700; color: #1A1A2E; margin: 0 0 4px; }
+    .trilha-item-desc { font-size: 13px; color: #555; margin: 0; }
+    .trilha-item-meta { font-size: 11px; color: #aaa; margin-top: 6px; }
+    .trilha-item-tag { display: inline-block; font-size: 10px; font-weight: 700; letter-spacing: .5px; text-transform: uppercase; background: #fff3ee; color: #FF6B35; border-radius: 4px; padding: 2px 7px; margin-right: 6px; }
+
+    .trilha-cta-box { background: linear-gradient(135deg, #1A1A2E, #2d2d4e); border-radius: 16px; padding: 36px; text-align: center; margin-top: 48px; }
+    .trilha-cta-box h3 { color: #fff; font-size: 1.3rem; margin: 0 0 10px; }
+    .trilha-cta-box p { color: #9999bb; font-size: 14px; margin: 0 0 24px; }
+    .trilha-cta-box .btn-primary { display: inline-block; background: #FF6B35; color: #fff; font-weight: 700; padding: 14px 32px; border-radius: 8px; text-decoration: none; font-size: 15px; }
+    .trilha-cta-box .cta-note { font-size: 12px; color: #666; margin-top: 10px; }
+
+    .quiz-banner { background: #fff3ee; border: 1.5px solid #FF6B35; border-radius: 12px; padding: 20px 24px; display: flex; align-items: center; gap: 16px; margin-bottom: 36px; text-decoration: none; color: inherit; }
+    .quiz-banner-icon { font-size: 2rem; flex-shrink: 0; }
+    .quiz-banner-text strong { display: block; font-size: 15px; color: #1A1A2E; margin-bottom: 2px; }
+    .quiz-banner-text span { font-size: 13px; color: #555; }
+    .quiz-banner-arrow { color: #FF6B35; font-weight: 700; font-size: 1.2rem; margin-left: auto; }
+  </style>
+</head>
+<body>
+  <nav class="site-nav">
+    <div class="container site-nav-inner">
+      <a href="/" class="nav-logo">ProdutoVivo</a>
+      <button class="nav-hamburger" aria-label="Menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+      <div class="nav-links">
+        <a href="/blog">Blog</a>
+        <a href="/trilha">Trilha</a>
+        <a href="/quiz">Quiz grátis</a>
+        <a href="/recursos">Recursos</a>
+        <a href="/#comprar" class="btn-nav">Comprar guia</a>
+      </div>
+    </div>
+  </nav>
+
+  <div class="trilha-hero">
+    <div class="container">
+      <div class="badge">100% gratuito</div>
+      <h1>Trilha Completa: Infoprodutos com IA</h1>
+      <p>31 guias práticos organizados em ordem. Do zero ao produto interativo publicado — no seu ritmo.</p>
+      <div class="trilha-stats">
+        <div class="trilha-stat"><strong>31</strong><span>guias gratuitos</span></div>
+        <div class="trilha-stat"><strong>3</strong><span>fases de aprendizado</span></div>
+        <div class="trilha-stat"><strong>~4h</strong><span>de leitura total</span></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="trilha-body">
+
+    <a href="/quiz" class="quiz-banner">
+      <div class="quiz-banner-icon">🎯</div>
+      <div class="quiz-banner-text">
+        <strong>Não sabe por onde começar na trilha?</strong>
+        <span>Faça o quiz de diagnóstico em 2 minutos — descubra seu estágio e o próximo passo ideal.</span>
+      </div>
+      <div class="quiz-banner-arrow">→</div>
+    </a>
+
+    <!-- FASE 1: CRIAR -->
+    <div class="fase fase-1">
+      <div class="fase-header">
+        <div class="fase-num">1</div>
+        <div>
+          <div class="fase-title">Fase 1 — Criar</div>
+          <div class="fase-sub">Fundamentos, ferramentas e produção do seu primeiro infoproduto</div>
+        </div>
+      </div>
+      <ul class="trilha-list">
+
+        <li>
+          <a href="/blog/como-criar-infoproduto-do-zero" class="trilha-item">
+            <div class="trilha-item-num">01</div>
+            <div class="trilha-item-icon">💡</div>
+            <div class="trilha-item-body">
+              <div class="trilha-item-title">Como Criar um Infoproduto do Zero</div>
+              <p class="trilha-item-desc">Nicho, avatar, validação, formato e publicação. O passo a passo completo para quem está começando.</p>
+              <div class="trilha-item-meta"><span class="trilha-item-tag">Fundamentos</span>13 min</div>
+            </div>
+          </a>
+        </li>
+
+        <li>
+          <a href="/blog/ferramentas-de-ia-para-infoprodutores" class="trilha-item">
+            <div class="trilha-item-num">02</div>
+            <div class="trilha-item-icon">🤖</div>
+            <div class="trilha-item-body">
+              <div class="trilha-item-title">5 Ferramentas de IA para Infoprodutores Brasileiros</div>
+              <p class="trilha-item-desc">ChatGPT, Claude, Gamma, Typebot e ElevenLabs — quais valem seu tempo e como usar cada uma.</p>
+              <div class="trilha-item-meta"><span class="trilha-item-tag">Ferramentas</span>8 min</div>
+            </div>
+          </a>
+        </li>
+
+        <li>
+          <a href="/blog/prompts-chatgpt-para-infoprodutores" class="trilha-item">
+            <div class="trilha-item-num">03</div>
+            <div class="trilha-item-icon">⚡</div>
+            <div class="trilha-item-body">
+              <div class="trilha-item-title">15 Prompts ChatGPT para Criar Infoprodutos</div>
+              <p class="trilha-item-desc">Prompts testados para estruturar ebooks, criar quizzes, escrever copy de vendas e engajar compradores.</p>
+              <div class="trilha-item-meta"><span class="trilha-item-tag">Prompts</span>10 min</div>
+            </div>
+          </a>
+        </li>
+
+        <li>
+          <a href="/blog/como-criar-ebook-com-ia" class="trilha-item">
+            <div class="trilha-item-num">04</div>
+            <div class="trilha-item-icon">📖</div>
+            <div class="trilha-item-body">
+              <div class="trilha-item-title">Como Criar um Ebook com IA em 2026</div>
+              <p class="trilha-item-desc">6 passos para ir da ideia ao PDF publicado — com prompts exatos de estrutura, escrita e revisão.</p>
+              <div class="trilha-item-meta"><span class="trilha-item-tag">Tutorial</span>9 min</div>
+            </div>
+          </a>
+        </li>
+
+        <li>
+          <a href="/blog/como-transformar-pdf-em-app-interativo-com-ia" class="trilha-item">
+            <div class="trilha-item-num">05</div>
+            <div class="trilha-item-icon">📄→📱</div>
+            <div class="trilha-item-body">
+              <div class="trilha-item-title">Como Transformar PDF em App Interativo com IA</div>
+              <p class="trilha-item-desc">Passo a passo para converter qualquer PDF em chatbot, quiz e glossário usando IA — sem código.</p>
+              <div class="trilha-item-meta"><span class="trilha-item-tag">Tutorial</span>7 min</div>
+            </div>
+          </a>
+        </li>
+
+        <li>
+          <a href="/blog/chatbot-para-infoproduto" class="trilha-item">
+            <div class="trilha-item-num">06</div>
+            <div class="trilha-item-icon">🤖</div>
+            <div class="trilha-item-body">
+              <div class="trilha-item-title">Como Criar um Chatbot para seu Infoproduto</div>
+              <p class="trilha-item-desc">Custom GPT ou Typebot: passo a passo para criar um assistente IA especializado no conteúdo do seu produto.</p>
+              <div class="trilha-item-meta"><span class="trilha-item-tag">Interatividade</span>9 min</div>
+            </div>
+          </a>
+        </li>
+
+        <li>
+          <a href="/blog/como-criar-quiz-para-infoproduto-com-ia" class="trilha-item">
+            <div class="trilha-item-num">07</div>
+            <div class="trilha-item-icon">🎯</div>
+            <div class="trilha-item-body">
+              <div class="trilha-item-title">Como Criar Quiz para Infoproduto com IA</div>
+              <p class="trilha-item-desc">4 tipos de quiz que aumentam engajamento e conversão — com prompts prontos para criar em minutos.</p>
+              <div class="trilha-item-meta"><span class="trilha-item-tag">Tutorial</span>7 min</div>
+            </div>
+          </a>
+        </li>
+
+      </ul>
+    </div>
+
+    <!-- FASE 2: VENDER -->
+    <div class="fase fase-2">
+      <div class="fase-header">
+        <div class="fase-num">2</div>
+        <div>
+          <div class="fase-title">Fase 2 — Vender</div>
+          <div class="fase-sub">Precificação, copy, plataformas e lançamento da primeira venda</div>
+        </div>
+      </div>
+      <ul class="trilha-list">
+
+        <li>
+          <a href="/blog/como-precificar-infoproduto" class="trilha-item">
+            <div class="trilha-item-num">08</div>
+            <div class="trilha-item-icon">💰</div>
+            <div class="trilha-item-body">
+              <div class="trilha-item-title">Como Precificar seu Infoproduto</div>
+              <p class="trilha-item-desc">5 métodos testados para definir o preço certo — com tabela de referência por nicho e os erros mais caros.</p>
+              <div class="trilha-item-meta"><span class="trilha-item-tag">Estratégia</span>8 min</div>
+            </div>
+          </a>
+        </li>
+
+        <li>
+          <a href="/blog/copywriting-para-infoproduto" class="trilha-item">
+            <div class="trilha-item-num">09</div>
+            <div class="trilha-item-icon">✍️</div>
+            <div class="trilha-item-body">
+              <div class="trilha-item-title">Copywriting para Infoproduto: Guia Completo</div>
+              <p class="trilha-item-desc">Os 8 blocos de copy que toda página de vendas precisa — com checklist de 20 pontos e prompts prontos.</p>
+              <div class="trilha-item-meta"><span class="trilha-item-tag">Copy</span>12 min</div>
+            </div>
+          </a>
+        </li>
+
+        <li>
+          <a href="/blog/landing-page-para-infoproduto" class="trilha-item">
+            <div class="trilha-item-num">10</div>
+            <div class="trilha-item-icon">📄</div>
+            <div class="trilha-item-body">
+              <div class="trilha-item-title">Landing Page para Infoproduto: Como Criar com IA</div>
+              <p class="trilha-item-desc">Estrutura completa em 7 blocos + prompts de IA para escrever headline, benefícios, prova social e CTA.</p>
+              <div class="trilha-item-meta"><span class="trilha-item-tag">Vendas</span>9 min</div>
+            </div>
+          </a>
+        </li>
+
+        <li>
+          <a href="/blog/como-vender-infoproduto-no-hotmart" class="trilha-item">
+            <div class="trilha-item-num">11</div>
+            <div class="trilha-item-icon">🛒</div>
+            <div class="trilha-item-body">
+              <div class="trilha-item-title">Como Vender Infoproduto no Hotmart em 2026</div>
+              <p class="trilha-item-desc">Passo a passo para criar conta, cadastrar produto, configurar página de vendas e começar a vender.</p>
+              <div class="trilha-item-meta"><span class="trilha-item-tag">Plataforma</span>9 min</div>
+            </div>
+          </a>
+        </li>
+
+        <li>
+          <a href="/blog/kiwify-vs-hotmart" class="trilha-item">
+            <div class="trilha-item-num">12</div>
+            <div class="trilha-item-icon">⚖️</div>
+            <div class="trilha-item-body">
+              <div class="trilha-item-title">Kiwify vs Hotmart: Qual Plataforma Usar?</div>
+              <p class="trilha-item-desc">Comparação completa de taxas, checkout, afiliados e área de membros — sem propaganda.</p>
+              <div class="trilha-item-meta"><span class="trilha-item-tag">Plataformas</span>10 min</div>
+            </div>
+          </a>
+        </li>
+
+        <li>
+          <a href="/blog/vender-infoproduto-sem-audiencia" class="trilha-item">
+            <div class="trilha-item-num">13</div>
+            <div class="trilha-item-icon">🎙️</div>
+            <div class="trilha-item-body">
+              <div class="trilha-item-title">Como Vender Sem Audiência (7 Estratégias)</div>
+              <p class="trilha-item-desc">Grupos de nicho, cold outreach, parcerias, tráfego pago e rede pessoal — como conseguir as primeiras vendas do zero.</p>
+              <div class="trilha-item-meta"><span class="trilha-item-tag">Primeiras Vendas</span>10 min</div>
+            </div>
+          </a>
+        </li>
+
+        <li>
+          <a href="/blog/como-lancar-infoproduto" class="trilha-item">
+            <div class="trilha-item-num">14</div>
+            <div class="trilha-item-icon">🚀</div>
+            <div class="trilha-item-body">
+              <div class="trilha-item-title">Como Lançar um Infoproduto: Guia Completo</div>
+              <p class="trilha-item-desc">Cronograma de 30 dias: validação, pré-lançamento 14 dias, 6 e-mails de lançamento, pós-lançamento.</p>
+              <div class="trilha-item-meta"><span class="trilha-item-tag">Lançamento</span>11 min</div>
+            </div>
+          </a>
+        </li>
+
+      </ul>
+    </div>
+
+    <!-- FASE 3: ESCALAR -->
+    <div class="fase fase-3">
+      <div class="fase-header">
+        <div class="fase-num">3</div>
+        <div>
+          <div class="fase-title">Fase 3 — Escalar</div>
+          <div class="fase-sub">Funil, tráfego, e-mail e sistema de vendas automático</div>
+        </div>
+      </div>
+      <ul class="trilha-list">
+
+        <li>
+          <a href="/blog/funil-de-vendas-para-infoproduto" class="trilha-item">
+            <div class="trilha-item-num">15</div>
+            <div class="trilha-item-icon">🎯</div>
+            <div class="trilha-item-body">
+              <div class="trilha-item-title">Funil de Vendas para Infoproduto: Guia Completo</div>
+              <p class="trilha-item-desc">Como montar um funil completo: quiz → captura → e-mails → página de vendas → checkout. Prompts prontos.</p>
+              <div class="trilha-item-meta"><span class="trilha-item-tag">Funil</span>10 min</div>
+            </div>
+          </a>
+        </li>
+
+        <li>
+          <a href="/blog/email-marketing-para-infoproduto" class="trilha-item">
+            <div class="trilha-item-num">16</div>
+            <div class="trilha-item-icon">📧</div>
+            <div class="trilha-item-body">
+              <div class="trilha-item-title">Email Marketing para Infoproduto: Guia Completo</div>
+              <p class="trilha-item-desc">4 sequências automáticas que vendem enquanto você dorme — templates prontos, benchmarks reais.</p>
+              <div class="trilha-item-meta"><span class="trilha-item-tag">E-mail</span>11 min</div>
+            </div>
+          </a>
+        </li>
+
+        <li>
+          <a href="/blog/trafego-organico-para-infoproduto" class="trilha-item">
+            <div class="trilha-item-num">17</div>
+            <div class="trilha-item-icon">🌱</div>
+            <div class="trilha-item-body">
+              <div class="trilha-item-title">Tráfego Orgânico para Infoproduto: 5 Canais</div>
+              <p class="trilha-item-desc">SEO, Reels, YouTube, WhatsApp e Pinterest — como gerar visitantes qualificados sem gastar com anúncios.</p>
+              <div class="trilha-item-meta"><span class="trilha-item-tag">Tráfego</span>10 min</div>
+            </div>
+          </a>
+        </li>
+
+        <li>
+          <a href="/blog/renda-passiva-com-infoproduto" class="trilha-item">
+            <div class="trilha-item-num">18</div>
+            <div class="trilha-item-icon">💤</div>
+            <div class="trilha-item-body">
+              <div class="trilha-item-title">Renda Passiva com Infoproduto: Como Funciona</div>
+              <p class="trilha-item-desc">Os 4 pilares do sistema de vendas automático: tráfego, captura, funil evergreen e afiliados.</p>
+              <div class="trilha-item-meta"><span class="trilha-item-tag">Escala</span>11 min</div>
+            </div>
+          </a>
+        </li>
+
+        <li>
+          <a href="/blog/como-monetizar-conhecimento" class="trilha-item">
+            <div class="trilha-item-num">19</div>
+            <div class="trilha-item-icon">🧠</div>
+            <div class="trilha-item-body">
+              <div class="trilha-item-title">Como Monetizar seu Conhecimento em 2026</div>
+              <p class="trilha-item-desc">8 formatos — infoproduto, mentoria, consultoria, comunidade, newsletter — e como escolher o certo para seu perfil.</p>
+              <div class="trilha-item-meta"><span class="trilha-item-tag">Monetização</span>9 min</div>
+            </div>
+          </a>
+        </li>
+
+        <li>
+          <a href="/blog/como-criar-pdf-interativo" class="trilha-item">
+            <div class="trilha-item-num">20</div>
+            <div class="trilha-item-icon">📄✨</div>
+            <div class="trilha-item-body">
+              <div class="trilha-item-title">Como Criar um PDF Interativo com IA (Sem Programar)</div>
+              <p class="trilha-item-desc">Custom GPT, quiz com Typebot e glossário navegável — 3 métodos para transformar qualquer PDF em produto premium.</p>
+              <div class="trilha-item-meta"><span class="trilha-item-tag">PDF Interativo</span>11 min</div>
+            </div>
+          </a>
+        </li>
+
+        <li>
+          <a href="/blog/youtube-para-infoprodutores" class="trilha-item">
+            <div class="trilha-item-num">21</div>
+            <div class="trilha-item-icon">🎬</div>
+            <div class="trilha-item-body">
+              <div class="trilha-item-title">YouTube para Infoprodutores: Como Usar o Canal para Vender Mais</div>
+              <p class="trilha-item-desc">Nicho, SEO de vídeo, funil de vendas e como transformar visualizações em vendas — guia completo.</p>
+              <div class="trilha-item-meta"><span class="trilha-item-tag">YouTube</span>12 min</div>
+            </div>
+          </a>
+        </li>
+
+        <li>
+          <a href="/blog/como-criar-curso-online" class="trilha-item">
+            <div class="trilha-item-num">22</div>
+            <div class="trilha-item-icon">🎓</div>
+            <div class="trilha-item-body">
+              <div class="trilha-item-title">Como Criar um Curso Online do Zero</div>
+              <p class="trilha-item-desc">Do tema ao primeiro pagamento: formato, gravação, plataforma, precificação e lançamento.</p>
+              <div class="trilha-item-meta"><span class="trilha-item-tag">Curso Online</span>13 min</div>
+            </div>
+          </a>
+        </li>
+
+        <li>
+          <a href="/blog/instagram-para-infoprodutores" class="trilha-item">
+            <div class="trilha-item-num">23</div>
+            <div class="trilha-item-icon">📱</div>
+            <div class="trilha-item-body">
+              <div class="trilha-item-title">Instagram para Infoprodutores: Estratégia Completa</div>
+              <p class="trilha-item-desc">Reels, Stories, Direct e funil — como transformar seguidores em compradores mesmo com audiência pequena.</p>
+              <div class="trilha-item-meta"><span class="trilha-item-tag">Instagram</span>11 min</div>
+            </div>
+          </a>
+        </li>
+
+        <li>
+          <a href="/blog/trafego-pago-para-infoproduto" class="trilha-item">
+            <div class="trilha-item-num">24</div>
+            <div class="trilha-item-icon">📊</div>
+            <div class="trilha-item-body">
+              <div class="trilha-item-title">Tráfego Pago para Infoproduto: Meta Ads e Google Ads</div>
+              <p class="trilha-item-desc">Pixel, públicos, criativos, orçamento e escala — o que funciona em 2026 para infoprodutores.</p>
+              <div class="trilha-item-meta"><span class="trilha-item-tag">Tráfego Pago</span>12 min</div>
+            </div>
+          </a>
+        </li>
+
+        <li>
+          <a href="/blog/marketing-de-afiliados-para-infoprodutores" class="trilha-item">
+            <div class="trilha-item-num">25</div>
+            <div class="trilha-item-icon">🤝</div>
+            <div class="trilha-item-body">
+              <div class="trilha-item-title">Marketing de Afiliados para Infoprodutores</div>
+              <p class="trilha-item-desc">Comissão ideal, materiais prontos, recrutamento e como escalar vendas sem aumentar o budget de ads.</p>
+              <div class="trilha-item-meta"><span class="trilha-item-tag">Afiliados</span>10 min</div>
+            </div>
+          </a>
+        </li>
+
+        <li>
+          <a href="/blog/whatsapp-para-infoprodutores" class="trilha-item">
+            <div class="trilha-item-num">26</div>
+            <div class="trilha-item-icon">📱</div>
+            <div class="trilha-item-body">
+              <div class="trilha-item-title">WhatsApp para Infoprodutores: Funil e Estratégia de Vendas</div>
+              <p class="trilha-item-desc">Lista de transmissão, sequência de 7 mensagens e automação — o canal de 98% de abertura sem virar spam.</p>
+              <div class="trilha-item-meta"><span class="trilha-item-tag">WhatsApp</span>11 min</div>
+            </div>
+          </a>
+        </li>
+
+        <li>
+          <a href="/blog/como-escolher-nicho-para-infoproduto" class="trilha-item">
+            <div class="trilha-item-num">27</div>
+            <div class="trilha-item-icon">🎯</div>
+            <div class="trilha-item-body">
+              <div class="trilha-item-title">Como Escolher Nicho para Infoproduto: Método dos 3 Círculos</div>
+              <p class="trilha-item-desc">Conhecimento + paixão + mercado: como validar demanda, analisar concorrência e definir o subnicho certo.</p>
+              <div class="trilha-item-meta"><span class="trilha-item-tag">Nicho</span>12 min</div>
+            </div>
+          </a>
+        </li>
+
+        <li>
+          <a href="/blog/webinar-para-infoproduto" class="trilha-item">
+            <div class="trilha-item-num">28</div>
+            <div class="trilha-item-icon">🎙</div>
+            <div class="trilha-item-body">
+              <div class="trilha-item-title">Webinar para Infoproduto: Como Fazer, Converter e Vender ao Vivo</div>
+              <p class="trilha-item-desc">Estrutura P.A.S.T.O.R., pitch de vendas, plataformas, follow-up de 3 dias e métricas realistas.</p>
+              <div class="trilha-item-meta"><span class="trilha-item-tag">Webinar</span>13 min</div>
+            </div>
+          </a>
+        </li>
+
+        <li>
+          <a href="/blog/tiktok-para-infoprodutores" class="trilha-item">
+            <div class="trilha-item-num">29</div>
+            <div class="trilha-item-icon">🎵</div>
+            <div class="trilha-item-body">
+              <div class="trilha-item-title">TikTok para Infoprodutores: Como Criar Conteúdo e Vender</div>
+              <p class="trilha-item-desc">Algoritmo, os 7 tipos de vídeo que convertem, funil TikTok → lead → venda e alcance orgânico.</p>
+              <div class="trilha-item-meta"><span class="trilha-item-tag">TikTok</span>11 min</div>
+            </div>
+          </a>
+        </li>
+
+        <li>
+          <a href="/blog/como-criar-comunidade-paga" class="trilha-item">
+            <div class="trilha-item-num">30</div>
+            <div class="trilha-item-icon">🏘</div>
+            <div class="trilha-item-body">
+              <div class="trilha-item-title">Como Criar uma Comunidade Paga para Infoprodutos</div>
+              <p class="trilha-item-desc">Plataformas, precificação, lançamento fundador, sistema anti-churn e escala para MRR previsível.</p>
+              <div class="trilha-item-meta"><span class="trilha-item-tag">Comunidade</span>12 min</div>
+            </div>
+          </a>
+        </li>
+
+        <li>
+          <a href="/blog/o-que-e-infoproduto" class="trilha-item">
+            <div class="trilha-item-num">31</div>
+            <div class="trilha-item-icon">💡</div>
+            <div class="trilha-item-body">
+              <div class="trilha-item-title">O Que É Infoproduto? Tipos, Exemplos e Como Criar</div>
+              <p class="trilha-item-desc">Definição completa, os 8 tipos com exemplos reais, comparação de formatos e custo zero para começar.</p>
+              <div class="trilha-item-meta"><span class="trilha-item-tag">Fundamentos</span>10 min</div>
+            </div>
+          </a>
+        </li>
+
+      </ul>
+    </div>
+
+    <!-- CTA final -->
+    <div class="trilha-cta-box">
+      <h3>Pronto para dar o próximo passo?</h3>
+      <p>A trilha gratuita te mostra o caminho. O Guia ProdutoVivo te dá as ferramentas — 50 prompts prontos para criar um produto interativo que se diferencia da concorrência.</p>
+      <a href="/#comprar" class="btn-primary">Ver o Guia ProdutoVivo — R$37</a>
+      <div class="cta-note">Preço sobe para R$97 em 15/05 · Garantia de 7 dias</div>
+    </div>
+
+  </div>
+
+  <footer>
+    <p>© 2026 ProdutoVivo · <a href="mailto:suporte@produtovivo.com">suporte@produtovivo.com</a></p>
+    <p><a href="/">Home</a> · <a href="/quiz">Quiz</a> · <a href="/blog">Blog</a>
+        <a href="/trilha">Trilha</a> · <a href="/recursos">Recursos</a> · <a href="/afiliados">Afiliados</a> · <a href="/privacidade">Privacidade</a> · <a href="/termos">Termos</a></p>
+  </footer>
+
+  <script src="/main.js"></script>
+</body>
+</html>

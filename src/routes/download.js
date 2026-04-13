@@ -6,11 +6,17 @@ const { pool } = require('../db');
 const router = express.Router();
 
 const PRODUCT_DIR = path.join(__dirname, '..', '..', 'product');
-const GUIDE_FILE = 'guia-produtovivo-v1.pdf';
+
+// Prefer PDF; fall back to HTML if PDF not yet generated.
+const CANDIDATES = [
+  { file: 'guia-produtovivo-v1.pdf', downloadName: 'Guia-ProdutoVivo.pdf' },
+  { file: 'guia-produtovivo-v1.html', downloadName: 'Guia-ProdutoVivo.html' },
+];
 
 /**
  * GET /download?token=xxx
  * Validates the purchase token and streams the guide file.
+ * Serves PDF if available; falls back to HTML.
  */
 router.get('/', async (req, res) => {
   const { token } = req.query;
@@ -36,13 +42,14 @@ router.get('/', async (req, res) => {
     return res.status(410).send('Este link expirou. Envie um e-mail para suporte@produtovivo.com para obter um novo link.');
   }
 
-  const filePath = path.join(PRODUCT_DIR, GUIDE_FILE);
-  if (!fs.existsSync(filePath)) {
-    console.error('Guide file not found:', filePath);
+  const candidate = CANDIDATES.find(c => fs.existsSync(path.join(PRODUCT_DIR, c.file)));
+  if (!candidate) {
+    console.error('Guide file not found in product dir:', PRODUCT_DIR);
     return res.status(503).send('Arquivo temporariamente indisponível. Contate suporte@produtovivo.com');
   }
 
-  res.download(filePath, 'Guia-ProdutoVivo.pdf', (err) => {
+  const filePath = path.join(PRODUCT_DIR, candidate.file);
+  res.download(filePath, candidate.downloadName, (err) => {
     if (err) console.error('Download stream error:', err);
   });
 });
