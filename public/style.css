@@ -205,3 +205,14 @@ footer a { color: #94a3b8; text-decoration: none; }
 .guarantee-text { display: flex; flex-direction: column; gap: 4px; }
 .guarantee-text strong { font-size: 14px; color: #166534; }
 .guarantee-text span { font-size: 13px; color: #15803d; line-height: 1.4; }
+
+/* Site navigation */
+.site-nav { background: #0f172a; border-bottom: 1px solid #1e293b; position: sticky; top: 0; z-index: 100; }
+.site-nav-inner { display: flex; align-items: center; justify-content: space-between; padding: 14px 0; gap: 16px; }
+.nav-logo { font-size: 16px; font-weight: 800; color: #fff; text-decoration: none; letter-spacing: -.3px; }
+.nav-links { display: flex; align-items: center; gap: 24px; }
+.nav-links a { font-size: 14px; font-weight: 500; color: #94a3b8; text-decoration: none; transition: color .15s; }
+.nav-links a:hover { color: #fff; }
+.nav-cta { background: #FF6B35 !important; color: #fff !important; padding: 8px 18px; border-radius: 6px; font-weight: 700 !important; font-size: 13px !important; transition: background .15s !important; }
+.nav-cta:hover { background: #e55a24 !important; }
+@media(max-width:560px) { .nav-links { gap: 12px; } .nav-links a:not(.nav-cta) { display: none; } }
