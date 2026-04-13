@@ -1,6 +1,14 @@
 const { Resend } = require('resend');
 
-const resend = new Resend(process.env.RESEND_API_KEY);
+// Lazy client — instantiated only when RESEND_API_KEY is set
+let _resend;
+function getResend() {
+  if (!_resend) {
+    if (!process.env.RESEND_API_KEY) throw new Error('RESEND_API_KEY not configured');
+    _resend = new Resend(process.env.RESEND_API_KEY);
+  }
+  return _resend;
+}
 
 const FROM = process.env.FROM_EMAIL || 'noreply@produtovivo.com';
 const SUPPORT = process.env.SUPPORT_EMAIL || 'suporte@produtovivo.com';
@@ -11,7 +19,7 @@ const SUPPORT = process.env.SUPPORT_EMAIL || 'suporte@produtovivo.com';
 async function sendPurchaseEmail({ to, name, downloadUrl }) {
   const firstName = name ? name.split(' ')[0] : 'Criador';
 
-  const { error } = await resend.emails.send({
+  const { error } = await getResend().emails.send({
     from: FROM,
     to,
     replyTo: SUPPORT,
