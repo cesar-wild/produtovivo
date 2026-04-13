@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cancelar inscrição — ProdutoVivo</title>
+  <meta name="robots" content="noindex, nofollow">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Inter', -apple-system, sans-serif;
+      background: #f8fafc;
+      color: #0f172a;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+    .nav { background: #0f172a; padding: 14px 20px; text-align: center; }
+    .nav a { color: #fff; font-weight: 800; font-size: 18px; text-decoration: none; }
+
+    .wrap {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 48px 20px;
+    }
+    .card {
+      background: #fff;
+      border-radius: 16px;
+      box-shadow: 0 4px 24px rgba(0,0,0,.07);
+      padding: 48px 40px;
+      max-width: 480px;
+      width: 100%;
+      text-align: center;
+    }
+
+    /* States */
+    .state { display: none; }
+    .state.active { display: block; }
+
+    .emoji { font-size: 48px; margin-bottom: 20px; }
+    h1 { font-size: 1.5rem; font-weight: 700; margin-bottom: 12px; color: #0f172a; }
+    p { font-size: 15px; color: #475569; line-height: 1.7; margin-bottom: 0; }
+
+    .email-display {
+      background: #f1f5f9;
+      border-radius: 8px;
+      padding: 12px 16px;
+      font-size: 14px;
+      color: #334155;
+      margin: 20px 0;
+      font-weight: 600;
+      word-break: break-all;
+    }
+
+    .btn-confirm {
+      display: inline-block;
+      background: #ef4444;
+      color: #fff;
+      border: none;
+      padding: 14px 32px;
+      border-radius: 8px;
+      font-size: 15px;
+      font-weight: 700;
+      cursor: pointer;
+      margin-top: 24px;
+      width: 100%;
+      transition: background .15s;
+    }
+    .btn-confirm:hover { background: #dc2626; }
+    .btn-confirm:disabled { opacity: .6; cursor: not-allowed; }
+
+    .btn-back {
+      display: inline-block;
+      color: #64748b;
+      font-size: 14px;
+      margin-top: 16px;
+      text-decoration: none;
+    }
+    .btn-back:hover { color: #0f172a; }
+
+    footer {
+      background: #0f172a;
+      color: #475569;
+      text-align: center;
+      padding: 16px;
+      font-size: 13px;
+    }
+    footer a { color: #475569; text-decoration: none; }
+  </style>
+</head>
+<body>
+
+<nav class="nav">
+  <a href="/">ProdutoVivo</a>
+</nav>
+
+<div class="wrap">
+  <div class="card">
+
+    <!-- Confirm state -->
+    <div id="state-confirm" class="state active">
+      <div class="emoji">📧</div>
+      <h1>Cancelar inscrição</h1>
+      <p>Você não receberá mais e-mails de marketing do ProdutoVivo.</p>
+      <div class="email-display" id="email-display">—</div>
+      <button class="btn-confirm" id="btn-confirm" onclick="doUnsubscribe()">
+        Confirmar cancelamento
+      </button>
+      <br>
+      <a href="/" class="btn-back">← Voltar para a página inicial</a>
+    </div>
+
+    <!-- Success state -->
+    <div id="state-success" class="state">
+      <div class="emoji">✅</div>
+      <h1>Inscrição cancelada</h1>
+      <p>Seu e-mail foi removido da nossa lista. Você não receberá mais mensagens de marketing.</p>
+      <p style="margin-top:16px;font-size:14px;color:#64748b;">
+        Se isso foi um engano, entre em contato:<br>
+        <a href="mailto:suporte@produtovivo.com" style="color:#2563eb;">suporte@produtovivo.com</a>
+      </p>
+      <a href="/" class="btn-back" style="display:block;margin-top:24px;">← Voltar para a página inicial</a>
+    </div>
+
+    <!-- Error state -->
+    <div id="state-error" class="state">
+      <div class="emoji">⚠️</div>
+      <h1>Algo deu errado</h1>
+      <p>Não conseguimos processar o seu pedido. Por favor, entre em contato diretamente:</p>
+      <p style="margin-top:16px;">
+        <a href="mailto:suporte@produtovivo.com" style="color:#2563eb;font-weight:600;">suporte@produtovivo.com</a>
+      </p>
+    </div>
+
+  </div>
+</div>
+
+<footer>
+  <p>© 2026 ProdutoVivo · <a href="/privacidade">Política de Privacidade</a></p>
+</footer>
+
+<script>
+(function() {
+  const params = new URLSearchParams(window.location.search);
+  const email = params.get('email') || '';
+
+  if (email) {
+    document.getElementById('email-display').textContent = decodeURIComponent(email);
+  } else {
+    document.getElementById('email-display').textContent = 'E-mail não identificado';
+  }
+
+  window._email = decodeURIComponent(email);
+})();
+
+function show(id) {
+  document.querySelectorAll('.state').forEach(s => s.classList.remove('active'));
+  document.getElementById(id).classList.add('active');
+}
+
+async function doUnsubscribe() {
+  const btn = document.getElementById('btn-confirm');
+  btn.disabled = true;
+  btn.textContent = 'Processando…';
+
+  try {
+    const res = await fetch('/unsubscribe', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ email: window._email }),
+    });
+
+    const data = await res.json();
+    if (data.ok) {
+      show('state-success');
+    } else {
+      show('state-error');
+    }
+  } catch (_) {
+    show('state-error');
+  }
+}
+</script>
+
+</body>
+</html>

@@ -45,10 +45,26 @@ async function migrate() {
         source          TEXT DEFAULT 'quiz',
         welcome_sent_at TIMESTAMPTZ,
         converted_at    TIMESTAMPTZ,
+        opted_out_at    TIMESTAMPTZ,
         created_at      TIMESTAMPTZ NOT NULL DEFAULT NOW(),
         updated_at      TIMESTAMPTZ NOT NULL DEFAULT NOW()
       );
       CREATE INDEX IF NOT EXISTS idx_leads_email ON leads(email);
+    `);
+
+    // Add opted_out_at to existing leads tables (safe on re-run)
+    await client.query(`
+      ALTER TABLE leads ADD COLUMN IF NOT EXISTS opted_out_at TIMESTAMPTZ;
+    `);
+
+    // Global unsubscribes log (covers both leads and cold email prospects)
+    await client.query(`
+      CREATE TABLE IF NOT EXISTS unsubscribes (
+        id         SERIAL PRIMARY KEY,
+        email      TEXT UNIQUE NOT NULL,
+        created_at TIMESTAMPTZ NOT NULL DEFAULT NOW()
+      );
+      CREATE INDEX IF NOT EXISTS idx_unsubscribes_email ON unsubscribes(email);
     `);
 
     console.log('DB migrations applied');

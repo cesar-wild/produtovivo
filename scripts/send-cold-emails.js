@@ -23,6 +23,7 @@ require('dotenv').config();
 const fs = require('fs');
 const path = require('path');
 const { sendColdEmail } = require('../src/email');
+const { pool } = require('../src/db');
 
 const PROSPECTS_CSV = path.join(__dirname, '../docs/prospects.csv');
 const LOG_CSV = path.join(__dirname, '../docs/email-log.csv');
@@ -111,7 +112,18 @@ async function main() {
     sentToday = log.split('\n').filter(l => l.startsWith(today) && l.includes(',ok,')).length;
   }
 
-  console.log(`Sent today so far: ${sentToday}/${DAILY_LIMIT} | DRY_RUN: ${DRY_RUN}`);
+  // Load global unsubscribe list from DB (if DB available)
+  const unsubSet = new Set();
+  if (process.env.DATABASE_URL) {
+    try {
+      const client = await pool.connect();
+      const rows = await client.query('SELECT email FROM unsubscribes');
+      rows.rows.forEach(r => unsubSet.add(r.email.toLowerCase()));
+      client.release();
+    } catch (_) {}
+  }
+
+  console.log(`Sent today so far: ${sentToday}/${DAILY_LIMIT} | Unsubscribes: ${unsubSet.size} | DRY_RUN: ${DRY_RUN}`);
 
   for (const prospect of prospects) {
     if (sent >= MAX_THIS_RUN) break;
@@ -122,6 +134,15 @@ async function main() {
 
     const { first_name, email, platform, product_name, status } = prospect;
     if (!email || !first_name) continue;
+
+    // Skip opted-out emails
+    if (unsubSet.has(email.toLowerCase())) {
+      console.log(`[SKIP] ${email} — unsubscribed`);
+      if (prospect.status !== 'unsubscribed') {
+        prospect.status = 'unsubscribed';
+      }
+      continue;
+    }
 
     let touch = null;
 
@@ -176,7 +197,11 @@ async function main() {
   }
 }
 
-main().catch(err => {
-  console.error('Fatal:', err.message);
-  process.exit(1);
-});
+main()
+  .catch(err => {
+    console.error('Fatal:', err.message);
+    process.exit(1);
+  })
+  .finally(() => {
+    if (process.env.DATABASE_URL) pool.end().catch(() => {});
+  });

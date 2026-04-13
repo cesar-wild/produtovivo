@@ -21,6 +21,16 @@ router.post('/', async (req, res) => {
   const safeScore = typeof score === 'number' ? Math.min(Math.max(score, 0), 10) : null;
 
   try {
+    // Check global unsubscribe list before anything
+    const optOut = await pool.query(
+      `SELECT 1 FROM unsubscribes WHERE email = $1`,
+      [email.toLowerCase().trim()]
+    );
+    if (optOut.rows.length > 0) {
+      // Silently accept — don't reveal opt-out status, just skip email
+      return res.json({ ok: true, profile: safeProfile });
+    }
+
     // Upsert: if email seen before, update profile and reset welcome sent flag
     const result = await pool.query(
       `INSERT INTO leads (email, quiz_profile, quiz_score, source)
