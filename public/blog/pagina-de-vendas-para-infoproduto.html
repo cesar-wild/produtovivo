@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Página de Vendas para Infoproduto: Estrutura Completa que Converte em 2026</title>
+  <meta name="description" content="Como criar uma página de vendas de alta conversão para infoproduto: estrutura em 12 blocos, copywriting, design, métricas e checklist completo. Com exemplos práticos.">
+  <link rel="canonical" href="https://produtovivo.com/blog/pagina-de-vendas-para-infoproduto">
+  <meta property="og:title" content="Página de Vendas para Infoproduto: Estrutura que Converte">
+  <meta property="og:description" content="Estrutura completa em 12 blocos para criar página de vendas de alta conversão para infoprodutos.">
+  <meta property="og:url" content="https://produtovivo.com/blog/pagina-de-vendas-para-infoproduto">
+  <meta property="og:type" content="article">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "HowTo",
+        "name": "Como criar uma página de vendas para infoproduto",
+        "description": "Passo a passo para estruturar uma página de vendas de alta conversão",
+        "step": [
+          {"@type": "HowToStep", "name": "Headline e subheadline", "text": "Defina a promessa principal em até 12 palavras e o avatar exato do comprador"},
+          {"@type": "HowToStep", "name": "Problema e agitação", "text": "Descreva a dor com linguagem do avatar, mostre o custo de não resolver"},
+          {"@type": "HowToStep", "name": "Solução e mecanismo único", "text": "Apresente o método com nome próprio e explique por que é diferente"},
+          {"@type": "HowToStep", "name": "Prova social e autoridade", "text": "Depoimentos com resultado, bio com credenciais, logos de mídia"},
+          {"@type": "HowToStep", "name": "Oferta e preço", "text": "Liste o que está incluído, âncora de preço, bônus com valor atribuído"},
+          {"@type": "HowToStep", "name": "Urgência, escassez e garantia", "text": "Deadline real, vagas ou bônus limitados, garantia sem condições"}
+        ]
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "Qual a diferença entre página de vendas e landing page?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Landing page é qualquer página com um objetivo único (capturar lead, redirecionar para compra). Página de vendas é um tipo específico de landing page com copy longo, estrutura completa (problema → solução → oferta → prova → CTA) e objetivo de gerar compra direta — sem intermediários."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Página de vendas longa ou curta converte mais?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Depende do ticket e da temperatura do tráfego. Produtos até R$97 com tráfego quente (lista própria) funcionam bem com páginas curtas (800–1.200 palavras). Produtos acima de R$197 ou tráfego frio precisam de páginas longas (2.000–5.000 palavras) para vencer objeções antes do clique de compra."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Qual ferramenta usar para criar página de vendas no Brasil?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Para iniciantes: a própria checkout page do Hotmart ou Kiwify já converte bem. Para mais controle: Elementor (WordPress), Framer ou o próprio HTML estático. Para escalar com testes A/B: Unbounce ou VWO. Não otimize a ferramenta antes de validar o copy."
+            }
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'Segoe UI', system-ui, sans-serif; background: #FAFAFA; color: #1A1A2E; line-height: 1.7; font-size: 16px; }
+    a { color: #FF6B35; text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    nav { background: #1A1A2E; padding: 0 24px; display: flex; align-items: center; justify-content: space-between; height: 56px; position: sticky; top: 0; z-index: 100; }
+    .nav-logo { color: #fff; font-weight: 800; font-size: 18px; }
+    .nav-logo span { color: #FF6B35; }
+    .nav-links { display: flex; gap: 20px; list-style: none; }
+    .nav-links a { color: #ccc; font-size: 14px; font-weight: 500; }
+    .nav-links a:hover { color: #FF6B35; text-decoration: none; }
+    .nav-cta { background: #FF6B35; color: #fff !important; padding: 6px 14px; border-radius: 6px; font-weight: 700 !important; font-size: 13px !important; }
+    .nav-cta:hover { background: #e55a25; }
+    .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; background: none; border: none; padding: 4px; }
+    .hamburger span { display: block; width: 22px; height: 2px; background: #fff; border-radius: 2px; }
+    @media(max-width:680px) {
+      .nav-links { display: none; flex-direction: column; position: absolute; top: 56px; left: 0; right: 0; background: #1A1A2E; padding: 16px 24px 20px; gap: 14px; }
+      .nav-links.open { display: flex; }
+      .hamburger { display: flex; }
+    }
+
+    .page-wrap { max-width: 1100px; margin: 0 auto; padding: 40px 20px; display: grid; grid-template-columns: 1fr 300px; gap: 48px; }
+    @media(max-width:860px) { .page-wrap { grid-template-columns: 1fr; } .sidebar { order: -1; } }
+
+    article { background: #fff; border-radius: 12px; padding: 40px; box-shadow: 0 1px 4px rgba(0,0,0,.06); }
+    .tag { display: inline-block; background: #FFF3EE; color: #FF6B35; font-size: 12px; font-weight: 700; padding: 4px 10px; border-radius: 20px; text-transform: uppercase; letter-spacing: .5px; margin-bottom: 14px; }
+    h1 { font-size: clamp(1.6rem, 4vw, 2.2rem); font-weight: 900; line-height: 1.2; margin-bottom: 16px; }
+    .meta { font-size: 13px; color: #888; margin-bottom: 28px; }
+    .intro { font-size: 17px; color: #444; line-height: 1.8; margin-bottom: 32px; padding-bottom: 28px; border-bottom: 2px solid #f0f0f0; }
+    h2 { font-size: 1.35rem; font-weight: 800; margin: 36px 0 14px; color: #1A1A2E; }
+    h3 { font-size: 1.1rem; font-weight: 700; margin: 24px 0 10px; color: #1A1A2E; }
+    p { margin-bottom: 16px; color: #333; }
+    ul, ol { padding-left: 22px; margin-bottom: 16px; }
+    li { margin-bottom: 8px; color: #333; }
+    strong { color: #1A1A2E; }
+
+    .table-wrap { overflow-x: auto; margin: 20px 0 28px; border-radius: 10px; border: 1px solid #eee; }
+    table { width: 100%; border-collapse: collapse; font-size: 14px; }
+    th { background: #1A1A2E; color: #fff; padding: 11px 14px; text-align: left; font-weight: 700; }
+    td { padding: 10px 14px; border-bottom: 1px solid #f0f0f0; }
+    tr:last-child td { border-bottom: none; }
+    tr:nth-child(even) td { background: #fafafa; }
+
+    .callout { border-left: 4px solid #FF6B35; background: #FFF3EE; padding: 16px 20px; border-radius: 0 8px 8px 0; margin: 24px 0; }
+    .callout strong { color: #FF6B35; }
+    .callout-blue { border-left-color: #4A90E2; background: #EEF4FF; }
+    .callout-blue strong { color: #4A90E2; }
+    .callout-green { border-left-color: #28a745; background: #f0fff4; }
+    .callout-green strong { color: #28a745; }
+
+    /* BLOCO CARDS */
+    .bloco-list { list-style: none; padding: 0; counter-reset: bloco; }
+    .bloco-list li { counter-increment: bloco; display: flex; gap: 16px; margin-bottom: 24px; background: #fff; border: 1px solid #eee; border-radius: 12px; padding: 20px; box-shadow: 0 1px 4px rgba(0,0,0,.04); }
+    .bloco-list li::before { content: counter(bloco); display: flex; align-items: center; justify-content: center; min-width: 36px; height: 36px; background: #FF6B35; color: #fff; border-radius: 50%; font-weight: 900; font-size: 15px; }
+    .bloco-body strong { display: block; font-size: 15px; font-weight: 800; color: #1A1A2E; margin-bottom: 4px; }
+    .bloco-body p { font-size: 14px; color: #555; margin: 0; }
+    .bloco-copy { background: #f8f8f8; border-radius: 6px; padding: 8px 12px; font-size: 13px; color: #333; font-style: italic; border-left: 3px solid #FF6B35; margin-top: 8px; }
+
+    .cta-box { background: linear-gradient(135deg, #1A1A2E, #2d2d5e); color: #fff; padding: 32px; border-radius: 16px; margin: 40px 0 0; text-align: center; }
+    .cta-box h3 { color: #fff; font-size: 1.3rem; margin-bottom: 10px; }
+    .cta-box p { color: #ccc; font-size: 15px; margin-bottom: 24px; }
+    .btn-cta { display: inline-block; background: #FF6B35; color: #fff; font-weight: 800; padding: 14px 32px; border-radius: 8px; font-size: 16px; }
+    .btn-cta:hover { background: #e55a25; text-decoration: none; }
+    .cta-note { font-size: 12px; color: #aaa; margin-top: 12px; }
+
+    .wa-share { display: inline-flex; align-items: center; gap: 8px; background: #25D366; color: #fff; font-weight: 700; font-size: 14px; padding: 10px 20px; border-radius: 8px; margin: 32px 0 0; }
+    .wa-share:hover { background: #1da851; text-decoration: none; }
+
+    .sidebar { display: flex; flex-direction: column; gap: 24px; }
+    .sidebar-card { background: #fff; border-radius: 12px; padding: 24px; box-shadow: 0 1px 4px rgba(0,0,0,.06); }
+    .sidebar-card h4 { font-size: 15px; font-weight: 800; margin-bottom: 12px; color: #1A1A2E; }
+    .sidebar-card p { font-size: 14px; color: #555; margin-bottom: 16px; }
+    .btn-sidebar { display: block; text-align: center; background: #FF6B35; color: #fff; font-weight: 700; padding: 11px; border-radius: 8px; font-size: 14px; }
+    .btn-sidebar:hover { background: #e55a25; text-decoration: none; }
+    .btn-sidebar-outline { background: transparent; border: 2px solid #FF6B35; color: #FF6B35; margin-top: 8px; }
+    .btn-sidebar-outline:hover { background: #FF6B35; color: #fff; }
+    .related-links { list-style: none; padding: 0; }
+    .related-links li { padding: 6px 0; border-bottom: 1px solid #f0f0f0; }
+    .related-links li:last-child { border-bottom: none; }
+    .related-links a { font-size: 13px; color: #333; }
+    .related-links a:hover { color: #FF6B35; }
+
+    footer { background: #1A1A2E; color: #888; text-align: center; padding: 28px 20px; font-size: 13px; margin-top: 60px; }
+    footer a { color: #aaa; }
+    footer p + p { margin-top: 8px; }
+  </style>
+</head>
+<body>
+
+<nav>
+  <a href="/" class="nav-logo">Produto<span>Vivo</span></a>
+  <button class="hamburger" onclick="this.nextElementSibling.classList.toggle('open')" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
+  <ul class="nav-links">
+    <li><a href="/blog">Blog</a></li>
+    <li><a href="/trilha">Trilha</a></li>
+    <li><a href="/quiz">Quiz grátis</a></li>
+    <li><a href="/recursos">Recursos</a></li>
+    <li><a href="/#comprar" class="nav-cta">Comprar guia</a></li>
+  </ul>
+</nav>
+
+<div class="page-wrap">
+  <article>
+    <span class="tag">Conversão & Copywriting</span>
+    <h1>Página de Vendas para Infoproduto: Estrutura Completa que Converte em 2026</h1>
+    <div class="meta">14 abr 2026 · 12 min de leitura</div>
+
+    <p class="intro">Uma página de vendas é o vendedor que trabalha 24h por você. A estrutura certa — na ordem certa — faz o lead passar de "estou curioso" para "quero comprar agora". Este guia cobre os 12 blocos obrigatórios, copywriting para cada um, design que não sabota a conversão e as métricas que indicam onde sua página está perdendo dinheiro.</p>
+
+    <h2>Página de vendas vs. landing page — qual a diferença?</h2>
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr><th>Característica</th><th>Landing page (captura)</th><th>Página de vendas</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Objetivo</td><td>Capturar email / lead</td><td>Gerar compra direta</td></tr>
+          <tr><td>Tamanho típico</td><td>200–600 palavras</td><td>1.500–6.000 palavras</td></tr>
+          <tr><td>Pedido principal</td><td>Email ou WhatsApp</td><td>Clique no botão de compra</td></tr>
+          <tr><td>Nível de objeção</td><td>Baixo (grátis)</td><td>Alto (precisa justificar R$)</td></tr>
+          <tr><td>Tráfego ideal</td><td>Frio</td><td>Morno a quente</td></tr>
+          <tr><td>Ferramentas</td><td>Hotmart, Kiwify, formulário</td><td>HTML, WordPress, Hotmart</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h2>Quando usar página curta vs. longa</h2>
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr><th>Situação</th><th>Formato recomendado</th><th>Por quê</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Ticket até R$97 + tráfego quente (lista própria)</td><td>Curta (800–1.200 palavras)</td><td>Confiança já existe — não precisa vencer objeções longas</td></tr>
+          <tr><td>Ticket R$97–R$497 + tráfego morno</td><td>Média (1.500–2.500 palavras)</td><td>Precisa de prova social robusta e detalhe de entrega</td></tr>
+          <tr><td>Ticket acima de R$497 + tráfego frio</td><td>Longa (3.000–6.000 palavras)</td><td>Alta objeção — cada dúvida não respondida = venda perdida</td></tr>
+          <tr><td>Mentoria / consultoria (ticket alto)</td><td>Aplicação ou VSL + curta</td><td>Venda por vídeo ou call — texto apenas qualifica</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h2>Os 12 blocos obrigatórios — na ordem certa</h2>
+
+    <ol class="bloco-list">
+      <li>
+        <div class="bloco-body">
+          <strong>Headline — a promessa em 12 palavras</strong>
+          <p>Uma única frase que captura o maior benefício + o avatar exato. Elimina quem não é o comprador ideal e seduz quem é. Fórmula: [resultado desejado] + [prazo ou método] + [sem o obstáculo principal].</p>
+          <div class="bloco-copy">"Transforme qualquer PDF em app interativo em 2 horas — sem código, sem agência"</div>
+        </div>
+      </li>
+      <li>
+        <div class="bloco-body">
+          <strong>Subheadline — quem é e quem não é para você</strong>
+          <p>Confirma o avatar e aumenta a especificidade da promessa. Também serve como filtro — afastar quem não é o público certo aumenta a taxa de conversão dos que ficam.</p>
+          <div class="bloco-copy">"Para infoprodutores que vendem PDFs e querem se diferenciar antes que todos usem o mesmo método"</div>
+        </div>
+      </li>
+      <li>
+        <div class="bloco-body">
+          <strong>Vídeo de vendas (VSL) — opcional mas poderoso</strong>
+          <p>Um vídeo de 3–7 minutos no topo da página aumenta conversão em 80%+ para tráfego frio. Roteiro: gancho (10s) → problema (30s) → solução (60s) → credenciais (30s) → oferta + CTA (60s). Se não tiver vídeo, fortaleça os demais blocos.</p>
+        </div>
+      </li>
+      <li>
+        <div class="bloco-body">
+          <strong>Problema e agitação — a dor em palavras do avatar</strong>
+          <p>Use a linguagem exata que seu cliente usa — não jargões de marketing. Liste os sintomas concretos da situação atual. A agitação mostra o custo de não resolver: tempo, dinheiro, oportunidades perdidas.</p>
+          <div class="bloco-copy">"Você passou semanas criando o PDF. Enviou para os primeiros alunos. E aí... silêncio. Ninguém termina. Ninguém compartilha. A taxa de conclusão está em 8%."</div>
+        </div>
+      </li>
+      <li>
+        <div class="bloco-body">
+          <strong>Solução e mecanismo único — por que o SEU método é diferente</strong>
+          <p>Apresente o método com nome próprio (ex: "Método PDF→App em 5 etapas"). Explique por que as soluções anteriores falharam e como a sua resolve de forma diferente. O mecanismo único justifica o preço sem comparação direta com concorrentes.</p>
+          <div class="bloco-copy">"O problema não é o seu conteúdo — é o formato. PDFs são estáticos. Apps interativos com chatbot, quiz e glossário têm 5x mais conclusão. O Método PDF→App transforma qualquer documento em experiência interativa."</div>
+        </div>
+      </li>
+      <li>
+        <div class="bloco-body">
+          <strong>O que está incluído — lista detalhada com valor atribuído</strong>
+          <p>Liste cada entrega com o nome, o que faz e o valor individual. Somar os valores (mesmo que não venda separado) cria ancoragem de preço que faz o preço final parecer barato por comparação.</p>
+          <div class="bloco-copy">"✓ 50 prompts prontos (valor: R$147) · ✓ 8 templates de app (valor: R$97) · ✓ Checklist de 20 pontos (valor: R$27) · TOTAL: R$271 → por R$37"</div>
+        </div>
+      </li>
+      <li>
+        <div class="bloco-body">
+          <strong>Prova social — depoimentos com resultado, não elogios</strong>
+          <p>Mínimo 3 depoimentos. Formato ideal: foto real + nome + nicho + resultado específico. Um depoimento que diz "taxa de conclusão subiu de 12% para 67%" é 10x mais convincente que "ótimo produto, recomendo muito".</p>
+        </div>
+      </li>
+      <li>
+        <div class="bloco-body">
+          <strong>Autoridade — quem é você e por que deve ser ouvido</strong>
+          <p>Bio focada em credenciais relevantes para o produto: quantos produtos criou, quantas pessoas ajudou, resultados mensuráveis. Logos de veículos de mídia onde apareceu. Não precisa ser famoso — precisa ser credível para aquele avatar.</p>
+        </div>
+      </li>
+      <li>
+        <div class="bloco-body">
+          <strong>Oferta e preço — com ancoragem e comparação de valor</strong>
+          <p>Apresente o preço depois de já ter estabelecido valor. Compare com o custo da alternativa (agência, curso mais caro, custo de não resolver). Riscar o preço antigo e mostrar o desconto de lançamento ativa o gatilho de contraste.</p>
+          <div class="bloco-copy">"Uma agência cobra R$3.000+ para criar um app. Você aprende o mesmo método em um final de semana por R$37. Preço de lançamento válido até 15/05."</div>
+        </div>
+      </li>
+      <li>
+        <div class="bloco-body">
+          <strong>Urgência e escassez — reais, com motivo explícito</strong>
+          <p>Countdown timer com prazo real de aumento de preço. Vagas ou bônus limitados com número atual visível. Sempre explique o motivo: "preço sobe porque o lançamento encerra" ou "vagas limitadas pelo suporte". Urgência sem motivo parece manipulação.</p>
+          <div class="bloco-copy">"Preço de lançamento R$37 → sobe para R$97 em 15/05/2026. Primeiras 50 pessoas: acesso ao grupo VIP de revisão de projetos. Restam [X] vagas."</div>
+        </div>
+      </li>
+      <li>
+        <div class="bloco-body">
+          <strong>Garantia — reverter o risco para você</strong>
+          <p>Garantia de 7 dias (mínimo legal no Brasil para produtos digitais) elimina a maior objeção: "e se não for para mim?". Quanto mais simples a condição ("não gostou, devolvo 100%"), maior o efeito. Paradoxalmente, garantias generosas reduzem pedidos de reembolso.</p>
+          <div class="bloco-copy">"7 dias de garantia total. Se por qualquer motivo não gostar, me envie um email e devolvo 100% — sem perguntas, sem burocracia."</div>
+        </div>
+      </li>
+      <li>
+        <div class="bloco-body">
+          <strong>FAQ — responder as objeções que impedem o clique</strong>
+          <p>Liste as 5–8 perguntas que seu avatar mais faz antes de comprar. Cada pergunta não respondida na página é uma venda perdida. Inclua: "funciona para meu nicho?", "preciso de experiência técnica?", "como acesso?", "e o suporte?".</p>
+        </div>
+      </li>
+    </ol>
+
+    <h2>Design que não sabota a conversão</h2>
+    <p>O design serve ao texto — não compete com ele. Erros de design que derrubam conversão:</p>
+
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr><th>Elemento</th><th>Errado</th><th>Certo</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Menu de navegação</td><td>Menu completo com 8 links</td><td>Logo apenas — sem links que desviam o foco</td></tr>
+          <tr><td>Fonte do corpo</td><td>Fonte decorativa tamanho 12px</td><td>Sans-serif 16–17px, altura de linha 1.7</td></tr>
+          <tr><td>Botão de compra</td><td>Cinza, texto "Clique aqui"</td><td>Cor de destaque, texto de ação específica: "Quero meu acesso agora"</td></tr>
+          <tr><td>Quantidade de CTAs</td><td>1 botão no final</td><td>3–5 botões distribuídos: após hero, após prova social, após preço, após FAQ</td></tr>
+          <tr><td>Imagens</td><td>Mockups genéricos de laptop</td><td>Screenshot real do produto, foto do autor, prints de resultados</td></tr>
+          <tr><td>Mobile</td><td>Página desktop reduzida</td><td>Fonte ≥16px, botão com largura total, sem textos cortados</td></tr>
+          <tr><td>Velocidade</td><td>Página carrega em 8s</td><td>Menos de 3s — cada segundo extra = -7% conversão</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h2>Ferramentas para criar a página de vendas</h2>
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr><th>Ferramenta</th><th>Custo</th><th>Vantagem</th><th>Ideal para</th></tr>
+        </thead>
+        <tbody>
+          <tr><td><strong>Hotmart/Kiwify checkout</strong></td><td>Grátis (% da venda)</td><td>Integrado ao pagamento</td><td>Primeiros lançamentos</td></tr>
+          <tr><td><strong>HTML estático</strong></td><td>Grátis</td><td>Velocidade máxima</td><td>Quem sabe editar código</td></tr>
+          <tr><td><strong>Elementor (WordPress)</strong></td><td>R$199/ano</td><td>Arrastar e soltar, extensões</td><td>Sites já em WordPress</td></tr>
+          <tr><td><strong>Framer</strong></td><td>US$5–$15/mês</td><td>Design bonito sem código</td><td>Produto visual/design</td></tr>
+          <tr><td><strong>Unbounce</strong></td><td>US$74/mês</td><td>A/B testing nativo</td><td>Escala com tráfego pago</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="callout callout-blue">
+      <strong>Conselho:</strong> Não invista em ferramenta cara antes de validar o copy. A página de vendas do Hotmart com copy excelente converte mais que um Unbounce com texto fraco. Otimize a mensagem primeiro; a ferramenta depois.
+    </div>
+
+    <h2>Métricas que revelam onde sua página perde dinheiro</h2>
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr><th>Métrica</th><th>Referência saudável</th><th>O que fazer se estiver baixo</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Taxa de conversão geral</td><td>1–3% (tráfego frio), 3–8% (lista quente)</td><td>Revisar headline e oferta primeiro</td></tr>
+          <tr><td>Taxa de scroll até o meio</td><td>≥50% dos visitantes</td><td>Encurtar parágrafos, adicionar quebras visuais</td></tr>
+          <tr><td>Taxa de scroll até o preço</td><td>≥30% dos visitantes</td><td>Reposicionar prova social para antes do preço</td></tr>
+          <tr><td>Cliques no botão de compra</td><td>≥5% dos visitantes</td><td>Testar cor, texto e posição do CTA</td></tr>
+          <tr><td>Abandono no checkout</td><td>≤60%</td><td>Simplificar formulário, adicionar garantia visível</td></tr>
+          <tr><td>Tempo médio na página</td><td>≥2 minutos</td><td>Adicionar vídeo ou prova social acima da dobra</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h2>Copy de 5 CTA buttons — testados e aprovados</h2>
+    <p>O texto do botão importa mais do que a cor. Teste estas variações (em ordem de eficácia típica para infoprodutos):</p>
+    <ol>
+      <li><strong>"Quero transformar meu PDF agora →"</strong> — específico, ação imediata</li>
+      <li><strong>"Sim, quero o método completo por R$37"</strong> — confirma preço, reduz surpresa</li>
+      <li><strong>"Acessar o Guia ProdutoVivo agora"</strong> — nome do produto, específico</li>
+      <li><strong>"Garantir minha vaga com desconto de lançamento"</strong> — urgência + benefício</li>
+      <li><strong>"Começar agora — 7 dias de garantia"</strong> — reduz risco no clique</li>
+    </ol>
+
+    <h2>Checklist final antes de publicar</h2>
+    <ul>
+      <li>[ ] Headline responde: "o que eu ganho e quem é para mim"?</li>
+      <li>[ ] Menu de navegação removido (ou logo apenas)</li>
+      <li>[ ] Mínimo 3 depoimentos com nome, foto e resultado concreto</li>
+      <li>[ ] Preço aparece depois de estabelecer valor (mínimo blocos 1–7)</li>
+      <li>[ ] Countdown timer ativo com prazo real</li>
+      <li>[ ] Garantia visível próxima ao botão de compra</li>
+      <li>[ ] FAQ com mínimo 5 perguntas reais da audiência</li>
+      <li>[ ] Página carrega em menos de 3 segundos</li>
+      <li>[ ] Texto legível no mobile (fonte ≥16px, botão 100% de largura)</li>
+      <li>[ ] Botão de compra aparece no mínimo em 4 posições na página</li>
+      <li>[ ] Pixel de rastreamento (Meta ou Google) instalado e disparando</li>
+      <li>[ ] Testou a compra completa você mesmo antes de publicar</li>
+    </ul>
+
+    <div class="callout callout-green">
+      <strong>Primeiro teste A/B:</strong> Só mude a headline. É o elemento de maior impacto e mais rápido de medir. Teste por 7 dias ou 200 visitantes por versão — o que vier primeiro. Depois, teste o CTA. Depois, a cor do botão.
+    </div>
+
+    <div class="cta-box">
+      <h3>Infoproduto interativo = produto que se vende com mais facilidade</h3>
+      <p>Quanto mais o aluno usa e termina, mais depoimentos reais você recebe — a melhor prova social para a sua página de vendas. Aprenda a criar com o Guia ProdutoVivo.</p>
+      <a href="/#comprar" class="btn-cta">Ver o Guia — R$37</a>
+      <div class="cta-note">Preço sobe para R$97 em 15/05 · Garantia de 7 dias</div>
+    </div>
+
+    <a href="https://api.whatsapp.com/send?text=Estrutura+completa+de+p%C3%A1gina+de+vendas+para+infoproduto+%F0%9F%94%A5+https%3A%2F%2Fprodutovivo.com%2Fblog%2Fpagina-de-vendas-para-infoproduto" class="wa-share" target="_blank" rel="noopener">
+      Compartilhar no WhatsApp
+    </a>
+  </article>
+
+  <aside class="sidebar">
+    <div class="sidebar-card">
+      <h4>Qual tipo de infoprodutor é você?</h4>
+      <p>Responda 5 perguntas e descubra qual formato de produto digital combina com seu nicho e audiência.</p>
+      <a href="/quiz" class="btn-sidebar">Fazer o quiz grátis →</a>
+    </div>
+
+    <div class="sidebar-card">
+      <h4>Guia ProdutoVivo</h4>
+      <p>50 prompts prontos para transformar qualquer PDF em app interativo com IA — sem código.</p>
+      <a href="/#comprar" class="btn-sidebar">Ver o guia — R$37</a>
+      <a href="/blog" class="btn-sidebar btn-sidebar-outline">Ver todos os artigos</a>
+    </div>
+
+    <div class="sidebar-card">
+      <h4>Artigos relacionados</h4>
+      <ul class="related-links">
+        <li><a href="/blog/copywriting-para-infoproduto">Copywriting: framework PASTOR completo</a></li>
+        <li><a href="/blog/gatilhos-mentais-para-infoproduto">Gatilhos mentais: 12 técnicas com copy</a></li>
+        <li><a href="/blog/landing-page-para-infoproduto">Landing page para infoproduto</a></li>
+        <li><a href="/blog/prova-social-para-infoproduto">Prova social: depoimentos que vendem</a></li>
+        <li><a href="/blog/funil-de-vendas-para-infoproduto">Funil de vendas do zero</a></li>
+      </ul>
+    </div>
+  </aside>
+</div>
+
+<footer>
+  <p>© 2026 ProdutoVivo · <a href="mailto:suporte@produtovivo.com">suporte@produtovivo.com</a></p>
+  <p><a href="/">Home</a> · <a href="/blog">Blog</a> · <a href="/trilha">Trilha</a> · <a href="/quiz">Quiz</a> · <a href="/recursos">Recursos</a> · <a href="/afiliados">Afiliados</a> · <a href="/privacidade">Privacidade</a> · <a href="/termos">Termos</a></p>
+</footer>
+
+</body>
+</html>
