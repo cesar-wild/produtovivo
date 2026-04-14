@@ -1,287 +1,121 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Como Usar o Notion para Organizar seu Infoproduto em 2026 | ProdutoVivo</title>
-  <meta name="description" content="Aprenda a usar o Notion para planejar, criar e vender infoprodutos — com templates prontos, fluxos de trabalho e dicas para criadores brasileiros.">
-  <link rel="canonical" href="https://produtovivo.com/blog/como-usar-notion-para-infoprodutores">
-  <meta property="og:title" content="Como Usar o Notion para Organizar seu Infoproduto em 2026">
-  <meta property="og:description" content="Templates prontos, fluxos de trabalho e dicas para criar e vender infoprodutos com Notion.">
-  <meta property="og:url" content="https://produtovivo.com/blog/como-usar-notion-para-infoprodutores">
-  <meta property="og:type" content="article">
-  <link rel="alternate" type="application/rss+xml" title="Blog ProdutoVivo" href="https://produtovivo.com/rss.xml">
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Como Usar o Notion para Criar e Vender Infoprodutos em 2026</title>
+  <meta name="description" content="Como usar o Notion para criar infoprodutos, organizar a producao de conteudo, criar templates para vender e entregar produtos digitais."/>
+  <link rel="canonical" href="https://produtovivo.com/blog/como-usar-notion-para-infoprodutores"/>
+  <link rel="stylesheet" href="/style.css"/>
+  <meta property="og:title" content="Como Usar o Notion para Criar e Vender Infoprodutos em 2026"/>
+  <meta property="og:type" content="article"/>
+  <meta property="og:url" content="https://produtovivo.com/blog/como-usar-notion-para-infoprodutores"/>
   <script>
     !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');
     fbq('init','4520253334926563');fbq('track','PageView');
   </script>
-  <style>
-    *{box-sizing:border-box;margin:0;padding:0}
-    body{font-family:'Segoe UI',system-ui,sans-serif;color:#1A1A2E;background:#fff;line-height:1.7}
-    a{color:#FF6B35;text-decoration:none}
-    nav{background:#1A1A2E;padding:14px 24px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:10px}
-    nav .logo{color:#fff;font-weight:800;font-size:1.1rem}
-    nav .nav-links a{color:#ccc;font-size:.9rem;margin-left:18px}
-    nav .nav-links a:hover{color:#FF6B35}
-    .hero{background:linear-gradient(135deg,#1A1A2E 0%,#2d2d5e 100%);color:#fff;padding:52px 24px 40px;text-align:center}
-    .hero .tag{display:inline-block;background:#FF6B35;color:#fff;font-size:.75rem;font-weight:700;padding:4px 12px;border-radius:20px;text-transform:uppercase;letter-spacing:.8px;margin-bottom:16px}
-    .hero h1{font-size:clamp(1.6rem,4vw,2.4rem);font-weight:800;max-width:760px;margin:0 auto 16px;line-height:1.25}
-    .hero .subtitle{font-size:1rem;color:#bbb;max-width:600px;margin:0 auto 20px}
-    .hero .meta{font-size:.85rem;color:#888}
-    .container{max-width:800px;margin:0 auto;padding:0 24px}
-    .article-body{padding:40px 0 60px}
-    .article-body h2{font-size:1.4rem;font-weight:800;color:#1A1A2E;margin:40px 0 14px;padding-top:8px;border-top:3px solid #FF6B35;display:inline-block}
-    .article-body h3{font-size:1.1rem;font-weight:700;color:#2d2d5e;margin:28px 0 10px}
-    .article-body p{margin-bottom:16px;color:#333;font-size:1rem}
-    .article-body ul,.article-body ol{margin:0 0 16px 20px;color:#333}
-    .article-body li{margin-bottom:6px}
-    .destaque-box{background:#fff8f5;border-left:4px solid #FF6B35;padding:18px 22px;border-radius:0 8px 8px 0;margin:24px 0;font-size:.97rem;color:#333}
-    .destaque-box strong{color:#FF6B35}
-    .workspace-card{background:#fff;border:2px solid #eee;border-radius:12px;padding:22px;margin:16px 0}
-    .workspace-card .ws-header{display:flex;align-items:center;gap:12px;margin-bottom:14px}
-    .workspace-card .ws-icon{font-size:1.4rem}
-    .workspace-card .ws-title{font-size:1rem;font-weight:700;color:#1A1A2E}
-    .workspace-card .ws-desc{font-size:.85rem;color:#777;margin-top:2px}
-    .ws-props{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}
-    .ws-prop{background:#fff8f5;color:#FF6B35;font-size:.78rem;font-weight:700;padding:3px 10px;border-radius:10px;border:1px solid #FF6B35}
-    .notion-block{background:#f9f9f9;border-left:3px solid #ddd;padding:14px 18px;border-radius:0 8px 8px 0;margin:10px 0;font-size:.9rem;color:#444}
-    .notion-block code{background:#eee;border-radius:4px;padding:2px 6px;font-family:monospace;font-size:.85rem;color:#333}
-    .template-table{width:100%;border-collapse:collapse;margin:20px 0;font-size:.88rem}
-    .template-table th{background:#1A1A2E;color:#fff;padding:10px 14px;text-align:left}
-    .template-table td{padding:10px 14px;border-bottom:1px solid #eee;vertical-align:top}
-    .template-table tr:nth-child(even) td{background:#fafafa}
-    .inline-cta{background:linear-gradient(135deg,#1A1A2E,#2d2d5e);color:#fff;padding:32px 28px;border-radius:16px;text-align:center;margin:40px 0}
-    .inline-cta h3{font-size:1.2rem;font-weight:800;margin-bottom:10px}
-    .inline-cta p{font-size:.95rem;color:#bbb;margin-bottom:20px}
-    .btn-cta{display:inline-block;background:#FF6B35;color:#fff;font-weight:700;padding:13px 28px;border-radius:8px;font-size:1rem;transition:background .2s}
-    .btn-cta:hover{background:#e55a24;color:#fff}
-    .faq-item{border-bottom:1px solid #eee;padding:18px 0}
-    .faq-item h3{font-size:1rem;font-weight:700;color:#1A1A2E;margin-bottom:8px}
-    .faq-item p{font-size:.93rem;color:#555}
-    footer{background:#1A1A2E;color:#888;text-align:center;padding:28px 24px;font-size:.85rem}
-    footer a{color:#FF6B35}
-  </style>
-  <script type="application/ld+json">
-  {
-    "@context":"https://schema.org",
-    "@type":"Article",
-    "headline":"Como Usar o Notion para Organizar seu Infoproduto em 2026",
-    "description":"Templates prontos, fluxos de trabalho e dicas para criar e vender infoprodutos com Notion.",
-    "author":{"@type":"Organization","name":"ProdutoVivo"},
-    "publisher":{"@type":"Organization","name":"ProdutoVivo","url":"https://produtovivo.com"},
-    "datePublished":"2026-04-14",
-    "url":"https://produtovivo.com/blog/como-usar-notion-para-infoprodutores"
-  }
-  </script>
 </head>
 <body>
-<nav>
-  <span class="logo">ProdutoVivo</span>
-  <div class="nav-links">
-    <a href="/blog">Blog</a>
-    <a href="/trilha">Trilha</a>
-    <a href="/quiz">Quiz grátis</a>
-    <a href="/recursos">Recursos</a>
-    <a href="/#comprar" class="btn-nav" style="background:#FF6B35;color:#fff;padding:6px 16px;border-radius:6px;font-weight:700">Comprar guia</a>
-  </div>
-</nav>
-
-<div class="hero">
-  <div class="container">
-    <span class="tag">Produtividade</span>
-    <h1>Como Usar o Notion para Organizar seu Infoproduto em 2026</h1>
-    <p class="subtitle">Do planejamento do produto à gestão de lançamentos — como o Notion vira o centro de comando do seu negócio digital</p>
-    <p class="meta">ProdutoVivo · 14 de abril de 2026 · 8 min de leitura</p>
-  </div>
-</div>
-
-<div class="container">
-<div class="article-body">
-
-<p>O Notion é a ferramenta favorita de criadores digitais no mundo todo — e por uma razão simples: é flexível o suficiente para ser tudo o que você precisa em um só lugar.</p>
-
-<p>Para infoprodutores, especificamente, o Notion resolve um problema crônico: <strong>a informação espalhada</strong>. Ideias no Notes, esboços no Google Docs, tarefas no WhatsApp, links no favoritos do Chrome. Resultado: você passa mais tempo procurando do que criando.</p>
-
-<p>Neste guia você vai ver como estruturar um workspace no Notion que centraliza todo o seu negócio de infoprodutos.</p>
-
-<div class="destaque-box">
-  <strong>Antes de começar:</strong> o Notion é gratuito para uso individual e custa US$10/mês para times. Para a maioria dos infoprodutores solo, o plano gratuito é mais do que suficiente.
-</div>
-
-<h2>Os 5 workspaces essenciais para infoprodutores</h2>
-
-<div class="workspace-card">
-  <div class="ws-header">
-    <div class="ws-icon">🧠</div>
-    <div>
-      <div class="ws-title">Central de Ideias de Produtos</div>
-      <div class="ws-desc">Onde ideias viram produtos</div>
+  <nav class="site-nav">
+    <a href="/" class="nav-logo">ProdutoVivo</a>
+    <div class="nav-links">
+      <a href="/blog">Blog</a>
+      <a href="/trilha">Trilha</a>
+      <a href="/quiz">Quiz gr&aacute;tis</a>
+      <a href="/recursos">Recursos</a>
+      <a href="/#comprar" class="nav-cta">Comprar guia</a>
     </div>
-  </div>
-  <p style="font-size:.88rem;color:#555;margin-bottom:10px">Uma database com todas as suas ideias de produto — com propriedades para avaliar potencial de mercado, esforço de criação e fit com sua audiência.</p>
-  <div class="ws-props">
-    <span class="ws-prop">Nome da ideia</span>
-    <span class="ws-prop">Público-alvo</span>
-    <span class="ws-prop">Formato</span>
-    <span class="ws-prop">Potencial (1-5)</span>
-    <span class="ws-prop">Status</span>
-    <span class="ws-prop">Prazo</span>
-  </div>
-</div>
-
-<div class="workspace-card">
-  <div class="ws-header">
-    <div class="ws-icon">📋</div>
-    <div>
-      <div class="ws-title">Planejador de Conteúdo do Produto</div>
-      <div class="ws-desc">Estrutura e criação do infoproduto</div>
+  </nav>
+  <article class="blog-post">
+    <header class="post-header">
+      <div class="post-tag">Ferramentas</div>
+      <h1>Como Usar o Notion para Criar e Vender Infoprodutos em 2026</h1>
+      <p class="post-lead">O Notion &eacute; a ferramenta mais vers&aacute;til dispon&iacute;vel gratuitamente para infoprodutores &mdash; serve como hub de produ&ccedil;&atilde;o de conte&uacute;do, plataforma de entrega de produtos simples, e at&eacute; como produto em si (templates vend&aacute;veis). Este guia mostra todos os usos poss&iacute;veis e como extrair o m&aacute;ximo sem pagar nada.</p>
+      <div class="post-meta">14 abr 2026 &middot; 11 min de leitura</div>
+    </header>
+    <div class="post-body">
+      <h2>3 formas de usar o Notion como infoprodutor</h2>
+      <table>
+        <thead><tr><th>Uso</th><th>O que &eacute;</th><th>Dificuldade</th></tr></thead>
+        <tbody>
+          <tr><td>Como produto</td><td>Templates Notion para vender diretamente</td><td>Baixa</td></tr>
+          <tr><td>Como ferramenta de produ&ccedil;&atilde;o</td><td>Organizar a cria&ccedil;&atilde;o de cursos, ebooks, artigos</td><td>Baixa</td></tr>
+          <tr><td>Como plataforma de entrega</td><td>&Aacute;rea de membros simples para infoprodutos de baixo ticket</td><td>M&eacute;dia</td></tr>
+        </tbody>
+      </table>
+      <h2>Uso 1: Templates Notion como produto para vender</h2>
+      <p>Templates de Notion s&atilde;o infoprodutos com custo de produ&ccedil;&atilde;o quase zero e alta percep&ccedil;&atilde;o de valor. Tipos que mais vendem:</p>
+      <ul>
+        <li><strong>Planejador de lan&ccedil;amento de infoproduto:</strong> checklist completo, datas, copy</li>
+        <li><strong>Calend&aacute;rio editorial para criadores:</strong> banco de ideias, pipeline, m&eacute;tricas</li>
+        <li><strong>Gest&atilde;o de clientes para freelancers:</strong> pipeline, contratos, faturamento</li>
+        <li><strong>Planejador financeiro pessoal:</strong> or&ccedil;amento, metas, extrato</li>
+        <li><strong>Sistema de estudo:</strong> cronograma, anota&ccedil;&otilde;es, progresso por mat&eacute;ria</li>
+      </ul>
+      <p>Pre&ccedil;os que funcionam no Brasil: R$17-R$97 (individual), R$47-R$197 (packs de templates).</p>
+      <h2>Como criar e vender um template</h2>
+      <ol>
+        <li>Crie o workspace Notion que resolve o problema espec&iacute;fico</li>
+        <li>Teste com uso real &mdash; refine at&eacute; estar satisfeito com a usabilidade</li>
+        <li>Em Configura&ccedil;&otilde;es &rarr; &ldquo;Compartilhar&rdquo; &rarr; ative &ldquo;Tornar p&uacute;blico como template&rdquo;</li>
+        <li>Copie o link de template (fica em &ldquo;Compartilhar no web&rdquo;)</li>
+        <li>Crie a p&aacute;gina de venda no Gumroad, Kiwify ou landing page simples</li>
+        <li>Ap&oacute;s pagamento confirmado, envie o link de template por email autom&aacute;tico</li>
+      </ol>
+      <h2>Uso 2: Organiza&ccedil;&atilde;o da produ&ccedil;&atilde;o de conte&uacute;do</h2>
+      <p>Estrutura de workspace recomendada:</p>
+      <ul>
+        <li><strong>Hub Principal:</strong> banco de dados de produtos, calend&aacute;rio editorial, pipeline de lan&ccedil;amento</li>
+        <li><strong>Por produto em desenvolvimento:</strong> &iacute;ndice, status de cada aula, checklist, copy da LP</li>
+        <li><strong>Banco de ideias:</strong> produtos futuros, palavras-chave do nicho, refer&ecirc;ncias</li>
+      </ul>
+      <h2>Uso 3: Entrega de infoprodutos simples</h2>
+      <p>Para infoprodutos de baixo ticket (R$17-R$97), o Notion pode ser a &aacute;rea de membros:</p>
+      <ol>
+        <li>Crie a estrutura do produto como p&aacute;ginas e subp&aacute;ginas</li>
+        <li>Configure a p&aacute;gina principal como &ldquo;Qualquer pessoa com o link pode visualizar&rdquo;</li>
+        <li>Ap&oacute;s pagamento confirmado, envie o link por email</li>
+        <li>O aluno acessa e navega pelo conte&uacute;do no navegador ou app Notion (gratuito)</li>
+      </ol>
+      <p><strong>Limita&ccedil;&otilde;es:</strong> sem controle de acesso por usu&aacute;rio, sem hospedagem de v&iacute;deo nativa, sem rastreamento de progresso. Para produtos acima de R$197: use Hotmart ou Kiwify.</p>
+      <div class="cta-box">
+        <p>Quer criar um produto interativo com IA no Notion &mdash; onde o comprador faz perguntas e o assistente responde com base no seu conte&uacute;do? O guia ProdutoVivo mostra o m&eacute;todo completo.</p>
+        <a href="/#comprar" class="btn-cta">Ver o guia ProdutoVivo &rarr;</a>
+      </div>
+      <h2>FAQ &mdash; Notion para infoprodutores</h2>
+      <details open>
+        <summary><strong>&Eacute; poss&iacute;vel vender templates do Notion como infoproduto?</strong></summary>
+        <p>Sim. Templates Notion s&atilde;o infoprodutos de baixo custo e alta percep&ccedil;&atilde;o de valor. Crie o workspace, ative como template p&uacute;blico, venda o link via Gumroad ou Kiwify. Pre&ccedil;os: R$17-R$97 (individual), R$47-R$197 (packs).</p>
+      </details>
+      <details>
+        <summary><strong>Como organizar a cria&ccedil;&atilde;o de infoproduto no Notion?</strong></summary>
+        <p>Hub principal com banco de produtos, calend&aacute;rio editorial e pipeline. Por produto: &iacute;ndice + progresso por m&oacute;dulo + checklist de lan&ccedil;amento. Banco de ideias para novos produtos. Tudo em um workspace acess&iacute;vel de qualquer dispositivo.</p>
+      </details>
+      <details>
+        <summary><strong>O Notion pode entregar infoprodutos sem plataforma paga?</strong></summary>
+        <p>Sim para baixo ticket (R$17-R$97): compartilhe a p&aacute;gina como p&uacute;blica, envie o link ap&oacute;s pagamento. Limita&ccedil;&otilde;es: sem controle de acesso por usu&aacute;rio, sem v&iacute;deo nativo. Para ticket maior: use Hotmart ou Kiwify.</p>
+      </details>
     </div>
-  </div>
-  <p style="font-size:.88rem;color:#555;margin-bottom:10px">Para cada produto, crie um espaço com o outline completo, módulos, aulas e materiais de suporte. Controle o progresso de cada seção.</p>
-  <div class="ws-props">
-    <span class="ws-prop">Módulo</span>
-    <span class="ws-prop">Título da aula</span>
-    <span class="ws-prop">Status</span>
-    <span class="ws-prop">Formato</span>
-    <span class="ws-prop">Revisado</span>
-  </div>
-</div>
-
-<div class="workspace-card">
-  <div class="ws-header">
-    <div class="ws-icon">📅</div>
-    <div>
-      <div class="ws-title">Calendário de Lançamento</div>
-      <div class="ws-desc">Cronograma e tarefas do lançamento</div>
+  </article>
+  <section class="related-posts">
+    <h2>Leia tamb&eacute;m</h2>
+    <div class="related-grid">
+      <a href="/blog/make-automation-para-infoprodutores" class="related-card">
+        <div class="related-tag">Automa&ccedil;&atilde;o</div>
+        <h3>Make.com para infoprodutores</h3>
+      </a>
+      <a href="/blog/como-criar-ebook-para-vender" class="related-card">
+        <div class="related-tag">Produto</div>
+        <h3>Como criar ebook para vender</h3>
+      </a>
+      <a href="/blog/canva-para-infoprodutores" class="related-card">
+        <div class="related-tag">Design</div>
+        <h3>Canva para infoprodutores</h3>
+      </a>
     </div>
-  </div>
-  <p style="font-size:.88rem;color:#555;margin-bottom:10px">Timeline completa do lançamento com todas as tarefas: criação de copy, configuração de plataforma, emails de aquecimento, posts nas redes. Vista de Kanban ou Calendário.</p>
-  <div class="ws-props">
-    <span class="ws-prop">Tarefa</span>
-    <span class="ws-prop">Data</span>
-    <span class="ws-prop">Responsável</span>
-    <span class="ws-prop">Canal</span>
-    <span class="ws-prop">Concluída</span>
-  </div>
-</div>
-
-<div class="workspace-card">
-  <div class="ws-header">
-    <div class="ws-icon">✍️</div>
-    <div>
-      <div class="ws-title">Banco de Conteúdo</div>
-      <div class="ws-desc">Posts, emails e scripts prontos para usar</div>
-    </div>
-  </div>
-  <p style="font-size:.88rem;color:#555;margin-bottom:10px">Todos os seus textos em um só lugar: posts para Instagram, emails da sequência, scripts de vídeo, roteiros de stories. Marque os que já usou e quais reutilizar.</p>
-  <div class="ws-props">
-    <span class="ws-prop">Tipo</span>
-    <span class="ws-prop">Canal</span>
-    <span class="ws-prop">Data de publicação</span>
-    <span class="ws-prop">Performance</span>
-  </div>
-</div>
-
-<div class="workspace-card">
-  <div class="ws-header">
-    <div class="ws-icon">📊</div>
-    <div>
-      <div class="ws-title">Dashboard de Métricas</div>
-      <div class="ws-desc">Resultados e metas do negócio</div>
-    </div>
-  </div>
-  <p style="font-size:.88rem;color:#555;margin-bottom:10px">Acompanhe as métricas mais importantes do seu negócio: faturamento mensal, número de compradores, taxa de conversão, custo de aquisição e crescimento da lista.</p>
-  <div class="ws-props">
-    <span class="ws-prop">Mês</span>
-    <span class="ws-prop">Receita</span>
-    <span class="ws-prop">Vendas</span>
-    <span class="ws-prop">Leads</span>
-    <span class="ws-prop">Conversão</span>
-  </div>
-</div>
-
-<h2>Template de planejamento de produto no Notion</h2>
-
-<p>Para cada novo produto, crie uma página com esta estrutura:</p>
-
-<div class="notion-block">
-  <strong># [Nome do Produto]</strong><br><br>
-  <strong>## Visão Geral</strong><br>
-  - Público: [quem é o comprador ideal]<br>
-  - Promessa: [resultado em 1 frase]<br>
-  - Formato: [ebook / curso / template / comunidade]<br>
-  - Preço: R$ [valor]<br>
-  - Plataforma: [Hotmart / Kiwify / Stripe]<br><br>
-  <strong>## Outline do Conteúdo</strong><br>
-  [database com módulos e aulas]<br><br>
-  <strong>## Calendário de Lançamento</strong><br>
-  [timeline de tarefas]<br><br>
-  <strong>## Copy e Materiais de Marketing</strong><br>
-  [links para landing page, emails, posts]<br><br>
-  <strong>## Métricas do Lançamento</strong><br>
-  [tabela de acompanhamento]
-</div>
-
-<h2>Notion como entrega do produto</h2>
-
-<p>Uma estratégia subestimada: usar o Notion como <strong>área de membros do seu produto</strong>. Você cria uma página com o conteúdo do produto e compartilha o link com compradores.</p>
-
-<p>Vantagens:</p>
-<ul>
-  <li>Zero custo adicional</li>
-  <li>Interface limpa e profissional</li>
-  <li>Fácil de atualizar — basta editar a página</li>
-  <li>Funciona em qualquer dispositivo</li>
-  <li>Compradores podem duplicar o template para o workspace deles</li>
-</ul>
-
-<p>Desvantagem: você não controla o acesso (qualquer pessoa com o link pode ver). Para produtos premium, prefira plataformas com login.</p>
-
-<h2>Templates de Notion como produto digital</h2>
-
-<p>Além de usar o Notion para <em>criar</em> infoprodutos, você pode criar <strong>templates de Notion como produto</strong>. É um dos formatos mais vendidos na plataforma:</p>
-
-<table class="template-table">
-  <tr><th>Tipo de Template</th><th>Preço típico</th><th>Público</th></tr>
-  <tr><td>Planejador de negócios</td><td>R$27–97</td><td>Empreendedores</td></tr>
-  <tr><td>Sistema de produtividade pessoal</td><td>R$37–97</td><td>Profissionais ocupados</td></tr>
-  <tr><td>Planejador de redes sociais</td><td>R$27–67</td><td>Criadores de conteúdo</td></tr>
-  <tr><td>CRM pessoal para freelancers</td><td>R$47–127</td><td>Freelancers</td></tr>
-  <tr><td>Planner de estudos para concursos</td><td>R$27–67</td><td>Concurseiros</td></tr>
-</table>
-
-<p>A vantagem: templates são fáceis de criar, têm alto valor percebido e podem ser vendidos na Hotmart, Kiwify ou diretamente no Gumroad.</p>
-
-<div class="inline-cta">
-  <h3>Dê o próximo passo no seu produto digital</h3>
-  <p>Você pode usar Notion para organizar — mas o que realmente impressiona seu cliente é um produto interativo. Aprenda a transformar qualquer material em um app com IA.</p>
-  <a href="/#comprar" class="btn-cta">Ver o Guia ProdutoVivo — R$37</a>
-</div>
-
-<h2>Perguntas frequentes</h2>
-
-<div class="faq-item">
-  <h3>Notion ou Trello para gestão de infoproduto?</h3>
-  <p>Para infoprodutos, o Notion ganha na maioria dos casos: é mais flexível, integra texto e database, e serve como repositório de conteúdo. O Trello é mais simples e pode ser suficiente se você só precisa de Kanban para tarefas.</p>
-</div>
-<div class="faq-item">
-  <h3>Posso usar Notion para vender templates?</h3>
-  <p>Sim. Você cria o template, publica no Notion como página compartilhada (com opção "Duplicar para o meu workspace") e vende o link em plataformas como Hotmart, Kiwify, Gumroad ou diretamente por Pix + link manual.</p>
-</div>
-<div class="faq-item">
-  <h3>O Notion funciona offline?</h3>
-  <p>Parcialmente. Páginas recentes ficam em cache e podem ser lidas offline. Edição offline tem limitações. Para trabalho sem internet, mantenha uma cópia local dos materiais mais críticos.</p>
-</div>
-<div class="faq-item">
-  <h3>Vale a pena o plano pago do Notion?</h3>
-  <p>Para uso solo, o plano gratuito (Free) já inclui páginas ilimitadas, databases e colaboração básica. O plano Plus (US$10/mês) adiciona histórico de versões de 30 dias e uploads maiores — útil se você tem arquivos pesados ou trabalha com equipe.</p>
-</div>
-
-</div>
-</div>
-
-<footer>
-  <p>© 2026 ProdutoVivo · <a href="/privacidade">Privacidade</a> · <a href="/termos">Termos</a> · <a href="/blog">Blog</a></p>
-</footer>
+  </section>
+  <footer class="site-footer">
+    <p>&copy; 2026 ProdutoVivo &middot; <a href="/privacidade">Privacidade</a> &middot; <a href="/termos">Termos</a></p>
+  </footer>
 </body>
 </html>
