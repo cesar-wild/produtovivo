@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Make.com para Infoprodutores: Automação Sem Código em 2026</title>
+  <meta name="description" content="Como usar o Make.com (antigo Integromat) para automatizar entregas, emails, planilhas e notificações do seu infoproduto sem saber programar."/>
+  <link rel="canonical" href="https://produtovivo.com/blog/make-automation-para-infoprodutores"/>
+  <link rel="stylesheet" href="/style.css"/>
+  <meta property="og:title" content="Make.com para Infoprodutores: Automação Sem Código em 2026"/>
+  <meta property="og:description" content="Automatize seu infoproduto com Make.com: entrega automática, notificações, planilhas de leads e sequências de email sem uma linha de código."/>
+  <meta property="og:type" content="article"/>
+  <meta property="og:url" content="https://produtovivo.com/blog/make-automation-para-infoprodutores"/>
+  <script>
+    !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init','4520253334926563');fbq('track','PageView');
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Article",
+        "headline": "Make.com para Infoprodutores: Automação Sem Código em 2026",
+        "description": "Como usar o Make.com para automatizar entregas, emails, planilhas e notificações de infoprodutos sem código.",
+        "datePublished": "2026-04-14",
+        "author": {"@type": "Organization", "name": "ProdutoVivo"},
+        "publisher": {"@type": "Organization", "name": "ProdutoVivo", "url": "https://produtovivo.com"}
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "Make.com é gratuito para infoprodutores?",
+            "acceptedAnswer": {"@type": "Answer", "text": "Sim, o plano gratuito do Make.com inclui 1.000 operações por mês (cada ação em um cenário conta como 1 operação) e acesso a conexões com mais de 1.500 apps. Para a maioria dos infoprodutores iniciantes, o plano gratuito é suficiente para automações de entrega, notificações e atualização de planilha. O plano Core (US$9/mês) oferece 10.000 operações e remoção do limite de execução a cada 15 minutos."}
+          },
+          {
+            "@type": "Question",
+            "name": "Qual a diferença entre Make.com e Zapier?",
+            "acceptedAnswer": {"@type": "Answer", "text": "Zapier é mais simples para fluxos lineares (A→B→C) e tem interface mais intuitiva. Make.com é mais visual (mapa de fluxo visual), mais poderoso para cenários complexos com condicionais e loops, e significativamente mais barato (1.000 ops/mês grátis no Make vs 100 tarefas/mês no Zapier). Para infoprodutores com automações simples: Zapier é mais rápido de aprender. Para fluxos mais complexos ou com volume maior: Make.com tem melhor custo-benefício."}
+          },
+          {
+            "@type": "Question",
+            "name": "Como integrar Make.com com Hotmart?",
+            "acceptedAnswer": {"@type": "Answer", "text": "O Hotmart não tem integração nativa com Make.com, mas funciona via webhook: (1) No Make.com, crie um cenário com trigger 'Webhooks → Custom Webhook'; (2) Copie a URL gerada; (3) No Hotmart: Ferramentas → Webhooks → Adicionar webhook → cole a URL; (4) Selecione os eventos (purchase_complete, purchase_refunded, etc.); (5) No Make.com, configure as ações seguintes (enviar email, adicionar à planilha, notificar no Telegram, etc.)."}
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+
+  <nav class="site-nav">
+    <a href="/" class="nav-logo">ProdutoVivo</a>
+    <div class="nav-links">
+      <a href="/blog">Blog</a>
+      <a href="/trilha">Trilha</a>
+      <a href="/quiz">Quiz grátis</a>
+      <a href="/recursos">Recursos</a>
+      <a href="/#comprar" class="nav-cta">Comprar guia</a>
+    </div>
+  </nav>
+
+  <article class="blog-post">
+    <header class="post-header">
+      <div class="post-tag">Automação</div>
+      <h1>Make.com para Infoprodutores: Automação Sem Código em 2026</h1>
+      <p class="post-lead">Cada venda do seu infoproduto pode disparar automaticamente um email de boas-vindas, adicionar o comprador a uma planilha, notificar você no Telegram e criar uma tarefa de acompanhamento — tudo sem você tocar em nada. O Make.com faz isso por R$0. Este guia mostra os cenários mais úteis para infoprodutores.</p>
+      <div class="post-meta">14 abr 2026 · 13 min de leitura</div>
+    </header>
+
+    <div class="post-body">
+
+      <h2>O que é o Make.com e por que infoprodutores precisam disso</h2>
+
+      <p>O Make.com (antigo Integromat) é uma plataforma de automação no-code que conecta apps entre si. Quando algo acontece em um app (trigger), ele executa ações em outros apps.</p>
+
+      <p>Para infoprodutores, os principais casos de uso são:</p>
+
+      <div class="gatilho-grid">
+        <div class="gatilho-card">
+          <div style="font-size:1.8rem;margin-bottom:8px;">🔔</div>
+          <strong>Notificações de venda</strong>
+          <p style="font-size:13px;">Receba no Telegram ou WhatsApp toda vez que uma venda acontecer — sem checar o painel o tempo todo</p>
+        </div>
+        <div class="gatilho-card">
+          <div style="font-size:1.8rem;margin-bottom:8px;">📊</div>
+          <strong>CRM de compradores</strong>
+          <p style="font-size:13px;">Cada comprador vai automaticamente para uma planilha Google Sheets com nome, email, data e produto</p>
+        </div>
+        <div class="gatilho-card">
+          <div style="font-size:1.8rem;margin-bottom:8px;">📧</div>
+          <strong>Sequência de boas-vindas</strong>
+          <p style="font-size:13px;">Email de boas-vindas personalizado via Resend, Brevo ou MailerLite disparado segundos após a compra</p>
+        </div>
+        <div class="gatilho-card">
+          <div style="font-size:1.8rem;margin-bottom:8px;">🏷️</div>
+          <strong>Segmentação automática</strong>
+          <p style="font-size:13px;">Adiciona tag de comprador na sua ferramenta de email marketing — separa leads de compradores automaticamente</p>
+        </div>
+        <div class="gatilho-card">
+          <div style="font-size:1.8rem;margin-bottom:8px;">🔄</div>
+          <strong>Reembolso e chargeback</strong>
+          <p style="font-size:13px;">Quando alguém pede reembolso, o acesso é revogado automaticamente e você recebe alerta imediato</p>
+        </div>
+        <div class="gatilho-card">
+          <div style="font-size:1.8rem;margin-bottom:8px;">📱</div>
+          <strong>Lead magnet automatizado</strong>
+          <p style="font-size:13px;">Formulário de captura → planilha → email de entrega do lead magnet → sequência de nutrição, tudo automático</p>
+        </div>
+      </div>
+
+      <h2>Make.com vs. Zapier para infoprodutores</h2>
+
+      <table>
+        <thead><tr><th>Critério</th><th>Make.com</th><th>Zapier</th></tr></thead>
+        <tbody>
+          <tr><td>Plano gratuito</td><td>1.000 operações/mês</td><td>100 tarefas/mês</td></tr>
+          <tr><td>Interface</td><td>Visual (mapa de fluxo)</td><td>Linear (lista de etapas)</td></tr>
+          <tr><td>Curva de aprendizado</td><td>Média (mais visual)</td><td>Baixa (mais simples)</td></tr>
+          <tr><td>Fluxos condicionais</td><td>Avançado (filtros, roteadores)</td><td>Básico</td></tr>
+          <tr><td>Loops e iterações</td><td>Nativo</td><td>Limitado</td></tr>
+          <tr><td>Webhook custom</td><td>Grátis no free</td><td>Pago (Team plan+)</td></tr>
+          <tr><td>Preço pago</td><td>US$9/mês (10.000 ops)</td><td>US$19,99/mês (750 tarefas)</td></tr>
+        </tbody>
+      </table>
+
+      <p><strong>Conclusão:</strong> para infoprodutores, o Make.com tem muito mais custo-benefício. O webhook gratuito é o recurso-chave que permite integrar com Hotmart, Kiwify e qualquer plataforma sem custo.</p>
+
+      <h2>Cenário 1: Notificação de venda no Telegram (15 minutos para configurar)</h2>
+
+      <p>Este é o cenário mais simples e mais satisfatório — você ouve o ping do Telegram quando uma venda entra.</p>
+
+      <h3>Apps necessários</h3>
+      <ul>
+        <li>Make.com (trigger: Custom Webhook)</li>
+        <li>Telegram (ação: Send Message)</li>
+        <li>Hotmart (configura webhook)</li>
+      </ul>
+
+      <h3>Passo a passo</h3>
+      <ol>
+        <li><strong>Make.com → Criar cenário → Add module → Webhooks → Custom Webhook</strong></li>
+        <li>Clique em "Add" → nomeie "hotmart-vendas" → copie a URL gerada</li>
+        <li><strong>Hotmart → Ferramentas → Webhooks → Adicionar Webhook</strong></li>
+        <li>Cole a URL do Make.com; selecione evento "PURCHASE_COMPLETE"</li>
+        <li>De volta ao Make.com, clique "Run once" e faça uma compra de teste no Hotmart</li>
+        <li>O Make.com receberá os dados do webhook — clique em "OK" para salvar a estrutura</li>
+        <li><strong>Adicione módulo: Telegram → Send a Message</strong></li>
+        <li>Conecte sua conta Telegram (crie um bot com @BotFather, copie o token)</li>
+        <li>Configure a mensagem: <code>💰 Nova venda! {{data.buyer.name}} comprou {{data.product.name}} por R${{data.purchase.price}}</code></li>
+        <li>Salve e ative o cenário</li>
+      </ol>
+
+      <h2>Cenário 2: CRM de compradores no Google Sheets</h2>
+
+      <p>Mantém um histórico completo de todos os seus compradores com atualização automática.</p>
+
+      <h3>Estrutura da planilha</h3>
+      <p>Crie uma planilha Google com as colunas: Data | Nome | Email | Produto | Valor | Parcelas | Tipo pagamento | Status</p>
+
+      <h3>Configuração no Make.com</h3>
+      <ol>
+        <li>Adicione o trigger de webhook do Hotmart (mesmo do cenário anterior)</li>
+        <li>Adicione módulo: <strong>Google Sheets → Add a Row</strong></li>
+        <li>Conecte sua conta Google</li>
+        <li>Selecione a planilha e a aba</li>
+        <li>Mapeie os campos do webhook para as colunas:
+          <ul>
+            <li>Data: <code>{{formatDate(now; "DD/MM/YYYY HH:mm")}}</code></li>
+            <li>Nome: <code>{{data.buyer.name}}</code></li>
+            <li>Email: <code>{{data.buyer.email}}</code></li>
+            <li>Valor: <code>{{data.purchase.price}}</code></li>
+          </ul>
+        </li>
+      </ol>
+
+      <h2>Cenário 3: Automação de lead magnet (formulário → email de entrega)</h2>
+
+      <p>Sequência completa sem intervenção manual:</p>
+
+      <ol>
+        <li><strong>Trigger:</strong> Tally.so (formulário gratuito) → nova resposta</li>
+        <li><strong>Ação 1:</strong> Google Sheets → adicionar linha com nome, email, data</li>
+        <li><strong>Ação 2:</strong> Resend ou Brevo → enviar email de entrega do lead magnet com link do PDF</li>
+        <li><strong>Ação 3:</strong> MailerLite ou ActiveCampaign → adicionar contato com tag "lead-magnet-X"</li>
+        <li><strong>Ação 4:</strong> Telegram → notificar "Novo lead: {{name}} - {{email}}"</li>
+      </ol>
+
+      <p>Com essa automação, cada pessoa que preenche seu formulário recebe o material em segundos e você já tem o contato segmentado no email marketing — sem nenhuma ação manual.</p>
+
+      <h2>Cenário 4: Gestão de reembolso</h2>
+
+      <p>Quando um comprador solicita reembolso no Hotmart:</p>
+      <ol>
+        <li>Hotmart dispara webhook com evento <code>PURCHASE_REFUNDED</code></li>
+        <li>Make.com recebe e verifica: é reembolso ou chargeback?</li>
+        <li>Se reembolso: envia email de confirmação e pesquisa de motivo (por que devolveu?)</li>
+        <li>Se chargeback: alerta prioritário no Telegram + adiciona email a lista de bloqueio</li>
+        <li>Atualiza status na planilha de CRM para "Reembolsado"</li>
+      </ol>
+
+      <p>O email de pesquisa de motivo de reembolso é um dos dados mais valiosos que você pode coletar — diz exatamente onde a promessa não se cumpriu.</p>
+
+      <h2>Integrando Make.com com IA (2026)</h2>
+
+      <p>O Make.com tem módulo nativo para OpenAI/ChatGPT. Cenários possíveis para infoprodutores:</p>
+
+      <ul>
+        <li><strong>Email de boas-vindas personalizado:</strong> ao receber dados do comprador, passa o nome e produto para o ChatGPT, que gera um email personalizado com menção ao nicho específico daquele comprador</li>
+        <li><strong>Análise de feedbacks:</strong> respostas de pesquisa pós-compra vão para o ChatGPT, que classifica em categorias e gera resumo semanal</li>
+        <li><strong>Criação de conteúdo agendada:</strong> todo domingo, o Make.com envia um prompt para o ChatGPT e posta o resultado em um rascunho no Notion ou Google Docs</li>
+      </ul>
+
+      <div class="cta-box">
+        <p>Quer criar um produto digital que funciona como app interativo com IA — sem código? O guia ProdutoVivo mostra como em 2 horas.</p>
+        <a href="/#comprar" class="btn-cta">Ver o guia ProdutoVivo →</a>
+      </div>
+
+      <h2>FAQ — Make.com para infoprodutores</h2>
+
+      <details open>
+        <summary><strong>Make.com é gratuito para infoprodutores?</strong></summary>
+        <p>Sim, o plano gratuito inclui 1.000 operações/mês e acesso a conexões com mais de 1.500 apps. Para a maioria dos iniciantes é suficiente. O plano Core (US$9/mês) oferece 10.000 operações.</p>
+      </details>
+
+      <details>
+        <summary><strong>Qual a diferença entre Make.com e Zapier?</strong></summary>
+        <p>Make.com tem interface visual de mapa de fluxo, é mais poderoso para cenários complexos e tem melhor custo-benefício (1.000 ops/mês grátis vs 100 no Zapier). Zapier é mais simples para iniciantes em fluxos lineares.</p>
+      </details>
+
+      <details>
+        <summary><strong>Como integrar Make.com com Hotmart?</strong></summary>
+        <p>(1) No Make.com: crie cenário com trigger 'Webhooks → Custom Webhook', copie a URL; (2) No Hotmart: Ferramentas → Webhooks → Adicionar → cole a URL → selecione eventos. Funciona sem custo adicional em ambas as plataformas.</p>
+      </details>
+
+    </div>
+  </article>
+
+  <section class="related-posts">
+    <h2>Leia também</h2>
+    <div class="related-grid">
+      <a href="/blog/automacao-de-marketing-para-infoprodutores" class="related-card">
+        <div class="related-tag">Automação</div>
+        <h3>Automação de marketing para infoprodutores</h3>
+      </a>
+      <a href="/blog/email-marketing-para-infoproduto" class="related-card">
+        <div class="related-tag">Email</div>
+        <h3>Email marketing para infoproduto</h3>
+      </a>
+      <a href="/blog/ferramentas-para-criar-infoproduto" class="related-card">
+        <div class="related-tag">Ferramentas</div>
+        <h3>Ferramentas para criar infoproduto</h3>
+      </a>
+    </div>
+  </section>
+
+  <footer class="site-footer">
+    <p>© 2026 ProdutoVivo · <a href="/privacidade">Privacidade</a> · <a href="/termos">Termos</a></p>
+  </footer>
+
+</body>
+</html>
