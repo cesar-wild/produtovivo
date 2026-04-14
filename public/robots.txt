@@ -3,3 +3,4 @@ Allow: /
 Disallow: /webhooks/
 
 Sitemap: https://produtovivo.com/sitemap.xml
+Sitemap: https://produtovivo.com/rss.xml
