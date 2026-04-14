@@ -13,6 +13,9 @@ const webhookRouter = require('./routes/webhook');
 const downloadRouter = require('./routes/download');
 const leadsRouter = require('./routes/leads');
 const unsubscribeRouter = require('./routes/unsubscribe');
+const hotmartRouter = require('./routes/hotmart');
+const resendEventsRouter = require('./routes/resend-events');
+const metaRouter = require('./routes/meta');
 
 const app = express();
 const PORT = process.env.PORT || 8082;
@@ -61,7 +64,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 
 // Static files (landing page, blog, assets)
-app.use(express.static(path.join(__dirname, '..', 'public')));
+app.use(express.static(path.join(__dirname, '..', 'public'), { extensions: ['html'] }));
 
 // Routes
 app.use('/health', healthRouter);
@@ -69,6 +72,11 @@ app.use('/checkout', checkoutRouter);
 app.use('/download', downloadRouter);
 app.use('/leads', leadsRouter);
 app.use('/unsubscribe', unsubscribeRouter);
+
+// Third-party webhooks (Hotmart, Resend events, Meta Conversions API)
+app.use('/webhooks/hotmart', hotmartRouter);
+app.use('/webhooks/resend', resendEventsRouter);
+app.use('/webhooks/meta-purchase', metaRouter);
 
 // SPA fallback — serve index.html for any unmatched route
 app.get('*', (req, res) => {

@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Minha Área — ProdutoVivo</title>
+  <meta name="robots" content="noindex, nofollow">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/style.css">
+
+  <style>
+    body { background: #f8fafc; }
+
+    .dash-wrapper {
+      min-height: 100vh;
+      padding: 40px 20px 80px;
+    }
+
+    .dash-container {
+      max-width: 680px;
+      margin: 0 auto;
+    }
+
+    .dash-header {
+      background: linear-gradient(135deg, #0f172a 0%, #1e3a5f 100%);
+      border-radius: 12px;
+      padding: 36px 40px;
+      margin-bottom: 28px;
+      color: #fff;
+    }
+    .dash-header h1 {
+      font-size: 22px;
+      font-weight: 800;
+      margin-bottom: 6px;
+    }
+    .dash-header p { color: #94a3b8; font-size: 15px; }
+
+    .dash-card {
+      background: #fff;
+      border: 1px solid #e2e8f0;
+      border-radius: 12px;
+      padding: 28px 32px;
+      margin-bottom: 20px;
+    }
+    .dash-card h2 {
+      font-size: 17px;
+      font-weight: 700;
+      margin-bottom: 16px;
+      color: #0f172a;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .product-row {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      padding: 16px 0;
+      border-bottom: 1px solid #f1f5f9;
+    }
+    .product-row:last-child { border-bottom: none; padding-bottom: 0; }
+    .product-icon {
+      width: 48px;
+      height: 48px;
+      background: #eff6ff;
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 22px;
+      flex-shrink: 0;
+    }
+    .product-info { flex: 1; }
+    .product-info strong { font-size: 15px; font-weight: 700; color: #0f172a; display: block; margin-bottom: 3px; }
+    .product-info span { font-size: 13px; color: #64748b; }
+    .product-action a {
+      background: #2563eb;
+      color: #fff;
+      text-decoration: none;
+      padding: 9px 18px;
+      border-radius: 7px;
+      font-size: 13px;
+      font-weight: 600;
+      white-space: nowrap;
+    }
+
+    .token-form input {
+      width: 100%;
+      padding: 12px 14px;
+      border: 1px solid #e2e8f0;
+      border-radius: 8px;
+      font-size: 15px;
+      font-family: inherit;
+      margin-bottom: 12px;
+      outline: none;
+    }
+    .token-form input:focus { border-color: #2563eb; box-shadow: 0 0 0 3px rgba(37,99,235,.1); }
+    .token-form button {
+      background: #2563eb;
+      color: #fff;
+      border: none;
+      padding: 12px 24px;
+      border-radius: 8px;
+      font-size: 15px;
+      font-weight: 600;
+      cursor: pointer;
+      font-family: inherit;
+    }
+    .token-form button:hover { background: #1d4ed8; }
+
+    .msg-box {
+      margin-top: 12px;
+      padding: 12px 16px;
+      border-radius: 8px;
+      font-size: 14px;
+      display: none;
+    }
+    .msg-box.success { background: #f0fdf4; color: #166534; border: 1px solid #bbf7d0; }
+    .msg-box.error { background: #fef2f2; color: #991b1b; border: 1px solid #fecaca; }
+
+    .resource-list { list-style: none; }
+    .resource-list li {
+      padding: 12px 0;
+      border-bottom: 1px solid #f1f5f9;
+      font-size: 15px;
+      color: #334155;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .resource-list li:last-child { border-bottom: none; }
+    .resource-list a { color: #2563eb; text-decoration: none; font-weight: 500; }
+    .resource-list a:hover { text-decoration: underline; }
+
+    @media (max-width: 560px) {
+      .dash-header, .dash-card { padding-left: 20px; padding-right: 20px; }
+      .product-action a { padding: 8px 12px; }
+    }
+  </style>
+</head>
+<body>
+  <nav class="site-nav">
+    <div class="container site-nav-inner">
+      <a href="/" class="nav-logo">ProdutoVivo</a>
+      <button class="nav-hamburger" aria-label="Menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+      <div class="nav-links">
+        <a href="/blog">Blog</a>
+        <a href="/trilha">Trilha</a>
+        <a href="/quiz">Quiz grátis</a>
+        <a href="/recursos">Recursos</a>
+      </div>
+    </div>
+  </nav>
+
+  <div class="dash-wrapper">
+    <div class="dash-container">
+
+      <div class="dash-header">
+        <h1>Minha Área</h1>
+        <p>Acesse seus produtos, downloads e recursos exclusivos.</p>
+      </div>
+
+      <!-- Download section: token-based -->
+      <div class="dash-card">
+        <h2>📥 Acessar download</h2>
+        <p style="font-size:14px;color:#64748b;margin-bottom:20px;">
+          Digite o token de download que você recebeu por e-mail após a compra.
+          O token é válido por 48 horas após a compra.
+        </p>
+        <form class="token-form" id="token-form" novalidate>
+          <input
+            type="text"
+            id="token-input"
+            name="token"
+            placeholder="Cole aqui seu token de download"
+            autocomplete="off"
+          >
+          <button type="submit">Acessar download →</button>
+          <div class="msg-box" id="token-msg"></div>
+        </form>
+      </div>
+
+      <!-- Included content -->
+      <div class="dash-card">
+        <h2>📦 O que está incluído no guia</h2>
+        <ul class="resource-list">
+          <li>📄 Guia completo em PDF — 7 capítulos, ~80 páginas</li>
+          <li>🤖 50 prompts prontos para copiar e usar</li>
+          <li>🧩 Templates de chatbot, quiz e glossário</li>
+          <li>✅ Checklist de publicação no Hotmart / Kiwify</li>
+          <li>♾️ Atualizações gratuitas para sempre</li>
+          <li>📧 Suporte por e-mail — <a href="mailto:suporte@produtovivo.com">suporte@produtovivo.com</a></li>
+        </ul>
+      </div>
+
+      <!-- Free resources -->
+      <div class="dash-card">
+        <h2>🎁 Recursos gratuitos</h2>
+        <ul class="resource-list">
+          <li>📚 <a href="/trilha">Trilha de 81 guias</a> — do zero ao produto interativo</li>
+          <li>🎯 <a href="/quiz">Quiz de diagnóstico</a> — descubra seu estágio como criador</li>
+          <li>📖 <a href="/blog">Blog</a> — artigos sobre criação, vendas e escala</li>
+          <li>🔧 <a href="/recursos">Recursos</a> — ferramentas recomendadas</li>
+        </ul>
+      </div>
+
+      <p style="text-align:center;font-size:13px;color:#94a3b8;margin-top:8px;">
+        Problemas com o acesso? <a href="mailto:suporte@produtovivo.com" style="color:#64748b;">suporte@produtovivo.com</a>
+      </p>
+
+    </div>
+  </div>
+
+  <script>
+    // Nav hamburger
+    const hamburger = document.querySelector('.nav-hamburger');
+    const navLinks = document.querySelector('.nav-links');
+    if (hamburger) {
+      hamburger.addEventListener('click', function() {
+        const expanded = this.getAttribute('aria-expanded') === 'true';
+        this.setAttribute('aria-expanded', !expanded);
+        navLinks.classList.toggle('open');
+      });
+    }
+
+    // Token-based download access
+    const tokenForm = document.getElementById('token-form');
+    const tokenInput = document.getElementById('token-input');
+    const tokenMsg = document.getElementById('token-msg');
+
+    // Pre-fill from URL ?token=...
+    const params = new URLSearchParams(window.location.search);
+    const urlToken = params.get('token');
+    if (urlToken) tokenInput.value = urlToken;
+
+    function showMsg(text, type) {
+      tokenMsg.textContent = text;
+      tokenMsg.className = 'msg-box ' + type;
+      tokenMsg.style.display = '';
+    }
+
+    tokenForm.addEventListener('submit', async function(e) {
+      e.preventDefault();
+      const token = tokenInput.value.trim();
+      if (!token) { showMsg('Por favor, insira o token de download.', 'error'); return; }
+
+      const btn = tokenForm.querySelector('button');
+      btn.disabled = true;
+      btn.textContent = 'Verificando…';
+
+      try {
+        const res = await fetch('/download?token=' + encodeURIComponent(token), { redirect: 'manual' });
+        // 302/301 means token is valid — follow the redirect
+        if (res.type === 'opaqueredirect' || res.status === 200 || res.status === 302) {
+          window.location.href = '/download?token=' + encodeURIComponent(token);
+        } else {
+          const data = await res.json().catch(() => ({}));
+          showMsg(data.error || 'Token inválido ou expirado. Verifique seu e-mail.', 'error');
+          btn.disabled = false;
+          btn.textContent = 'Acessar download →';
+        }
+      } catch (err) {
+        showMsg('Erro de conexão. Tente novamente.', 'error');
+        btn.disabled = false;
+        btn.textContent = 'Acessar download →';
+      }
+    });
+  </script>
+</body>
+</html>
