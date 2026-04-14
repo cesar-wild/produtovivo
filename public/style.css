@@ -606,3 +606,167 @@ footer a { color: #94a3b8; text-decoration: none; }
   .nav-cta { margin-top: 8px; text-align: center; padding: 12px !important; border-radius: 6px; }
   .site-nav-inner { position: relative; }
 }
+
+/* =====================================================
+   Hero enhancements (social proof, secondary CTA)
+   ===================================================== */
+.hero-social-proof {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  margin-bottom: 28px;
+}
+.hsp-stars { color: #fbbf24; font-size: 16px; letter-spacing: 2px; }
+.hsp-text { font-size: 14px; color: #94a3b8; }
+.hsp-text strong { color: #cbd5e1; }
+
+.btn-hero { font-size: 18px; padding: 18px 44px; }
+
+.btn-secondary-hero {
+  display: inline-block;
+  background: transparent;
+  border: 1.5px solid rgba(255,255,255,.25);
+  color: #94a3b8;
+  text-decoration: none;
+  padding: 13px 28px;
+  border-radius: 8px;
+  font-size: 15px;
+  font-weight: 600;
+  transition: border-color .15s, color .15s;
+}
+.btn-secondary-hero:hover {
+  border-color: rgba(255,255,255,.5);
+  color: #fff;
+}
+
+/* =====================================================
+   Section sub-headline
+   ===================================================== */
+.section-sub {
+  text-align: center;
+  font-size: 16px;
+  color: var(--muted);
+  max-width: 600px;
+  margin: 0 auto 36px;
+  line-height: 1.7;
+}
+
+/* =====================================================
+   Author stats row
+   ===================================================== */
+.author-stats {
+  display: flex;
+  gap: 28px;
+  margin: 12px 0 16px;
+  flex-wrap: wrap;
+}
+.author-stat {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+.author-stat span {
+  font-size: 18px;
+  font-weight: 800;
+  color: var(--dark);
+}
+.author-stat small {
+  font-size: 12px;
+  color: #94a3b8;
+  margin-top: 1px;
+}
+@media(max-width:560px) {
+  .author-stats { justify-content: center; }
+  .author-stat { align-items: center; }
+}
+
+/* =====================================================
+   Purchase section — social proof below CTA button
+   ===================================================== */
+.purchase-social-proof {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  margin: 14px 0 0;
+  font-size: 13px;
+  color: var(--muted);
+}
+.purchase-social-proof span:first-child {
+  color: #fbbf24;
+  font-size: 14px;
+  letter-spacing: 1px;
+}
+
+/* =====================================================
+   Final CTA strip
+   ===================================================== */
+.final-cta-strip {
+  background: #0f172a;
+  padding: 64px 20px;
+  text-align: center;
+}
+.fcs-label {
+  color: #60a5fa;
+  font-size: 12px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  margin: 0 0 16px;
+}
+.fcs-headline {
+  color: #fff;
+  font-size: clamp(20px, 3.5vw, 30px);
+  font-weight: 800;
+  max-width: 580px;
+  margin: 0 auto 16px;
+  line-height: 1.3;
+}
+.fcs-sub {
+  color: #94a3b8;
+  font-size: 15px;
+  max-width: 480px;
+  margin: 0 auto 32px;
+  line-height: 1.7;
+}
+.fcs-fine {
+  color: #475569;
+  font-size: 13px;
+  margin: 16px 0 0;
+}
+
+/* =====================================================
+   Lead form — text input (name field)
+   ===================================================== */
+.lead-form input[type="text"] {
+  width: 100%;
+  padding: 14px 18px;
+  border-radius: 8px;
+  border: 1.5px solid #334155;
+  background: #0f172a;
+  color: #fff;
+  font-size: 15px;
+  font-family: inherit;
+  outline: none;
+  transition: border-color .15s;
+}
+.lead-form input[type="text"]:focus { border-color: #2563eb; }
+.lead-form input[type="text"]::placeholder { color: #475569; }
+
+/* =====================================================
+   Mobile responsive refinements
+   ===================================================== */
+@media(max-width:480px) {
+  .btn-hero { font-size: 16px; padding: 16px 28px; width: 100%; text-align: center; }
+  .btn-secondary-hero { width: 100%; text-align: center; }
+  .cta-group { width: 100%; }
+  .preview-card pre { font-size: 0.72rem; }
+  .cd-block { padding: 6px 10px; min-width: 44px; }
+  .cd-block span { font-size: 20px; }
+  .cd-sep { font-size: 18px; }
+  .pricing-card { padding: 28px 20px; }
+  .author-stats { gap: 16px; }
+  .proof-stat { padding: 8px 12px; }
+  .proof-divider { display: none; }
+}
