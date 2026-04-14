@@ -95,6 +95,11 @@ function checkEnv() {
   if (missing.length) {
     console.warn(`[config] Missing env vars — checkout/webhook will fail: ${missing.join(', ')}`);
   }
+  const optional = ['HOTMART_SECRET', 'META_ACCESS_TOKEN', 'META_PIXEL_ID', 'MANUAL_WEBHOOK_SECRET', 'RESEND_WEBHOOK_SECRET'];
+  const missingOptional = optional.filter((k) => !process.env[k]);
+  if (missingOptional.length) {
+    console.info(`[config] Optional env vars not set (some features degraded): ${missingOptional.join(', ')}`);
+  }
 }
 
 /**

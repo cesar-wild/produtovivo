@@ -1,47 +1,41 @@
-'use strict';
-
 const express = require('express');
+const { fireMetaPurchaseCAPI } = require('./hotmart');
 
 const router = express.Router();
 
 /**
  * POST /webhooks/meta-purchase
- * Manual trigger for Meta Conversions API Purchase events.
- * Useful for purchases from Kiwify or other platforms that don't have
- * a native Meta integration.
+ * Manual CAPI trigger — call this from Kiwify or any platform that isn't Hotmart.
+ *
+ * Body (JSON):
+ *   { "email": "buyer@example.com", "name": "Full Name", "value": 37.00, "secret": "..." }
+ *
+ * Requires MANUAL_WEBHOOK_SECRET env var to prevent unauthorized calls.
+ * If not configured, the endpoint is disabled (503).
  */
-router.post('/', async (req, res) => {
-  const { email, value, currency = 'BRL', event_id } = req.body;
-
-  if (!process.env.META_ACCESS_TOKEN || !process.env.META_PIXEL_ID) {
-    console.warn('[meta] META_ACCESS_TOKEN or META_PIXEL_ID not set — skipping');
-    return res.sendStatus(200);
+router.post('/', express.json(), async (req, res) => {
+  const secret = process.env.MANUAL_WEBHOOK_SECRET;
+  if (!secret) {
+    console.warn('[meta-purchase] MANUAL_WEBHOOK_SECRET not configured — endpoint disabled');
+    return res.status(503).json({ error: 'Endpoint not configured' });
   }
 
-  const payload = {
-    data: [{
-      event_name: 'Purchase',
-      event_time: Math.floor(Date.now() / 1000),
-      event_id: event_id || `purchase-${Date.now()}`,
-      action_source: 'website',
-      user_data: { em: email ? [email] : [] },
-      custom_data: { value: value || 37.00, currency },
-    }],
-  };
+  const { email, name, value = 37.00, secret: providedSecret } = req.body || {};
+
+  if (providedSecret !== secret) {
+    return res.status(401).json({ error: 'Invalid secret' });
+  }
+
+  if (!email || typeof email !== 'string') {
+    return res.status(400).json({ error: 'email is required' });
+  }
 
   try {
-    const url = `https://graph.facebook.com/v19.0/${process.env.META_PIXEL_ID}/events?access_token=${process.env.META_ACCESS_TOKEN}`;
-    const response = await fetch(url, {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify(payload),
-    });
-    const data = await response.json();
-    console.log('[meta] conversions api response:', JSON.stringify(data));
-    res.sendStatus(200);
+    await fireMetaPurchaseCAPI({ email, name: name || '', value: Number(value) || 37.00 });
+    res.json({ sent: true });
   } catch (err) {
-    console.error('[meta] conversions api error:', err.message);
-    res.sendStatus(500);
+    console.error('[meta-purchase] CAPI error:', err.message);
+    res.status(500).json({ error: 'CAPI call failed', detail: err.message });
   }
 });
 

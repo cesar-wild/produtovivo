@@ -3,17 +3,25 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Obrigado! — ProdutoVivo</title>
+  <title>Obrigado — ProdutoVivo</title>
   <meta name="robots" content="noindex, nofollow">
+  <!--
+    /obrigado — Hotmart / Kiwify thank-you URL bridge.
+    These platforms redirect buyers here after payment.
+    We immediately forward to /sucesso, preserving any query parameters
+    (e.g. ?transaction=XXX) so future analytics hooks can read them.
+  -->
   <script>
-    // Redirect to /sucesso preserving any query string (session_id etc.)
-    var qs = window.location.search;
-    window.location.replace('/sucesso' + qs);
+    (function () {
+      var search = window.location.search || '';
+      window.location.replace('/sucesso' + search);
+    })();
   </script>
 </head>
 <body>
+  <!-- Fallback for JS-disabled browsers -->
   <p style="font-family:sans-serif;text-align:center;margin-top:80px;color:#475569;">
-    Redirecionando… <a href="/sucesso">Clique aqui se não for redirecionado automaticamente.</a>
+    Redirecionando… <a href="/sucesso">Clique aqui</a> se não for redirecionado automaticamente.
   </p>
 </body>
 </html>

@@ -3,142 +3,160 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Minha Área — ProdutoVivo</title>
+  <title>Meu Guia — ProdutoVivo</title>
   <meta name="robots" content="noindex, nofollow">
-
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="/style.css">
-
   <style>
     body { background: #f8fafc; }
 
     .dash-wrapper {
       min-height: 100vh;
-      padding: 40px 20px 80px;
+      padding: 60px 20px 80px;
     }
 
-    .dash-container {
+    .dash-inner {
       max-width: 680px;
       margin: 0 auto;
     }
 
+    /* Header card */
     .dash-header {
       background: linear-gradient(135deg, #0f172a 0%, #1e3a5f 100%);
-      border-radius: 12px;
+      border-radius: 16px;
       padding: 36px 40px;
-      margin-bottom: 28px;
-      color: #fff;
+      margin-bottom: 24px;
+      display: flex;
+      align-items: center;
+      gap: 24px;
+    }
+    .dash-header-icon {
+      font-size: 48px;
+      flex-shrink: 0;
     }
     .dash-header h1 {
+      color: #fff;
       font-size: 22px;
-      font-weight: 800;
-      margin-bottom: 6px;
+      font-weight: 700;
+      margin: 0 0 6px;
     }
-    .dash-header p { color: #94a3b8; font-size: 15px; }
+    .dash-header p {
+      color: #94a3b8;
+      font-size: 14px;
+      margin: 0;
+    }
 
-    .dash-card {
+    /* Download card */
+    .card {
       background: #fff;
-      border: 1px solid #e2e8f0;
-      border-radius: 12px;
+      border-radius: 14px;
+      box-shadow: 0 2px 12px rgba(0,0,0,.06);
       padding: 28px 32px;
       margin-bottom: 20px;
     }
-    .dash-card h2 {
-      font-size: 17px;
+    .card h2 {
+      font-size: 16px;
       font-weight: 700;
-      margin-bottom: 16px;
       color: #0f172a;
-      display: flex;
-      align-items: center;
-      gap: 10px;
+      margin: 0 0 20px;
+      text-transform: uppercase;
+      letter-spacing: .4px;
     }
 
-    .product-row {
-      display: flex;
+    .btn-download {
+      display: inline-flex;
       align-items: center;
-      gap: 20px;
-      padding: 16px 0;
-      border-bottom: 1px solid #f1f5f9;
-    }
-    .product-row:last-child { border-bottom: none; padding-bottom: 0; }
-    .product-icon {
-      width: 48px;
-      height: 48px;
-      background: #eff6ff;
-      border-radius: 10px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 22px;
-      flex-shrink: 0;
-    }
-    .product-info { flex: 1; }
-    .product-info strong { font-size: 15px; font-weight: 700; color: #0f172a; display: block; margin-bottom: 3px; }
-    .product-info span { font-size: 13px; color: #64748b; }
-    .product-action a {
+      gap: 10px;
       background: #2563eb;
       color: #fff;
       text-decoration: none;
-      padding: 9px 18px;
-      border-radius: 7px;
-      font-size: 13px;
-      font-weight: 600;
-      white-space: nowrap;
-    }
-
-    .token-form input {
-      width: 100%;
-      padding: 12px 14px;
-      border: 1px solid #e2e8f0;
+      padding: 14px 28px;
       border-radius: 8px;
-      font-size: 15px;
-      font-family: inherit;
-      margin-bottom: 12px;
-      outline: none;
+      font-weight: 700;
+      font-size: 16px;
+      transition: background .15s;
     }
-    .token-form input:focus { border-color: #2563eb; box-shadow: 0 0 0 3px rgba(37,99,235,.1); }
-    .token-form button {
-      background: #2563eb;
-      color: #fff;
-      border: none;
-      padding: 12px 24px;
-      border-radius: 8px;
-      font-size: 15px;
-      font-weight: 600;
-      cursor: pointer;
-      font-family: inherit;
-    }
-    .token-form button:hover { background: #1d4ed8; }
+    .btn-download:hover { background: #1d4ed8; }
+    .btn-download svg { flex-shrink: 0; }
 
-    .msg-box {
+    .download-note {
       margin-top: 12px;
-      padding: 12px 16px;
-      border-radius: 8px;
-      font-size: 14px;
-      display: none;
+      font-size: 13px;
+      color: #94a3b8;
     }
-    .msg-box.success { background: #f0fdf4; color: #166534; border: 1px solid #bbf7d0; }
-    .msg-box.error { background: #fef2f2; color: #991b1b; border: 1px solid #fecaca; }
 
-    .resource-list { list-style: none; }
+    /* Included items */
+    .items-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+    }
+    @media(max-width: 540px) { .items-grid { grid-template-columns: 1fr; } }
+
+    .item-row {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      padding: 14px;
+      background: #f8fafc;
+      border-radius: 10px;
+      border: 1px solid #e2e8f0;
+    }
+    .item-icon { font-size: 22px; flex-shrink: 0; }
+    .item-label { font-size: 14px; font-weight: 600; color: #0f172a; line-height: 1.3; }
+    .item-sub { font-size: 12px; color: #64748b; margin-top: 2px; }
+
+    /* Free resources */
+    .resource-list { list-style: none; padding: 0; margin: 0; }
     .resource-list li {
-      padding: 12px 0;
-      border-bottom: 1px solid #f1f5f9;
-      font-size: 15px;
-      color: #334155;
       display: flex;
       align-items: center;
       gap: 10px;
+      padding: 12px 0;
+      border-bottom: 1px solid #f1f5f9;
+      font-size: 14px;
+      color: #334155;
     }
     .resource-list li:last-child { border-bottom: none; }
-    .resource-list a { color: #2563eb; text-decoration: none; font-weight: 500; }
-    .resource-list a:hover { text-decoration: underline; }
-
-    @media (max-width: 560px) {
-      .dash-header, .dash-card { padding-left: 20px; padding-right: 20px; }
-      .product-action a { padding: 8px 12px; }
+    .resource-list li a {
+      color: #2563eb;
+      text-decoration: none;
+      font-weight: 500;
     }
+    .resource-list li a:hover { text-decoration: underline; }
+    .resource-badge {
+      font-size: 11px;
+      font-weight: 600;
+      color: #166534;
+      background: #dcfce7;
+      padding: 2px 8px;
+      border-radius: 20px;
+      white-space: nowrap;
+    }
+
+    /* Support footer */
+    .dash-support {
+      text-align: center;
+      font-size: 13px;
+      color: #94a3b8;
+      margin-top: 8px;
+    }
+    .dash-support a { color: #64748b; }
+
+    /* Error state */
+    .error-box {
+      background: #fff;
+      border-radius: 14px;
+      box-shadow: 0 2px 12px rgba(0,0,0,.06);
+      padding: 60px 40px;
+      text-align: center;
+      max-width: 480px;
+      margin: 0 auto;
+    }
+    .error-box h2 { font-size: 20px; color: #0f172a; margin: 16px 0 12px; }
+    .error-box p { font-size: 15px; color: #64748b; line-height: 1.6; }
+    .error-box a { color: #2563eb; }
   </style>
 </head>
 <body>
@@ -158,118 +176,145 @@
   </nav>
 
   <div class="dash-wrapper">
-    <div class="dash-container">
+    <div class="dash-inner" id="content" style="display:none;">
 
+      <!-- Header -->
       <div class="dash-header">
-        <h1>Minha Área</h1>
-        <p>Acesse seus produtos, downloads e recursos exclusivos.</p>
+        <div class="dash-header-icon">📦</div>
+        <div>
+          <h1>Meu Guia ProdutoVivo</h1>
+          <p>Acesso confirmado — baixe seu guia e explore os recursos abaixo.</p>
+        </div>
       </div>
 
-      <!-- Download section: token-based -->
-      <div class="dash-card">
-        <h2>📥 Acessar download</h2>
-        <p style="font-size:14px;color:#64748b;margin-bottom:20px;">
-          Digite o token de download que você recebeu por e-mail após a compra.
-          O token é válido por 48 horas após a compra.
-        </p>
-        <form class="token-form" id="token-form" novalidate>
-          <input
-            type="text"
-            id="token-input"
-            name="token"
-            placeholder="Cole aqui seu token de download"
-            autocomplete="off"
-          >
-          <button type="submit">Acessar download →</button>
-          <div class="msg-box" id="token-msg"></div>
-        </form>
+      <!-- Download -->
+      <div class="card">
+        <h2>Download</h2>
+        <a id="download-btn" href="#" class="btn-download">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+          Baixar Guia ProdutoVivo (PDF)
+        </a>
+        <p class="download-note">Link válido por 48 horas a partir da compra. Em caso de dúvidas, escreva para suporte@produtovivo.com.</p>
       </div>
 
-      <!-- Included content -->
-      <div class="dash-card">
-        <h2>📦 O que está incluído no guia</h2>
-        <ul class="resource-list">
-          <li>📄 Guia completo em PDF — 7 capítulos, ~80 páginas</li>
-          <li>🤖 50 prompts prontos para copiar e usar</li>
-          <li>🧩 Templates de chatbot, quiz e glossário</li>
-          <li>✅ Checklist de publicação no Hotmart / Kiwify</li>
-          <li>♾️ Atualizações gratuitas para sempre</li>
-          <li>📧 Suporte por e-mail — <a href="mailto:suporte@produtovivo.com">suporte@produtovivo.com</a></li>
-        </ul>
+      <!-- What's included -->
+      <div class="card">
+        <h2>O que está incluído</h2>
+        <div class="items-grid">
+          <div class="item-row">
+            <div class="item-icon">📘</div>
+            <div>
+              <div class="item-label">Guia Completo</div>
+              <div class="item-sub">8 capítulos + 50 prompts</div>
+            </div>
+          </div>
+          <div class="item-row">
+            <div class="item-icon">🗺️</div>
+            <div>
+              <div class="item-label">81 Guias da Trilha</div>
+              <div class="item-sub">Do básico ao avançado</div>
+            </div>
+          </div>
+          <div class="item-row">
+            <div class="item-icon">🤖</div>
+            <div>
+              <div class="item-label">50 Prompts de IA</div>
+              <div class="item-sub">Prontos para copiar e usar</div>
+            </div>
+          </div>
+          <div class="item-row">
+            <div class="item-icon">📋</div>
+            <div>
+              <div class="item-label">Checklists Práticos</div>
+              <div class="item-sub">Por etapa de lançamento</div>
+            </div>
+          </div>
+          <div class="item-row">
+            <div class="item-icon">💡</div>
+            <div>
+              <div class="item-label">Estudos de Caso</div>
+              <div class="item-sub">PDFs que viraram apps</div>
+            </div>
+          </div>
+          <div class="item-row">
+            <div class="item-icon">🔄</div>
+            <div>
+              <div class="item-label">Atualizações Inclusas</div>
+              <div class="item-sub">Versões futuras sem custo extra</div>
+            </div>
+          </div>
+        </div>
       </div>
 
       <!-- Free resources -->
-      <div class="dash-card">
-        <h2>🎁 Recursos gratuitos</h2>
+      <div class="card">
+        <h2>Recursos gratuitos</h2>
         <ul class="resource-list">
-          <li>📚 <a href="/trilha">Trilha de 81 guias</a> — do zero ao produto interativo</li>
-          <li>🎯 <a href="/quiz">Quiz de diagnóstico</a> — descubra seu estágio como criador</li>
-          <li>📖 <a href="/blog">Blog</a> — artigos sobre criação, vendas e escala</li>
-          <li>🔧 <a href="/recursos">Recursos</a> — ferramentas recomendadas</li>
+          <li>
+            <span>🗺️</span>
+            <span>
+              <a href="/trilha">Trilha de Aprendizado</a> — 81 guias organizados por nível
+            </span>
+            <span class="resource-badge">Grátis</span>
+          </li>
+          <li>
+            <span>📖</span>
+            <span>
+              <a href="/blog">Blog ProdutoVivo</a> — artigos práticos sobre infoprodutos e IA
+            </span>
+            <span class="resource-badge">Grátis</span>
+          </li>
+          <li>
+            <span>🧠</span>
+            <span>
+              <a href="/quiz">Quiz de Perfil</a> — descubra seu nível e receba dicas personalizadas
+            </span>
+            <span class="resource-badge">Grátis</span>
+          </li>
+          <li>
+            <span>🛠️</span>
+            <span>
+              <a href="/recursos">Recursos e Ferramentas</a> — lista curada de ferramentas de IA para criadores
+            </span>
+            <span class="resource-badge">Grátis</span>
+          </li>
         </ul>
       </div>
 
-      <p style="text-align:center;font-size:13px;color:#94a3b8;margin-top:8px;">
-        Problemas com o acesso? <a href="mailto:suporte@produtovivo.com" style="color:#64748b;">suporte@produtovivo.com</a>
+      <p class="dash-support">
+        Dúvidas? <a href="mailto:suporte@produtovivo.com">suporte@produtovivo.com</a>
       </p>
+    </div>
 
+    <!-- Error state -->
+    <div id="error-state" style="display:none;">
+      <div class="error-box">
+        <div style="font-size:48px;">🔒</div>
+        <h2>Link inválido ou expirado</h2>
+        <p>
+          Este link de acesso não é válido ou já expirou.<br><br>
+          Se você acabou de comprar, verifique o e-mail que enviamos com o link de download.<br><br>
+          Precisa de ajuda? <a href="mailto:suporte@produtovivo.com">suporte@produtovivo.com</a>
+        </p>
+        <p style="margin-top:24px;"><a href="/" style="color:#2563eb;font-weight:600;">← Voltar ao início</a></p>
+      </div>
     </div>
   </div>
 
   <script>
-    // Nav hamburger
-    const hamburger = document.querySelector('.nav-hamburger');
-    const navLinks = document.querySelector('.nav-links');
-    if (hamburger) {
-      hamburger.addEventListener('click', function() {
-        const expanded = this.getAttribute('aria-expanded') === 'true';
-        this.setAttribute('aria-expanded', !expanded);
-        navLinks.classList.toggle('open');
-      });
+  (function () {
+    var params = new URLSearchParams(window.location.search);
+    var token = params.get('token');
+
+    if (!token) {
+      document.getElementById('error-state').style.display = '';
+      return;
     }
 
-    // Token-based download access
-    const tokenForm = document.getElementById('token-form');
-    const tokenInput = document.getElementById('token-input');
-    const tokenMsg = document.getElementById('token-msg');
-
-    // Pre-fill from URL ?token=...
-    const params = new URLSearchParams(window.location.search);
-    const urlToken = params.get('token');
-    if (urlToken) tokenInput.value = urlToken;
-
-    function showMsg(text, type) {
-      tokenMsg.textContent = text;
-      tokenMsg.className = 'msg-box ' + type;
-      tokenMsg.style.display = '';
-    }
-
-    tokenForm.addEventListener('submit', async function(e) {
-      e.preventDefault();
-      const token = tokenInput.value.trim();
-      if (!token) { showMsg('Por favor, insira o token de download.', 'error'); return; }
-
-      const btn = tokenForm.querySelector('button');
-      btn.disabled = true;
-      btn.textContent = 'Verificando…';
-
-      try {
-        const res = await fetch('/download?token=' + encodeURIComponent(token), { redirect: 'manual' });
-        // 302/301 means token is valid — follow the redirect
-        if (res.type === 'opaqueredirect' || res.status === 200 || res.status === 302) {
-          window.location.href = '/download?token=' + encodeURIComponent(token);
-        } else {
-          const data = await res.json().catch(() => ({}));
-          showMsg(data.error || 'Token inválido ou expirado. Verifique seu e-mail.', 'error');
-          btn.disabled = false;
-          btn.textContent = 'Acessar download →';
-        }
-      } catch (err) {
-        showMsg('Erro de conexão. Tente novamente.', 'error');
-        btn.disabled = false;
-        btn.textContent = 'Acessar download →';
-      }
-    });
+    // Point the download button at the validated download route
+    document.getElementById('download-btn').href = '/download?token=' + encodeURIComponent(token);
+    document.getElementById('content').style.display = '';
+  })();
   </script>
 </body>
 </html>
