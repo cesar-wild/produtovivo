@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Como Criar uma Landing Page para Infoproduto em 2026: Guia Completo | ProdutoVivo</title>
+  <meta name="description" content="Estrutura, copywriting e design de landing pages que convertem para infoprodutos brasileiros — do hero ao CTA, com exemplos reais e erros a evitar.">
+  <link rel="canonical" href="https://produtovivo.com/blog/como-criar-landing-page-infoproduto">
+  <meta property="og:title" content="Como Criar uma Landing Page para Infoproduto em 2026">
+  <meta property="og:description" content="Estrutura completa, copywriting e design de páginas de vendas que convertem — com exemplos e erros a evitar.">
+  <meta property="og:url" content="https://produtovivo.com/blog/como-criar-landing-page-infoproduto">
+  <meta property="og:type" content="article">
+  <link rel="alternate" type="application/rss+xml" title="Blog ProdutoVivo" href="https://produtovivo.com/rss.xml">
+  <script>
+    !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init','4520253334926563');fbq('track','PageView');
+  </script>
+  <style>
+    *{box-sizing:border-box;margin:0;padding:0}
+    body{font-family:'Segoe UI',system-ui,sans-serif;color:#1A1A2E;background:#fff;line-height:1.7}
+    a{color:#FF6B35;text-decoration:none}
+    nav{background:#1A1A2E;padding:14px 24px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:10px}
+    nav .logo{color:#fff;font-weight:800;font-size:1.1rem}
+    nav .nav-links a{color:#ccc;font-size:.9rem;margin-left:18px}
+    nav .nav-links a:hover{color:#FF6B35}
+    .hero{background:linear-gradient(135deg,#1A1A2E 0%,#2d2d5e 100%);color:#fff;padding:52px 24px 40px;text-align:center}
+    .hero .tag{display:inline-block;background:#FF6B35;color:#fff;font-size:.75rem;font-weight:700;padding:4px 12px;border-radius:20px;text-transform:uppercase;letter-spacing:.8px;margin-bottom:16px}
+    .hero h1{font-size:clamp(1.6rem,4vw,2.4rem);font-weight:800;max-width:760px;margin:0 auto 16px;line-height:1.25}
+    .hero .subtitle{font-size:1rem;color:#bbb;max-width:600px;margin:0 auto 20px}
+    .hero .meta{font-size:.85rem;color:#888}
+    .container{max-width:800px;margin:0 auto;padding:0 24px}
+    .article-body{padding:40px 0 60px}
+    .article-body h2{font-size:1.4rem;font-weight:800;color:#1A1A2E;margin:40px 0 14px;padding-top:8px;border-top:3px solid #FF6B35;display:inline-block}
+    .article-body h3{font-size:1.1rem;font-weight:700;color:#2d2d5e;margin:28px 0 10px}
+    .article-body p{margin-bottom:16px;color:#333;font-size:1rem}
+    .article-body ul,.article-body ol{margin:0 0 16px 20px;color:#333}
+    .article-body li{margin-bottom:6px}
+    .destaque-box{background:#fff8f5;border-left:4px solid #FF6B35;padding:18px 22px;border-radius:0 8px 8px 0;margin:24px 0;font-size:.97rem;color:#333}
+    .destaque-box strong{color:#FF6B35}
+
+    /* Section flow */
+    .section-flow{display:flex;flex-direction:column;gap:4px;margin:20px 0 30px}
+    .section-item{display:flex;gap:16px;align-items:flex-start;padding:18px 20px;border-radius:8px;border-left:4px solid #FF6B35;background:#fff8f5;margin-bottom:4px}
+    .section-num{min-width:28px;font-weight:800;color:#FF6B35;font-size:1rem;flex-shrink:0;padding-top:2px}
+    .section-body h3{font-size:.95rem;font-weight:700;color:#1A1A2E;margin:0 0 4px}
+    .section-body p{font-size:.88rem;color:#555;margin:0}
+
+    /* Copy examples */
+    .copy-box{background:#1A1A2E;color:#e2e8f0;padding:16px 20px;border-radius:10px;font-size:.87rem;margin:14px 0 20px;white-space:pre-wrap;line-height:1.6}
+    .copy-box .label{color:#FF6B35;font-weight:700;font-size:.78rem;display:block;margin-bottom:8px;letter-spacing:.5px}
+    .copy-box .good{color:#68d391}
+    .copy-box .bad{color:#fc8181}
+
+    /* Mistakes table */
+    .err-table{width:100%;border-collapse:collapse;margin:20px 0 30px;font-size:.9rem}
+    .err-table th{background:#1A1A2E;color:#fff;padding:10px 14px;text-align:left}
+    .err-table td{padding:10px 14px;border-bottom:1px solid #eee;vertical-align:top}
+    .err-table tr:nth-child(even) td{background:#fafafa}
+    .err-wrong{color:#e53e3e;font-weight:600}
+    .err-right{color:#38a169;font-weight:600}
+
+    /* Tools grid */
+    .tools-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:14px;margin:20px 0 30px}
+    .tool-card{background:#fff;border:2px solid #eee;border-radius:10px;padding:16px}
+    .tool-card .tc-icon{font-size:1.5rem;margin-bottom:8px}
+    .tool-card h3{font-size:.9rem;font-weight:700;color:#1A1A2E;margin:0 0 6px}
+    .tool-card p{font-size:.83rem;color:#555;margin:0}
+
+    /* CTA */
+    .inline-cta{background:linear-gradient(135deg,#1A1A2E,#2d2d5e);color:#fff;padding:32px 28px;border-radius:16px;text-align:center;margin:40px 0}
+    .inline-cta h3{font-size:1.2rem;font-weight:800;margin-bottom:10px}
+    .inline-cta p{font-size:.95rem;color:#bbb;margin-bottom:20px}
+    .btn-cta{display:inline-block;background:#FF6B35;color:#fff;font-weight:700;padding:13px 28px;border-radius:8px;font-size:1rem;transition:background .2s}
+    .btn-cta:hover{background:#e55a24;color:#fff}
+    footer{background:#1A1A2E;color:#888;text-align:center;padding:28px 24px;font-size:.85rem}
+    footer a{color:#FF6B35}
+    @media(max-width:600px){.tools-grid{grid-template-columns:1fr}}
+  </style>
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"Article",
+    "headline":"Como Criar uma Landing Page para Infoproduto em 2026: Guia Completo",
+    "description":"Estrutura, copywriting e design de landing pages que convertem para infoprodutos brasileiros.",
+    "author":{"@type":"Organization","name":"ProdutoVivo"},
+    "publisher":{"@type":"Organization","name":"ProdutoVivo","url":"https://produtovivo.com"},
+    "datePublished":"2026-04-14",
+    "url":"https://produtovivo.com/blog/como-criar-landing-page-infoproduto"
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"FAQPage",
+    "mainEntity":[
+      {"@type":"Question","name":"Qual a taxa de conversão esperada de uma landing page de infoproduto?","acceptedAnswer":{"@type":"Answer","text":"Para tráfego frio (anúncio), 1–3% é considerado bom. Para tráfego quente (lista de e-mails, seguidores engajados), 5–15% é esperado. Páginas otimizadas com prova social e vídeo de vendas podem superar 20% em listas muito aquecidas."}},
+      {"@type":"Question","name":"Preciso de domínio próprio para criar uma landing page?","acceptedAnswer":{"@type":"Answer","text":"Não é obrigatório. Plataformas como Hotmart e Kiwify oferecem páginas de vendas nativas com subdomínio delas. Para maior profissionalismo e controle, ter domínio próprio (ex: meuproduto.com.br) é recomendado após validar o produto."}},
+      {"@type":"Question","name":"Qual a extensão ideal de uma landing page de infoproduto?","acceptedAnswer":{"@type":"Answer","text":"Não há tamanho fixo — depende do ticket. Para produtos de R$17–97, páginas mais curtas (hero + benefícios + garantia + CTA) convertem bem. Para tickets acima de R$197, páginas mais longas com depoimentos, FAQ e quebra de objeções aumentam a conversão."}}
+    ]
+  }
+  </script>
+</head>
+<body>
+
+<nav>
+  <span class="logo">ProdutoVivo</span>
+  <div class="nav-links">
+    <a href="/blog">Blog</a>
+    <a href="/trilha">Trilha</a>
+    <a href="/quiz">Quiz grátis</a>
+    <a href="/recursos">Recursos</a>
+    <a href="/#comprar">Comprar guia</a>
+  </div>
+</nav>
+
+<div class="hero">
+  <div class="tag">Vendas &amp; Lançamento</div>
+  <h1>Como Criar uma Landing Page para Infoproduto em 2026: Guia Completo</h1>
+  <p class="subtitle">Estrutura, copywriting e design de páginas de vendas que convertem — da headline ao CTA. Com exemplos reais, erros comuns e ferramentas recomendadas.</p>
+  <div class="meta">14 abr 2026 · 13 min de leitura</div>
+</div>
+
+<div class="container">
+<div class="article-body">
+
+<p>A landing page é o ponto onde todo o seu trabalho de criação, marketing e tráfego se converte — ou não — em venda. Uma boa copy e estrutura podem triplicar a conversão de uma página mediana sem mudar nada no produto ou no tráfego.</p>
+
+<p>Este guia cobre a anatomia completa de uma landing page de infoproduto, com exemplos de copy testados e os erros que destroem conversão antes do visitante chegar ao botão de compra.</p>
+
+<div class="destaque-box">
+  <strong>Landing page vs. página de vendas vs. squeeze page:</strong> Landing page é qualquer página de destino com uma ação única. Página de vendas é uma landing page focada em compra. Squeeze page foca em captura de e-mail. Neste guia, focamos em <strong>página de vendas</strong> — a que converte visitante em comprador.
+</div>
+
+<h2>A anatomia de uma página de vendas que converte</h2>
+
+<div class="section-flow">
+
+  <div class="section-item">
+    <div class="section-num">1</div>
+    <div class="section-body">
+      <h3>Hero section — acima do scroll</h3>
+      <p>Headline principal (resultado desejado em 1 frase), subheadline (como o produto entrega esse resultado), imagem ou mockup do produto, CTA principal. Tudo visível sem rolar a página. O visitante decide se fica ou vai nos primeiros 5 segundos.</p>
+    </div>
+  </div>
+
+  <div class="section-item">
+    <div class="section-num">2</div>
+    <div class="section-body">
+      <h3>Problema + agitação</h3>
+      <p>Descreva a dor do leitor antes de mostrar o produto. Nomeie o problema com precisão — o leitor precisa sentir que você o entende. Evite soluções nesta seção. Objetivo: amplificar o problema antes de apresentar a solução.</p>
+    </div>
+  </div>
+
+  <div class="section-item">
+    <div class="section-num">3</div>
+    <div class="section-body">
+      <h3>Apresentação do produto</h3>
+      <p>Nome, formato, o que está incluso. Use lista com bullets — não parágrafos densos. Cada bullet deve ser um resultado ou entregável concreto, não uma característica. "50 prompts que geram seu produto em 3 dias" → não "prompts de IA inclusos".</p>
+    </div>
+  </div>
+
+  <div class="section-item">
+    <div class="section-num">4</div>
+    <div class="section-body">
+      <h3>Para quem é (e para quem NÃO é)</h3>
+      <p>Liste explicitamente o perfil ideal do comprador. Incluir "para quem NÃO é" aumenta conversão — demonstra honestidade e qualifica o lead antes da compra, reduzindo pedidos de reembolso.</p>
+    </div>
+  </div>
+
+  <div class="section-item">
+    <div class="section-num">5</div>
+    <div class="section-body">
+      <h3>Prova social</h3>
+      <p>Depoimentos com foto, nome e resultado específico. Prints de WhatsApp ou Instagram funcionam bem. Se não tem depoimentos: use número de alunos, avaliações da plataforma, ou ofereça para beta-testers em troca de feedback.</p>
+    </div>
+  </div>
+
+  <div class="section-item">
+    <div class="section-num">6</div>
+    <div class="section-body">
+      <h3>Quem criou + autoridade</h3>
+      <p>Apresentação do autor: 3–5 linhas, foco em resultados obtidos (não em credenciais acadêmicas). Foto profissional. Para nichos técnicos: certificações relevantes. Para nichos de resultado: casos de sucesso do próprio criador.</p>
+    </div>
+  </div>
+
+  <div class="section-item">
+    <div class="section-num">7</div>
+    <div class="section-body">
+      <h3>Oferta + preço + ancoragem</h3>
+      <p>Mostre o preço original (riscado) e o preço de lançamento. Justifique o desconto (tempo limitado, lançamento, bônus). Liste os bônus separadamente com valor individual. Faça a soma: "Valor total: R$547 — hoje por R$97".</p>
+    </div>
+  </div>
+
+  <div class="section-item">
+    <div class="section-num">8</div>
+    <div class="section-body">
+      <h3>Garantia</h3>
+      <p>Garantia de 7 dias é padrão no Brasil (LGPD + Código do Consumidor). Reforce-a com linguagem clara: "Se não gostar por qualquer motivo, devolvo 100% — sem perguntas". Garantia reduz fricção de compra mais do que qualquer desconto.</p>
+    </div>
+  </div>
+
+  <div class="section-item">
+    <div class="section-num">9</div>
+    <div class="section-body">
+      <h3>FAQ — quebre objeções</h3>
+      <p>Liste as 5–8 dúvidas mais comuns e responda diretamente. Inclua objeções reais: "Não tenho tempo", "É muito caro para mim", "Vou conseguir aplicar?". Cada objeção respondida remove um bloqueio de compra.</p>
+    </div>
+  </div>
+
+  <div class="section-item">
+    <div class="section-num">10</div>
+    <div class="section-body">
+      <h3>CTA final + urgência</h3>
+      <p>Botão de compra grande, com texto de ação ("Quero o guia agora" em vez de "Comprar"). Abaixo do botão: ícones de segurança (cadeado, bandeiras de cartão) + texto de garantia em 1 linha. Urgência real: vagas limitadas, preço de lançamento até [data].</p>
+    </div>
+  </div>
+
+</div>
+
+<h2>Copywriting: headlines que abrem — e headlines que fecham</h2>
+
+<div class="copy-box"><span class="label">// HEADLINE — FÓRMULAS QUE FUNCIONAM</span><span class="good">✅ "Como [resultado desejado] em [prazo] — mesmo que [objeção principal]"</span>
+Exemplo: "Como criar seu primeiro produto digital em 7 dias — mesmo sem audiência"
+
+<span class="good">✅ "[Número] [tipo de pessoa] já [resultado] com este método — agora é sua vez"</span>
+Exemplo: "1.200 infoprodutores já lançaram com este guia — agora é sua vez"
+
+<span class="good">✅ "A [adjetivo] forma de [resultado] sem [dor/obstáculo]"</span>
+Exemplo: "A forma mais rápida de vender seu conhecimento sem criar curso"
+
+<span class="bad">❌ Evite: "O melhor guia de infoprodutos do mercado"</span>
+<span class="bad">❌ Evite: "Descubra os segredos de..."</span>
+<span class="bad">❌ Evite: "Transforme sua vida com..."</span></div>
+
+<div class="copy-box"><span class="label">// BULLETS DE BENEFÍCIO — ANTES E DEPOIS</span><span class="bad">❌ "50 prompts de IA incluídos"</span>
+<span class="good">✅ "50 prompts numerados que geram seu produto interativo em horas — não em semanas"</span>
+
+<span class="bad">❌ "Módulo de vendas"</span>
+<span class="good">✅ "Como precificar seu produto para vender mais de 100 unidades no primeiro mês"</span>
+
+<span class="bad">❌ "Suporte por e-mail"</span>
+<span class="good">✅ "Resposta em até 24h para qualquer dúvida na aplicação"</span></div>
+
+<h2>Ferramentas para criar a landing page</h2>
+
+<div class="tools-grid">
+  <div class="tool-card">
+    <div class="tc-icon">🛒</div>
+    <h3>Hotmart / Kiwify (nativo)</h3>
+    <p>Página de vendas integrada à plataforma. Sem custo adicional. Boa para começar — menos controle visual mas zero fricção técnica.</p>
+  </div>
+  <div class="tool-card">
+    <div class="tc-icon">📄</div>
+    <h3>Elementor (WordPress)</h3>
+    <p>Editor visual com total controle de design. Requer hospedagem + domínio (~R$30/mês). Melhor para quem quer customização máxima.</p>
+  </div>
+  <div class="tool-card">
+    <div class="tc-icon">⚡</div>
+    <h3>Systeme.io</h3>
+    <p>Plano gratuito com funil completo (landing page + e-mail + vendas). Ideal para quem está começando e quer solução all-in-one sem custo.</p>
+  </div>
+  <div class="tool-card">
+    <div class="tc-icon">🎨</div>
+    <h3>Canva (exportar HTML)</h3>
+    <p>Design visual rápido. Limitado em funcionalidade de formulário mas bom para criar o layout antes de replicar em outra ferramenta.</p>
+  </div>
+  <div class="tool-card">
+    <div class="tc-icon">🔧</div>
+    <h3>Framer / Webflow</h3>
+    <p>Maior liberdade de design sem código. Framer tem plano gratuito. Ideal para designers ou infoprodutores que querem presença digital diferenciada.</p>
+  </div>
+  <div class="tool-card">
+    <div class="tc-icon">📊</div>
+    <h3>Google Optimize / VWO</h3>
+    <p>Ferramentas de A/B test para testar headlines, CTAs e cores. Use depois de ter pelo menos 200 visitas/semana para ter dados estatisticamente válidos.</p>
+  </div>
+</div>
+
+<h2>Os 8 erros que destroem a conversão</h2>
+
+<table class="err-table">
+  <thead>
+    <tr><th>Erro</th><th>Por que mata a conversão</th><th>Como corrigir</th></tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><span class="err-wrong">Menu de navegação no topo</span></td>
+      <td>O visitante navega para fora antes de ver a oferta</td>
+      <td>Remova toda navegação da landing page — só o logo</td>
+    </tr>
+    <tr>
+      <td><span class="err-wrong">Headline focada em feature, não em resultado</span></td>
+      <td>O leitor não entende como isso o beneficia</td>
+      <td>Transforme: "50 prompts" → "produto pronto em 3 dias"</td>
+    </tr>
+    <tr>
+      <td><span class="err-wrong">Sem prova social acima do scroll</span></td>
+      <td>Sem confiança, o visitante abandona</td>
+      <td>Adicione número de alunos ou 1 depoimento no hero</td>
+    </tr>
+    <tr>
+      <td><span class="err-wrong">Botão de compra só no final</span></td>
+      <td>Visitante que decide cedo não acha onde comprar</td>
+      <td>CTA repetido a cada 2–3 seções da página</td>
+    </tr>
+    <tr>
+      <td><span class="err-wrong">Carregamento lento (&gt;3s)</span></td>
+      <td>70% dos visitantes móveis abandonam</td>
+      <td>Comprima imagens (WebP), use CDN, minimize scripts</td>
+    </tr>
+    <tr>
+      <td><span class="err-wrong">Sem garantia visível</span></td>
+      <td>Medo de perder o dinheiro paralisa a compra</td>
+      <td>Garantia em destaque visual (badge, caixa colorida)</td>
+    </tr>
+    <tr>
+      <td><span class="err-wrong">Preço sem contexto</span></td>
+      <td>R$97 parece caro sem ancoragem</td>
+      <td>Mostre o valor total dos itens inclusos (ancoragem)</td>
+    </tr>
+    <tr>
+      <td><span class="err-wrong">Urgência falsa</span></td>
+      <td>Destrói credibilidade quando o timer reseta</td>
+      <td>Urgência real: data de encerramento fixada e cumprida</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2>Produto interativo na landing page: diferencial de conversão</h2>
+
+<p>Uma landing page padrão <em>descreve</em> o produto. Uma landing page com elemento interativo <em>demonstra</em> o produto antes da compra:</p>
+
+<ul>
+  <li><strong>Quiz de diagnóstico gratuito:</strong> "Responda 5 perguntas e descubra qual é seu maior bloqueio para lançar seu produto" → resultado personalizado + recomendação do produto</li>
+  <li><strong>Preview interativo:</strong> Mostre uma seção do produto funcionando — um mini-quiz, um capítulo navegável, uma calculadora. O visitante experimenta antes de pagar.</li>
+  <li><strong>Calculadora de ROI:</strong> "Se você criar um produto de R$97 e vender para X% da sua audiência de Y pessoas, fatura R$Z" — personaliza o argumento de valor para cada visitante</li>
+</ul>
+
+<div class="destaque-box">
+  <strong>Dado de mercado:</strong> Landing pages com elementos interativos (quiz, calculadora, preview) têm taxa de conversão 2–3× maior que páginas estáticas equivalentes — porque reduzem risco percebido e aumentam engajamento pré-compra.
+</div>
+
+<div class="inline-cta">
+  <h3>Adicione um quiz interativo à sua landing page</h3>
+  <p>O Guia ProdutoVivo ensina o método para criar quizzes e ferramentas interativas que integram direto na sua página de vendas — aumentando conversão sem aumentar o preço do produto.</p>
+  <a href="/#comprar" class="btn-cta">Ver o Guia ProdutoVivo — R$37</a>
+</div>
+
+<h2>Perguntas frequentes</h2>
+
+<h3>Qual a taxa de conversão esperada de uma landing page de infoproduto?</h3>
+<p>Para tráfego frio (anúncios para público novo), 1–3% é considerado bom. Para tráfego quente (lista de e-mails, seguidores engajados), 5–15% é esperado. Páginas otimizadas com prova social robusta e vídeo de vendas podem superar 20% em listas muito aquecidas.</p>
+
+<h3>Preciso de domínio próprio para criar uma landing page?</h3>
+<p>Não é obrigatório. Plataformas como Hotmart e Kiwify oferecem páginas de vendas nativas com subdomínio delas (ex: pay.hotmart.com/seu-produto). Para maior profissionalismo e controle, domínio próprio é recomendado após validar o produto e ter as primeiras vendas.</p>
+
+<h3>Qual a extensão ideal de uma landing page de infoproduto?</h3>
+<p>Depende do ticket. Para produtos de R$17–97, páginas mais curtas (hero + benefícios + garantia + CTA) convertem bem. Para tickets acima de R$197, páginas mais longas com depoimentos, FAQ extenso e quebra de objeções aumentam a confiança e a conversão. Regra geral: quanto maior o investimento pedido, mais argumentos a página precisa ter.</p>
+
+</div>
+</div>
+
+<footer>
+  <p>© 2026 ProdutoVivo · <a href="mailto:suporte@produtovivo.com">suporte@produtovivo.com</a></p>
+  <p style="margin-top:6px;"><a href="/">Home</a> · <a href="/blog">Blog</a> · <a href="/trilha">Trilha</a> · <a href="/quiz">Quiz</a> · <a href="/afiliados">Afiliados</a> · <a href="/privacidade">Privacidade</a> · <a href="/termos">Termos</a></p>
+</footer>
+
+</body>
+</html>
