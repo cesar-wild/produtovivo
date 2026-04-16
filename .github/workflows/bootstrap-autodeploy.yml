@@ -1,0 +1,40 @@
+name: Bootstrap auto-deploy (one-time install)
+
+# Manual trigger only — runs once to install systemd units.
+# After this runs, the produtovivo-autodeploy.timer handles all future deploys.
+# PRO-49: this is NOT the continuous deploy path; it is the one-time server bootstrap.
+on:
+  workflow_dispatch:
+
+jobs:
+  install-systemd-units:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Install systemd units and start timer on Hetzner
+        uses: appleboy/ssh-action@v1.2.0
+        with:
+          host: 5.223.73.101
+          username: root
+          key: ${{ secrets.HETZNER_SSH_KEY }}
+          script: |
+            set -euo pipefail
+
+            REPO_DIR="/opt/produtovivo"
+            echo "=== Pulling latest from origin/main ==="
+            git -C "$REPO_DIR" fetch origin
+            git -C "$REPO_DIR" checkout origin/main -- infra/ scripts/auto-deploy.sh || \
+              git -C "$REPO_DIR" pull --ff-only origin main
+
+            echo "=== Running installer ==="
+            bash "${REPO_DIR}/infra/install-autodeploy.sh"
+
+            echo "=== Verifying timer is active ==="
+            systemctl is-active produtovivo-autodeploy.timer
+            systemctl list-timers produtovivo-autodeploy.timer --no-pager
+
+            echo "=== Verifying produtovivo service ==="
+            systemctl is-active produtovivo.service || true
+            curl -sf http://127.0.0.1:3000/health && echo " — /health OK"
+
+            echo "=== Bootstrap complete. Continuous deploy is now live. ==="
+            echo "Monitor with: journalctl -t produtovivo-autodeploy -f"
