@@ -30,14 +30,10 @@ jobs:
             set -e
             cd /opt/produtovivo
             git pull origin main
-            npm install --omit=dev
-            sudo systemctl restart produtovivo
-            echo "Waiting for service to come up..."
-            sleep 5
-            curl -sf http://localhost:8082/health || (echo "Health check failed" && exit 1)
+            bash deploy.sh
             echo "Deploy successful"
 
-      - name: Verify health endpoint
+      - name: Verify public health endpoint
         run: |
           sleep 3
           HTTP_STATUS=$(curl -s -o /dev/null -w "%{http_code}" https://produtovivo.com/health || echo "000")
@@ -45,4 +41,5 @@ jobs:
             echo "Production health check passed (HTTP $HTTP_STATUS)"
           else
             echo "Production health check returned HTTP $HTTP_STATUS — may still be warming up"
+            exit 1
           fi
