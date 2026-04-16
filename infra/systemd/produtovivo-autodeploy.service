@@ -1,0 +1,24 @@
+# /etc/systemd/system/produtovivo-autodeploy.service
+# One-shot service that runs the auto-deploy script on each timer tick.
+# Triggered by produtovivo-autodeploy.timer (every 2 minutes).
+#
+# Install: see infra/install-autodeploy.sh
+# Logs:    journalctl -t produtovivo-autodeploy -f
+
+[Unit]
+Description=ProdutoVivo auto-deploy (one-shot)
+Documentation=https://github.com/cesar-wild/produtovivo
+After=network-online.target produtovivo.service
+Wants=network-online.target
+
+[Service]
+Type=oneshot
+ExecStart=/opt/produtovivo/scripts/auto-deploy.sh
+
+# Capture all output into the journal under the script's own syslog tag
+StandardOutput=journal
+StandardError=journal
+SyslogIdentifier=produtovivo-autodeploy
+
+# Never email on failure (OnFailure= intentionally omitted per PRO-49 requirements)
+# Morning health check at 07:45 UTC is the alerting mechanism.
