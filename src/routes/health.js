@@ -20,4 +20,11 @@ router.get('/', async (req, res) => {
   });
 });
 
+router.get('/deploy', (req, res) => {
+  res.json({
+    sha: process.env.GIT_SHA || 'unknown',
+    ts: new Date().toISOString(),
+  });
+});
+
 module.exports = router;

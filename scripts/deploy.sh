@@ -12,7 +12,10 @@ cd "$APP_DIR"
 git pull origin main
 
 echo "[deploy] Rebuilding and restarting docker container..."
-docker compose -f "$COMPOSE_FILE" up -d --build
+GIT_SHA=$(git rev-parse HEAD)
+echo "[deploy] SHA: $GIT_SHA"
+docker compose -f "$COMPOSE_FILE" build --build-arg GIT_SHA="$GIT_SHA"
+docker compose -f "$COMPOSE_FILE" up -d
 
 echo "[deploy] Waiting for container to come up..."
 sleep 6

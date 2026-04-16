@@ -13,6 +13,8 @@ COPY product/ ./product/
 
 EXPOSE 8082
 
+ARG GIT_SHA=unknown
+ENV GIT_SHA=${GIT_SHA}
 ENV PORT=8082
 ENV NODE_ENV=production
 
