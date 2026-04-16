@@ -1,0 +1,36 @@
+# /etc/systemd/system/produtovivo.service
+# Manages the ProdutoVivo production Docker Compose stack.
+# Allows `systemctl start/stop/restart produtovivo` to control the app.
+#
+# Install: see infra/install-autodeploy.sh
+# Logs:    journalctl -u produtovivo -f
+# IMPORTANT: Do NOT create a unit for port 8080 — that is another company's service.
+
+[Unit]
+Description=ProdutoVivo production app (Docker Compose)
+Documentation=https://github.com/cesar-wild/produtovivo
+After=docker.service network-online.target
+Requires=docker.service
+Wants=network-online.target
+
+[Service]
+Type=oneshot
+RemainAfterExit=yes
+WorkingDirectory=/opt/produtovivo
+
+# Build image from current source, start container detached
+ExecStart=/usr/bin/docker compose -f docker-compose.prod.yml up -d --build
+
+# Stop and remove container (data is stateless — postgres is external)
+ExecStop=/usr/bin/docker compose -f docker-compose.prod.yml down
+
+StandardOutput=journal
+StandardError=journal
+SyslogIdentifier=produtovivo
+
+# Restart on failure except intentional stops
+Restart=on-failure
+RestartSec=10s
+
+[Install]
+WantedBy=multi-user.target

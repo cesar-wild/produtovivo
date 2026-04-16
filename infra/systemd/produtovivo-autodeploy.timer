@@ -1,0 +1,27 @@
+# /etc/systemd/system/produtovivo-autodeploy.timer
+# Fires produtovivo-autodeploy.service every 2 minutes.
+# Satisfies PRO-49: "up-to-5-min deploy latency" requirement.
+#
+# Install: see infra/install-autodeploy.sh
+# Status:  systemctl status produtovivo-autodeploy.timer
+# Logs:    journalctl -t produtovivo-autodeploy -f
+
+[Unit]
+Description=ProdutoVivo auto-deploy timer (every 2 minutes)
+Documentation=https://github.com/cesar-wild/produtovivo
+
+[Timer]
+# First run 60s after boot (give network + Docker time to settle)
+OnBootSec=60s
+
+# Subsequent runs every 2 minutes from last activation
+OnUnitActiveSec=2min
+
+# Never persist missed runs across reboots (Persistent=false is the default;
+# stated explicitly to prevent accidental catch-up deploys after long downtime)
+Persistent=false
+
+Unit=produtovivo-autodeploy.service
+
+[Install]
+WantedBy=timers.target
