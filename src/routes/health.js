@@ -27,4 +27,22 @@ router.get('/deploy', (req, res) => {
   });
 });
 
+// Returns presence of required env vars — never their values.
+// Used by ops to diagnose missing config without SSH.
+router.get('/env', (req, res) => {
+  const required = [
+    'STRIPE_SECRET_KEY',
+    'STRIPE_PRICE_ID',
+    'STRIPE_WEBHOOK_SECRET',
+    'RESEND_API_KEY',
+    'DATABASE_URL',
+    'HOTMART_SECRET',
+    'META_PIXEL_ID',
+    'META_ACCESS_TOKEN',
+  ];
+  const status = Object.fromEntries(required.map((k) => [k, Boolean(process.env[k])]));
+  const missing = required.filter((k) => !process.env[k]);
+  res.json({ status, missing, allRequiredPresent: missing.length === 0 });
+});
+
 module.exports = router;
