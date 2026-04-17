@@ -18,18 +18,30 @@ function getStripe() {
 /**
  * POST /checkout/session
  * Creates a Stripe Checkout session for the guide purchase.
+ * Uses STRIPE_PRICE_ID if configured; falls back to inline price_data (R$37).
  */
 router.post('/session', async (req, res) => {
   const priceId = process.env.STRIPE_PRICE_ID;
-  if (!priceId) {
-    console.error('Checkout error: STRIPE_PRICE_ID not configured');
-    return res.status(500).json({ error: 'Falha ao criar sessão de pagamento' });
-  }
+
+  // Build line item: use pre-configured price ID if set, otherwise inline price_data
+  const lineItem = priceId
+    ? { price: priceId, quantity: 1 }
+    : {
+        price_data: {
+          currency: 'brl',
+          product_data: {
+            name: 'Guia ProdutoVivo — PDF para App Interativo com IA',
+            description: '7 capítulos · 50 prompts prontos · Acesso imediato',
+          },
+          unit_amount: 3700, // R$37,00 in centavos
+        },
+        quantity: 1,
+      };
 
   try {
     const session = await getStripe().checkout.sessions.create({
       mode: 'payment',
-      line_items: [{ price: priceId, quantity: 1 }],
+      line_items: [lineItem],
       payment_method_types: ['card'],
       billing_address_collection: 'auto',
       success_url: `${APP_URL}/sucesso?session_id={CHECKOUT_SESSION_ID}`,
