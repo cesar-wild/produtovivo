@@ -44,12 +44,18 @@ router.post('/stripe', express.raw({ type: 'application/json' }), async (req, re
     const expiresAt = new Date(Date.now() + 48 * 60 * 60 * 1000); // 48 h
 
     try {
-      await pool.query(
+      const result = await pool.query(
         `INSERT INTO orders (stripe_session_id, stripe_payment_intent, email, name, status, download_token, download_expires_at)
          VALUES ($1, $2, $3, $4, 'paid', $5, $6)
          ON CONFLICT (stripe_session_id) DO NOTHING`,
         [sessionId, session.payment_intent, email, name, token, expiresAt]
       );
+
+      if (result.rowCount === 0) {
+        // Duplicate webhook delivery — order already fulfilled, skip email
+        console.log(`Webhook duplicate ignored for session ${sessionId}`);
+        return res.json({ received: true });
+      }
 
       const downloadUrl = `${APP_URL}/download?token=${token}`;
       await sendPurchaseEmail({ to: email, name, downloadUrl });
