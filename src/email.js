@@ -43,7 +43,7 @@ async function sendPurchaseEmail({ to, name, downloadUrl }) {
         Baixar meu Guia →
       </a>
       <p style="margin:24px 0 0;color:#94a3b8;font-size:13px;">
-        Link válido por 48 horas. Em caso de dúvidas, responda este e-mail.
+        Link válido por 7 dias (máx. 5 downloads). Em caso de dúvidas, responda este e-mail.
       </p>
     </div>
     <div style="padding:20px 40px;border-top:1px solid #f1f5f9;text-align:center;">

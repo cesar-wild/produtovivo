@@ -48,7 +48,7 @@ router.post('/', express.json(), async (req, res) => {
   // Use Hotmart transaction ID as the unique idempotency key
   const transactionId = `hotmart_${purchase?.transaction || Date.now()}`;
   const token = crypto.randomBytes(32).toString('hex');
-  const expiresAt = new Date(Date.now() + 48 * 60 * 60 * 1000); // 48 h
+  const expiresAt = new Date(Date.now() + 7 * 24 * 60 * 60 * 1000); // 7 days
 
   try {
     const result = await pool.query(

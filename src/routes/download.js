@@ -24,8 +24,16 @@ router.get('/', async (req, res) => {
 
   let order;
   try {
+    // Atomically increment download_count and return the updated row.
+    // The WHERE clause enforces token validity, paid status, expiry, and 5-download cap.
     const result = await pool.query(
-      `SELECT * FROM orders WHERE download_token = $1 AND status = 'paid'`,
+      `UPDATE orders
+       SET download_count = download_count + 1, updated_at = NOW()
+       WHERE download_token = $1
+         AND status = 'paid'
+         AND download_expires_at > NOW()
+         AND download_count < 5
+       RETURNING *`,
       [token]
     );
     order = result.rows[0];
@@ -35,11 +43,26 @@ router.get('/', async (req, res) => {
   }
 
   if (!order) {
+    // Distinguish between invalid token, expired, and limit reached for better UX.
+    try {
+      const check = await pool.query(
+        `SELECT status, download_expires_at, download_count FROM orders WHERE download_token = $1`,
+        [token]
+      );
+      const row = check.rows[0];
+      if (!row || row.status !== 'paid') {
+        return res.status(404).send('Link inválido ou expirado.');
+      }
+      if (new Date(row.download_expires_at) < new Date()) {
+        return res.status(410).send('Este link expirou. Envie um e-mail para suporte@produtovivo.com para obter um novo link.');
+      }
+      if (row.download_count >= 5) {
+        return res.status(410).send('Limite de downloads atingido. Envie um e-mail para suporte@produtovivo.com para obter um novo link.');
+      }
+    } catch (_) {
+      // ignore secondary check error
+    }
     return res.status(404).send('Link inválido ou expirado.');
-  }
-
-  if (new Date(order.download_expires_at) < new Date()) {
-    return res.status(410).send('Este link expirou. Envie um e-mail para suporte@produtovivo.com para obter um novo link.');
   }
 
   const candidate = CANDIDATES.find(c => fs.existsSync(path.join(PRODUCT_DIR, c.file)));

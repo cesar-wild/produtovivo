@@ -35,6 +35,12 @@ async function migrate() {
         ADD COLUMN IF NOT EXISTS nurturing_day1_at TIMESTAMPTZ,
         ADD COLUMN IF NOT EXISTS nurturing_day3_at TIMESTAMPTZ;
     `);
+
+    // Add download count tracking (max 5 per token)
+    await client.query(`
+      ALTER TABLE orders
+        ADD COLUMN IF NOT EXISTS download_count INTEGER NOT NULL DEFAULT 0;
+    `);
     // Leads table for quiz funnel
     await client.query(`
       CREATE TABLE IF NOT EXISTS leads (

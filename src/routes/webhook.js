@@ -41,7 +41,7 @@ router.post('/stripe', express.raw({ type: 'application/json' }), async (req, re
 
     // Generate a time-limited download token
     const token = crypto.randomBytes(32).toString('hex');
-    const expiresAt = new Date(Date.now() + 48 * 60 * 60 * 1000); // 48 h
+    const expiresAt = new Date(Date.now() + 7 * 24 * 60 * 60 * 1000); // 7 days
 
     try {
       const result = await pool.query(
