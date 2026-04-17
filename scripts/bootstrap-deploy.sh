@@ -18,9 +18,9 @@ SERVICE_NAME="produtovivo-deploy"
 TIMER_NAME="produtovivo-deploy.timer"
 LOG_FILE="/var/log/produtovivo-deploy.log"
 
-if [ ! -d "$APP_DIR" ]; then
-  echo "[bootstrap] ERROR: $APP_DIR not found. Aborting."
-  exit 1
+if [ ! -d "$APP_DIR/.git" ]; then
+  echo "[bootstrap] $APP_DIR not found — cloning from GitHub..."
+  git clone https://github.com/cesar-wild/produtovivo "$APP_DIR"
 fi
 
 echo "[bootstrap] Installing GitHub Actions deploy key into /root/.ssh/authorized_keys (idempotent)..."
