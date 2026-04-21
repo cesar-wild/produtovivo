@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-import os, textwrap
+import os, json
 
 BASE = "/paperclip/instances/staging/projects/8e3f5ea8-7aef-45a3-94da-f8840beb4ca5/0de17dd9-cfe7-4d6c-be32-ee3535be097e/produtovivo/public"
 
@@ -43,7 +43,6 @@ def art(slug, title, desc, tag, tc, h1, lead, secs, faqs, rel):
     rel_html = "".join(f'<div class="related-card"><a href="/blog/{r[0]}/">{r[1]}</a></div>' for r in rel)
     faq_items = "".join(f'<div class="faq-item"><h3>{q}</h3><p>{a}</p></div>' for q,a in faqs)
     faq_ld = [{"@type":"Question","name":q,"acceptedAnswer":{"@type":"Answer","text":a}} for q,a in faqs]
-    import json
     secs_html = ""
     for sh, sp in secs:
         secs_html += f"<h2>{sh}</h2>" + "".join(f"<p>{p}</p>" for p in sp)
@@ -78,526 +77,552 @@ def art(slug, title, desc, tag, tc, h1, lead, secs, faqs, rel):
 <h2>Perguntas Frequentes</h2>
 {faq_items}
 </div></div>
-<div class="related"><h2>Veja Tambem</h2><div class="related-grid">{rel_html}</div></div>
+<div class="related"><h2>Artigos Relacionados</h2><div class="related-grid">{rel_html}</div></div>
 <div class="cta-section">
-<h2>Transforme Seu Conhecimento em Produto Digital</h2>
-<p>O guia ProdutoVivo mostra o passo a passo completo para criar, publicar e vender seu produto digital usando IA.</p>
-<a class="btn" href="/#comprar">Baixar Guia por R$37</a>
+<h2>Pronto para criar seu infoproduto?</h2>
+<p>Baixe o guia ProdutoVivo por R$37 e transforme seu conhecimento em produto digital com IA.</p>
+<a class="btn" href="/#comprar">Quero o Guia Agora</a>
 </div>
-<footer>© 2025 ProdutoVivo · <a href="/privacidade/" style="color:#aaa">Privacidade</a></footer>
+<footer><p>&copy; 2025 ProdutoVivo &mdash; <a href="/privacidade.html" style="color:#aaa">Privacidade</a> &middot; <a href="/termos.html" style="color:#aaa">Termos</a></p></footer>
 </body></html>"""
-    with open(f"{out}/index.html","w") as f:
-        f.write(html)
+    with open(f"{out}/index.html", "w", encoding="utf-8") as fh:
+        fh.write(html)
     print(f"OK {slug}")
 
+# ── BATCH 569 ────────────────────────────────────────────────────────────────
+
 art(
-    "gestao-de-clinicas-de-alergologia-adulto",
-    "Gestao de Clinicas de Alergologia Adulto",
-    "Aprenda a gerir uma clinica de alergologia adulto com eficiencia: processos, equipe, tecnologia e crescimento sustentavel.",
-    "Gestao",
-    "Gestao de Clinicas de Alergologia Adulto | ProdutoVivo",
-    "Como Gerir uma Clinica de Alergologia Adulto com Eficiencia",
-    "Descubra as melhores praticas de gestao para clinicas de alergologia adulto e transforme seu consultorio em um negocio sustentavel.",
+    "como-criar-infoproduto-sobre-gestao-de-clinicas-de-urologia-pediatrica",
+    "Como Criar Infoproduto sobre Gestão de Clínica de Urologia Pediátrica",
+    "Aprenda a criar infoproduto ensinando urologistas pediátricos a estruturar sua clínica, montar protocolos de atendimento infantil e crescer com pacientes de alto valor.",
+    "Gestão de Negócios",
+    "Como Criar Infoproduto sobre Gestão de Clínica de Urologia Pediátrica | ProdutoVivo",
+    "Como Criar Infoproduto sobre Gestão de Clínica de Urologia Pediátrica",
+    "Descubra como ensinar urologistas pediátricos a estruturar sua clínica com protocolos infantis, gestão de equipe multidisciplinar e captação de famílias usando IA para criar seu infoproduto.",
     [
-        ("Fundamentos da Gestao Clinica em Alergologia", [
-            "A gestao eficiente de uma clinica de alergologia adulto vai alem do atendimento clinico. Envolve processos administrativos, financeiros e de relacionamento com pacientes que impactam diretamente nos resultados.",
-            "Clinicas bem geridas conseguem atender mais pacientes com a mesma estrutura, reduzir custos operacionais e oferecer uma experiencia superior que gera indicacoes e fidelizacao.",
+        ("Por que urologia pediátrica é um nicho premium para infoprodutos de gestão", [
+            "A urologia pediátrica é uma subespecialidade rara e de alto valor — poucos cirurgiões no Brasil dominam procedimentos como correção de hipospádia, pieloplastia e orquidopexia. Pais buscam ativamente especialistas para seus filhos, tornando este um mercado com alta disposição de pagamento.",
+            "Um infoproduto sobre gestão de clínica de urologia pediátrica preenche uma lacuna real: muitos urologistas pediátricos têm formação técnica excelente mas carecem de estrutura administrativa, precificação e captação de pacientes.",
         ]),
-        ("Processos Essenciais para sua Clinica", [
-            "Implemente um sistema de agendamento online integrado ao prontuario eletronico. Isso reduz faltas, otimiza o tempo dos medicos e melhora a experiencia do paciente desde o primeiro contato.",
-            "Padronize protocolos de atendimento para as principais queixas alergologicas: rinite, asma, urticaria e alergias alimentares. Protocolos claros reduzem erros e aumentam a produtividade.",
+        ("O que ensinar no infoproduto de gestão de clínica de urologia pediátrica", [
+            "Os módulos mais valiosos cobrem estruturação de clínica pediátrica com ambiente adequado para crianças e responsáveis, formação de equipe multidisciplinar com enfermagem e psicologia, precificação de procedimentos cirúrgicos e consultas, captação de famílias via pediatras parceiros e planos de saúde.",
+            "Um módulo dedicado à comunicação com pais — como explicar procedimentos delicados e construir confiança — tem alto valor percebido e diferencia o infoproduto de concorrentes.",
         ]),
-        ("Gestao Financeira e Crescimento", [
-            "Monitore indicadores como ticket medio, taxa de retorno e custo de aquisicao de pacientes. Esses numeros permitem tomar decisoes baseadas em dados para crescer de forma sustentavel.",
-            "Considere criar produtos digitais com seu conhecimento em alergologia — guias para pacientes, cursos sobre manejo de alergias. Isso diversifica receita e posiciona sua clinica como referencia.",
+        ("Como criar infoproduto de urologia pediátrica com IA", [
+            "O guia ProdutoVivo ensina a transformar protocolos clínicos e de gestão em módulos de curso usando IA, com materiais de apoio e página de vendas otimizada.",
+            "Em poucos dias você tem um produto digital pronto para vender para urologistas pediátricos que querem profissionalizar sua clínica e aumentar o faturamento.",
         ]),
     ],
     [
-        ("Quais sistemas de gestao sao recomendados para clinicas de alergologia?", "Sistemas como iClinic, Omint e Tasy sao populares. Priorize integracao com convenios, prontuario eletronico e teleconsulta."),
-        ("Como reduzir faltas e cancelamentos na clinica?", "Use lembretes automaticos por WhatsApp e SMS, implemente lista de espera digital e cobre taxa de cancelamento com antecedencia menor que 24h."),
-        ("Vale a pena oferecer teleconsulta em alergologia?", "Sim, especialmente para retornos e acompanhamento de imunoterapia. Reduz deslocamento do paciente e aumenta a capacidade de atendimento da clinica."),
+        ("Qualquer urologista pediátrico pode criar um infoproduto de gestão?", "Sim. Urologistas com residência em urologia pediátrica e experiência clínica têm credencial suficiente. O guia ProdutoVivo ajuda a estruturar esse conhecimento em produto digital."),
+        ("Quanto cobrar por infoproduto de gestão de urologia pediátrica?", "Entre R$997 e R$2.997. A especificidade do nicho e a escassez de especialistas justificam preços elevados."),
+        ("Como encontrar urologistas pediátricos para vender o infoproduto?", "A SBUP (Sociedade Brasileira de Urologia Pediátrica), grupos de pediatria cirúrgica e congressos da área são os canais ideais."),
+        ("Urologia pediátrica tem demanda crescente no Brasil?", "Sim. O aumento de diagnósticos precoces via ultrassom fetal e maior acesso à saúde infantil privada expandiram a demanda por especialistas em urologia pediátrica."),
     ],
     [
-        ("gestao-de-clinicas-de-cardiologia-intervencionista", "Gestao de Clinicas de Cardiologia Intervencionista"),
-        ("gestao-de-clinicas-de-pneumologia-adulto", "Gestao de Clinicas de Pneumologia Adulto"),
-        ("marketing-para-profissionais-de-alergologia-adulto", "Marketing para Alergologistas"),
+        ("como-criar-infoproduto-sobre-gestao-de-clinicas-de-urologia-adulto", "Gestão de Clínica de Urologia de Adultos"),
+        ("como-criar-infoproduto-sobre-gestao-de-clinicas-de-pediatria-geral", "Gestão de Clínica de Pediatria Geral"),
+        ("como-criar-infoproduto-sobre-gestao-de-clinicas-de-cardiologia-adulto", "Gestão de Clínica de Cardiologia de Adultos"),
     ]
 )
 
 art(
-    "gestao-de-clinicas-de-cardiologia-intervencionista",
-    "Gestao de Clinicas de Cardiologia Intervencionista",
-    "Guia completo de gestao para clinicas e servicos de cardiologia intervencionista: eficiencia operacional, equipe e crescimento.",
-    "Gestao",
-    "Gestao de Clinicas de Cardiologia Intervencionista | ProdutoVivo",
-    "Gestao Eficiente em Cardiologia Intervencionista",
-    "Otimize os processos da sua clinica ou servico de cardiologia intervencionista com estrategias modernas de gestao e tecnologia.",
+    "como-criar-infoproduto-sobre-gestao-de-clinicas-de-radiologia-e-diagnostico",
+    "Como Criar Infoproduto sobre Gestão de Clínica de Radiologia e Diagnóstico",
+    "Aprenda a criar infoproduto ensinando radiologistas a estruturar clínica de diagnóstico por imagem, montar fluxo de laudos e crescer com contratos corporativos e planos de saúde.",
+    "Gestão de Negócios",
+    "Como Criar Infoproduto sobre Gestão de Clínica de Radiologia e Diagnóstico | ProdutoVivo",
+    "Como Criar Infoproduto sobre Gestão de Clínica de Radiologia e Diagnóstico",
+    "Descubra como ensinar radiologistas a estruturar clínica de diagnóstico por imagem com gestão de equipamentos, fluxo de laudos e contratos corporativos usando IA para criar seu infoproduto.",
     [
-        ("Desafios Unicos da Cardiologia Intervencionista", [
-            "Clinicas de cardiologia intervencionista operam com alta complexidade: equipamentos de alto custo, equipes multidisciplinares e pacientes em estado critico. A gestao precisa ser precisa e proativa.",
-            "O controle de materiais e insumos e especialmente critico nessa especialidade, onde stents, cateteres e outros dispositivos tem custo elevado e prazo de validade rigoroso.",
+        ("Por que radiologia e diagnóstico é um nicho premium para infoprodutos de gestão", [
+            "Clínicas de radiologia e diagnóstico por imagem movimentam bilhões no Brasil. Radiologistas que gerenciam suas próprias clínicas ou centros de imagem lidam com desafios únicos: gestão de equipamentos de alto custo, credenciamento em múltiplos planos e fluxo eficiente de laudos.",
+            "Um infoproduto sobre gestão de clínica de radiologia preenche uma demanda real — muitos radiologistas com sócios ou clínicas próprias nunca tiveram formação administrativa e buscam estruturar seus negócios.",
         ]),
-        ("Otimizacao de Sala de Hemodinamica", [
-            "A sala de hemodinamica e o ativo mais valioso. Maximize sua utilizacao com agendamento inteligente, reducao de tempos de setup e manutencao preventiva rigorosa.",
-            "Implemente um sistema de rastreabilidade para todos os materiais utilizados. Isso garante conformidade regulatoria, facilita auditorias e reduz desperdicio.",
+        ("O que ensinar no infoproduto de gestão de clínica de radiologia", [
+            "Os módulos essenciais cobrem estruturação da clínica com gestão de equipamentos (RM, TC, ultrassom), fluxo de laudos com telemedicina e laudos remotos, credenciamento e tabelas com planos de saúde, captação de médicos solicitantes e contratos com empresas.",
+            "Um módulo sobre como montar um serviço de telerradiologia — permitindo laudos remotos e expansão da capacidade sem aumento de estrutura física — tem alto apelo e diferencial de mercado.",
         ]),
-        ("Gestao de Equipe e Resultados", [
-            "Invista em treinamento continuo da equipe tecnica e de enfermagem. Em procedimentos de alto risco, a competencia da equipe impacta diretamente nos resultados clinicos e na reputacao do servico.",
-            "Monitore indicadores de qualidade: taxa de sucesso dos procedimentos, complicacoes, tempo porta-balao em IAM. Esses dados sao diferenciais competitivos e de credenciamento.",
+        ("Como criar infoproduto de radiologia com IA", [
+            "O guia ProdutoVivo ensina a transformar protocolos de gestão radiológica em módulos de curso usando IA, com exemplos práticos de fluxo de trabalho e página de vendas.",
+            "Em poucos dias você tem um produto digital pronto para vender para radiologistas que querem profissionalizar sua clínica ou montar um serviço de telerradiologia.",
         ]),
     ],
     [
-        ("Como calcular o custo real de cada procedimento intervencionista?", "Some materiais consumidos, tempo de sala, honorarios medicos e custos indiretos rateados. Sistemas de custos ABC ajudam a ter essa visibilidade por procedimento."),
-        ("Como negociar melhor com operadoras de saude?", "Apresente dados de qualidade e eficiencia: menor tempo de internacao, menores complicacoes, melhor custo-efetividade. Esses argumentos sao valorizados nas negociacoes de tabelas."),
-        ("Vale a pena investir em equipamentos de ultima geracao?", "Depende do volume de procedimentos e do perfil de pacientes. Calcule o payback e avalie opcoes de leasing ou parcerias com fabricantes antes de comprar."),
+        ("Radiologistas podem criar infoprodutos de gestão?", "Sim, especialmente aqueles com experiência em gestão de clínicas, centros de imagem ou serviços hospitalares. O guia ProdutoVivo ajuda a estruturar esse conhecimento."),
+        ("Quanto cobrar por infoproduto de gestão de radiologia?", "Entre R$1.497 e R$4.997. O investimento em equipamentos e a complexidade da gestão justificam preços mais elevados."),
+        ("Como encontrar radiologistas interessados em gestão?", "CBR (Colégio Brasileiro de Radiologia), grupos de radiologia no LinkedIn e WhatsApp, e congressos da especialidade são os melhores canais."),
+        ("O mercado de diagnóstico por imagem está crescendo no Brasil?", "Sim. A expansão de operadoras de planos de saúde, a valorização da medicina preventiva e o avanço da telerradiologia criam oportunidades crescentes para clínicas especializadas."),
     ],
     [
-        ("gestao-de-clinicas-de-alergologia-adulto", "Gestao de Clinicas de Alergologia Adulto"),
-        ("gestao-de-clinicas-de-pneumologia-adulto", "Gestao de Clinicas de Pneumologia Adulto"),
-        ("gestao-de-clinicas-de-neurologia-vascular", "Gestao em Neurologia Vascular"),
+        ("como-criar-infoproduto-sobre-gestao-de-clinicas-de-medicina-nuclear", "Gestão de Clínica de Medicina Nuclear"),
+        ("como-criar-infoproduto-sobre-gestao-de-clinicas-de-medicina-do-viajante", "Gestão de Clínica de Medicina do Viajante"),
+        ("como-criar-infoproduto-sobre-gestao-de-clinicas-de-endocrinologia-adulto-avancado", "Gestão de Clínica de Endocrinologia Avançada"),
+    ]
+)
+
+# ── BATCH 570 ────────────────────────────────────────────────────────────────
+
+art(
+    "como-criar-infoproduto-sobre-gestao-de-negocios-de-empresa-de-consultoria-de-gestao-de-projetos",
+    "Como Criar Infoproduto sobre Gestão de Empresa de Consultoria de Gestão de Projetos",
+    "Aprenda a criar infoproduto ensinando consultores de gestão de projetos a estruturar sua empresa, conquistar contratos corporativos e escalar receita com metodologias como PMI e Agile.",
+    "Gestão de Negócios",
+    "Como Criar Infoproduto sobre Gestão de Empresa de Consultoria de Gestão de Projetos | ProdutoVivo",
+    "Como Criar Infoproduto sobre Gestão de Empresa de Consultoria de Gestão de Projetos",
+    "Descubra como ensinar consultores de projetos a estruturar sua empresa de consultoria, conquistar contratos corporativos e escalar com metodologias PMI e Agile usando IA para criar seu infoproduto.",
+    [
+        ("Por que consultoria de gestão de projetos é um nicho lucrativo para infoprodutos", [
+            "O mercado brasileiro de gestão de projetos movimenta bilhões e profissionais certificados (PMP, PMI-ACP, CAPM) têm alta demanda em empresas de todos os portes. Consultores que estruturam sua própria empresa de consultoria podem cobrar de R$300 a R$1.500 por hora.",
+            "Um infoproduto sobre como estruturar e gerir uma empresa de consultoria de projetos tem alta procura — a maioria dos consultores sabe gerir projetos mas não sabe gerir seu próprio negócio, desde precificação até captação de clientes corporativos.",
+        ]),
+        ("O que ensinar no infoproduto de gestão de empresa de consultoria de projetos", [
+            "Os módulos mais valiosos cobrem estruturação jurídica e tributária da consultoria, precificação de projetos por entregáveis e por hora, montagem de proposta comercial vencedora, captação de clientes corporativos via LinkedIn e eventos, formação de equipe e gestão de subcontratados.",
+            "Um módulo sobre como criar metodologias proprietárias — combinando PMI, Agile e práticas próprias — para diferenciar a consultoria no mercado é altamente valorizado por quem quer sair da commodity.",
+        ]),
+        ("Como criar infoproduto de consultoria de projetos com IA", [
+            "O guia ProdutoVivo ensina a transformar metodologias e experiências de gestão de projetos em módulos de curso usando IA, com modelos de proposta comercial e página de vendas.",
+            "Em poucos dias você tem um produto digital pronto para vender para consultores que querem estruturar sua empresa e aumentar contratos corporativos.",
+        ]),
+    ],
+    [
+        ("Consultores PMP podem criar infoprodutos de gestão de empresa?", "Sim, especialmente consultores com PMP, PMI-ACP ou MBA em projetos e experiência em empresas ou projetos próprios. O guia ProdutoVivo ajuda a estruturar esse conhecimento."),
+        ("Quanto cobrar por infoproduto de gestão de consultoria de projetos?", "Entre R$997 e R$3.997. O ticket médio alto de contratos corporativos de consultoria justifica investimento similar no infoproduto."),
+        ("Como encontrar consultores de projetos para vender o infoproduto?", "PMI chapters brasileiros, grupos do LinkedIn de gestão de projetos e eventos como PMI Global Summit são os canais ideais."),
+        ("Gestão de projetos segue em alta no mercado brasileiro?", "Sim. Transformação digital, projetos de infraestrutura e expansão de empresas de tecnologia criam demanda crescente por consultores de projetos qualificados."),
+    ],
+    [
+        ("como-criar-infoproduto-sobre-gestao-de-negocios-de-empresa-de-assessoria-de-investimentos", "Gestão de Empresa de Assessoria de Investimentos"),
+        ("como-criar-infoproduto-sobre-gestao-de-negocios-de-empresa-de-gestao-de-patrimonio-familiar", "Gestão de Empresa de Gestão de Patrimônio Familiar"),
+        ("como-criar-infoproduto-de-vendas-para-o-setor-de-consultoria-de-gestao-de-projetos", "Vendas para Consultoria de Gestão de Projetos"),
     ]
 )
 
 art(
-    "gestao-de-negocios-de-empresa-de-coaching-executivo",
-    "Gestao de Negocios de Empresa de Coaching Executivo",
-    "Como estruturar e gerir uma empresa de coaching executivo de sucesso: modelo de negocio, precificacao, captacao e escala.",
-    "Gestao",
-    "Gestao de Negocios de Empresa de Coaching Executivo | ProdutoVivo",
-    "Como Gerir uma Empresa de Coaching Executivo com Sucesso",
-    "Estruture seu negocio de coaching executivo para crescer de forma sustentavel, com precificacao adequada e captacao consistente de clientes.",
+    "como-criar-infoproduto-sobre-gestao-de-negocios-de-empresa-de-gestao-de-patrimonio-familiar",
+    "Como Criar Infoproduto sobre Gestão de Empresa de Gestão de Patrimônio Familiar",
+    "Aprenda a criar infoproduto ensinando gestores de patrimônio a estruturar seu family office ou boutique de wealth management, conquistar clientes HNWI e escalar com recorrência.",
+    "Gestão de Negócios",
+    "Como Criar Infoproduto sobre Gestão de Empresa de Gestão de Patrimônio Familiar | ProdutoVivo",
+    "Como Criar Infoproduto sobre Gestão de Empresa de Gestão de Patrimônio Familiar",
+    "Descubra como ensinar gestores de patrimônio a estruturar family office ou boutique de wealth management, conquistar clientes HNWI e escalar receita recorrente usando IA para criar seu infoproduto.",
     [
-        ("Estruturando seu Negocio de Coaching Executivo", [
-            "Empresas de coaching executivo bem-sucedidas tem proposta de valor clara, nicho definido e metodologia proprietaria. Genericos competem por preco; especialistas cobram premium.",
-            "Defina se voce quer atuar B2B (contratos com empresas) ou B2C (executivos individuais). O modelo B2B tem ticket maior e contratos mais longos, mas exige um processo comercial diferente.",
+        ("Por que gestão de patrimônio familiar é um nicho premium para infoprodutos", [
+            "O wealth management brasileiro está em acelerada expansão com a proliferação de assessores de investimentos autônomos (AAI) e family offices independentes. Gestores que estruturam suas boutiques de patrimônio podem cobrar taxas de administração de 0,5% a 2% ao ano sobre patrimônio gerido.",
+            "Um infoproduto sobre como estruturar e gerir uma empresa de gestão de patrimônio familiar tem alto valor percebido — assessores e gestores dominam investimentos mas frequentemente carecem de estrutura empresarial, compliance CVM e captação de clientes de alto patrimônio.",
         ]),
-        ("Precificacao e Modelos de Receita", [
-            "Coaching executivo e tipicamente precificado por sessao (R$ 500-3.000), por programa (R$ 5.000-30.000) ou por retainer mensal com empresas. Combine modelos para estabilizar o caixa.",
-            "Produtos digitais complementares — cursos, assessments, ferramentas — aumentam a receita sem aumentar proporcionalmente o tempo investido. Esse e o caminho para escalar sem se esgotar.",
+        ("O que ensinar no infoproduto de gestão de empresa de patrimônio familiar", [
+            "Os módulos essenciais cobrem estruturação de family office ou boutique de wealth management, compliance e regulamentação CVM, precificação e modelos de remuneração (taxa de gestão, performance), captação de clientes HNWI (High Net Worth Individuals) e gestão de relacionamento de longo prazo.",
+            "Um módulo sobre como estruturar o modelo de serviços — desde o mapeamento patrimonial completo até planejamento sucessório e proteção patrimonial — diferencia gestores que competem apenas por retornos daqueles que oferecem serviço integral.",
         ]),
-        ("Captacao e Retencao de Clientes", [
-            "No coaching executivo, confianca e reputacao sao tudo. Invista em cases de sucesso documentados, depoimentos de executivos de alto nivel e presenca em eventos do setor.",
-            "Parcerias com RH de grandes empresas, consultorias de outplacement e escritorios de recrutamento executivo sao canais poderosos para captacao consistente de novos clientes.",
+        ("Como criar infoproduto de gestão de patrimônio com IA", [
+            "O guia ProdutoVivo ensina a transformar metodologias de wealth management em módulos de curso usando IA, com frameworks de captação e página de vendas para o público financeiro.",
+            "Em poucos dias você tem um produto digital pronto para vender para gestores e assessores que querem estruturar sua boutique e captar clientes de alto patrimônio.",
         ]),
     ],
     [
-        ("Como se diferenciar em um mercado de coaching saturado?", "Especialize-se em um verticale ou perfil de executivo: CEOs de startups, mulheres em lideranca, executivos em transicao de carreira. A especializacao justifica precos mais altos."),
-        ("Devo me certificar em coaching? Qual certificacao escolher?", "Certificacoes ICF (ACC, PCC, MCC) sao as mais reconhecidas internacionalmente. Para o mercado corporativo brasileiro, tambem sao valorizadas certificacoes de escolas como SBC e IBC."),
-        ("Como criar um produto digital complementar ao meu servico de coaching?", "Identifique as perguntas mais frequentes dos seus clientes e os frameworks que voce mais usa. Isso vira um curso online, um livro digital ou uma ferramenta de assessment — itens que vendem 24/7."),
+        ("Assessores de investimentos podem criar infoprodutos de gestão de patrimônio?", "Sim, especialmente AAI certificados (CEA, CFP) com experiência em clientes HNWI ou family office. O guia ProdutoVivo ajuda a estruturar esse conhecimento."),
+        ("Quanto cobrar por infoproduto de gestão de patrimônio familiar?", "Entre R$1.997 e R$5.997. O ticket médio dos serviços de wealth management justifica investimento elevado no infoproduto."),
+        ("Como encontrar gestores de patrimônio para vender o infoproduto?", "ANBIMA, eventos de wealth management, grupos de AAI no LinkedIn e comunidades de planejamento financeiro são os melhores canais."),
+        ("O mercado de gestão de patrimônio está crescendo no Brasil?", "Sim. O crescimento do número de milionários brasileiros, a migração de grandes bancos para assessores independentes e a digitalização do wealth management criam oportunidade crescente."),
     ],
     [
-        ("gestao-de-negocios-de-empresa-de-consultoria-de-pricing", "Gestao de Empresa de Consultoria de Pricing"),
-        ("marketing-para-profissionais-de-alergologia-adulto", "Marketing para Profissionais de Saude"),
-        ("vendas-para-o-setor-de-consultoria-de-gestao-de-pessoas", "Vendas para Consultoria de Gestao de Pessoas"),
+        ("como-criar-infoproduto-sobre-gestao-de-negocios-de-empresa-de-assessoria-de-investimentos", "Gestão de Empresa de Assessoria de Investimentos"),
+        ("como-criar-infoproduto-sobre-gestao-de-negocios-de-empresa-de-consultoria-de-gestao-de-projetos", "Gestão de Empresa de Consultoria de Projetos"),
+        ("como-criar-infoproduto-de-vendas-para-o-setor-de-assessoria-de-investimentos", "Vendas para Assessoria de Investimentos"),
     ]
 )
 
-art(
-    "gestao-de-negocios-de-empresa-de-consultoria-de-pricing",
-    "Gestao de Negocios de Empresa de Consultoria de Pricing",
-    "Estruture e escale sua empresa de consultoria de pricing com gestao eficiente, captacao de clientes e diferenciais competitivos.",
-    "Gestao",
-    "Gestao de Negocios de Empresa de Consultoria de Pricing | ProdutoVivo",
-    "Como Gerir uma Empresa de Consultoria de Pricing",
-    "Aprenda a estruturar sua consultoria de pricing para crescer de forma sustentavel, captando clientes corporativos e entregando resultados mensuráveis.",
-    [
-        ("O Mercado de Consultoria de Pricing no Brasil", [
-            "Pricing e uma das alavancas mais poderosas de rentabilidade, mas ainda e sub-explorada pela maioria das empresas brasileiras. Isso cria uma oportunidade enorme para consultorias especializadas.",
-            "Empresas que melhoram sua estrategia de precificacao tipicamente aumentam margem em 2-7 pontos percentuais sem aumentar volume de vendas. Esse ROI claro facilita a venda do servico de consultoria.",
-        ]),
-        ("Modelos de Entrega e Precificacao da Consultoria", [
-            "Consultorias de pricing podem atuar por projeto (diagnostico + implantacao), por retainer mensal (monitoramento continuo) ou por success fee atrelado a melhoria de margem. O modelo hibrido e mais seguro.",
-            "Desenvolva ferramentas e metodologias proprietarias — modelos de elasticidade, dashboards de monitoramento, playbooks de negociacao. Essas entregas tangibilizem o valor e diferenciam sua consultoria.",
-        ]),
-        ("Captacao de Clientes Corporativos", [
-            "Publique conteudo tecnico sobre pricing: artigos, cases, webinars. Empresas buscam especialistas quando tem um problema de margem — esteja presente quando elas pesquisam.",
-            "Parcerias com consultorias de strategy, bancos de investimento e associacoes setoriais ampliam seu alcance para decisores que controlam orcamentos de consultoria.",
-        ]),
-    ],
-    [
-        ("Quais setores tem mais demanda por consultoria de pricing?", "Varejo, industria de bens de consumo, SaaS e servicos financeiros sao os setores com maior maturidade e demanda por pricing estrategico no Brasil."),
-        ("Como demonstrar ROI da consultoria de pricing para um CFO?", "Apresente benchmarks do setor, calcule o impacto de um ganho de 1pp de margem na rentabilidade da empresa e mostre cases com resultados documentados de projetos anteriores."),
-        ("Devo oferecer diagnostico gratuito como porta de entrada?", "Um mini-diagnostico pago (R$ 2.000-5.000) qualifica melhor o cliente e demonstra mais valor do que um gratuito. Reserve o gratuito para prospects estrategicos de alto potencial."),
-    ],
-    [
-        ("gestao-de-negocios-de-empresa-de-coaching-executivo", "Gestao de Empresa de Coaching Executivo"),
-        ("vendas-para-o-setor-de-consultoria-de-gestao-de-pessoas", "Vendas para Consultoria de Gestao de Pessoas"),
-        ("vendas-para-o-setor-de-consultoria-de-supply-chain-avancado", "Vendas para Consultoria de Supply Chain"),
-    ]
-)
+# ── BATCH 571 ────────────────────────────────────────────────────────────────
 
 art(
-    "marketing-para-profissionais-de-alergologia-adulto",
-    "Marketing para Profissionais de Alergologia Adulto",
-    "Estrategias de marketing digital para alergologistas: como atrair mais pacientes, construir autoridade e crescer na especialidade.",
+    "como-criar-infoproduto-de-marketing-para-profissionais-de-cardiologia-pediatrica",
+    "Como Criar Infoproduto de Marketing para Profissionais de Cardiologia Pediátrica",
+    "Aprenda a criar infoproduto ensinando cardiologistas pediátricos a atrair famílias, construir autoridade digital e crescer com uma estratégia de marketing para pediatria cardíaca.",
     "Marketing",
-    "Marketing para Alergologistas: Atraia Mais Pacientes | ProdutoVivo",
-    "Marketing Digital para Alergologistas: Guia Completo",
-    "Descubra como alergologistas podem usar marketing digital para atrair pacientes ideais, construir autoridade online e crescer de forma etica.",
+    "Como Criar Infoproduto de Marketing para Profissionais de Cardiologia Pediátrica | ProdutoVivo",
+    "Como Criar Infoproduto de Marketing para Profissionais de Cardiologia Pediátrica",
+    "Descubra como ensinar cardiologistas pediátricos a atrair famílias, construir autoridade digital e crescer com estratégias de marketing para cardiopatia infantil usando IA para criar seu infoproduto.",
     [
-        ("Por que Alergologistas Precisam de Marketing Digital", [
-            "A busca por especialistas de saude comeca online. Pacientes com rinite, asma e alergias alimentares pesquisam ativamente antes de marcar uma consulta — e seu consultorio precisa aparecer nessa busca.",
-            "Marketing digital para medicos nao e sobre propaganda agressiva: e sobre educar, construir confianca e estar presente quando o paciente precisa. Feito com etica, fortalece a reputacao e aumenta indicacoes.",
+        ("Por que marketing para cardiologistas pediátricos é um nicho valioso", [
+            "A cardiologia pediátrica é uma subespecialidade de altíssimo ticket e altíssima responsabilidade — pais buscam ativamente os melhores especialistas para o coração de seus filhos e não poupam nos honorários. Um especialista com boa presença digital captura pacientes de todo o Brasil.",
+            "A maioria dos cardiologistas pediátricos não tem estratégia de marketing estruturada. Um infoproduto que ensina esses profissionais a atrair pacientes sem depender exclusivamente de planos de saúde tem enorme valor percebido.",
         ]),
-        ("Canais de Marketing para Alergologistas", [
-            "Google Meu Negocio e o canal mais importante: garanta que seu perfil esta completo, com fotos, horarios e especialidades. Reviews positivos aumentam drasticamente o numero de novos pacientes.",
-            "Instagram e YouTube sao excelentes para conteudo educativo: explique a diferenca entre rinite alergica e nao-alergica, mostre como funciona a imunoterapia, tire duvidas comuns. Autoridade online gera consultas.",
+        ("O que ensinar no infoproduto de marketing para cardiologia pediátrica", [
+            "Os módulos mais valiosos cobrem posicionamento digital para cardiologistas pediátricos, criação de conteúdo que educa pais sobre cardiopatias congênitas e adquiridas, SEO para consultório de cardiologia pediátrica, estratégia no Instagram e YouTube para construção de autoridade.",
+            "Um módulo sobre como criar uma rede de encaminhamentos com pediatras clínicos, neonatologistas e maternidades — as fontes primárias de encaminhamento para cardiologia pediátrica — é altamente prático e diferenciado.",
         ]),
-        ("Criando Conteudo que Atrai Pacientes", [
-            "Crie conteudo em torno das principais queixas: 'alergia ao frio', 'urticaria cronica', 'alergia alimentar em adultos'. Esses sao os termos que seus futuros pacientes digitam no Google.",
-            "Transforme seu conhecimento em produtos digitais: um guia sobre controle ambiental para pacientes com rinite, um mini-curso sobre imunoterapia. Isso gera receita adicional e posiciona voce como referencia.",
+        ("Como criar infoproduto de marketing para cardiologia pediátrica com IA", [
+            "O guia ProdutoVivo ensina a criar conteúdo de marketing médico em larga escala usando IA, com templates de post, scripts de vídeo e página de vendas para o público médico.",
+            "Em poucos dias você tem um produto digital pronto para vender para cardiologistas pediátricos que querem aumentar sua visibilidade e atrair pacientes particulares.",
         ]),
     ],
     [
-        ("O CFM permite que medicos facao publicidade?", "Sim, dentro das normas do CFM (Resolucao 2.336/2023). E permitido divulgar especializacao, area de atuacao e informacoes educativas. Proibido: prometer resultados, usar antes/depois e sensacionalismo."),
-        ("Vale a pena ter um site proprio ou so usar Instagram?", "Ter um site proprio e fundamental para SEO e credibilidade. O Instagram complementa, mas o site e seu ativo permanente — perfis em redes sociais podem ser suspensos a qualquer momento."),
-        ("Como coletar reviews no Google de forma etica?", "Apos a consulta, envie uma mensagem agradecendo e convidando o paciente satisfeito a deixar um comentario no Google. Nao ofereça incentivos — isso viola as regras do Google e a etica medica."),
+        ("Cardiologistas pediátricos podem criar infoprodutos de marketing médico?", "Sim, especialmente aqueles com experiência em atendimento particular e construção de reputação digital. O guia ProdutoVivo ajuda a estruturar esse conhecimento."),
+        ("Quanto cobrar por infoproduto de marketing para cardiologia pediátrica?", "Entre R$997 e R$2.997. A especificidade e o alto ticket dos serviços de cardiologia pediátrica justificam preços elevados."),
+        ("Como encontrar cardiologistas pediátricos para vender o infoproduto?", "SBCP (Sociedade Brasileira de Cardiologia Pediátrica), grupos de cardiologia pediátrica no LinkedIn e congressos da especialidade são os canais ideais."),
+        ("Marketing médico para cardiologia pediátrica é permitido pelo CFM?", "Sim, dentro das diretrizes do CFM que proíbem promessas de cura e resultados garantidos. Marketing educativo, de autoridade e informativo é permitido e recomendado."),
     ],
     [
-        ("gestao-de-clinicas-de-alergologia-adulto", "Gestao de Clinicas de Alergologia"),
-        ("marketing-para-profissionais-de-medicina-preventiva", "Marketing para Medicina Preventiva"),
-        ("marketing-para-profissionais-de-cirurgia-bariatrica", "Marketing para Cirurgia Bariatrica"),
+        ("como-criar-infoproduto-de-marketing-para-profissionais-de-cardiologia-adulto", "Marketing para Profissionais de Cardiologia de Adultos"),
+        ("como-criar-infoproduto-sobre-gestao-de-clinicas-de-urologia-pediatrica", "Gestão de Clínica de Urologia Pediátrica"),
+        ("como-criar-infoproduto-de-marketing-para-profissionais-de-psiquiatria-infantojuvenil", "Marketing para Profissionais de Psiquiatria Infantojuvenil"),
     ]
 )
 
 art(
-    "marketing-para-profissionais-de-medicina-preventiva",
-    "Marketing para Profissionais de Medicina Preventiva",
-    "Como medicos de medicina preventiva podem atrair pacientes e construir autoridade digital com marketing etico e eficaz.",
+    "como-criar-infoproduto-de-marketing-para-profissionais-de-psiquiatria-infantojuvenil",
+    "Como Criar Infoproduto de Marketing para Profissionais de Psiquiatria Infantojuvenil",
+    "Aprenda a criar infoproduto ensinando psiquiatras infantojuvenis a atrair famílias, construir autoridade digital e crescer com estratégia de marketing ética para saúde mental infantil.",
     "Marketing",
-    "Marketing para Medicina Preventiva: Estrategias que Funcionam | ProdutoVivo",
-    "Marketing Digital para Medicina Preventiva",
-    "Aprenda como profissionais de medicina preventiva podem usar marketing digital para educar pacientes, construir autoridade e crescer.",
+    "Como Criar Infoproduto de Marketing para Profissionais de Psiquiatria Infantojuvenil | ProdutoVivo",
+    "Como Criar Infoproduto de Marketing para Profissionais de Psiquiatria Infantojuvenil",
+    "Descubra como ensinar psiquiatras infantojuvenis a atrair famílias com estratégia de marketing ética para saúde mental infantil e adolescente usando IA para criar seu infoproduto.",
     [
-        ("O Diferencial da Medicina Preventiva no Marketing", [
-            "Medicina preventiva tem uma vantagem unica no marketing: o paciente ideal ainda nao esta doente. Voce compete pela atencao de quem quer qualidade de vida, longevidade e performance — um mercado crescente e premium.",
-            "Posicione-se como parceiro de saude a longo prazo, nao apenas como quem trata doencas. Esse posicionamento justifica planos de acompanhamento continuo com receita recorrente.",
+        ("Por que marketing para psiquiatras infantojuvenis é um nicho urgente", [
+            "A psiquiatria infantojuvenil enfrenta escassez grave de especialistas no Brasil — estima-se que o país tenha menos de 2.000 psiquiatras formados em infância e adolescência para uma população de 70 milhões de crianças e adolescentes. Isso cria uma demanda reprimida enorme e um mercado com altíssimo ticket para particulares.",
+            "Pais em busca de psiquiatra para seus filhos enfrentam filas de espera de meses. Especialistas com boa presença digital e estratégia de comunicação clara sobre como e quando buscar atendimento psiquiátrico infantil se destacam e lotam agendas no privado.",
         ]),
-        ("Conteudo que Educa e Converte", [
-            "Crie conteudo sobre rastreamento de cancer, saude cardiovascular preventiva, suplementacao baseada em evidencias e check-ups personalizados. Esses temas tem altissima busca e engajamento.",
-            "Videos curtos explicando exames preventivos menos conhecidos — como o CAC score, a ressonancia de corpo inteiro ou o teste genetico — geram curiosidade e posicionam voce como especialista atualizado.",
+        ("O que ensinar no infoproduto de marketing para psiquiatria infantojuvenil", [
+            "Os módulos mais valiosos cobrem comunicação com pais sobre quando buscar avaliação psiquiátrica, posicionamento digital ético para saúde mental infantil, criação de conteúdo educativo sobre TDAH, autismo (TEA), ansiedade infantil e depressão na adolescência, SEO e estratégia no Instagram para construção de autoridade.",
+            "Um módulo sobre como estruturar parcerias com escolas, psicopedagogos, fonoaudiólogos e terapeutas ocupacionais — fontes naturais de encaminhamento — tem valor prático imediato.",
         ]),
-        ("Modelos de Atendimento e Receita Recorrente", [
-            "Medicina preventiva se presta bem a modelos de membership: o paciente paga uma mensalidade e tem acesso a consultas, exames e monitoramento continuo. Isso estabiliza o caixa e fideliza.",
-            "Produtos digitais como guias de longevidade, protocolos de check-up personalizados ou masterclasses sobre saude preventiva complementam a receita e ampliam seu alcance alem da sua cidade.",
+        ("Como criar infoproduto de marketing para psiquiatria infantojuvenil com IA", [
+            "O guia ProdutoVivo ensina a criar conteúdo educativo e de marketing para saúde mental infantil em larga escala usando IA, com templates de post e scripts de vídeo.",
+            "Em poucos dias você tem um produto digital pronto para vender para psiquiatras infantojuvenis que querem atrair pacientes particulares e reduzir dependência de planos de saúde.",
         ]),
     ],
     [
-        ("Como precificar um programa de medicina preventiva?", "Calcule o custo dos exames, consultas e seu tempo. Adicione margem de 40-60%. Programas anuais custam tipicamente R$ 3.000-15.000 dependendo da complexidade e do perfil do paciente."),
-        ("Medicina preventiva pode ser coberta por planos de saude?", "Parcialmente — alguns exames e consultas sao cobertos. Mas a medicina preventiva premium, com protocolos personalizados e acompanhamento continuo, geralmente e particular. Isso e um diferencial, nao um obstaculo."),
-        ("Como atrair pacientes corporativos para programas preventivos?", "Empresas investem em saude do executivo para reduzir absenteismo e aumentar produtividade. Apresente-se para RHs e beneficios corporativos com um programa especifico para esse publico."),
+        ("Psiquiatras infantojuvenis podem criar infoprodutos de marketing?", "Sim, especialmente aqueles com experiência em TDAH, TEA, ansiedade e depressão em crianças e adolescentes. O guia ProdutoVivo ajuda a estruturar esse conhecimento."),
+        ("Quanto cobrar por infoproduto de marketing para psiquiatria infantojuvenil?", "Entre R$997 e R$2.997. A escassez de especialistas e o alto ticket das consultas justificam preços elevados."),
+        ("Como encontrar psiquiatras infantojuvenis para vender o infoproduto?", "ABP (Associação Brasileira de Psiquiatria), ABENEPI (Associação Brasileira de Neurologia e Psiquiatria Infantil), grupos de psiquiatria infantil no LinkedIn e congressos da área."),
+        ("Marketing de saúde mental infantil tem restrições do CFM?", "Sim. É fundamental seguir as diretrizes do CFM sobre marketing médico — conteúdo educativo e informativo é permitido, mas promessas de cura ou resultado garantido são proibidos."),
     ],
     [
-        ("marketing-para-profissionais-de-alergologia-adulto", "Marketing para Alergologistas"),
-        ("marketing-para-profissionais-de-cirurgia-bariatrica", "Marketing para Cirurgia Bariatrica"),
-        ("marketing-para-profissionais-de-pneumologia-adulto", "Marketing para Pneumologistas"),
+        ("como-criar-infoproduto-de-marketing-para-profissionais-de-cardiologia-pediatrica", "Marketing para Profissionais de Cardiologia Pediátrica"),
+        ("como-criar-infoproduto-de-marketing-para-profissionais-de-geriatria", "Marketing para Profissionais de Geriatria"),
+        ("como-criar-infoproduto-sobre-gestao-de-clinicas-de-pediatria-geral", "Gestão de Clínica de Pediatria Geral"),
+    ]
+)
+
+# ── BATCH 572 ────────────────────────────────────────────────────────────────
+
+art(
+    "como-criar-infoproduto-de-vendas-para-o-setor-de-energia-solar",
+    "Como Criar Infoproduto de Vendas para o Setor de Energia Solar",
+    "Aprenda a criar infoproduto ensinando profissionais de energia solar a aumentar vendas, fechar contratos maiores e escalar receita com técnicas de vendas consultivas para o mercado fotovoltaico.",
+    "Vendas",
+    "Como Criar Infoproduto de Vendas para o Setor de Energia Solar | ProdutoVivo",
+    "Como Criar Infoproduto de Vendas para o Setor de Energia Solar",
+    "Descubra como ensinar profissionais do setor solar a aumentar vendas, fechar contratos maiores e escalar receita com técnicas de venda consultiva para o mercado fotovoltaico usando IA.",
+    [
+        ("Por que vendas para energia solar é um nicho lucrativo para infoprodutos", [
+            "O Brasil é o maior mercado de energia solar da América Latina e um dos mais rápidos em crescimento no mundo. O setor gerou mais de R$100 bilhões em investimentos acumulados e segue em expansão acelerada, criando enorme demanda por profissionais de vendas qualificados.",
+            "Vendedores e integradores de energia solar que dominam técnicas de venda consultiva, calculam ROI para clientes e sabem apresentar propostas claras fecham contratos muito maiores — de R$30 mil a R$500 mil por projeto. Um infoproduto sobre vendas solar tem altíssima demanda.",
+        ]),
+        ("O que ensinar no infoproduto de vendas para energia solar", [
+            "Os módulos essenciais cobrem técnicas de prospecção ativa e receptiva para clientes residenciais, comerciais e industriais, elaboração de proposta técnica e financeira com cálculo de payback e TIR, objeções mais comuns e como superá-las, técnicas de fechamento para contratos de grande porte.",
+            "Um módulo sobre como vender para o segmento agro e industrial — os de maior ticket médio no setor solar — com linguagem técnica e financeira específica para esses decisores de compra, tem altíssimo valor percebido.",
+        ]),
+        ("Como criar infoproduto de vendas para energia solar com IA", [
+            "O guia ProdutoVivo ensina a transformar técnicas de vendas solar em módulos de curso usando IA, com simulações de proposta, scripts de venda e página de vendas otimizada.",
+            "Em poucos dias você tem um produto digital pronto para vender para vendedores e integradores solares que querem aumentar suas taxas de fechamento e ticket médio.",
+        ]),
+    ],
+    [
+        ("Qualquer profissional de vendas solar pode criar um infoproduto?", "Sim, especialmente gerentes de vendas, integradores com experiência em projetos de médio e grande porte e consultores com histórico comprovado de fechamentos. O guia ProdutoVivo ajuda a estruturar esse conhecimento."),
+        ("Quanto cobrar por infoproduto de vendas para energia solar?", "Entre R$497 e R$1.997. O setor tem profissionais com alta renda comissionada dispostos a investir em capacitação de vendas."),
+        ("Como encontrar profissionais de energia solar para vender o infoproduto?", "ABSOLAR (Associação Brasileira de Energia Solar Fotovoltaica), grupos de integradores solares no WhatsApp e Facebook, e eventos como Intersolar Brasil."),
+        ("O mercado de energia solar continuará crescendo no Brasil?", "Sim. Metas de energia renovável, queda contínua de custos de painéis e novas regulamentações de microgeração tornam o setor solar um dos mais promissores do Brasil."),
+    ]
+    ,
+    [
+        ("como-criar-infoproduto-de-vendas-para-o-setor-de-saas-de-seguros", "Vendas para o Setor de SaaS de Seguros"),
+        ("como-criar-infoproduto-de-vendas-para-o-setor-de-industria-alimenticia", "Vendas para a Indústria Alimentícia"),
+        ("como-criar-infoproduto-de-vendas-para-o-setor-de-consultoria-de-gestao-de-projetos", "Vendas para Consultoria de Gestão de Projetos"),
     ]
 )
 
 art(
-    "marketing-para-profissionais-de-cirurgia-bariatrica",
-    "Marketing para Profissionais de Cirurgia Bariatrica",
-    "Estrategias de marketing para cirurgioes bariátricos: como atrair pacientes qualificados, construir autoridade e crescer de forma etica.",
+    "como-criar-infoproduto-de-vendas-para-o-setor-de-industria-alimenticia",
+    "Como Criar Infoproduto de Vendas para o Setor de Indústria Alimentícia",
+    "Aprenda a criar infoproduto ensinando profissionais da indústria alimentícia a aumentar vendas B2B, conquistar redes de varejo e escalar contratos com grandes distribuidores.",
+    "Vendas",
+    "Como Criar Infoproduto de Vendas para o Setor de Indústria Alimentícia | ProdutoVivo",
+    "Como Criar Infoproduto de Vendas para o Setor de Indústria Alimentícia",
+    "Descubra como ensinar profissionais do setor alimentício a aumentar vendas B2B, conquistar redes de varejo e escalar contratos com distribuidores usando IA para criar seu infoproduto.",
+    [
+        ("Por que vendas na indústria alimentícia é um nicho estratégico para infoprodutos", [
+            "O setor alimentício brasileiro é um dos maiores do mundo — o agronegócio e a indústria de alimentos representam mais de 20% do PIB nacional. Profissionais de vendas que sabem navegar em grandes redes de varejo, distribuidores e food service têm carreiras altamente remuneradas.",
+            "A complexidade das vendas B2B no setor alimentício — com negociações de verbas trade, calendário de lançamentos, sell-in e sell-out — cria demanda por capacitação especializada que poucos infoprodutores endereçam.",
+        ]),
+        ("O que ensinar no infoproduto de vendas para a indústria alimentícia", [
+            "Os módulos mais valiosos cobrem técnicas de negociação com compradores de grandes redes (Pão de Açúcar, Carrefour, Assaí), gestão de verba trade e promoções, estratégia de distribuição e relacionamento com distribuidores, gestão de carteira de clientes e forecast de vendas.",
+            "Um módulo sobre como entrar no food service — restaurantes, redes de fast food e cozinhas industriais — com proposta de valor específica para esse canal tem alto diferencial pois é um segmento frequentemente neglicenciado.",
+        ]),
+        ("Como criar infoproduto de vendas para a indústria alimentícia com IA", [
+            "O guia ProdutoVivo ensina a transformar técnicas de vendas B2B do setor alimentício em módulos de curso usando IA, com modelos de proposta comercial e scripts de negociação.",
+            "Em poucos dias você tem um produto digital pronto para vender para gerentes e representantes de vendas que querem dominar as vendas no setor de alimentos.",
+        ]),
+    ],
+    [
+        ("Profissionais de vendas da indústria alimentícia podem criar infoprodutos?", "Sim, especialmente gerentes de vendas, KAMs (Key Account Managers) e representantes com experiência em grandes redes, distribuidores ou food service."),
+        ("Quanto cobrar por infoproduto de vendas para a indústria alimentícia?", "Entre R$497 e R$1.997. Profissionais do setor têm alta renda e disposição para investir em capacitação técnica específica."),
+        ("Como encontrar profissionais de vendas da indústria alimentícia?", "ABIA (Associação Brasileira da Indústria de Alimentos), grupos de vendas B2B no LinkedIn, eventos do setor como Fispal Food Service e Apas Show."),
+        ("A indústria alimentícia oferece boas perspectivas para infoprodutores?", "Sim. A digitalização das vendas, a expansão do e-commerce B2B e a profissionalização de compradores de varejo criam demanda crescente por capacitação em vendas especializadas."),
+    ],
+    [
+        ("como-criar-infoproduto-de-vendas-para-o-setor-de-energia-solar", "Vendas para o Setor de Energia Solar"),
+        ("como-criar-infoproduto-de-vendas-para-o-setor-de-saas-de-seguros", "Vendas para o Setor de SaaS de Seguros"),
+        ("como-criar-infoproduto-de-vendas-para-o-setor-de-consultoria-de-gestao-de-projetos", "Vendas para Consultoria de Gestão de Projetos"),
+    ]
+)
+
+# ── BATCH 573 ────────────────────────────────────────────────────────────────
+
+art(
+    "como-criar-infoproduto-de-vendas-para-o-setor-de-consultoria-de-gestao-de-projetos",
+    "Como Criar Infoproduto de Vendas para o Setor de Consultoria de Gestão de Projetos",
+    "Aprenda a criar infoproduto ensinando consultores de projetos a vender seus serviços, conquistar contratos corporativos e escalar receita com técnicas de venda consultiva B2B.",
+    "Vendas",
+    "Como Criar Infoproduto de Vendas para o Setor de Consultoria de Gestão de Projetos | ProdutoVivo",
+    "Como Criar Infoproduto de Vendas para o Setor de Consultoria de Gestão de Projetos",
+    "Descubra como ensinar consultores de projetos a vender seus serviços, conquistar contratos corporativos e escalar receita com técnicas de venda consultiva B2B usando IA para criar seu infoproduto.",
+    [
+        ("Por que vendas para consultorias de projetos é um nicho de alto valor", [
+            "Consultores de gestão de projetos certificados (PMP, CAPM, PMI-ACP) têm alta competência técnica mas frequentemente carecem de habilidades comerciais. Saber vender uma consultoria de projetos — que pode gerar contratos de R$50 mil a R$2 milhões — é uma competência rara e muito valorizada.",
+            "Um infoproduto sobre vendas B2B para consultorias de projetos atende um público com alta renda e disposição para investir em capacitação que gere retorno direto em contratos fechados.",
+        ]),
+        ("O que ensinar no infoproduto de vendas para consultoria de projetos", [
+            "Os módulos mais valiosos cobrem prospecção de clientes corporativos via LinkedIn e networking, elaboração de proposta comercial vencedora para projetos de transformação, técnicas de apresentação e demonstração de ROI para executivos C-level, gestão de funil de vendas B2B de ciclo longo.",
+            "Um módulo sobre como estruturar cases de sucesso e portfolio de projetos — a principal ferramenta de vendas de uma consultoria — e como usá-los estrategicamente no processo comercial tem alto valor diferencial.",
+        ]),
+        ("Como criar infoproduto de vendas para consultoria de projetos com IA", [
+            "O guia ProdutoVivo ensina a transformar técnicas de vendas consultivas B2B em módulos de curso usando IA, com templates de proposta e scripts de prospecção.",
+            "Em poucos dias você tem um produto digital pronto para vender para consultores que querem dominar o processo comercial e fechar mais contratos corporativos.",
+        ]),
+    ],
+    [
+        ("Consultores de projetos podem criar infoprodutos de vendas B2B?", "Sim, especialmente aqueles com histórico de captação de contratos corporativos e experiência em vendas consultivas. O guia ProdutoVivo ajuda a estruturar esse conhecimento."),
+        ("Quanto cobrar por infoproduto de vendas para consultoria de projetos?", "Entre R$997 e R$2.997. O ticket médio alto de contratos de consultoria justifica investimento similar no infoproduto de vendas."),
+        ("Como encontrar consultores de projetos para vender o infoproduto?", "PMI chapters, grupos de gestão de projetos no LinkedIn, eventos como PMI Global Summit e fóruns de consultoria de negócios."),
+        ("Vender consultoria de projetos exige técnicas diferentes de vendas?", "Sim. Vendas de consultoria têm ciclo longo, múltiplos decisores e exigem construção de confiança e demonstração de ROI — habilidades específicas que diferenciam consultores comercialmente bem-sucedidos."),
+    ],
+    [
+        ("como-criar-infoproduto-sobre-gestao-de-negocios-de-empresa-de-consultoria-de-gestao-de-projetos", "Gestão de Empresa de Consultoria de Projetos"),
+        ("como-criar-infoproduto-de-vendas-para-o-setor-de-energia-solar", "Vendas para o Setor de Energia Solar"),
+        ("como-criar-infoproduto-de-vendas-para-o-setor-de-saas-de-seguros", "Vendas para o Setor de SaaS de Seguros"),
+    ]
+)
+
+art(
+    "como-criar-infoproduto-sobre-gestao-de-negocios-de-empresa-de-assessoria-de-investimentos",
+    "Como Criar Infoproduto sobre Gestão de Empresa de Assessoria de Investimentos",
+    "Aprenda a criar infoproduto ensinando assessores de investimentos a estruturar sua AAI, montar equipe, captar clientes de alto patrimônio e escalar receita recorrente.",
+    "Gestão de Negócios",
+    "Como Criar Infoproduto sobre Gestão de Empresa de Assessoria de Investimentos | ProdutoVivo",
+    "Como Criar Infoproduto sobre Gestão de Empresa de Assessoria de Investimentos",
+    "Descubra como ensinar assessores de investimentos a estruturar sua AAI, montar equipe, captar clientes de alto patrimônio e escalar receita recorrente usando IA para criar seu infoproduto.",
+    [
+        ("Por que gestão de empresa de assessoria de investimentos é um nicho premium", [
+            "O mercado de assessores de investimentos autônomos (AAI) vinculados a corretoras como XP, BTG, Genial e Rico cresceu exponencialmente na última década. Assessores que estruturam suas próprias AAIs ou boutiques de investimentos podem gerir R$50 milhões a R$1 bilhão em ativos, gerando receitas de R$300 mil a R$10 milhões anuais.",
+            "Um infoproduto sobre como estruturar e gerir uma empresa de assessoria de investimentos endereça um mercado em acelerado crescimento — assessores dominam o produto financeiro mas frequentemente carecem de gestão empresarial, liderança de equipe e captação estruturada.",
+        ]),
+        ("O que ensinar no infoproduto de gestão de empresa de assessoria de investimentos", [
+            "Os módulos mais valiosos cobrem estruturação jurídica e operacional da AAI, compliance e regulamentação CVM/ANCORD, montagem e liderança de equipe de assessores, criação de processo de captação de novos clientes, precificação e modelos de remuneração (corretagem, fee fixo, fee baseado em AUM).",
+            "Um módulo sobre como construir uma máquina de indicações — transformar clientes satisfeitos em fontes sistemáticas de novos clientes — é o diferencial que separa assessorias que crescem daquelas que estacionam.",
+        ]),
+        ("Como criar infoproduto de gestão de assessoria de investimentos com IA", [
+            "O guia ProdutoVivo ensina a transformar metodologias de gestão de AAI em módulos de curso usando IA, com frameworks de captação e onboarding e página de vendas para o público financeiro.",
+            "Em poucos dias você tem um produto digital pronto para vender para assessores que querem estruturar sua empresa e escalar para o próximo nível de patrimônio gerido.",
+        ]),
+    ],
+    [
+        ("Assessores de investimentos podem criar infoprodutos de gestão de AAI?", "Sim, especialmente AAI certificados (CEA, CFP) com experiência em gestão de carteira, liderança de equipe ou múltiplas células. O guia ProdutoVivo ajuda a estruturar esse conhecimento."),
+        ("Quanto cobrar por infoproduto de gestão de assessoria de investimentos?", "Entre R$1.997 e R$5.997. O alto potencial de receita de uma AAI bem estruturada justifica investimento elevado no infoproduto."),
+        ("Como encontrar assessores de investimentos para vender o infoproduto?", "ANCORD, eventos de assessores XP e BTG, grupos de AAI no LinkedIn e WhatsApp, e plataformas de cursos financeiros como o Busca XP e InfoMoney."),
+        ("O mercado de assessoria de investimentos seguirá crescendo?", "Sim. A migração de clientes de grandes bancos para assessores independentes, a queda da taxa Selic e o aumento da cultura de investimentos no Brasil sustentam crescimento contínuo do setor."),
+    ],
+    [
+        ("como-criar-infoproduto-sobre-gestao-de-negocios-de-empresa-de-gestao-de-patrimonio-familiar", "Gestão de Empresa de Gestão de Patrimônio Familiar"),
+        ("como-criar-infoproduto-sobre-gestao-de-negocios-de-empresa-de-consultoria-de-gestao-de-projetos", "Gestão de Empresa de Consultoria de Projetos"),
+        ("como-criar-infoproduto-de-vendas-para-o-setor-de-saas-de-seguros", "Vendas para o Setor de SaaS de Seguros"),
+    ]
+)
+
+art(
+    "como-criar-infoproduto-de-vendas-para-o-setor-de-saas-de-seguros",
+    "Como Criar Infoproduto de Vendas para o Setor de SaaS de Seguros",
+    "Aprenda a criar infoproduto ensinando profissionais de vendas de SaaS para seguradoras a aumentar conversões, reduzir churn e escalar contratos com seguradoras e corretoras.",
+    "Vendas",
+    "Como Criar Infoproduto de Vendas para o Setor de SaaS de Seguros | ProdutoVivo",
+    "Como Criar Infoproduto de Vendas para o Setor de SaaS de Seguros",
+    "Descubra como ensinar profissionais de SaaS para seguros a aumentar conversões, reduzir churn e escalar contratos com seguradoras e corretoras usando IA para criar seu infoproduto.",
+    [
+        ("Por que vendas de SaaS para o setor de seguros é um nicho promissor", [
+            "O setor de seguros brasileiro está em transformação digital acelerada — seguradoras, corretoras e insuretechs buscam soluções SaaS para automação de apólices, gestão de sinistros, precificação dinâmica e distribuição digital. O ticket médio de contratos de SaaS para seguros vai de R$5 mil a R$200 mil mensais.",
+            "Profissionais de vendas que dominam o vocabulário e as dores do setor segurador — regulamentação SUSEP, integração com sistemas legados, segurança de dados sensíveis — fecham contratos muito maiores que vendedores generalistas.",
+        ]),
+        ("O que ensinar no infoproduto de vendas de SaaS para seguros", [
+            "Os módulos mais valiosos cobrem mapeamento do ecossistema de seguros no Brasil (seguradoras, corretoras, insuretechs, SUSEP), técnicas de prospecção e qualificação de leads no setor, elaboração de proposta de valor para compradores técnicos e executivos de seguros, estratégias para navegar em processos de compra complexos com múltiplos stakeholders.",
+            "Um módulo dedicado a como demonstrar ROI para seguradoras — calculando redução de custo operacional, melhora de NPS e aumento de conversão de apólices — é o diferencial que transforma demos em contratos fechados.",
+        ]),
+        ("Como criar infoproduto de vendas de SaaS para seguros com IA", [
+            "O guia ProdutoVivo ensina a transformar técnicas de vendas B2B SaaS para o setor financeiro em módulos de curso usando IA, com scripts de demo e templates de proposta.",
+            "Em poucos dias você tem um produto digital pronto para vender para vendedores de SaaS que querem dominar o mercado de seguros.",
+        ]),
+    ],
+    [
+        ("Vendedores de SaaS podem criar infoprodutos especializados em seguros?", "Sim, especialmente account executives e sales engineers com experiência em vender para seguradoras, corretoras ou insuretechs. O guia ProdutoVivo ajuda a estruturar esse conhecimento."),
+        ("Quanto cobrar por infoproduto de vendas de SaaS para seguros?", "Entre R$997 e R$2.997. O ticket médio alto de contratos de SaaS para seguros justifica investimento elevado em capacitação de vendas."),
+        ("Como encontrar profissionais de vendas de SaaS para seguros?", "CNseg (Confederação Nacional das Seguradoras), eventos de insurtech como Insurtech Brasil Summit, grupos de SaaS e fintech no LinkedIn."),
+        ("O setor de seguros vai continuar investindo em SaaS?", "Sim. A transformação digital no setor de seguros é irreversível — seguradoras e corretoras que não digitalizarem processos perderão competitividade, criando demanda contínua por soluções SaaS especializadas."),
+    ],
+    [
+        ("como-criar-infoproduto-de-vendas-para-o-setor-de-energia-solar", "Vendas para o Setor de Energia Solar"),
+        ("como-criar-infoproduto-de-vendas-para-o-setor-de-industria-alimenticia", "Vendas para a Indústria Alimentícia"),
+        ("como-criar-infoproduto-de-vendas-para-o-setor-de-consultoria-de-gestao-de-projetos", "Vendas para Consultoria de Gestão de Projetos"),
+    ]
+)
+
+art(
+    "como-criar-infoproduto-sobre-gestao-de-clinicas-de-neonatologia",
+    "Como Criar Infoproduto sobre Gestão de Clínica de Neonatologia",
+    "Aprenda a criar infoproduto ensinando neonatologistas a estruturar UTI neonatal, gerir equipe multidisciplinar e crescer com parcerias com maternidades e planos de saúde.",
+    "Gestão de Negócios",
+    "Como Criar Infoproduto sobre Gestão de Clínica de Neonatologia | ProdutoVivo",
+    "Como Criar Infoproduto sobre Gestão de Clínica de Neonatologia",
+    "Descubra como ensinar neonatologistas a estruturar UTI neonatal, gerir equipe multidisciplinar e crescer com parcerias estratégicas usando IA para criar seu infoproduto.",
+    [
+        ("Por que neonatologia é um nicho de alto impacto para infoprodutos de gestão", [
+            "A neonatologia é uma das especialidades médicas mais críticas — neonatologistas que lideram UTIs neonatais (UTINs) têm responsabilidade sobre os pacientes mais vulneráveis e precisam de gestão impecável de equipe, equipamentos e protocolos. O serviço de neonatologia é também um dos mais lucrativos para hospitais e maternidades.",
+            "Neonatologistas com experiência em gestão de UTIN têm conhecimento raro e valioso — um infoproduto ensinando como estruturar, gerir e qualificar um serviço de neonatologia tem mercado nacional e potencial de exportação para Portugal e países de língua portuguesa.",
+        ]),
+        ("O que ensinar no infoproduto de gestão de clínica de neonatologia", [
+            "Os módulos mais valiosos cobrem estruturação de UTIN com certificação ONA e JCAHO, gestão de equipe multidisciplinar (enfermagem neonatal, fisioterapia, fonoaudiologia), protocolos de alta qualidade baseados em evidências, indicadores de qualidade e segurança do paciente neonatal.",
+            "Um módulo sobre como negociar contratos com maternidades e planos de saúde — incluindo tabelas de procedimentos neonatais e estruturação de contratos de gestão de UTIN — tem valor estratégico para neonatologistas que querem ir além do plantão.",
+        ]),
+        ("Como criar infoproduto de neonatologia com IA", [
+            "O guia ProdutoVivo ensina a transformar protocolos clínicos e de gestão neonatal em módulos de curso usando IA, com materiais de apoio e página de vendas.",
+            "Em poucos dias você tem um produto digital pronto para vender para neonatologistas que querem profissionalizar a gestão de seus serviços.",
+        ]),
+    ],
+    [
+        ("Neonatologistas podem criar infoprodutos de gestão de UTIN?", "Sim, especialmente aqueles com experiência em coordenação ou direção de UTIs neonatais. O guia ProdutoVivo ajuda a estruturar esse conhecimento."),
+        ("Quanto cobrar por infoproduto de gestão de neonatologia?", "Entre R$1.497 e R$3.997. A criticidade e complexidade da gestão de UTIN justificam preços elevados."),
+        ("Como encontrar neonatologistas para vender o infoproduto?", "SBP (Sociedade Brasileira de Pediatria), SBPN (Sociedade Brasileira de Pediatria Neonatal), congressos de neonatologia e grupos de UTI neonatal no LinkedIn."),
+        ("Gestão de UTIN tem regulamentação específica no Brasil?", "Sim. UTIs neonatais seguem normas da ANVISA (RDC 36) e do CFM, e muitas buscam certificações como ONA e JCAHO. Um infoproduto que endereça essas especificidades tem alto valor."),
+    ],
+    [
+        ("como-criar-infoproduto-sobre-gestao-de-clinicas-de-urologia-pediatrica", "Gestão de Clínica de Urologia Pediátrica"),
+        ("como-criar-infoproduto-sobre-gestao-de-clinicas-de-pediatria-geral", "Gestão de Clínica de Pediatria Geral"),
+        ("como-criar-infoproduto-sobre-gestao-de-clinicas-de-medicina-intensiva", "Gestão de Clínica de Medicina Intensiva"),
+    ]
+)
+
+art(
+    "como-criar-infoproduto-de-marketing-para-profissionais-de-geriatria",
+    "Como Criar Infoproduto de Marketing para Profissionais de Geriatria",
+    "Aprenda a criar infoproduto ensinando geriatras a atrair pacientes idosos e familiares, construir autoridade digital e crescer com estratégia de marketing para medicina geriátrica.",
     "Marketing",
-    "Marketing para Cirurgia Bariatrica: Guia para Cirurgioes | ProdutoVivo",
-    "Marketing Digital para Cirurgioes Bariátricos",
-    "Descubra como cirurgioes bariátricos podem atrair mais pacientes qualificados e construir autoridade digital com marketing etico.",
+    "Como Criar Infoproduto de Marketing para Profissionais de Geriatria | ProdutoVivo",
+    "Como Criar Infoproduto de Marketing para Profissionais de Geriatria",
+    "Descubra como ensinar geriatras a atrair pacientes idosos e familiares, construir autoridade digital e crescer com estratégias de marketing para medicina geriátrica usando IA para criar seu infoproduto.",
     [
-        ("O Paciente Bariátrico e sua Jornada de Decisao", [
-            "A decisao pela cirurgia bariatrica e longa e emocional — o paciente pesquisa por meses antes de consultar. Estar presente em todas as fases dessa jornada e fundamental para ser escolhido.",
-            "Conteudo que desmistifica a cirurgia, explica os diferentes procedimentos e mostra resultados reais (dentro das normas do CFM) gera confianca e atrai pacientes em fase de consideracao.",
+        ("Por que marketing para geriatras é um nicho em rápida expansão", [
+            "O Brasil tem uma das populações que mais envelhece no mundo — o número de idosos acima de 60 anos deve dobrar até 2040, chegando a 60 milhões. Geriatras são especialistas raros e altamente demandados por famílias que buscam cuidado longitudinal e qualificado para pais e avós.",
+            "A maioria dos geriatras não tem estratégia de marketing estruturada para alcançar familiares que são os tomadores de decisão na contratação de serviços geriátricos. Um infoproduto que ensina geriatras a se posicionar digitalmente tem mercado enorme e crescente.",
         ]),
-        ("Canais e Estrategias para Cirurgioes Bariátricos", [
-            "YouTube e o canal mais poderoso para bariatrica: videos sobre 'como e a recuperacao', 'diferenca entre bypass e sleeve', 'vida apos a cirurgia' tem milhoes de buscas mensais no Brasil.",
-            "Grupos de apoio online (Facebook, WhatsApp) de pacientes pós-cirurgicos sao fontes de indicacao poderosas. Pacientes satisfeitos recomendam seu cirurgiao ativamente nesses espacos.",
+        ("O que ensinar no infoproduto de marketing para geriatria", [
+            "Os módulos mais valiosos cobrem posicionamento digital para geriatras, comunicação com filhos adultos que buscam cuidado para os pais, criação de conteúdo educativo sobre avaliação geriátrica, fragilidade, quedas e polifarmácia, estratégia no Instagram e LinkedIn para construção de autoridade.",
+            "Um módulo sobre como estruturar parcerias com clínicas de saúde da família, ortopedistas, neurologistas e cardiologistas — especialistas que frequentemente encaminham pacientes idosos — é altamente prático e gera resultado rápido.",
         ]),
-        ("Etica e Compliance no Marketing Bariátrico", [
-            "O CFM e especialmente rigoroso com marketing de cirurgia. Evite completamente imagens de antes/depois, promessas de resultado e depoimentos com percentuais de perda de peso.",
-            "Foque em conteudo educativo: criterios para indicacao da cirurgia, processo de avaliacao multidisciplinar, riscos e beneficios. Transparencia e conhecimento constroem mais confianca do que qualquer anuncio.",
+        ("Como criar infoproduto de marketing para geriatria com IA", [
+            "O guia ProdutoVivo ensina a criar conteúdo de marketing médico para geriatria em larga escala usando IA, com templates de post e scripts de vídeo.",
+            "Em poucos dias você tem um produto digital pronto para vender para geriatras que querem atrair mais pacientes particulares e construir autoridade na medicina do envelhecimento.",
         ]),
     ],
     [
-        ("Posso mostrar fotos de pacientes operados nas redes sociais?", "Nao — o CFM proibe imagens de antes/depois em cirurgia. Voce pode mostrar sua tecnica, seu centro cirurgico e depoimentos em texto (com autorizacao do paciente), mas sem comparacoes visuais de resultados."),
-        ("Como lidar com avaliações negativas online sobre cirurgia?", "Responda com empatia e profissionalismo, sem revelar informacoes do paciente. Convide para contato privado para resolver. Uma resposta bem dada pode transformar uma crise em demonstracao de cuidado."),
-        ("Vale a pena anunciar no Google para bariatrica?", "Sim — 'cirurgia bariatrica [cidade]' e 'melhor cirurgiao bariátrico' tem alto volume de busca e intencao forte. O custo por clique e alto, mas o ticket do procedimento justifica o investimento."),
+        ("Geriatras podem criar infoprodutos de marketing médico?", "Sim, especialmente aqueles com experiência em consultório particular ou coordenação de serviços de geriatria em clínicas e hospitais. O guia ProdutoVivo ajuda a estruturar esse conhecimento."),
+        ("Quanto cobrar por infoproduto de marketing para geriatria?", "Entre R$997 e R$2.497. O crescimento da demanda por geriatras e o alto ticket das consultas justificam preços competitivos."),
+        ("Como encontrar geriatras para vender o infoproduto?", "SBGG (Sociedade Brasileira de Geriatria e Gerontologia), congressos de geriatria, grupos de geriatria no LinkedIn e Instagram são os canais ideais."),
+        ("Marketing médico para geriatria tem particularidades?", "Sim. O público tomador de decisão frequentemente são os filhos adultos dos pacientes, não os próprios idosos. O marketing deve comunicar confiança, cuidado longitudinal e qualidade de vida — não apenas tratamento de doenças."),
     ],
     [
-        ("marketing-para-profissionais-de-medicina-preventiva", "Marketing para Medicina Preventiva"),
-        ("marketing-para-profissionais-de-alergologia-adulto", "Marketing para Alergologistas"),
-        ("gestao-de-clinicas-de-alergologia-adulto", "Gestao de Clinicas"),
+        ("como-criar-infoproduto-de-marketing-para-profissionais-de-psiquiatria-infantojuvenil", "Marketing para Profissionais de Psiquiatria Infantojuvenil"),
+        ("como-criar-infoproduto-de-marketing-para-profissionais-de-cardiologia-pediatrica", "Marketing para Profissionais de Cardiologia Pediátrica"),
+        ("como-criar-infoproduto-sobre-gestao-de-clinicas-de-neonatologia", "Gestão de Clínica de Neonatologia"),
     ]
 )
 
 art(
-    "vendas-para-o-setor-de-saas-de-seguros",
-    "Vendas para o Setor de SaaS de Seguros",
-    "Como vender SaaS para o setor de seguros: estrategias B2B, ciclos de venda longos e como superar objecoes de seguradoras e corretoras.",
-    "Vendas",
-    "Vendas de SaaS para o Setor de Seguros | ProdutoVivo",
-    "Como Vender SaaS para o Setor de Seguros",
-    "Aprenda as estrategias especificas para vender tecnologia SaaS para seguradoras, corretoras e gestoras de risco com ciclos de venda eficientes.",
+    "como-criar-infoproduto-sobre-gestao-de-clinicas-de-hematologia",
+    "Como Criar Infoproduto sobre Gestão de Clínica de Hematologia",
+    "Aprenda a criar infoproduto ensinando hematologistas a estruturar sua clínica, gerir tratamentos de alto custo e crescer com contratos com planos de saúde e parcerias hospitalares.",
+    "Gestão de Negócios",
+    "Como Criar Infoproduto sobre Gestão de Clínica de Hematologia | ProdutoVivo",
+    "Como Criar Infoproduto sobre Gestão de Clínica de Hematologia",
+    "Descubra como ensinar hematologistas a estruturar clínica de hematologia, gerir medicamentos de alto custo e crescer com contratos estratégicos usando IA para criar seu infoproduto.",
     [
-        ("Entendendo o Comprador de Tecnologia no Setor de Seguros", [
-            "O setor de seguros e altamente regulado e avesso a risco tecnologico. Decisores valorizam estabilidade, compliance com SUSEP e integracao com sistemas legados. Sua venda deve abordar essas preocupacoes desde o primeiro contato.",
-            "Os principais compradores variam: seguradoras grandes tem CTO e comite de TI; corretoras medias tem o dono ou diretor comercial como decisor; insurtechs buscam parceiros tecnologicos ageis. Mapeie o perfil antes de abordar.",
+        ("Por que hematologia é um nicho premium para infoprodutos de gestão", [
+            "A hematologia é uma especialidade de alto custo e alto impacto — clínicas de hematologia lidam com pacientes oncológicos (leucemias, linfomas, mieloma múltiplo) e hematológicos benignos (anemia falciforme, hemofilia) que demandam tratamentos de R$50 mil a R$1 milhão por ciclo. A gestão financeira e logística é extremamente complexa.",
+            "Hematologistas que estruturam suas clínicas ou centros de infusão particular podem gerar receitas expressivas, mas a complexidade de gestão — medicamentos de alta especialidade, regras de reembolso de planos e credenciamento ANVISA — exige conhecimento específico que um infoproduto pode endereçar.",
         ]),
-        ("Estrategias de Prospeccao e Qualificacao", [
-            "Eventos do setor como CNSEG, feiras de insurtech e associacoes como CNseg e FENACOR sao excelentes pontos de entrada. Decisores do setor frequentam esses eventos e estao abertos a conversas.",
-            "Um white paper ou estudo de caso especifico para seguros ('Como uma corretora aumentou renovacoes em X% com automacao') e muito mais eficaz do que materiais genericos de SaaS.",
+        ("O que ensinar no infoproduto de gestão de clínica de hematologia", [
+            "Os módulos essenciais cobrem estruturação de centro de infusão com normas ANVISA, gestão de medicamentos de alto custo e dispensação oncológica, credenciamento em planos de saúde para procedimentos hematológicos, captação de pacientes e parcerias com hospitais e clínicas oncológicas.",
+            "Um módulo sobre como navegar no processo de autorização e reembolso de medicamentos oncológicos de alto custo junto a planos de saúde — incluindo recursos administrativos e ANS — tem valor imediato para hematologistas que perdem receita por problemas de cobrança.",
         ]),
-        ("Superando Objecoes Tipicas", [
-            "Seguranca de dados e integracao com sistemas legados sao as objecoes mais comuns. Prepare documentacao tecnica detalhada, certificacoes de seguranca e referencias de clientes do setor.",
-            "O ciclo de vendas para grandes seguradoras pode ser de 6-18 meses. Use esse tempo para construir relacionamentos em multiplos niveis — TI, operacoes e negocios — para reduzir o risco de perder a negociacao por mudanca de sponsor.",
+        ("Como criar infoproduto de hematologia com IA", [
+            "O guia ProdutoVivo ensina a transformar protocolos clínicos e de gestão hematológica em módulos de curso usando IA, com materiais de apoio e página de vendas.",
+            "Em poucos dias você tem um produto digital pronto para vender para hematologistas que querem profissionalizar a gestão de suas clínicas.",
         ]),
     ],
     [
-        ("Qual e o ciclo de vendas tipico para SaaS no setor de seguros?", "Para corretoras pequenas: 1-3 meses. Para seguradoras medias: 3-6 meses. Para grandes seguradoras: 6-18 meses com multiplos estagios de avaliacao tecnica e juridica."),
-        ("Como demonstrar ROI de SaaS para uma seguradora?", "Quantifique reducao de sinistros fradulentos, aumento de taxa de renovacao, reducao de custo operacional por apolice e tempo de emissao. CFOs de seguros entendem matematica atuarial — use a linguagem deles."),
-        ("SaaS de seguros precisa de certificacao SUSEP?", "Depende do que o SaaS faz. Plataformas que operam como corretoras digitais precisam de autorizacao SUSEP. Ferramentas de backoffice ou analytics geralmente nao, mas consulte um advogado especializado."),
+        ("Hematologistas podem criar infoprodutos de gestão?", "Sim, especialmente aqueles com experiência em gestão de centros de infusão, clínicas onco-hematológicas ou hospitais terciários. O guia ProdutoVivo ajuda a estruturar esse conhecimento."),
+        ("Quanto cobrar por infoproduto de gestão de hematologia?", "Entre R$1.497 e R$4.997. A complexidade e o alto custo envolvido na gestão de clínicas de hematologia justificam preços elevados."),
+        ("Como encontrar hematologistas para vender o infoproduto?", "ABHH (Associação Brasileira de Hematologia, Hemoterapia e Terapia Celular), congressos de hematologia, grupos de onco-hematologia no LinkedIn."),
+        ("A hematologia é um mercado em crescimento no Brasil?", "Sim. O aumento de diagnósticos de câncer hematológico, a incorporação de novas terapias (CAR-T, anticorpos bispecíficos) e a expansão da medicina de precisão criam crescimento contínuo no setor."),
     ],
     [
-        ("vendas-para-o-setor-de-saas-de-rh-e-folha", "Vendas para SaaS de RH e Folha"),
-        ("vendas-para-o-setor-de-saas-de-bi-e-analytics", "Vendas para SaaS de BI e Analytics"),
-        ("vendas-para-o-setor-de-consultoria-de-gestao-de-pessoas", "Vendas para Consultoria de Gestao de Pessoas"),
+        ("como-criar-infoproduto-sobre-gestao-de-clinicas-de-medicina-nuclear", "Gestão de Clínica de Medicina Nuclear"),
+        ("como-criar-infoproduto-sobre-gestao-de-clinicas-de-radiologia-e-diagnostico", "Gestão de Clínica de Radiologia e Diagnóstico"),
+        ("como-criar-infoproduto-sobre-gestao-de-clinicas-de-hepatologia-adulto", "Gestão de Clínica de Hepatologia de Adultos"),
     ]
 )
 
 art(
-    "vendas-para-o-setor-de-saas-de-rh-e-folha",
-    "Vendas para o Setor de SaaS de RH e Folha",
-    "Como vender SaaS de RH e folha de pagamento: estrategias de prospeccao, objecoes tipicas e como fechar com empresas de todos os portes.",
-    "Vendas",
-    "Vendas de SaaS de RH e Folha de Pagamento | ProdutoVivo",
-    "Como Vender SaaS de RH e Folha com Eficiencia",
-    "Domine as estrategias de vendas B2B para SaaS de RH e folha: desde a prospeccao ate o fechamento em empresas de pequeno, medio e grande porte.",
+    "como-criar-infoproduto-sobre-gestao-de-clinicas-de-medicina-nuclear",
+    "Como Criar Infoproduto sobre Gestão de Clínica de Medicina Nuclear",
+    "Aprenda a criar infoproduto ensinando médicos nucleares a estruturar serviço de medicina nuclear, gerir radiofarmacos e crescer com contratos hospitalares e oncológicos.",
+    "Gestão de Negócios",
+    "Como Criar Infoproduto sobre Gestão de Clínica de Medicina Nuclear | ProdutoVivo",
+    "Como Criar Infoproduto sobre Gestão de Clínica de Medicina Nuclear",
+    "Descubra como ensinar médicos nucleares a estruturar serviço de medicina nuclear, gerir radiofarmacos com compliance CNEN e crescer com contratos oncológicos usando IA para criar seu infoproduto.",
     [
-        ("O Mercado de SaaS de RH no Brasil", [
-            "O Brasil tem mais de 6 milhoes de empresas com funcionarios registrados — todas precisam processar folha. O mercado de HRtech brasileiro cresce acima de 20% ao ano, criando oportunidade enorme para vendas B2B.",
-            "A complexidade da legislacao trabalhista brasileira (eSocial, FGTS, INSS, ferias, 13o) e o principal driver de adocao de SaaS de folha. Seu produto resolve uma dor real e regulatoria.",
+        ("Por que medicina nuclear é um nicho exclusivo para infoprodutos de gestão", [
+            "A medicina nuclear é uma das especialidades mais reguladas e de maior custo de entrada na medicina privada — um serviço de medicina nuclear com PET-CT pode representar investimento de R$5 a R$20 milhões. Médicos nucleares que dominam a gestão desses centros têm conhecimento de alto valor.",
+            "O Brasil tem poucos médicos nucleares — menos de 2.000 especialistas formados — e ainda menos com experiência em gestão de serviços. Um infoproduto ensinando a estruturar e gerir um serviço de medicina nuclear é praticamente sem concorrência direta.",
         ]),
-        ("Segmentacao e Abordagem por Porte de Empresa", [
-            "PMEs (ate 50 funcionarios) tomam decisao rapida, valorizam preco e simplicidade. Founders e donos sao os decisores. O ciclo de vendas e de 2-4 semanas e a venda pode ser self-service ou inside sales.",
-            "Medias empresas (50-500 funcionarios) tem gerente de RH como champion e diretoria como decisor economico. Valorizam integracao com sistemas existentes, suporte e conformidade legal.",
+        ("O que ensinar no infoproduto de gestão de serviço de medicina nuclear", [
+            "Os módulos mais valiosos cobrem estruturação de serviço de medicina nuclear com licenciamento CNEN e ANVISA, gestão de radiofarmacos e cadeia de fornecimento, estruturação de contratos com hospitais oncológicos e planos de saúde, proteção radiológica e gestão de rejeitos radioativos.",
+            "Um módulo sobre como estruturar contratos de gestão de serviço de medicina nuclear com hospitais — onde o médico nuclear traz expertise e gestão e o hospital fornece infraestrutura — tem alto valor estratégico para profissionais que querem empreender.",
         ]),
-        ("Tecnicas de Fechamento para RH SaaS", [
-            "Oferecer um trial gratuito de 30 dias com onboarding assistido e a estrategia mais eficaz — clientes que importam dados reais tem taxas de conversao muito maiores do que quem apenas explora o sistema.",
-            "Use o calculo de ROI: quanto tempo o RH gasta hoje com folha manual? Multiplique por custo/hora. Mostre que o SaaS paga seu proprio custo em poucas semanas so com ganho de produtividade.",
+        ("Como criar infoproduto de medicina nuclear com IA", [
+            "O guia ProdutoVivo ensina a transformar protocolos regulatórios e de gestão de medicina nuclear em módulos de curso usando IA, com frameworks de compliance e página de vendas.",
+            "Em poucos dias você tem um produto digital pronto para vender para médicos nucleares que querem estruturar ou otimizar seus serviços.",
         ]),
     ],
     [
-        ("Como diferenciar meu SaaS de RH de concorrentes como ADP, Totvs e Senior?", "Foque em segmento especifico (ex: empresas de tecnologia, varejo) ou em funcionalidade diferenciada (ex: gestao de ponto com biometria facial, integracao nativa com Slack). Nicho bate generalista."),
-        ("Qual e a maior objecao na venda de SaaS de folha?", "Medo de migrar dados e interromper a folha. Mitigue com: importacao assistida, garantia de que a primeira folha roda com suporte dedicado e opcao de rollback. Reduza o risco percebido ao maximo."),
-        ("Devo vender direto ou por canal de parceiros contabeis?", "Ambos. Parceiros contabeis sao multiplicadores poderosos — eles ja tem a relacao de confianca com o cliente. Crie um programa de parceiros com comissao recorrente e treinamento gratuito."),
+        ("Médicos nucleares podem criar infoprodutos de gestão de serviço?", "Sim, especialmente aqueles com experiência em direção técnica de serviços de medicina nuclear ou PET-CT. O guia ProdutoVivo ajuda a estruturar esse conhecimento."),
+        ("Quanto cobrar por infoproduto de gestão de medicina nuclear?", "Entre R$1.997 e R$5.997. A exclusividade da especialidade e a complexidade regulatória justificam os maiores preços."),
+        ("Como encontrar médicos nucleares para vender o infoproduto?", "SMBN (Sociedade Brasileira de Medicina Nuclear), CNEN, congressos de medicina nuclear e grupos da especialidade no LinkedIn são os canais ideais."),
+        ("O mercado de medicina nuclear está crescendo no Brasil?", "Sim. A expansão da oncologia de precisão, o crescimento de PET-CT para estadiamento de câncer e novas terapias de radionuclídeos (PSMA, DOTATATE) criam demanda crescente por serviços de medicina nuclear."),
     ],
     [
-        ("vendas-para-o-setor-de-saas-de-seguros", "Vendas para SaaS de Seguros"),
-        ("vendas-para-o-setor-de-consultoria-de-gestao-de-pessoas", "Vendas para Consultoria de Gestao de Pessoas"),
-        ("vendas-para-o-setor-de-saas-de-bi-e-analytics", "Vendas para SaaS de BI e Analytics"),
+        ("como-criar-infoproduto-sobre-gestao-de-clinicas-de-hematologia", "Gestão de Clínica de Hematologia"),
+        ("como-criar-infoproduto-sobre-gestao-de-clinicas-de-radiologia-e-diagnostico", "Gestão de Clínica de Radiologia e Diagnóstico"),
+        ("como-criar-infoproduto-sobre-gestao-de-clinicas-de-medicina-do-viajante", "Gestão de Clínica de Medicina do Viajante"),
     ]
 )
 
-art(
-    "vendas-para-o-setor-de-consultoria-de-gestao-de-pessoas",
-    "Vendas para o Setor de Consultoria de Gestao de Pessoas",
-    "Como vender servicos de consultoria de gestao de pessoas para empresas: prospeccao, proposta de valor e fechamento B2B.",
-    "Vendas",
-    "Vendas para Consultoria de Gestao de Pessoas | ProdutoVivo",
-    "Como Vender Consultoria de Gestao de Pessoas",
-    "Aprenda a vender servicos de consultoria de gestao de pessoas com estrategias B2B eficazes, desde a prospeccao ate o fechamento.",
-    [
-        ("Vendendo para o Decisor Certo em Gestao de Pessoas", [
-            "Em empresas ate 200 funcionarios, o CEO ou dono e geralmente o decisor para contratar uma consultoria de RH. Em empresas maiores, o CHRO ou VP de People e o champion — mas o CFO aprova o budget.",
-            "O gatilho mais comum para contratar consultoria de gestao de pessoas e uma crise: turnover alto, conflito de lideranca, fusao/aquisicao ou crescimento rapido. Esteja presente nesses momentos.",
-        ]),
-        ("Construindo a Proposta de Valor", [
-            "Quantifique o custo do problema: turnover de 20% em uma empresa de 100 funcionarios custa R$ 500.000-1 milhao por ano (recrutamento, treinamento, perda de produtividade). Sua consultoria deve custar uma fracao disso.",
-            "Diferencie-se por metodologia ou especializacao setorial. Uma consultoria que entende profundamente o setor do cliente (tecnologia, varejo, industria) entrega mais valor do que uma generalista.",
-        ]),
-        ("Tecnicas de Prospeccao e Vendas", [
-            "LinkedIn e o canal principal para prospectar decisores de RH e CEOs. Publique conteudo sobre gestao de pessoas regularmente — quem publica gera inbound e tem muito mais facilidade de abertura de portas.",
-            "Workshops gratuitos para grupos de empresas ('Como reduzir turnover em empresas de tecnologia') sao estrategias poderosas para gerar leads qualificados e demonstrar expertise ao mesmo tempo.",
-        ]),
-    ],
-    [
-        ("Qual e o ticket medio de uma consultoria de gestao de pessoas?", "Projetos pontuais custam de R$ 10.000 a R$ 100.000 dependendo da complexidade. Retainers mensais variam de R$ 3.000 a R$ 30.000. Defina pelo valor gerado, nao pelo custo do seu tempo."),
-        ("Como mostrar ROI de consultoria de RH para um CFO?", "Calcule o custo atual do problema (turnover, absenteismo, conflitos) e proponha uma meta mensuravel de melhoria. CFOs gostam de numeros — 'reduzir turnover de 25% para 15% em 12 meses' e mais convincente do que conceitos abstratos."),
-        ("Devo cobrar pelo diagnostico inicial?", "Sim — um diagnostico pago (R$ 3.000-8.000) qualifica melhor o cliente e aumenta o comprometimento. Clientes que pagam pelo diagnostico tem muito mais chances de contratar o projeto completo."),
-    ],
-    [
-        ("vendas-para-o-setor-de-saas-de-rh-e-folha", "Vendas para SaaS de RH e Folha"),
-        ("gestao-de-negocios-de-empresa-de-consultoria-de-pricing", "Gestao de Consultoria de Pricing"),
-        ("vendas-para-o-setor-de-consultoria-de-supply-chain-avancado", "Vendas para Consultoria de Supply Chain"),
-    ]
-)
-
-art(
-    "gestao-de-clinicas-de-pneumologia-adulto",
-    "Gestao de Clinicas de Pneumologia Adulto",
-    "Guia completo de gestao para clinicas de pneumologia adulto: processos, tecnologia, equipe e crescimento sustentavel.",
-    "Gestao",
-    "Gestao de Clinicas de Pneumologia Adulto | ProdutoVivo",
-    "Como Gerir uma Clinica de Pneumologia Adulto com Eficiencia",
-    "Aprenda as melhores praticas de gestao para clinicas de pneumologia adulto e transforme sua especialidade em um negocio sustentavel.",
-    [
-        ("Especificidades da Gestao em Pneumologia", [
-            "Clinicas de pneumologia tem demanda crescente impulsionada por poluicao urbana, sequelas pos-COVID e aumento de diagnosticos de DPOC e asma. A gestao deve estar preparada para absorver esse crescimento.",
-            "A espirometria e o principal exame da especialidade. Gerenciar a agenda do equipamento, treinar a equipe tecnica e garantir calibracao regular sao diferenciais que impactam diretamente na qualidade e receita.",
-        ]),
-        ("Otimizando o Fluxo de Atendimento", [
-            "Implemente triagem pre-consulta por enfermagem para colher historico respiratorio, fatores de risco e medicamentos em uso. Isso reduz o tempo de consulta medica e melhora a qualidade do atendimento.",
-            "Crie protocolos especificos para as principais condicoes: asma, DPOC, apneia do sono, pneumonias de repeticao. Protocolos padronizados reduzem variabilidade e facilitam auditoria de qualidade.",
-        ]),
-        ("Expansao e Novos Modelos de Receita", [
-            "Poligrafia domiciliar para diagnostico de apneia do sono e um servico de alto valor com baixo custo operacional. Integrar esse servico amplia receita sem aumentar significativamente a estrutura.",
-            "Teleconsulta para retornos e monitoramento de DPOC e asma reduz o no-show e aumenta a capacidade de atendimento. Pacientes cronicos sao a base de receita recorrente da clinica de pneumologia.",
-        ]),
-    ],
-    [
-        ("Como montar uma clinica de pneumologia com baixo investimento inicial?", "Comece com consultorio compartilhado, espirometro proprio e parceria com laboratorio e radiologia. O investimento inicial pode ser abaixo de R$ 50.000 e a clinica propria vem com o crescimento da carteira."),
-        ("Qual e o ticket medio de uma consulta de pneumologia?", "Consultas particulares variam de R$ 300-600. Com exames complementares (espirometria, poligrafia), o ticket medio por paciente pode superar R$ 1.000 na primeira consulta."),
-        ("Como captar pacientes de pneumologia pela internet?", "Google Meu Negocio, conteudo sobre 'tosse cronica', 'falta de ar' e 'ronco e apneia' atraem pacientes com queixas respiratorias. SEO local e muito eficaz para especialidades medicas."),
-    ],
-    [
-        ("gestao-de-clinicas-de-alergologia-adulto", "Gestao de Clinicas de Alergologia"),
-        ("marketing-para-profissionais-de-pneumologia-adulto", "Marketing para Pneumologistas"),
-        ("gestao-de-clinicas-de-cardiologia-intervencionista", "Gestao em Cardiologia Intervencionista"),
-    ]
-)
-
-art(
-    "vendas-para-o-setor-de-consultoria-de-supply-chain-avancado",
-    "Vendas para o Setor de Consultoria de Supply Chain Avancado",
-    "Como vender consultoria de supply chain avancado para industrias e varejistas: estrategias B2B, ROI e fechamento de contratos.",
-    "Vendas",
-    "Vendas para Consultoria de Supply Chain Avancado | ProdutoVivo",
-    "Como Vender Consultoria de Supply Chain Avancado",
-    "Aprenda a vender consultoria especializada em supply chain para grandes industrias e varejistas com estrategias B2B de alto valor.",
-    [
-        ("O Mercado de Consultoria de Supply Chain no Brasil", [
-            "Disrupcoes de cadeia de suprimentos pos-pandemia, reshoring e pressoes de ESG criaram uma demanda explosiva por consultoria especializada em supply chain. Empresas brasileiras estao investindo como nunca nessa area.",
-            "Consultoria de supply chain avancado inclui S&OP, gestao de riscos de fornecedores, otimizacao de estoque com ML e redesenho de redes logisticas. Cada um desses modulos pode ser um projeto independente.",
-        ]),
-        ("Identificando e Abordando Decisores", [
-            "O decisor tipico e o COO ou Diretor de Operacoes. Em empresas menores, o CEO. O CFO e sempre um stakeholder critico porque supply chain tem impacto direto no capital de giro e nos custos.",
-            "Gatilhos de compra: aumento de ruptura de estoque, crescimento de custo logistico acima da inflacao, entrada em novo mercado geografico ou canal, crise com fornecedor critico. Monitore esses sinais nos seus prospects.",
-        ]),
-        ("Construindo Cases e Proposta de Valor", [
-            "Supply chain consulting vende ROI. Calcule o impacto financeiro do problema: cada dia de ruptura de estoque em um varejista de R$ 100M de faturamento custa R$ 200-500K em vendas perdidas. Sua consultoria deve custar uma fracao.",
-            "Cases detalhados com metricas antes/depois ('reducao de estoque de 45 para 28 dias sem aumentar ruptura') sao a ferramenta de venda mais poderosa nesse segmento. Invista em documentar seus melhores projetos.",
-        ]),
-    ],
-    [
-        ("Qual e o ticket tipico de projetos de consultoria de supply chain?", "Projetos de diagnostico custam R$ 50.000-150.000. Projetos de implantacao de S&OP ou redesenho de rede: R$ 200.000-1.000.000. Retainers mensais de suporte: R$ 15.000-50.000."),
-        ("Como prospectar industrias para consultoria de supply chain?", "Eventos setoriais (IMAM, ILOS), publicacoes de relatorios setoriais gratuitos e LinkedIn com conteudo tecnico sao os canais mais eficazes. Decisores de supply chain seguem quem publica conteudo relevante."),
-        ("Como diferenciar minha consultoria de supply chain das big fours?", "Especializacao setorial profunda (ex: so industria farmaceutica, so agronegocio) e velocidade de implantacao. Big fours sao caras e lentas; boutiques especializadas entregam mais valor para o segmento escolhido."),
-    ],
-    [
-        ("vendas-para-o-setor-de-consultoria-de-gestao-de-pessoas", "Vendas para Consultoria de Gestao de Pessoas"),
-        ("gestao-de-negocios-de-empresa-de-consultoria-de-pricing", "Gestao de Consultoria de Pricing"),
-        ("vendas-para-o-setor-de-saas-de-bi-e-analytics", "Vendas para SaaS de BI e Analytics"),
-    ]
-)
-
-art(
-    "gestao-de-clinicas-de-neurologia-vascular",
-    "Gestao de Clinicas de Neurologia Vascular",
-    "Como gerir uma clinica de neurologia vascular com eficiencia: processos, equipe especializada e crescimento sustentavel.",
-    "Gestao",
-    "Gestao de Clinicas de Neurologia Vascular | ProdutoVivo",
-    "Gestao Eficiente em Neurologia Vascular",
-    "Aprenda a gerir clinicas e servicos de neurologia vascular com processos otimizados, equipe qualificada e resultados superiores.",
-    [
-        ("Complexidade e Oportunidade na Neurologia Vascular", [
-            "Neurologia vascular opera na intersecao de alta urgencia (AVC) e acompanhamento cronico (prevencao secundaria). Gerir essa dualidade requer protocolos rigidos para urgencias e processos eficientes para ambulatorio.",
-            "O AVC e a segunda maior causa de morte no Brasil e a principal causa de invalidez. Com populacao envelhecendo, a demanda por servicos de neurologia vascular cresce consistentemente ano a ano.",
-        ]),
-        ("Estruturando Protocolos de Atendimento", [
-            "Para servicos hospitalares, o protocolo de AVC isquemico (tempo porta-agulha abaixo de 60 minutos para rtPA) e o indicador mais critico. Sistemas de telemedicina para telestroke ampliam o alcance em regioes sem especialista.",
-            "Para ambulatorio, padronize o seguimento pos-AVC: controle de fatores de risco vasculares, reabilitacao, medicamentos. Pacientes bem acompanhados tem menos recorrencias e sao a base de receita estavel da clinica.",
-        ]),
-        ("Tecnologia e Crescimento", [
-            "Ferramentas de IA para analise de neuroimagem (deteccao automatica de AVC em TC e RM) estao chegando ao mercado brasileiro. Clinicas que adotam cedo ganham vantagem competitiva e qualidade superior.",
-            "Producao de conteudo educativo sobre prevencao de AVC para pacientes de risco e seus familiares posiciona a clinica como referencia e gera demanda organica consistente.",
-        ]),
-    ],
-    [
-        ("Quais equipamentos sao essenciais para uma clinica de neurologia vascular?", "Ultrassom Doppler transcraniano e de carotidas sao fundamentais. Acesso a RM com protocolo de AVC e essencial. Para inicio, parcerias com centros de imagem sao viáveis ate ter volume que justifique equipamento proprio."),
-        ("Como captar pacientes de neurologia vascular?", "Parcerias com clinicos gerais, cardiologistas e geriatras sao a principal fonte de encaminhamentos. Conteudo sobre AVC, demencia vascular e prevencao atrai pacientes e familiares que buscam especialista."),
-        ("Vale a pena ter um servico de teleAVC?", "Sim — o telestroke permite atender hospitais sem neurologista vascular 24/7. E um modelo de alta receita com impacto social significativo, alem de ser uma tendencia fortemente incentivada pelo CFM e ANS."),
-    ],
-    [
-        ("gestao-de-clinicas-de-cardiologia-intervencionista", "Gestao em Cardiologia Intervencionista"),
-        ("gestao-de-clinicas-de-pneumologia-adulto", "Gestao de Clinicas de Pneumologia"),
-        ("gestao-de-clinicas-de-alergologia-adulto", "Gestao de Clinicas de Alergologia"),
-    ]
-)
-
-art(
-    "marketing-para-profissionais-de-pneumologia-adulto",
-    "Marketing para Profissionais de Pneumologia Adulto",
-    "Como pneumologistas podem atrair mais pacientes e construir autoridade digital com marketing etico e estrategias comprovadas.",
-    "Marketing",
-    "Marketing para Pneumologistas: Guia Completo | ProdutoVivo",
-    "Marketing Digital para Pneumologistas",
-    "Descubra como pneumologistas podem usar marketing digital para atrair pacientes com queixas respiratorias e construir autoridade na especialidade.",
-    [
-        ("Por que Pneumologistas Precisam de Marketing Digital", [
-            "Tosse cronica, falta de ar e ronco sao sintomas que as pessoas buscam no Google antes de consultar. Pneumologistas que aparecem nessas buscas captan pacientes que ja estao prontos para agendar.",
-            "Apos a pandemia de COVID, o interesse por saude respiratoria explodiu. Sequelas pos-COVID, pneumonias e monitoramento respiratorio sao temas com audiencia gigante e baixa competicao de conteudo especializado.",
-        ]),
-        ("Conteudo Estrategico para Pneumologistas", [
-            "Crie conteudo em torno de busca do paciente: 'por que tenho tosse persistente', 'diferenca entre asma e DPOC', 'ronco pode ser apneia do sono'. Esses sao os termos que seus futuros pacientes digitam.",
-            "Videos explicando como funciona a espirometria, o que e a poligrafia e como e o tratamento da apneia geram curiosidade e autoridade ao mesmo tempo. YouTube e Instagram Reels sao os canais ideais.",
-        ]),
-        ("Convertendo Atencao em Consultas", [
-            "Um site bem otimizado para SEO local com Google Meu Negocio completo e a base. Reviews de pacientes satisfeitos multiplicam a taxa de conversao de visitas em agendamentos.",
-            "Parcerias com clinicos gerais, cardiologistas e alergologistas geram encaminhamentos continuos. Seja conhecido pelos seus colegas como o pneumologista de referencia para casos complexos.",
-        ]),
-    ],
-    [
-        ("Posso falar sobre COVID longo e sequelas respiratorias nas redes?", "Sim — dentro das normas do CFM. Conteudo educativo sobre sequelas respiratorias pos-COVID tem enorme demanda e poucos especialistas produzindo. E uma oportunidade de posicionamento unico."),
-        ("Como crescer no Instagram como pneumologista?", "Consistencia e mais importante do que perfeicao. Comece com 3 posts por semana sobre sintomas respiratorios comuns, mitos sobre asma/DPOC e dicas de qualidade do ar. Use Reels para maximizar alcance."),
-        ("Vale a pena criar um canal no YouTube sobre saude respiratoria?", "Sim — o YouTube e o segundo maior buscador do mundo. Videos sobre tosse cronica, apneia do sono e tabagismo tem buscas mensais na casa dos milhares. Um canal bem feito gera consultas por anos."),
-    ],
-    [
-        ("gestao-de-clinicas-de-pneumologia-adulto", "Gestao de Clinicas de Pneumologia"),
-        ("marketing-para-profissionais-de-medicina-preventiva", "Marketing para Medicina Preventiva"),
-        ("marketing-para-profissionais-de-alergologia-adulto", "Marketing para Alergologistas"),
-    ]
-)
-
-art(
-    "vendas-para-o-setor-de-saas-de-bi-e-analytics",
-    "Vendas para o Setor de SaaS de BI e Analytics",
-    "Como vender SaaS de BI e analytics para empresas: estrategias de prospeccao, demonstracao de valor e fechamento B2B.",
-    "Vendas",
-    "Vendas de SaaS de BI e Analytics para Empresas | ProdutoVivo",
-    "Como Vender SaaS de BI e Analytics com Sucesso",
-    "Aprenda as estrategias especificas para vender plataformas de BI e analytics para empresas de todos os portes, desde PMEs ate grandes corporacoes.",
-    [
-        ("O Mercado de BI e Analytics no Brasil", [
-            "O mercado brasileiro de analytics cresce mais de 25% ao ano, impulsionado por transformacao digital e maior disponibilidade de dados. Empresas de todos os portes estao acordando para a importancia das decisoes baseadas em dados.",
-            "O desafio nao e mais convencer que dados importam — e mostrar que SEU SaaS entrega insights acionaveis mais rapido e mais barato do que a alternativa (planilhas, Power BI on-premise, times de BI internos).",
-        ]),
-        ("Segmentando e Abordando o Mercado", [
-            "PMEs sao atraidas por simplicidade e preco. Produtos como dashboards pre-prontos por vertical (varejo, SaaS, e-commerce) tem alta taxa de conversao self-service sem necessidade de demonstracao personalizada.",
-            "Para enterprise, o processo e diferente: mapeie o ecosistema de dados existente, identifique o 'data pain' mais critico e construa um POC (prova de conceito) com dados reais do cliente. Isso tem taxa de conversao muito maior do que demos genericas.",
-        ]),
-        ("Demonstrando Valor em Vendas de BI", [
-            "A demo de BI precisa ser personalizada. Use dados do setor do prospect ou, melhor ainda, dados anonimizados do proprio prospect. Uma demo com dados reais converte 3-5x mais do que uma com dados ficticios.",
-            "Mostre o caminho de dado bruto a decisao em tempo real. Se o prospect e um varejista, mostre como ele veria ruptura de gôndola acontecendo agora, nao em um relatorio semanal. Isso cria urgencia emocional.",
-        ]),
-    ],
-    [
-        ("Qual e o ciclo de vendas tipico para SaaS de BI?", "Self-service para PMEs: 1-4 semanas. Enterprise com POC: 2-6 meses. O investimento em um POC bem feito e justificado — clientes enterprise que passam por POC tem taxa de conversao de 60-80%."),
-        ("Como competir com Power BI e Tableau no mercado brasileiro?", "Nao compete direto — se posicione como complementar ou superior em casos de uso especificos. Foco setorial, time-to-insight mais rapido, custo menor para PMEs ou conectores nativos com ERPs brasileiros sao diferenciais valiosos."),
-        ("Devo cobrar pelo POC ou oferecer de graca?", "POC pago (R$ 5.000-20.000) e melhor — qualifica o cliente, financia seu tempo e aumenta o comprometimento. Reserve POCs gratuitos para oportunidades estrategicas de alto valor onde voce precisa ganhar a conta."),
-    ],
-    [
-        ("vendas-para-o-setor-de-saas-de-seguros", "Vendas para SaaS de Seguros"),
-        ("vendas-para-o-setor-de-saas-de-rh-e-folha", "Vendas para SaaS de RH e Folha"),
-        ("vendas-para-o-setor-de-consultoria-de-supply-chain-avancado", "Vendas para Consultoria de Supply Chain"),
-    ]
-)
-
-print("DONE — batch 569-575")
+print("15 artigos criados.")
