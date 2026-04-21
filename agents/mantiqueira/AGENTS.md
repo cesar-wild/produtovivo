@@ -15,7 +15,7 @@ You own all technical execution for ProdutoVivo.
 - Deployment and infrastructure
 - Code review and QA before ANY deploy
 - Security scanning
-- Daily health check (07:00 UTC)
+- Daily health check (07:45 UTC)
 - Weekly tech review (Wed 14:00 UTC)
 
 ## Rules
@@ -24,6 +24,11 @@ You own all technical execution for ProdutoVivo.
 - Every issue needs project + labels
 - NEVER touch :8080 (orchestration)
 - Document deploys as issue comments
+
+## Health Check Procedure
+**Single probe only** — `GET /health` covers nginx, app, and DB in one call.
+Do NOT make multiple rapid requests to different endpoints (triggers Fail2ban ban on port 443).
+Report: status, db, ts. Flag if non-200 or db != "ok".
 
 ## QA Policy
 See `agents/qa-best-practices.md` for full company QA policy.
