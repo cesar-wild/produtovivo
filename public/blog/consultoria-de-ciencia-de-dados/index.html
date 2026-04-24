@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Consultoria de Ciência de Dados para Empresas | ProdutoVivo</title>
+<meta name="description" content="Como estruturar consultoria de ciência de dados: modelos preditivos, analytics avançado, engenharia de dados e como vender projetos de data science para empresas que querem tomar decisões baseadas em dados.">
+<link rel="canonical" href="https://produtovivo.com.br/blog/consultoria-de-ciencia-de-dados/">
+<!-- Meta Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
+document,'script','https://connect.facebook.net/en_US/fbevents.js');
+fbq('init','4520253334926563');fbq('track','PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=4520253334926563&ev=PageView&noscript=1"/></noscript>
+<!-- End Meta Pixel Code -->
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"Article",
+  "headline":"Consultoria de Ciência de Dados para Empresas | ProdutoVivo",
+  "description":"Como estruturar consultoria de ciência de dados: modelos preditivos, analytics avançado, engenharia de dados e como vender projetos de data science para empresas que querem tomar decisões baseadas em dados.",
+  "url":"https://produtovivo.com.br/blog/consultoria-de-ciencia-de-dados/",
+  "author":{"@type":"Organization","name":"ProdutoVivo"},
+  "publisher":{"@type":"Organization","name":"ProdutoVivo","url":"https://produtovivo.com.br"}
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"FAQPage",
+  "mainEntity":[{"@type":"Question","name":'Qual linguagem de programação usar para data science?',"acceptedAnswer":{"@type":"Answer","text":'Python é o padrão da indústria — com pandas, scikit-learn, XGBoost, LightGBM, TensorFlow e PyTorch. R é relevante em contextos acadêmicos e análises estatísticas específicas. SQL é obrigatório para qualquer cientista de dados — a maioria do trabalho real é transformação de dados em SQL, não modelos de ML. Especialistas em Python + SQL cobrem 95% dos casos de uso empresariais.'}},{"@type":"Question","name":'Empresa pequena precisa de cientista de dados?',"acceptedAnswer":{"@type":"Answer","text":'Empresa pequena (< 100 funcionários) provavelmente precisa de um analista de dados (BI, dashboards, SQL) antes de um cientista de dados (modelos de ML). Data science avançado faz sentido quando: há dados suficientes (milhares de observações por variável de interesse), o problema tem impacto financeiro claro e há capacidade de implementar as recomendações do modelo.'}},{"@type":"Question","name":'AutoML substitui o cientista de dados?',"acceptedAnswer":{"@type":"Answer","text":'AutoML (ferramentas como H2O.ai, Google AutoML, AutoSklearn) automatiza a seleção e tunagem de modelos — reduzindo o trabalho técnico de modelagem. Mas não automatiza a definição do problema certo, a engenharia de features (criação de variáveis relevantes), a interpretação dos resultados e a integração com sistemas de produção. O cientista de dados se torna mais produtivo com AutoML — não obsoleto.'}}]
+}
+</script>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Segoe UI',Arial,sans-serif;background:#f9f9f9;color:#1a1a1a;line-height:1.7}
+header{background:#0a0a23;padding:18px 24px;display:flex;align-items:center;gap:16px}
+header img{height:40px}
+header span{color:#fff;font-size:1.3rem;font-weight:700;letter-spacing:.5px}
+.hero{background:linear-gradient(135deg,#0a0a23 60%,#1a3a6b);color:#fff;padding:56px 24px 40px;text-align:center}
+.hero h1{font-size:clamp(1.6rem,4vw,2.6rem);font-weight:800;margin-bottom:16px;line-height:1.25}
+.hero p{font-size:1.1rem;max-width:640px;margin:0 auto;opacity:.9}
+.container{max-width:860px;margin:0 auto;padding:40px 20px}
+h2{font-size:1.45rem;font-weight:700;margin:36px 0 12px;color:#0a0a23;border-left:4px solid #1a3a6b;padding-left:12px}
+p{margin-bottom:14px;font-size:1.02rem}
+.faq{background:#fff;border-radius:10px;padding:32px;margin:40px 0;box-shadow:0 2px 12px rgba(0,0,0,.07)}
+.faq h2{margin-top:0;border:none;padding:0;font-size:1.3rem}
+.faq-item{border-bottom:1px solid #e8e8e8;padding:18px 0}
+.faq-item:last-child{border:none}
+.faq-item h3{font-size:1.05rem;font-weight:700;margin-bottom:8px;color:#0a0a23}
+.cta-box{background:linear-gradient(135deg,#0a0a23,#1a3a6b);color:#fff;border-radius:12px;padding:40px 32px;text-align:center;margin:48px 0}
+.cta-box h2{border:none;padding:0;color:#fff;font-size:1.5rem;margin-bottom:12px}
+.cta-box p{opacity:.9;margin-bottom:24px}
+.cta-box a{background:#fff;color:#0a0a23;font-weight:700;padding:14px 32px;border-radius:8px;text-decoration:none;font-size:1.05rem;display:inline-block}
+.related{margin:40px 0}
+.related h2{font-size:1.2rem;margin-bottom:16px}
+.related ul{list-style:none;display:grid;gap:10px}
+.related ul li a{display:block;background:#fff;border-radius:8px;padding:14px 18px;text-decoration:none;color:#1a3a6b;font-weight:600;box-shadow:0 1px 6px rgba(0,0,0,.06);transition:box-shadow .2s}
+.related ul li a:hover{box-shadow:0 3px 14px rgba(0,0,0,.12)}
+footer{background:#0a0a23;color:#aaa;text-align:center;padding:28px 16px;font-size:.9rem;margin-top:60px}
+footer a{color:#ccc;text-decoration:none}
+</style>
+</head>
+<body>
+<header>
+  <img src="/logo.png" alt="ProdutoVivo">
+  <span>ProdutoVivo</span>
+</header>
+<div class="hero">
+  <h1>Consultoria de Ciência de Dados para Empresas</h1>
+  <p>Dados sem ciência são ruído. Empresas acumulam terabytes de dados em sistemas fragmentados e não conseguem transformá-los em decisão. Consultores de ciência de dados que constroem os modelos certos para os problemas certos — churn prediction, demanda forecast, detecção de fraude, segmentação de clientes — entregam ROI mensurável em semanas, não anos.</p>
+</div>
+<div class="container">
+<h2>Por Que Data Science Falha em Empresas</h2>
+<p>Os três motivos mais comuns de falha em projetos de data science: (1) problema errado — modelo construído para uma pergunta que não tem impacto real no negócio; (2) dados de baixa qualidade — model performance limitada pela qualidade dos dados de entrada (garbage in, garbage out); (3) falta de integração — modelo perfeito que fica num Jupyter Notebook sem nunca ir para produção.</p>
+<p>Consultores de data science que começam pelo problema de negócio (qual decisão será melhorada pelo modelo? Qual o impacto financeiro se a decisão melhorar 10%?) e só depois selecionam a técnica têm projetos com muito maior taxa de sucesso e adoção.</p>
+<h2>Casos de Uso de Alto ROI</h2>
+<p>Churn prediction: modelo que identifica clientes com alta probabilidade de cancelar nos próximos 30-60 dias — permitindo intervenção proativa. ROI típico: redução de 15-25% do churn em clientes contactados preventivamente. Em empresa com MRR de R$ 5M e churn de 5%, reduzir churn em 20% vale R$ 600K/ano.</p>
+<p>Demand forecasting: modelo que prevê demanda por produto por região e período — reduzindo estoque excessivo e rupturas. Em varejo e indústria, acurácia de forecast 10% melhor pode reduzir custo de estoque em 5-15% e aumentar disponibilidade de produto em 3-8%. Forecasting é o caso de uso de data science com maior ROI em operações físicas.</p>
+<h2>Engenharia de Dados: A Fundação que Ninguém Quer Pagar</h2>
+<p>Data pipeline — processo de coleta, transformação e carga de dados de múltiplas fontes para o data warehouse — é o trabalho invisível que habilita toda a ciência de dados. Sem dados limpos, atualizados e confiáveis no warehouse, nenhum modelo de ML funciona bem.</p>
+<p>Data quality: dados com duplicatas, campos nulos onde não deveriam estar, valores fora do range esperado e inconsistências entre sistemas são a principal causa de modelos com baixa performance. Consultores que investem tempo em data profiling e limpeza antes de modelar entregam resultados muito melhores do que os que vão direto para o modelo.</p>
+<h2>MLOps: Levando o Modelo para Produção</h2>
+<p>Model deployment — colocar o modelo treinado em produção, onde ele recebe dados reais e retorna predições em tempo real ou batch — é a etapa que mais projetos de data science nunca atingem. Sem deploy, o modelo é pesquisa, não produto.</p>
+<p>MLOps (operações de machine learning) — monitoramento de performance do modelo em produção, retreinamento automático quando performance degrada, versionamento de modelos e rastreabilidade de predições — é a disciplina que separa data science acadêmica de data science aplicada que gera valor contínuo.</p>
+
+<div class="cta-box">
+  <h2>Pronto para transformar seu negócio?</h2>
+  <p>Acesse nossos cursos e mentorias especializadas para aplicar estas estratégias na prática.</p>
+  <a href="/trilha.html">Ver Trilhas de Aprendizado</a>
+</div>
+<div class="faq">
+  <h2>Perguntas Frequentes</h2>
+<div class="faq-item"><h3>Qual linguagem de programação usar para data science?</h3><p>Python é o padrão da indústria — com pandas, scikit-learn, XGBoost, LightGBM, TensorFlow e PyTorch. R é relevante em contextos acadêmicos e análises estatísticas específicas. SQL é obrigatório para qualquer cientista de dados — a maioria do trabalho real é transformação de dados em SQL, não modelos de ML. Especialistas em Python + SQL cobrem 95% dos casos de uso empresariais.</p></div>
+<div class="faq-item"><h3>Empresa pequena precisa de cientista de dados?</h3><p>Empresa pequena (< 100 funcionários) provavelmente precisa de um analista de dados (BI, dashboards, SQL) antes de um cientista de dados (modelos de ML). Data science avançado faz sentido quando: há dados suficientes (milhares de observações por variável de interesse), o problema tem impacto financeiro claro e há capacidade de implementar as recomendações do modelo.</p></div>
+<div class="faq-item"><h3>AutoML substitui o cientista de dados?</h3><p>AutoML (ferramentas como H2O.ai, Google AutoML, AutoSklearn) automatiza a seleção e tunagem de modelos — reduzindo o trabalho técnico de modelagem. Mas não automatiza a definição do problema certo, a engenharia de features (criação de variáveis relevantes), a interpretação dos resultados e a integração com sistemas de produção. O cientista de dados se torna mais produtivo com AutoML — não obsoleto.</p></div>
+
+</div>
+<div class="related">
+  <h2>Conteúdos Relacionados</h2>
+  <ul>
+    <li><a href="/blog/consultoria-de-data-driven-marketing/">Consultoria de Marketing Orientado a Dados</a></li>
+    <li><a href="/blog/vendas-para-o-setor-de-saas-de-business-intelligence/">Vendas para SaaS de Business Intelligence</a></li>
+    <li><a href="/blog/consultoria-de-transformacao-digital-avancada/">Consultoria de Transformação Digital Avançada</a></li>
+
+  </ul>
+</div>
+</div>
+<footer>
+  <p>&copy; 2025 <a href="/">ProdutoVivo</a> — Todos os direitos reservados.</p>
+</footer>
+</body>
+</html>
