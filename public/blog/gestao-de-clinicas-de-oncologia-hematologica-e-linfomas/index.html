@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Gestão de Clínicas de Oncologia Hematológica e Linfomas | ProdutoVivo</title>
+<meta name="description" content="Guia completo para gestão de clínicas de oncologia hematológica — leucemias, linfomas, mieloma múltiplo, protocolos de quimioterapia e transplante de medula óssea.">
+<link rel="canonical" href="https://produtovivo.com.br/blog/gestao-de-clinicas-de-oncologia-hematologica-e-linfomas/">
+<!-- Facebook Pixel Code -->
+<script>!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');fbq('init','4520253334926563');fbq('track','PageView');</script>
+<style>
+body{font-family:Arial,sans-serif;margin:0;padding:0;color:#222;}
+header{background:#1a1a2e;color:#fff;padding:16px 24px;}
+header a{color:#e0e0ff;text-decoration:none;font-weight:bold;font-size:1.2rem;}
+main{max-width:860px;margin:40px auto;padding:0 20px;}
+h1{font-size:2rem;color:#1a1a2e;}
+.lead{font-size:1.1rem;color:#444;margin-bottom:28px;}
+h2{color:#16213e;margin-top:32px;}
+.faq{background:#f5f7ff;border-radius:8px;padding:24px;margin-top:40px;}
+.faq h2{color:#1a1a2e;margin-top:0;}
+.faq-item{margin-bottom:18px;}
+.faq-item h3{margin:0 0 6px;color:#16213e;}
+footer{text-align:center;padding:24px;color:#888;font-size:.9rem;margin-top:60px;border-top:1px solid #eee;}
+footer a{color:#555;}
+</style>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Quais sistemas sao mais usados em oncologia hematologica?", "acceptedAnswer": {"@type": "Answer", "text": "Em centros de referencia, sistemas especializados em oncologia como Varian Aria, Elekta Mosaic (mais usados em radioterapia) e modulos de quimioterapia de sistemas hospitalares como Tasy e MV sao comuns. Para oncologia hematologica ambulatorial, ha lacuna importante de sistemas que integrem controle de protocolo de QT, monitoramento de toxicidade e registro de resposta molecular — a maioria usa prontuarios genéricos com workflows customizados. Essa lacuna representa oportunidade para SaaS especializado no nicho."}}, {"@type": "Question", "name": "Como estruturar o controle de protocolos de quimioterapia em uma clinica de hematologia?", "acceptedAnswer": {"@type": "Answer", "text": "Crie um catalogo de protocolos com doses padronizadas por SCq, intervalos entre ciclos, exames pre-ciclo obrigatorios (hemograma, funcao renal, ECG para cardiotoxicos), e criterios de reducao ou suspensao de dose por toxicidade. Para cada paciente em tratamento, gere automaticamente o calendario de ciclos e os pedidos de exames pre-ciclo. Antes de cada ciclo, o sistema deve verificar se os criterios de nadir foram atingidos e alertar para situacoes de risco (anemia, plaquetopenia, neutropenia). Essa verificacao automatica e o diferencial mais valorizado em sistemas de quimioterapia."}}, {"@type": "Question", "name": "Qual e o ticket medio para SaaS de oncologia hematologica?", "acceptedAnswer": {"@type": "Answer", "text": "O ticket para SaaS especializado em oncologia hematologica fica entre R$ 2.000 e R$ 8.000/mes para ambulatorios de quimioterapia de medio porte. Centros de transplante de medula ossea (TMO) com modulo especifico de gestao de transplante podem justificar tickets de R$ 6.000-15.000/mes. O churn e muito baixo — uma vez que o sistema acumula o historico de protocolos e toxicidades de pacientes em tratamento, a migracao e quase impossivel sem risco clinico."}}]}</script>
+</head>
+<body>
+<header><a href="/">ProdutoVivo</a></header>
+<main>
+<h1>Gestão de Clínicas de Oncologia Hematológica e Linfomas</h1>
+<p class="lead">Oncologia hematológica trata cânceres do sangue — leucemias agudas e crônicas, linfomas de Hodgkin e não-Hodgkin, e mieloma múltiplo. São doenças de alta complexidade que exigem protocolos de quimioterapia específicos e acompanhamento intensivo.</p>
+<h2>Protocolos de Quimioterapia em Hematologia: R-CHOP, ABVD e Hipercvad</h2>
+<p>Oncologia hematológica tem protocolos de quimioterapia altamente específicos por diagnóstico e estadiamento: R-CHOP (rituximabe + ciclofosfamida + doxorrubicina + vincristina + prednisona) para linfoma difuso de grandes células B, ABVD (adriamicina + bleomicina + vinblastina + dacarbazina) para linfoma de Hodgkin, HiperCVAD (ciclofosfamida + vincristina + doxorrubicina + dexametasona alternado com metotrexato + citarabina) para leucemia linfoblástica aguda. Sistemas que registrem o protocolo completo — com cálculo de doses por SCq (superfície corpórea), datas de cada ciclo, e controle de toxicidade — são ferramentas de segurança críticas.</p>
+<h2>Controle de Toxicidade: Citopenia, Infecção e Toxicidade Orgânica</h2>
+<p>Quimioterapia hematológica causa toxicidade intensa — mielossupressão profunda (neutropenia febril, anemia, plaquetopenia), cardiotoxicidade (antraciclinas), neurotoxicidade (vincristina), nefrotoxicidade e cistite hemorrágica (ciclofosfamida). O acompanhamento requer hemogramas frequentes (às vezes diários durante quimioterapia intensiva) e ajuste de dose ou adiamento de ciclo baseado nos nadir de neutrófilos e plaquetas. Sistemas que integrem os resultados laboratoriais, calculem automaticamente os nadir esperados por protocolo, e alertem para critérios de internação (neutropenia febril com ANC < 500), são ferramentas de segurança indispensáveis.</p>
+<h2>Terapias-Alvo e Imunoterapia em Hematologia</h2>
+<p>A revolução terapêutica em hematologia oncológica vem das terapias-alvo e imunoterapia: imatinibe e nilotinibe para LMC (leucemia mieloide crônica) com monitoramento molecular de BCR-ABL, ibrutinibe e venetoclax para LLC (leucemia linfocítica crônica), rituximabe e obinutuzumabe para linfomas B, e CAR-T cell therapy para linfomas e leucemias refratárias. Sistemas que registrem a resposta molecular ao imatinibe (PCR quantitativa trimestral para BCR-ABL), o estadiamento de linfoma por critérios Lugano (PET-CT), e os eventos adversos específicos de cada terapia-alvo, têm valor clínico imenso.</p>
+<h2>Transplante de Medula Óssea: Avaliação e Seguimento</h2>
+<p>Transplante de medula óssea (TMO) autólogo e alogênico é parte do tratamento de leucemias, linfomas recidivados e mieloma múltiplo. O processo envolve: avaliação pré-TMO (estadiamento da doença, avaliação cardiopulmonar, compatibilidade HLA no alogênico), condicionamento (quimioterapia mieloablativa), infusão do enxerto, e seguimento pós-TMO (pega do enxerto, doença do enxerto-versus-hospedeiro, reconstitução imune). Centros de TMO precisam de sistemas específicos para esse fluxo — com rastreamento do doador, controle de HLA, e monitoramento de enxerto versus hospedeiro.</p>
+<h2>Faturamento: Protocolos de QT de Alta Complexidade e APAC</h2>
+<p>Quimioterapia hematológica é faturada via APAC (Autorização de Procedimentos de Alta Complexidade) para o SUS, com laudos específicos e renovações periódicas. Para convênios, os protocolos têm cobertura variável — rituximabe e terapias-alvo de alto custo frequentemente exigem autorização prévia com documentação detalhada. O faturamento correto de todos os medicamentos utilizados em cada ciclo (com apresentações, doses e vias de administração) é crítico — erros custam R$ 10.000-100.000 por ciclo em medicamentos não reembolsados.</p>
+
+<div class="faq">
+<h2>Perguntas Frequentes</h2>
+<div class="faq-item"><h3>Quais sistemas sao mais usados em oncologia hematologica?</h3><p>Em centros de referencia, sistemas especializados em oncologia como Varian Aria, Elekta Mosaic (mais usados em radioterapia) e modulos de quimioterapia de sistemas hospitalares como Tasy e MV sao comuns. Para oncologia hematologica ambulatorial, ha lacuna importante de sistemas que integrem controle de protocolo de QT, monitoramento de toxicidade e registro de resposta molecular — a maioria usa prontuarios genéricos com workflows customizados. Essa lacuna representa oportunidade para SaaS especializado no nicho.</p></div>
+<div class="faq-item"><h3>Como estruturar o controle de protocolos de quimioterapia em uma clinica de hematologia?</h3><p>Crie um catalogo de protocolos com doses padronizadas por SCq, intervalos entre ciclos, exames pre-ciclo obrigatorios (hemograma, funcao renal, ECG para cardiotoxicos), e criterios de reducao ou suspensao de dose por toxicidade. Para cada paciente em tratamento, gere automaticamente o calendario de ciclos e os pedidos de exames pre-ciclo. Antes de cada ciclo, o sistema deve verificar se os criterios de nadir foram atingidos e alertar para situacoes de risco (anemia, plaquetopenia, neutropenia). Essa verificacao automatica e o diferencial mais valorizado em sistemas de quimioterapia.</p></div>
+<div class="faq-item"><h3>Qual e o ticket medio para SaaS de oncologia hematologica?</h3><p>O ticket para SaaS especializado em oncologia hematologica fica entre R$ 2.000 e R$ 8.000/mes para ambulatorios de quimioterapia de medio porte. Centros de transplante de medula ossea (TMO) com modulo especifico de gestao de transplante podem justificar tickets de R$ 6.000-15.000/mes. O churn e muito baixo — uma vez que o sistema acumula o historico de protocolos e toxicidades de pacientes em tratamento, a migracao e quase impossivel sem risco clinico.</p></div>
+
+</div>
+</main>
+<footer><p>&copy; 2025 ProdutoVivo &mdash; <a href="/blog/">Blog</a> | <a href="/trilha">Trilha Gratuita</a></p></footer>
+</body>
+</html>
