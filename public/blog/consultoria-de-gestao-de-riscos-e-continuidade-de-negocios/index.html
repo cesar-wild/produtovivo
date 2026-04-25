@@ -2,83 +2,53 @@
 <html lang="pt-BR">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Consultoria de Gestão de Riscos e Continuidade de Negócios | ProdutoVivo</title>
-<meta name="description" content="Como implementar gestão de riscos corporativos e planos de continuidade de negócios: ISO 31000, BCP, DRP, análise de impacto e testes de resiliência organizacional.">
+<meta name="description" content="Como estruturar e posicionar uma consultoria de gestão de riscos corporativos e continuidade de negócios (BCP/DRP) para empresas de médio e grande porte.">
 <link rel="canonical" href="https://produtovivo.com.br/blog/consultoria-de-gestao-de-riscos-e-continuidade-de-negocios/">
-<!-- Facebook Pixel -->
-<script>
-!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
-n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
-t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
-document,'script','https://connect.facebook.net/en_US/fbevents.js');
-fbq('init','4520253334926563');fbq('track','PageView');
-</script>
-<noscript><img height="1" width="1" style="display:none"
-src="https://www.facebook.com/tr?id=4520253334926563&ev=PageView&noscript=1"/></noscript>
-<script type="application/ld+json">
-{
-  "@context":"https://schema.org",
-  "@type":"Article",
-  "headline":"Consultoria de Gestão de Riscos e Continuidade de Negócios | ProdutoVivo",
-  "description":"Como implementar gestão de riscos corporativos e planos de continuidade de negócios: ISO 31000, BCP, DRP, análise de impacto e testes de resiliência organizacional.",
-  "url":"https://produtovivo.com.br/blog/consultoria-de-gestao-de-riscos-e-continuidade-de-negocios/",
-  "publisher":{"@type":"Organization","name":"ProdutoVivo","url":"https://produtovivo.com.br"}
-}
-</script>
-<script type="application/ld+json">
-{
-  "@context":"https://schema.org",
-  "@type":"FAQPage",
-  "mainEntity":[{"@type": "Question", "name": "O que é RTO e RPO em planos de continuidade?", "acceptedAnswer": {"@type": "Answer", "text": "RTO (Recovery Time Objective) é o tempo máximo aceitável para restaurar um processo ou sistema após uma disrupção. RPO (Recovery Point Objective) é a quantidade máxima de dados que a organização pode perder — define a frequência mínima de backup. Quanto menores o RTO e RPO, maior o custo de infraestrutura de continuidade."}},
-{"@type": "Question", "name": "Qual a diferença entre BCP e DRP?", "acceptedAnswer": {"@type": "Answer", "text": "BCP (Business Continuity Plan) cobre a continuidade de todas as funções críticas do negócio durante uma disrupção — inclui processos, pessoas e comunicação. DRP (Disaster Recovery Plan) é focado especificamente na recuperação de infraestrutura e sistemas de TI. O DRP é um componente do BCP mais amplo."}},
-{"@type": "Question", "name": "Como testar um plano de continuidade de negócios?", "acceptedAnswer": {"@type": "Answer", "text": "Testes progridem em complexidade: revisão de documentos (desk review), walkthrough (simulação verbal com equipes), simulação (exercício sem interrupção real) e teste real (ativação parcial ou total do plano). Cada teste gera lições aprendidas que melhoram o plano. Testes anuais são o mínimo recomendado pela ISO 22301."}}]
-}
-</script>
+<!-- Facebook Pixel Code -->
+<script>!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');fbq('init','4520253334926563');fbq('track','PageView');</script>
 <style>
-*{box-sizing:border-box;margin:0;padding:0}
-body{font-family:'Segoe UI',sans-serif;background:#f9fafb;color:#1a202c;line-height:1.7}
-header{background:#1a56db;padding:16px 24px}
-header a{color:#fff;font-weight:700;font-size:1.2rem;text-decoration:none}
-.container{max-width:860px;margin:40px auto;padding:0 20px}
-h1{font-size:2rem;color:#1a202c;margin-bottom:12px}
-.lead{font-size:1.1rem;color:#4a5568;margin-bottom:32px}
-h2{font-size:1.4rem;color:#1a56db;margin:28px 0 10px}
-p{margin-bottom:16px;color:#2d3748}
-.faq{background:#fff;border-radius:12px;padding:28px;margin-top:40px;box-shadow:0 2px 8px rgba(0,0,0,.07)}
-.faq h2{color:#1a202c;margin-bottom:20px}
-.faq-item{border-bottom:1px solid #e2e8f0;padding:16px 0}
-.faq-item:last-child{border-bottom:none}
-.faq-item h3{font-size:1rem;color:#2d3748;margin-bottom:6px}
-.faq-item p{color:#4a5568;margin:0}
-footer{text-align:center;padding:32px 20px;color:#718096;font-size:.9rem}
+body{font-family:Arial,sans-serif;margin:0;padding:0;color:#222;}
+header{background:#1a1a2e;color:#fff;padding:16px 24px;}
+header a{color:#e0e0ff;text-decoration:none;font-weight:bold;font-size:1.2rem;}
+main{max-width:860px;margin:40px auto;padding:0 20px;}
+h1{font-size:2rem;color:#1a1a2e;}
+.lead{font-size:1.1rem;color:#444;margin-bottom:28px;}
+h2{color:#16213e;margin-top:32px;}
+.faq{background:#f5f7ff;border-radius:8px;padding:24px;margin-top:40px;}
+.faq h2{color:#1a1a2e;margin-top:0;}
+.faq-item{margin-bottom:18px;}
+.faq-item h3{margin:0 0 6px;color:#16213e;}
+footer{text-align:center;padding:24px;color:#888;font-size:.9rem;margin-top:60px;border-top:1px solid #eee;}
+footer a{color:#555;}
 </style>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Qual a diferença entre BCP e DRP?", "acceptedAnswer": {"@type": "Answer", "text": "BCP (Business Continuity Plan) é mais amplo e cobre a continuidade de todas as operações críticas do negócio durante uma interrupção — incluindo pessoas, processos, instalações e tecnologia. DRP (Disaster Recovery Plan) é um subconjunto focado especificamente na recuperação de sistemas de TI e dados. Todo DRP faz parte de um BCP, mas o BCP vai além da TI."}}, {"@type": "Question", "name": "Quais empresas são obrigadas a ter plano de continuidade de negócios no Brasil?", "acceptedAnswer": {"@type": "Answer", "text": "Instituições financeiras (Resolução CMN 4.557 e BCB 85), operadoras de saúde (ANS RN 443), empresas de infraestrutura crítica e concessionárias de serviços públicos têm obrigações regulatórias específicas. Para outras empresas, o BCP é uma boa prática fortemente recomendada por seguradoras, investidores e grandes clientes corporativos."}}, {"@type": "Question", "name": "Como calcular o ROI de um projeto de gestão de riscos?", "acceptedAnswer": {"@type": "Answer", "text": "O ROI é calculado comparando o custo do projeto (implementação + manutenção anual) com o custo esperado de incidentes mitigados — prêmio de seguro reduzido pela melhora de perfil de risco, custos evitados de interrupção de operações, multas regulatórias evitadas e valor de contratos mantidos por demonstrar maturidade em riscos para grandes clientes."}}]}</script>
 </head>
 <body>
-<header><a href="https://produtovivo.com.br">ProdutoVivo</a></header>
-<div class="container">
+<header><a href="/">ProdutoVivo</a></header>
+<main>
 <h1>Consultoria de Gestão de Riscos e Continuidade de Negócios</h1>
-<p class="lead">Pandemias, ataques cibernéticos, desastres naturais e crises de reputação testaram a resiliência das empresas. Organizações com gestão de riscos madura e planos de continuidade robustos saem de crises mais rápido e com menos perdas.</p>
-<h2>Framework de Gestão de Riscos: ISO 31000</h2>
-<p>A ISO 31000:2018 fornece princípios e diretrizes para gestão de riscos aplicáveis a qualquer organização. O processo inclui: estabelecimento do contexto, identificação de riscos, análise (qualitativa e quantitativa), avaliação, tratamento e monitoramento. A consultoria facilita workshops de identificação de riscos com equipes multifuncionais e estrutura o registro de riscos (Risk Register) com responsáveis e status de tratamento.</p>
-<h2>Análise Qualitativa e Quantitativa de Riscos</h2>
-<p>A matriz de riscos qualitativa (probabilidade × impacto em escala 1-5) prioriza riscos para tratamento. A análise quantitativa (Monte Carlo, Value at Risk — VaR, Expected Loss) quantifica o impacto financeiro potencial e fundamenta decisões de insurance e provisionamento. Para riscos operacionais, a metodologia RCSA (Risk and Control Self-Assessment) mapeia controles existentes e gaps.</p>
-<h2>BCP: Business Continuity Planning</h2>
-<p>O Plano de Continuidade de Negócios (BCP) define como a organização mantém funções críticas durante e após uma disrupção. Componentes: BIA (Business Impact Analysis — define RTO e RPO por processo crítico), estratégias de continuidade (trabalho remoto, site alternativo, fornecedores alternativos), planos de comunicação e protocolos de ativação. BCP deve ser testado com exercícios simulados ao menos anualmente.</p>
-<h2>DRP: Disaster Recovery Plan para TI</h2>
-<p>O DRP foca na recuperação de infraestrutura de TI após desastre. RTO (Recovery Time Objective) e RPO (Recovery Point Objective) definem metas de recuperação por sistema. Estratégias: backup em nuvem com replicação geográfica, hot/warm/cold standby, runbooks de recuperação testados. Com o aumento de ataques ransomware no Brasil, o DRP com componente de cyber recovery é requisito de seguradoras e auditorias.</p>
-<h2>Gestão de Riscos ESG e Operacionais</h2>
-<p>Riscos ESG (mudanças climáticas, conflitos de água, riscos sociais na cadeia de fornecimento) ganham peso crescente com investidores e reguladores. A TCFD (Task Force on Climate-related Financial Disclosures) e o ISSB (IFRS S1/S2) padronizam o disclosure de riscos climáticos. Riscos operacionais (falhas de processo, fraudes, recall de produtos) são gerenciados pelo framework COSO ERM em alinhamento com o SOX para empresas de capital aberto.</p>
-<h2>Métricas e Maturidade em GRC</h2>
-<p>KPIs de GRC (Governance, Risk & Compliance): % de riscos críticos com plano de tratamento, número de incidentes de continuidade ativados vs recuperados dentro do RTO, tempo médio de detecção de riscos, cobertura de seguro vs exposição e resultado de auditorias externas. O índice de maturidade em GRC (escala 1-5) é reportado ao board anualmente para demonstrar evolução e justificar investimentos.</p>
+<p class="lead">Gestão de riscos e continuidade de negócios são disciplinas que ganharam urgência após a pandemia, ataques cibernéticos em escala e desastres climáticos. Consultorias especializadas nessa área têm demanda crescente de empresas que precisam estruturar frameworks de riscos, planos de continuidade e respostas a crises.</p>
+<h2>Escopo e Diferenciação da Consultoria de Riscos</h2>
+<p>A consultoria de riscos atua em múltiplas dimensões: riscos estratégicos (disruption de mercado, M&A mal executado), riscos operacionais (falhas de processo, supply chain), riscos financeiros (liquidez, câmbio, crédito), riscos de compliance (regulatório, ambiental, trabalhista) e riscos tecnológicos (cibersegurança, continuidade de TI). A diferenciação é possível por setores — saúde, financeiro, energia, agro — ou por tipo de risco — cibernético, ESG, regulatório.</p>
+<h2>Framework de Gestão de Riscos: ERM e ISO 31000</h2>
+<p>O Enterprise Risk Management (ERM) e a ISO 31000 são os frameworks de referência mais adotados. A consultoria conduz: identificação e mapeamento de riscos (risk register), avaliação de probabilidade e impacto (heat map), definição de apetite ao risco pela alta gestão, planos de tratamento por risco (aceitar, mitigar, transferir, evitar) e monitoramento contínuo com KRIs (Key Risk Indicators). A integração do framework de riscos com o planejamento estratégico é o nível mais avançado de maturidade.</p>
+<h2>Plano de Continuidade de Negócios (BCP) e Recuperação de Desastres (DRP)</h2>
+<p>O BCP (Business Continuity Plan) garante que funções críticas do negócio continuem operando durante interrupções. O DRP (Disaster Recovery Plan) foca na recuperação de sistemas de TI. A consultoria conduz BIA (Business Impact Analysis) para identificar processos críticos e RTOs/RPOs aceitáveis, desenvolve procedimentos de resposta e recuperação, e conduz simulações (tabletop exercises e testes de failover) para validar a efetividade dos planos.</p>
+<h2>Gestão de Riscos ESG e Regulatórios</h2>
+<p>Riscos ESG ganharam protagonismo com pressão de investidores, reguladores e grandes corporações sobre fornecedores. A consultoria ajuda empresas a mapearem riscos de transição climática, riscos de reputação por falhas em cadeia de fornecimento e riscos regulatórios de compliance ambiental e social. Frameworks como TCFD (Task Force on Climate-related Financial Disclosures) e GRI são referencias para relatórios de riscos ESG.</p>
+<h2>Monetização e Posicionamento da Consultoria de Riscos</h2>
+<p>Projetos de consultoria de riscos são tipicamente vendidos por entregáveis: R$ 80.000 a R$ 300.000 para implantação de framework ERM em empresa de médio porte, R$ 150.000 a R$ 500.000 para desenvolvimento de BCP completo, e retainers mensais de R$ 15.000 a R$ 50.000 para monitoramento contínuo e atualização de planos. Certificações como CRMA, CBCP e ISO 22301 Lead Implementer aumentam a credibilidade e permitem cobrar prêmio de mercado.</p>
+
 <div class="faq">
 <h2>Perguntas Frequentes</h2>
-<div class="faq-item"><h3>O que é RTO e RPO em planos de continuidade?</h3><p>RTO (Recovery Time Objective) é o tempo máximo aceitável para restaurar um processo ou sistema após uma disrupção. RPO (Recovery Point Objective) é a quantidade máxima de dados que a organização pode perder — define a frequência mínima de backup. Quanto menores o RTO e RPO, maior o custo de infraestrutura de continuidade.</p></div>
-<div class="faq-item"><h3>Qual a diferença entre BCP e DRP?</h3><p>BCP (Business Continuity Plan) cobre a continuidade de todas as funções críticas do negócio durante uma disrupção — inclui processos, pessoas e comunicação. DRP (Disaster Recovery Plan) é focado especificamente na recuperação de infraestrutura e sistemas de TI. O DRP é um componente do BCP mais amplo.</p></div>
-<div class="faq-item"><h3>Como testar um plano de continuidade de negócios?</h3><p>Testes progridem em complexidade: revisão de documentos (desk review), walkthrough (simulação verbal com equipes), simulação (exercício sem interrupção real) e teste real (ativação parcial ou total do plano). Cada teste gera lições aprendidas que melhoram o plano. Testes anuais são o mínimo recomendado pela ISO 22301.</p></div>
+<div class="faq-item"><h3>Qual a diferença entre BCP e DRP?</h3><p>BCP (Business Continuity Plan) é mais amplo e cobre a continuidade de todas as operações críticas do negócio durante uma interrupção — incluindo pessoas, processos, instalações e tecnologia. DRP (Disaster Recovery Plan) é um subconjunto focado especificamente na recuperação de sistemas de TI e dados. Todo DRP faz parte de um BCP, mas o BCP vai além da TI.</p></div>
+<div class="faq-item"><h3>Quais empresas são obrigadas a ter plano de continuidade de negócios no Brasil?</h3><p>Instituições financeiras (Resolução CMN 4.557 e BCB 85), operadoras de saúde (ANS RN 443), empresas de infraestrutura crítica e concessionárias de serviços públicos têm obrigações regulatórias específicas. Para outras empresas, o BCP é uma boa prática fortemente recomendada por seguradoras, investidores e grandes clientes corporativos.</p></div>
+<div class="faq-item"><h3>Como calcular o ROI de um projeto de gestão de riscos?</h3><p>O ROI é calculado comparando o custo do projeto (implementação + manutenção anual) com o custo esperado de incidentes mitigados — prêmio de seguro reduzido pela melhora de perfil de risco, custos evitados de interrupção de operações, multas regulatórias evitadas e valor de contratos mantidos por demonstrar maturidade em riscos para grandes clientes.</p></div>
+
 </div>
-</div>
-<footer>© 2025 ProdutoVivo — produtovivo.com.br</footer>
+</main>
+<footer><p>&copy; 2025 ProdutoVivo. <a href="/blog/">Blog</a> | <a href="/">Home</a></p></footer>
 </body>
 </html>
