@@ -1,59 +1,54 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
 <title>Consultoria de Design Organizacional e Estrutura de Times | ProdutoVivo</title>
-<meta name="description" content="Guia completo de consultoria em design organizacional: estruturas, spans of control, gestão de mudança e como estruturar o negócio.">
-<link rel="canonical" href="https://produtovivo.com.br/blog/consultoria-de-design-organizacional-e-estrutura-de-times/">
+<meta name="description" content="Como infoprodutores podem monetizar expertise em consultoria de design organizacional, estrutura de times e arquitetura de organizações."/>
+<link rel="canonical" href="https://produtovivo.com.br/blog/consultoria-de-design-organizacional-e-estrutura-de-times/"/>
 <!-- Facebook Pixel -->
-<script>!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');fbq('init','4520253334926563');fbq('track','PageView');</script>
+<script>
+!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
+document,'script','https://connect.facebook.net/en_US/fbevents.js');
+fbq('init','4520253334926563');fbq('track','PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=4520253334926563&ev=PageView&noscript=1"/></noscript>
+<!-- FAQ Schema -->
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "O que é design organizacional e como difere de RH estratégico?", "acceptedAnswer": {"@type": "Answer", "text": "Design organizacional é a disciplina de projetar estruturas, processos e mecanismos de coordenação que permitem que a empresa execute sua estratégia. RH estratégico foca em pessoas (atração, desenvolvimento, remuneração, cultura). Design organizacional foca na arquitetura da organização — como os times são formados, como as decisões são tomadas, como o trabalho flui entre áreas. Na prática, as duas disciplinas se complementam: a estrutura define os papéis que o RH precisa preencher e desenvolver."}}, {"@type": "Question", "name": "Qual é a diferença entre organização funcional, divisional e matricial?", "acceptedAnswer": {"@type": "Answer", "text": "Organização funcional agrupa pessoas por função (todos os engenheiros juntos, todos os vendedores juntos) — eficiente para especialização, mas cria silos. Divisional agrupa por produto, geografia ou segmento de cliente — cada divisão tem suas próprias funções. Matricial combina as duas: as pessoas reportam tanto para o chefe funcional quanto para o líder de produto ou projeto. Cada modelo tem vantagens e desvantagens que dependem da estratégia e do tamanho da empresa."}}, {"@type": "Question", "name": "Como estruturar squads de produto em empresas de tecnologia?", "acceptedAnswer": {"@type": "Answer", "text": "O modelo mais eficaz para empresas de tecnologia B2B é o de squads stream-aligned (alinhados a fluxos de valor para o cliente), com autonomia de ponta a ponta para entregar valor — desde a descoberta até a operação em produção. Cada squad tem PM, designers, engenheiros e, quando relevante, data analyst. O número ideal de squads é definido pela estratégia de produto, não pelo headcount disponível. Times de plataforma e enablement suportam os squads stream-aligned sem se tornar bottlenecks."}}]}</script>
 <style>
-body{font-family:Arial,sans-serif;margin:0;padding:0;color:#333}
-header{background:#1a73e8;color:#fff;padding:16px 24px}
-header a{color:#fff;text-decoration:none;font-size:1.4rem;font-weight:700}
-main{max-width:860px;margin:40px auto;padding:0 20px}
-h1{font-size:2rem;color:#1a73e8}
-h2{font-size:1.4rem;color:#333;margin-top:32px}
-.lead{font-size:1.1rem;color:#555;margin-bottom:32px}
-.faq{background:#f9f9f9;border-left:4px solid #1a73e8;padding:16px 20px;margin-top:40px}
-.faq h2{margin-top:0}
-.faq-item{margin-bottom:20px}
-.faq-item h3{margin-bottom:4px;color:#1a73e8}
-footer{background:#f1f1f1;text-align:center;padding:24px;font-size:.85rem;color:#666;margin-top:60px}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Segoe UI',sans-serif;color:#1a1a1a;background:#f9f9f9}
+header{background:#0a7c4e;color:#fff;padding:2rem 1rem;text-align:center}
+header h1{font-size:1.8rem;max-width:860px;margin:0 auto}
+main{max-width:860px;margin:2rem auto;padding:0 1rem}
+h2{color:#0a7c4e;margin:1.5rem 0 .5rem}
+p{line-height:1.7;margin-bottom:1rem}
+.faq{background:#fff;border-left:4px solid #0a7c4e;padding:1rem;margin:1rem 0;border-radius:4px}
+.faq strong{display:block;margin-bottom:.4rem}
+footer{text-align:center;padding:2rem;font-size:.85rem;color:#666}
+a{color:#0a7c4e}
 </style>
-<script type="application/ld+json">{
-  "@context":"https://schema.org",
-  "@type":"FAQPage",
-  "mainEntity":[{"@type": "Question", "name": "Qual a diferença entre estrutura funcional e divisional?", "acceptedAnswer": {"@type": "Answer", "text": "Estrutura funcional agrupa pessoas por função — Engenharia, Marketing, Vendas, Financeiro — cada função com sua hierarquia. Favorece a especialização e eficiência dentro de cada área mas cria silos e dificuldade de coordenação entre funções para atender um produto ou cliente. Estrutura divisional agrupa pessoas em torno de produtos, mercados ou geografias — cada divisão tem suas próprias funções. Favorece foco e responsabilidade por resultado mas duplica funções e pode criar inconsistência de processos entre divisões."}},
-{"@type": "Question", "name": "O que é span of control e por que importa?", "acceptedAnswer": {"@type": "Answer", "text": "Span of control é o número de pessoas que um gestor gerencia diretamente. Span muito estreito (2-3 diretos) cria muitas camadas hierárquicas, excesso de gestores e lentidão de decisão. Span muito amplo (15+ diretos em funções complexas) sobrecarrega os gestores e reduz qualidade do desenvolvimento das pessoas. O span ideal depende da complexidade do trabalho, da maturidade dos subordinados e do modelo de gestão. Organizações mais planas com spans mais amplos são mais eficientes mas exigem maior autonomia e maturidade dos colaboradores."}},
-{"@type": "Question", "name": "Como uma reestruturação organizacional deve ser comunicada?", "acceptedAnswer": {"@type": "Answer", "text": "A comunicação de reestruturação precisa ser: simultânea para todos os afetados (vazamentos antes do anúncio oficial destroem confiança), clara sobre o porquê estratégico da mudança, honesta sobre os impactos (incluindo eliminações de cargo), e com um canal seguro para perguntas e feedbacks. O gestor direto de cada pessoa impactada deve ter a conversa 1-1 antes ou imediatamente após o anúncio geral. Comunicações vagas que deixam as pessoas sem saber se o próprio emprego está seguro são mais danosas que comunicações diretas com más notícias."}}]
-}</script>
 </head>
 <body>
-<header><a href="/">ProdutoVivo</a></header>
+<header><h1>Consultoria de Design Organizacional e Estrutura de Times</h1></header>
 <main>
-<h1>Consultoria de Design Organizacional e Estrutura de Times</h1>
-<p class="lead">Design organizacional é a disciplina que define como uma empresa organiza suas pessoas, processos e estruturas de reporte para executar sua estratégia. À medida que empresas crescem, fundem, fazem spin-offs ou mudam de modelo de negócio, a estrutura organizacional existente frequentemente torna-se um freio à execução. Consultores de design organizacional ajudam líderes a redesenhar estruturas que habilitam a estratégia, melhoram a tomada de decisão e reduzem fricção organizacional.</p>
-<h2>Quando Empresas Precisam de Design Organizacional</h2>
-<p>Os gatilhos mais comuns para um projeto de design organizacional são: crescimento rápido (a estrutura que funcionava para 50 pessoas não funciona para 200), mudança estratégica (nova divisão de negócio, entrada em novo mercado), fusão/aquisição (integração de duas estruturas distintas), reestruturação (corte de custos ou reorganização por eficiência), e sucessão de liderança (novo CEO que quer reimprimir sua visão na estrutura). Cada contexto exige abordagem diferente — não existe estrutura universal correta.</p>
-<h2>Princípios de Design Organizacional</h2>
-<p>Os princípios que guiam o design incluem: alinhamento com estratégia (a estrutura segue a estratégia, não o contrário), clareza de autoridade e responsabilidade (quem decide o quê), spans of control adequados (quantas pessoas cada gestor pode gerir efetivamente — tipicamente 5-8 diretos para funções complexas, mais para funções operacionais repetitivas), e coordenação de interdependências críticas. Estruturas funcionais, divisionais, matriciais e tribais/squads têm trade-offs bem documentados que o consultor deve dominar.</p>
-<h2>O Processo: Diagnóstico, Design e Transição</h2>
-<p>Um projeto típico tem três fases: (1) Diagnóstico — entendimento da estratégia, mapeamento da estrutura atual, identificação de disfunções (silos, ambiguidades de responsabilidade, gargalos de decisão), entrevistas com líderes-chave e análise de spans of control; (2) Design — geração e comparação de opções estruturais, análise de trade-offs, decisão com o CEO/board; (3) Transição — plano de implementação, comunicação às equipes, gestão de mudança e acompanhamento. A fase de transição é frequentemente subestimada e é onde as reorganizações falham.</p>
-<h2>Gestão de Mudança: O Componente Humano</h2>
-<p>Reorganizações são emocionalmente carregadas — pessoas perdem posições de liderança, mudam de gestor, veem sua área mudar de importância. A gestão de mudança é inseparável do design organizacional: comunicação clara e honesta do porquê, envolvimento dos afetados no processo, planos de transição de carreira para quem é impactado negativamente, e rapidez na implementação (ambiguidade prolongada é tóxica). Consultores que ignoram o componente humano entregam relatórios bonitos que não são implementados.</p>
-<h2>Precificação e Estrutura de Projetos</h2>
-<p>Projetos de diagnóstico e design organizacional costam de R$80-R$250 mil dependendo do porte da empresa e da profundidade da análise. Implementação e gestão de mudança podem adicionar 50-100% ao custo base. Empresas em crise ou que precisam de velocidade pagam prêmio de urgência. Retainers de acompanhamento de implementação (R$20-R$50 mil/mês por 3-6 meses) garantem que o design não é gaveta — são uma extensão natural do projeto principal com receita recorrente.</p>
-<h2>Diferenciação: Org Design para Empresas Ágeis e Squads</h2>
-<p>O design organizacional para empresas de tecnologia e startups ganhou nova dimensão com modelos ágeis (Spotify Model, squads, tribos, capítulos). Consultores que dominam a implementação e adaptação desses modelos para o contexto brasileiro têm demanda crescente. O Spotify Model é frequentemente mal implementado — empresas copiam a estrutura sem os pré-requisitos culturais e de autonomia, criando confusão sem os benefícios de agilidade. Consultores que ajudam a adaptar o modelo à realidade de cada organização entregam valor real.</p>
-<div class="faq">
+<p>Design organizacional é a disciplina que define como uma empresa estrutura seus times, funções, processos e sistemas de tomada de decisão para executar sua estratégia com máxima eficiência. Em um período de crescimento acelerado, fusões, reestruturações pós-crise ou transformação digital, as empresas precisam redesenhar suas estruturas — e consultores especializados nisso são raros e altamente remunerados.</p>
+<section><h2>Quando uma Empresa Precisa de Design Organizacional</h2><p>Sinais de que a estrutura organizacional está atrapalhando a empresa incluem: times que trabalham em silos sem comunicação eficaz, duplicidade de funções e responsabilidades pouco claras, lentidão nas decisões por excesso de hierarquia, dificuldade em executar iniciativas cross-funcionais, e crescimento desestruturado onde a empresa triplicou de tamanho mas a estrutura permaneceu a mesma. Esses sintomas são oportunidades de entrada para o consultor de design organizacional.</p></section>
+<section><h2>Frameworks de Design Organizacional</h2><p>Consultores usam frameworks como: McKinsey 7S (estratégia, estrutura, sistemas, valores compartilhados, estilo, staff, habilidades) para diagnóstico holístico, Modelo de Galbraith Star (estratégia, estrutura, processos, pessoas, recompensas) para design integrado, Team Topologies (stream-aligned, enabling, complicated subsystem, platform teams) para organizações de tecnologia e produto, e Sociocracy/Holacracy para organizações que experimentam autogestão.</p></section>
+<section><h2>Estruturação de Times de Produto e Tecnologia</h2><p>Um dos projetos mais demandados é a estruturação de times de produto e engenharia em empresas de tecnologia em crescimento. Como organizar squads? Modelo por produto, por jornada do cliente, por plataforma ou por funcionalidade? Quem é o PM, o Engineering Manager, o tech lead? Como evitar bottlenecks no time de plataforma? Consultores com experiência em Team Topologies e empowered teams têm projeto a projeto com empresas de tecnologia de médio porte.</p></section>
+<section><h2>Gestão de Mudança na Reestruturação</h2><p>Reestruturações organizacionais falham quando o design técnico está correto mas a gestão de mudança é negligenciada. Comunicar claramente o porquê da reestruturação, envolver lideranças no processo de design, garantir que as novas responsabilidades são compreendidas, e ter um plano de 90 dias de transição são elementos críticos. O consultor de design organizacional que também domina change management entrega projetos com taxa de sucesso muito superior.</p></section>
+<section><h2>Infoprodutos sobre Design Organizacional para Líderes</h2><p>CHROs, VPs de Operações, CEOs de scale-ups e gerentes de RH que enfrentam desafios de estruturação organizacional buscam formação em frameworks de design, como estruturar times de produto, e como gerenciar reestruturações. Cursos sobre Team Topologies, OKRs como mecanismo de alinhamento, e como construir uma organização ágil têm alta demanda corporativa com tickets de R$ 1.997 a R$ 7.997.</p></section>
+<section class="faqs">
 <h2>Perguntas Frequentes</h2>
-<div class="faq-item"><h3>Qual a diferença entre estrutura funcional e divisional?</h3><p>Estrutura funcional agrupa pessoas por função — Engenharia, Marketing, Vendas, Financeiro — cada função com sua hierarquia. Favorece a especialização e eficiência dentro de cada área mas cria silos e dificuldade de coordenação entre funções para atender um produto ou cliente. Estrutura divisional agrupa pessoas em torno de produtos, mercados ou geografias — cada divisão tem suas próprias funções. Favorece foco e responsabilidade por resultado mas duplica funções e pode criar inconsistência de processos entre divisões.</p></div>
-<div class="faq-item"><h3>O que é span of control e por que importa?</h3><p>Span of control é o número de pessoas que um gestor gerencia diretamente. Span muito estreito (2-3 diretos) cria muitas camadas hierárquicas, excesso de gestores e lentidão de decisão. Span muito amplo (15+ diretos em funções complexas) sobrecarrega os gestores e reduz qualidade do desenvolvimento das pessoas. O span ideal depende da complexidade do trabalho, da maturidade dos subordinados e do modelo de gestão. Organizações mais planas com spans mais amplos são mais eficientes mas exigem maior autonomia e maturidade dos colaboradores.</p></div>
-<div class="faq-item"><h3>Como uma reestruturação organizacional deve ser comunicada?</h3><p>A comunicação de reestruturação precisa ser: simultânea para todos os afetados (vazamentos antes do anúncio oficial destroem confiança), clara sobre o porquê estratégico da mudança, honesta sobre os impactos (incluindo eliminações de cargo), e com um canal seguro para perguntas e feedbacks. O gestor direto de cada pessoa impactada deve ter a conversa 1-1 antes ou imediatamente após o anúncio geral. Comunicações vagas que deixam as pessoas sem saber se o próprio emprego está seguro são mais danosas que comunicações diretas com más notícias.</p></div>
-</div>
+<div class="faq"><strong>O que é design organizacional e como difere de RH estratégico?</strong><p>Design organizacional é a disciplina de projetar estruturas, processos e mecanismos de coordenação que permitem que a empresa execute sua estratégia. RH estratégico foca em pessoas (atração, desenvolvimento, remuneração, cultura). Design organizacional foca na arquitetura da organização — como os times são formados, como as decisões são tomadas, como o trabalho flui entre áreas. Na prática, as duas disciplinas se complementam: a estrutura define os papéis que o RH precisa preencher e desenvolver.</p></div>
+<div class="faq"><strong>Qual é a diferença entre organização funcional, divisional e matricial?</strong><p>Organização funcional agrupa pessoas por função (todos os engenheiros juntos, todos os vendedores juntos) — eficiente para especialização, mas cria silos. Divisional agrupa por produto, geografia ou segmento de cliente — cada divisão tem suas próprias funções. Matricial combina as duas: as pessoas reportam tanto para o chefe funcional quanto para o líder de produto ou projeto. Cada modelo tem vantagens e desvantagens que dependem da estratégia e do tamanho da empresa.</p></div>
+<div class="faq"><strong>Como estruturar squads de produto em empresas de tecnologia?</strong><p>O modelo mais eficaz para empresas de tecnologia B2B é o de squads stream-aligned (alinhados a fluxos de valor para o cliente), com autonomia de ponta a ponta para entregar valor — desde a descoberta até a operação em produção. Cada squad tem PM, designers, engenheiros e, quando relevante, data analyst. O número ideal de squads é definido pela estratégia de produto, não pelo headcount disponível. Times de plataforma e enablement suportam os squads stream-aligned sem se tornar bottlenecks.</p></div>
+</section>
 </main>
-<footer>© 2025 ProdutoVivo · <a href="/blog/">Blog</a> · <a href="/trilha/">Trilha</a></footer>
+<footer><p>© 2025 ProdutoVivo · <a href="https://produtovivo.com.br/blog/">Blog</a></p></footer>
 </body>
 </html>
