@@ -63,6 +63,11 @@ jobs:
               ufw allow 443/tcp 2>/dev/null || true
             fi
 
+            # Free disk space — prune old Docker images/build cache
+            echo "Pruning Docker system..."
+            docker system prune -af --volumes 2>&1 || true
+            df -h / 2>/dev/null || true
+
             # Pull latest code and rebuild
             cd /opt/produtovivo
             echo "Pulling latest code..."

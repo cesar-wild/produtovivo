@@ -1,0 +1,24 @@
+# Git
+.git
+.gitignore
+
+# Dev/CI tooling
+node_modules
+docs
+agents
+infra
+scripts
+.github
+.env
+.env.example
+
+# Generator scripts (not needed at runtime)
+public/gen_batch*.py
+
+# Other non-runtime files
+Dockerfile
+docker-compose.prod.yml
+deploy.sh
+setup-server.sh
+README.md
+paperclip
