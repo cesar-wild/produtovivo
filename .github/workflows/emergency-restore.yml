@@ -1,0 +1,96 @@
+name: Emergency restore — diagnose and restart production
+
+on:
+  workflow_dispatch:
+
+jobs:
+  restore:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: SSH into Hetzner — diagnose and restore
+        uses: appleboy/ssh-action@v1.2.0
+        with:
+          host: 5.223.73.101
+          username: root
+          key: ${{ secrets.HETZNER_SSH_KEY }}
+          command_timeout: 8m
+          script: |
+            set -euo pipefail
+            echo "=== EMERGENCY RESTORE — $(date -u) ==="
+
+            echo "--- System overview ---"
+            uptime
+            free -h
+            df -h / /opt 2>/dev/null || df -h /
+
+            echo "--- Docker status ---"
+            systemctl is-active docker && echo "Docker: running" || echo "Docker: NOT running"
+            docker ps -a --format 'table {{.Names}}\t{{.Status}}\t{{.Ports}}' 2>/dev/null || echo "docker ps failed"
+
+            echo "--- nginx status ---"
+            systemctl is-active nginx && echo "nginx: running" || echo "nginx: NOT running"
+
+            echo "--- ProdutoVivo service status ---"
+            systemctl is-active produtovivo.service && echo "produtovivo.service: active" || echo "produtovivo.service: NOT active"
+
+            echo "--- Container logs (last 50 lines) ---"
+            docker logs produtovivo-prod --tail=50 2>&1 || echo "No container logs available"
+
+            echo "--- UFW status ---"
+            ufw status 2>/dev/null || echo "UFW not installed"
+
+            echo ""
+            echo "=== ATTEMPTING RESTORE ==="
+
+            # Ensure Docker is running
+            if ! systemctl is-active --quiet docker; then
+              echo "Starting Docker..."
+              systemctl start docker
+              sleep 3
+            fi
+
+            # Ensure nginx is running
+            if ! systemctl is-active --quiet nginx; then
+              echo "Starting nginx..."
+              systemctl start nginx
+            fi
+
+            # Ensure UFW allows ports 80/443
+            if command -v ufw &>/dev/null; then
+              ufw allow 22/tcp 2>/dev/null || true
+              ufw allow 80/tcp 2>/dev/null || true
+              ufw allow 443/tcp 2>/dev/null || true
+            fi
+
+            # Pull latest code and rebuild
+            cd /opt/produtovivo
+            echo "Pulling latest code..."
+            git fetch origin main
+            git pull --ff-only origin main || echo "git pull failed — continuing with current code"
+
+            echo "Rebuilding and restarting container..."
+            docker compose -f docker-compose.prod.yml up -d --build 2>&1
+
+            echo "Waiting for health check..."
+            for i in $(seq 1 12); do
+              if curl -sf http://127.0.0.1:3000/health; then
+                echo ""
+                echo "HEALTH CHECK PASSED"
+                break
+              fi
+              if [ "$i" -eq 12 ]; then
+                echo "Health check failed after 60s"
+                docker compose -f docker-compose.prod.yml logs --tail=100 2>&1
+                exit 1
+              fi
+              echo "  Waiting... ($i/12)"
+              sleep 5
+            done
+
+            # Reload nginx to be safe
+            nginx -t && systemctl reload nginx
+
+            echo ""
+            echo "=== RESTORE COMPLETE — $(date -u) ==="
+            echo "Site should be live at https://produtovivo.com"
